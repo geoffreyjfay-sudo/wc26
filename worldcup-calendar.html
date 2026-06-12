@@ -662,16 +662,19 @@ const FIXTURES = [
 let currentFilter = 'all';
 let hideCompleted = true;
 
-function isCompleted(id) {
-  const r = results[id];
-  return r && r.home !== '' && r.away !== '';
+function isCompleted(f) {
+  // Completed = kickoff time has passed (IST = UTC+1), allowing 2hrs for the game
+  const [y, mo, d] = f.date.split('-').map(Number);
+  const [h, mi] = f.time.split(':').map(Number);
+  const kickoffUTC = Date.UTC(y, mo - 1, d, h - 1, mi); // IST→UTC
+  return Date.now() > kickoffUTC + 2 * 60 * 60 * 1000;
 }
 
 function toggleHideCompleted() {
   hideCompleted = !hideCompleted;
   const btn = document.getElementById('btn-hide-completed');
   btn.classList.toggle('active', hideCompleted);
-  btn.textContent = 'Hide Completed';
+  btn.textContent = hideCompleted ? 'Hide Completed' : 'Show Completed';
   render();
 }
 
@@ -748,7 +751,7 @@ function render() {
   // Filter fixtures
   const visible = FIXTURES.filter(f => {
     if (!matchesFilter(f.home, f.away)) return false;
-    if (hideCompleted && isCompleted(f.id)) return false;
+    if (hideCompleted && isCompleted(f)) return false;
     return true;
   });
 
