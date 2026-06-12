@@ -424,7 +424,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
 </head>
 <body>
 <nav class="topnav">
-  <a href="#" onclick="scrollTo(0,0);return false;" class="active" id="nav-calendar">📅 Calendar</a>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="active" id="nav-calendar">📅 Calendar</a>
   <a href="#" onclick="document.getElementById('standings').scrollIntoView({behavior:'smooth'});return false;" id="nav-standings">🏆 Standings</a>
   <a href="#" onclick="document.getElementById('group-tables-section').scrollIntoView({behavior:'smooth'});return false;" id="nav-groups">📋 Groups</a>
   <a href="#" onclick="document.getElementById('results-entry-section').scrollIntoView({behavior:'smooth'});return false;" id="nav-results">⚽ Results</a>
@@ -468,7 +468,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
   <button class="filter-btn" onclick="setFilter('Elsie')">Elsie</button>
   <button class="filter-btn" onclick="setFilter('Ruairí')">Ruairí</button>
   <span style="margin-left:auto">
-    <button class="filter-btn" id="btn-hide-completed" onclick="toggleHideCompleted()">Hide Completed</button>
+    <button class="filter-btn active" id="btn-hide-completed" onclick="toggleHideCompleted()">Show Completed</button>
   </span>
 </div>
 
@@ -539,9 +539,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
       <button class="modal-close" onclick="closePreview()">✕</button>
     </div>
     <div class="modal-body">
-      <div class="modal-wa-label">📱 Tap message to select all · Button to copy</div>
       <div class="modal-msg" id="modalMsg"></div>
-      <button class="modal-copy-btn" id="modalCopyBtn" onclick="copyPreview()">📋 Copy to WhatsApp</button>
     </div>
   </div>
 </div>
@@ -662,7 +660,7 @@ const FIXTURES = [
 
 // ── Group fixtures by date ────────────────────────────────────
 let currentFilter = 'all';
-let hideCompleted = false;
+let hideCompleted = true;
 
 function isCompleted(id) {
   const r = results[id];
@@ -2405,18 +2403,6 @@ function closePreview() {
   document.body.style.overflow = '';
 }
 
-function copyPreview() {
-  const text = document.getElementById('modalMsg').textContent;
-  const btn = document.getElementById('modalCopyBtn');
-  navigator.clipboard.writeText(text).catch(() => {
-    const ta = document.createElement('textarea');
-    ta.value = text; ta.style.cssText = 'position:fixed;opacity:0';
-    document.body.appendChild(ta); ta.select();
-    document.execCommand('copy'); document.body.removeChild(ta);
-  });
-  btn.textContent = '✅ Copied!'; btn.classList.add('copied');
-  setTimeout(() => { btn.textContent = '📋 Copy to WhatsApp'; btn.classList.remove('copied'); }, 2000);
-}
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePreview(); });
 
