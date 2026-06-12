@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-scores.py — Fetch World Cup 2026 results and update worldcup-calendar.html
+scores.py — Fetch World Cup 2026 results and update index.html
 
 Fetches completed match scores from football-data.org and patches the
 AUTO_SCORES block in the HTML so the page shows current results without
@@ -18,7 +18,20 @@ pip3 install requests
 python3 scores.py --api-key ebfb2f93b2d84919a843ecf10ee2ee95
 
 
+ Workflow going forward:                                                    
+                         
+  # 1. Update scores
+  python3 scores.py --api-key YOUR_KEY                                          
+   
+  # 2. Push to GitHub (site updates automatically)                              
+  git add index.html                                             
+  git commit -m "Update scores"                                                 
+  git push                                                                   
+                                                                                
+  The site reflects the new scores within ~30 seconds of pushing.     
 
+
+https://geoffreyjfay-sudo.github.io/wc26/   
 
 ===============================
 """
@@ -278,13 +291,13 @@ def patch_html(html_path: Path, scores: dict) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Fetch WC 2026 scores and update worldcup-calendar.html"
+        description="Fetch WC 2026 scores and update index.html"
     )
     parser.add_argument("--api-key", required=True, help="football-data.org API key")
     parser.add_argument(
         "--html",
-        default="worldcup-calendar.html",
-        help="Path to worldcup-calendar.html (default: ./worldcup-calendar.html)",
+        default="index.html",
+        help="Path to index.html (default: ./index.html)",
     )
     args = parser.parse_args()
 
