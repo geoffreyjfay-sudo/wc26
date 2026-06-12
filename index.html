@@ -2395,8 +2395,6 @@ function openPreview(id) {
   document.getElementById('modalMatchup').textContent = `${p.home} vs ${p.away}`;
   document.getElementById('modalMeta').innerHTML = `${p.group} · ${p.time}<br><span style="color:#f0c040;font-weight:600">${p.owners}</span>`;
   document.getElementById('modalMsg').textContent = p.msg;
-  document.getElementById('modalCopyBtn').textContent = '📋 Copy to WhatsApp';
-  document.getElementById('modalCopyBtn').classList.remove('copied');
   document.getElementById('previewModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
