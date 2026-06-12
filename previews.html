@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Match Previews — Family World Cup 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --dark:#0d1a0e; --panel:#132015; --panel2:#1a2e1c;
+  --border:rgba(255,255,255,0.09);
+  --gold:#d4a017; --gold-lt:#f0c040;
+  --cream:#f0ead8; --muted:rgba(240,234,216,0.45);
+  --green:#2d9e42; --green-lt:#4dcf6a;
+}
+body { background:var(--dark); color:var(--cream); font-family:'Inter',sans-serif; min-height:100vh; }
+.topnav { background:#091208; border-bottom:1px solid var(--border); padding:10px 24px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.topnav a { color:var(--muted); text-decoration:none; padding:5px 14px; border-radius:20px; border:1px solid transparent; transition:all 0.15s; font-family:'Bebas Neue',sans-serif; font-size:0.9rem; letter-spacing:0.07em; }
+.topnav a:hover { color:var(--cream); border-color:var(--border); }
+.topnav a.active { background:var(--gold); color:var(--dark); border-color:var(--gold); }
+header { background:linear-gradient(160deg,#0a2e0e,#0d1a0e); border-bottom:2px solid var(--gold); padding:32px 24px 24px; text-align:center; position:relative; overflow:hidden; }
+header::before { content:'📱'; position:absolute; font-size:200px; opacity:0.04; top:-20px; right:-20px; line-height:1; pointer-events:none; }
+header h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,6vw,3.8rem); letter-spacing:0.06em; background:linear-gradient(135deg,var(--gold-lt),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+header p { color:var(--muted); margin-top:6px; font-size:0.9rem; }
+main { max-width:680px; margin:0 auto; padding:28px 16px 60px; }
+
+/* Filter bar */
+.filter-bar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+.filter-btn { font-family:'Bebas Neue',sans-serif; font-size:0.82rem; letter-spacing:0.07em; padding:5px 13px; border-radius:20px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:var(--muted); cursor:pointer; transition:all 0.15s; }
+.filter-btn.active, .filter-btn:hover { background:var(--gold); color:var(--dark); border-color:var(--gold); }
+
+.day-label { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:0.1em; color:var(--gold-lt); margin:28px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+.preview-card { background:var(--panel); border:1px solid var(--border); border-radius:8px; margin-bottom:16px; overflow:hidden; }
+.card-header { background:var(--panel2); padding:12px 16px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--border); }
+.matchup { flex:1; font-weight:600; font-size:1rem; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.matchup .vs { color:var(--muted); font-size:0.8rem; font-weight:400; }
+.match-info { text-align:right; font-size:0.75rem; color:var(--muted); line-height:1.4; flex-shrink:0; }
+.family-tag { font-size:0.7rem; background:rgba(212,160,23,0.15); color:var(--gold-lt); border:1px solid rgba(212,160,23,0.3); border-radius:10px; padding:2px 8px; white-space:nowrap; }
+.wa-box { background:#0d1f10; padding:16px 16px 12px; }
+.wa-label { font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; font-family:'Bebas Neue',sans-serif; }
+.wa-message { font-size:0.88rem; line-height:1.65; color:var(--cream); white-space:pre-wrap; word-break:break-word; background:#1a3a1e; border-radius:6px; padding:12px 14px; border:1px solid rgba(255,255,255,0.06); cursor:text; user-select:all; }
+.copy-btn { margin-top:10px; width:100%; font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.1em; background:var(--green); color:#fff; border:none; border-radius:4px; padding:10px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; transition:background 0.15s; }
+.copy-btn:hover { background:var(--green-lt); color:var(--dark); }
+.copy-btn.copied { background:var(--gold); color:var(--dark); }
+.hidden { display:none; }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="worldcup-calendar.html">📅 Calendar</a>
+  <a href="#" class="active">💬 Previews</a>
+</nav>
+<header>
+  <h1>Match Previews</h1>
+  <p>Family World Cup 2026 · Copy each preview to WhatsApp before the game</p>
+</header>
+<main>
+  <div class="filter-bar" id="filterBar"></div>
+  <div id="previewList"></div>
+</main>
+
+<script>
+const PEOPLE = ["All","Aisling","Catherine","Cooper","Craig","David","Eimíle","Elsie","Eric","Evelyn","Geoff","Jane","Julian","Leighanne","Matthew","Oliver","Orlagh","Peter","Ruairí","Siobhan","Sue","Wes"];
+
+// Family tree for context:
+// Evelyn(80): Geoff(60), Siobhan(58), Wes(55), Leighanne(40)
+// Geoff+Catherine(62): David(40), Aisling(35), Eimíle(31)
+// David+Jane(38): Oliver(7), Cooper(6). Jane's mum: Orlagh(67)
+// Aisling+Eric(35): Julian(2)
+// Siobhan+Peter(57): Matthew(30)
+// Wes+Sue(52)
+// Leighanne+Craig(45): Elsie(11), Ruairí(7)
+// Football mad: Peter, Wes, Oliver. Apprentice soccer mom: Jane.
+
+const PREVIEWS = [
+
+  // ══ JUNE 11 ══
+  { id:"A1", date:"Thursday 11 June", group:"Group A", time:"20:00 IST",
+    home:"Mexico🇲🇽", away:"South Africa🇿🇦", owners:"David vs Jane",
+    people:["David","Jane"],
+    msg:`🇲🇽 MEXICO vs 🇿🇦 SOUTH AFRICA
+📅 Thursday 11 June · Group A · Mexico City
+
+⚡ THE 2010 REMATCH — HUSBAND vs WIFE
+
+David (Mexico 🇲🇽) vs Jane (South Africa 🇿🇦) — and here's the thing: these two teams have history.
+
+These exact sides played the OPENING GAME of the 2010 World Cup in Johannesburg. Siphiwe Tshabalala smashed in one of the great World Cup goals to the sound of 90,000 vuvuzelas, Rafael Márquez equalised late, and it finished 1-1. Sixteen years later, they open a World Cup against each other again — this time with a marriage on the line.
+
+Mexico have qualified for 17 World Cups but have lost in the Round of 16 SEVEN tournaments in a row. El Tri fans call it "el quinto partido" — the cursed fifth game they can never reach. David now carries that burden.
+
+South Africa haven't been back to the World Cup since hosting in 2010. Jane's team returns after 16 years away. No pressure.
+
+Prediction: 1-1, obviously. Some things are written in the stars. 🔮
+
+💰 €105 pot · 🥇 Winner takes €60`},
+
+  { id:"A2", date:"Thursday 11 June", group:"Group A", time:"Late IST",
+    home:"South Korea🇰🇷", away:"Czechia🇨🇿", owners:"Sue vs Oliver",
+    people:["Sue","Oliver"],
+    msg:`🇰🇷 SOUTH KOREA vs 🇨🇿 CZECHIA
+📅 Thursday 11 June · Group A · Guadalajara
+
+🏃 THE RUNNERS vs THE RETURNERS
+
+Sue (South Korea 🇰🇷) vs Oliver (Czechia 🇨🇿).
+
+South Korea are at their ELEVENTH straight World Cup — only Brazil, Germany and Argentina have longer active streaks. In 2002 they reached the semi-finals on home soil, beating Italy AND Spain along the way, still the best run by any Asian team ever. They also knocked out Germany in 2018 while ranked 57th in the world. Sue's team specialises in ruining bigger teams' tournaments.
+
+Czechia haven't been to a World Cup since 2006 — Oliver's team has waited 20 years for this, which is fitting because Oliver has waited his whole life, which is 7 years. As Czechoslovakia they reached two World Cup FINALS (1934, 1962). The pedigree is ancient but real.
+
+Oliver knows all of this. He will tell you. At length. ⚽📚`},
+
+  // ══ JUNE 12 ══
+  { id:"B1", date:"Friday 12 June", group:"Group B", time:"20:00 IST",
+    home:"Canada🇨🇦", away:"Bosnia & Hz.🇧🇦", owners:"Cooper vs Jane",
+    people:["Cooper","Jane"],
+    msg:`🇨🇦 CANADA vs 🇧🇦 BOSNIA & HERZEGOVINA
+📅 Friday 12 June · Group B · Toronto
+
+🏠 THE HOSTS vs THE PENALTY HEROES
+
+Cooper (Canada 🇨🇦) vs Jane (Bosnia 🇧🇦) — mother vs son, round one.
+
+Canada are CO-HOSTS of this World Cup and under serious pressure to perform. Fun fact: Canada's first ever World Cup goal didn't come until 2022 (Alphonso Davies vs Croatia) — they went their entire 1986 tournament without scoring. Cooper's team has scored exactly one World Cup goal in history. Cooper has scored more than that in his back garden this week.
+
+Bosnia qualified by beating ITALY on penalties in the playoff final — knocking the four-time champions out of a second straight World Cup. Jane's team arrives having pulled off one of the great qualification shocks. This is only Bosnia's second ever World Cup (2014 was the first).
+
+Host nation pressure vs giant-killer momentum. Mum vs the 6-year-old. 🍿`},
+
+  { id:"D1", date:"Friday 12 June", group:"Group D", time:"Late IST",
+    home:"USA🇺🇸", away:"Paraguay🇵🇾", owners:"Peter vs Siobhan",
+    people:["Peter","Siobhan"],
+    msg:`🇺🇸 USA vs 🇵🇾 PARAGUAY
+📅 Friday 12 June · Group D · Los Angeles
+
+🔥 HOSTS UNDER PRESSURE — AND IT'S HUSBAND vs WIFE
+
+Peter (USA 🇺🇸) vs Siobhan (Paraguay 🇵🇾).
+
+The USA are hosting and HAVE to deliver. Their best ever finish was third — in 1930, at the very first World Cup. Since then: quarter-finals in 2002 and a lot of brave Round of 16 exits. Peter, who is football mad and knows all of this, has chosen optimism anyway.
+
+Paraguay are back at the World Cup for the first time since 2010 — when they reached the quarter-finals and were a missed penalty away from facing Spain on level terms in the semis. They've never lost to the USA in World Cup play because they've never played them. First meeting ever at a World Cup. New history gets written either way.
+
+Worth noting: when these nations met at the 2016 Copa América, things got spicy. Expect the same in this house. Matthew has already left the room. 😅`},
+
+  // ══ JUNE 13 ══
+  { id:"C1", date:"Saturday 13 June", group:"Group C", time:"23:00 IST",
+    home:"Brazil🇧🇷", away:"Morocco🇲🇦", owners:"Oliver vs Orlagh",
+    people:["Oliver","Orlagh"],
+    msg:`🇧🇷 BRAZIL vs 🇲🇦 MOROCCO
+📅 Saturday 13 June · Group C · New York NJ
+
+👑 FIVE STARS vs THE SEMI-FINAL SHOCKERS
+
+Oliver (Brazil 🇧🇷) vs Orlagh (Morocco 🇲🇦) — grandson vs grandma, and genuinely one of the ties of the round.
+
+Brazil: FIVE World Cup titles, the only nation to play in every single World Cup, and the record they don't talk about — they haven't won it since 2002, their longest drought ever. Oliver wasn't born the last time Brazil lifted the trophy. Neither were his parents' marriages.
+
+Morocco: in 2022 they became the FIRST African team ever to reach a World Cup semi-final — beating Belgium, Spain AND Portugal along the way without conceding a single goal to an opposition player until the semis. And here's the kicker: Morocco BEAT Brazil 2-1 in a friendly in 2023.
+
+Orlagh's team has already proven they can do this. Oliver's team has the weight of history and a 24-year itch. The 7-year-old vs the 67-year-old. Football heritage vs football's newest power. 🌍`},
+
+  { id:"C2", date:"Saturday 13 June", group:"Group C", time:"Late IST",
+    home:"Haiti🇭🇹", away:"Scotland🏴󠁧󠁢󠁳󠁣󠁴󠁿", owners:"Geoff vs Eric",
+    people:["Geoff","Eric"],
+    msg:`🇭🇹 HAITI vs 🏴󠁧󠁢󠁳󠁣󠁴󠁿 SCOTLAND
+📅 Saturday 13 June · Group C · Boston
+
+🍀 THE CURSE BREAKERS' DERBY — GEOFF vs THE SON-IN-LAW
+
+Geoff (Haiti 🇭🇹) vs Eric (Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿).
+
+Haiti's only previous World Cup was 1974 — and they made history. Emmanuel Sanon scored against Italy and ended Dino Zoff's legendary 1,142-minute unbeaten streak, a goalkeeping record that had stood for two years. Haiti lost the game, but Sanon's goal is immortal. 52 years later, they're back.
+
+Scotland have been to ELEVEN World Cups and have never — not once — made it out of the group stage. It is the most Scottish record in sport. In 1974 they went home UNBEATEN and still got eliminated. In 1978 they beat eventual finalists Netherlands and still went out on goal difference.
+
+So: Geoff's team broke a famous curse the last time they showed up. Eric's team IS a famous curse. Something has to give. The smart money says it gives in the most painful way possible for Scotland. 😬`},
+
+  { id:"B2", date:"Saturday 13 June", group:"Group B", time:"20:00 IST",
+    home:"Qatar🇶🇦", away:"Switzerland🇨🇭", owners:"Eimíle vs Evelyn",
+    people:["Eimíle","Evelyn"],
+    msg:`🇶🇦 QATAR vs 🇨🇭 SWITZERLAND
+📅 Saturday 13 June · Group B · SF Bay Area
+
+⏰ REDEMPTION vs THE QUIET ACHIEVERS
+
+Eimíle (Qatar 🇶🇦) vs Evelyn (Switzerland 🇨🇭) — granddaughter vs Granny, 31 vs 80.
+
+Qatar's 2022 home World Cup was historically bad: they became the first host nation EVER to lose their opening game, and the first to lose all three group games. Zero points, one goal scored. They have had four years to think about it. Eimíle inherits the redemption arc.
+
+Switzerland are the tournament's quiet over-achievers — they've reached the knockout stage in four of the last five World Cups. In 2006 they were eliminated WITHOUT CONCEDING A SINGLE GOAL all tournament (lost on penalties having kept four clean sheets — still the only team ever to do this). Granny's team is reliable, organised and quietly ruthless. Sound familiar?
+
+Evelyn has watched more World Cups than anyone in this sweepstake — her first was 1966. She has seen everything. Qatar losing again would not surprise her. 🇨🇭`},
+
+  { id:"D2", date:"Saturday 13 June", group:"Group D", time:"Late IST",
+    home:"Australia🇦🇺", away:"Turkey🇹🇷", owners:"Leighanne vs Siobhan",
+    people:["Leighanne","Siobhan"],
+    msg:`🇦🇺 AUSTRALIA vs 🇹🇷 TURKEY
+📅 Saturday 13 June · Group D · Vancouver
+
+🦘 THE SOCCEROOS vs THE COMEBACK KINGS — SISTER vs SISTER
+
+Leighanne (Australia 🇦🇺) vs Siobhan (Turkey 🇹🇷).
+
+Australia's road to the 2006 World Cup included the most painful qualification near-misses in history — they once won a playoff first leg 1-0, lost the away leg, and missed the 1998 World Cup on away goals after being 2-0 up on aggregate with 15 minutes left. They've since become regulars and made the Round of 16 in 2022, beaten only by eventual champions Argentina.
+
+Turkey's World Cup record is short but spectacular: they've only qualified twice in the modern era, and in 2002 they finished THIRD — including the fastest goal in World Cup history (Hakan Şükür, 10.8 seconds, in the third-place match). Siobhan's team doesn't show up often. When they do, they make it count.
+
+Sister vs sister, 18 years apart. Siobhan also holds Paraguay in this same group, so she literally cannot lose interest in Group D. Leighanne just needs one good run. 🏃‍♀️`},
+
+  // ══ JUNE 14 ══
+  { id:"E1", date:"Sunday 14 June", group:"Group E", time:"18:00 IST",
+    home:"Germany🇩🇪", away:"Curaçao🇨🇼", owners:"Craig vs Leighanne",
+    people:["Craig","Leighanne"],
+    msg:`🇩🇪 GERMANY vs 🇨🇼 CURAÇAO
+📅 Sunday 14 June · Group E · Houston
+
+⚔️ GOLIATH vs THE SMALLEST NATION EVER — HUSBAND vs WIFE
+
+Craig (Germany 🇩🇪) vs Leighanne (Curaçao 🇨🇼).
+
+Germany: four World Cup titles, eight finals, thirteen semi-finals — the most consistent World Cup nation in history. BUT. They've gone out in the GROUP STAGE in both 2018 and 2022, the two worst results in their entire World Cup history, back to back. Craig's team is either due a return to greatness or completing the trilogy.
+
+Curaçao: population ~150,000, the SMALLEST nation ever to qualify for a World Cup. Their entire country could fit inside Munich's suburbs. They're managed by Dick Advocaat, who is 78 years old and has now taken THREE different nations to World Cups. This is one of the great stories in football.
+
+Husband vs wife, and the most lopsided fixture on paper in the entire tournament. But Germany lost to Saudi Arabia's neighbours Japan in 2022 and South Korea in 2018... underdogs are kind of their thing now. Leighanne believes. 🙏`},
+
+  { id:"E2", date:"Sunday 14 June", group:"Group E", time:"21:00 IST",
+    home:"Ecuador🇪🇨", away:"Ivory Coast🇨🇮", owners:"Cooper vs Geoff",
+    people:["Cooper","Geoff"],
+    msg:`🇪🇨 ECUADOR vs 🇨🇮 IVORY COAST
+📅 Sunday 14 June · Group E · Philadelphia
+
+🌋 ALTITUDE vs THE GOLDEN GENERATION'S HEIRS — GRANDAD vs THE 6-YEAR-OLD
+
+Cooper (Ecuador 🇪🇨) vs Geoff (Ivory Coast 🇨🇮).
+
+Ecuador are quietly one of South America's best sides — they qualified ahead of Chile and Peru and their famous high-altitude home in Quito (2,850m) has been breaking visiting teams for decades. In 2022 they were seconds from the knockouts before Senegal broke their hearts. Young, fast, organised. Cooper's team mirrors Cooper: small, energetic, surprisingly hard to deal with.
+
+Ivory Coast's golden generation — Drogba, Yaya Touré, Kalou — somehow never got out of a World Cup group, twice drawn into Groups of Death. The new generation just won the Africa Cup of Nations on home soil in 2024 after nearly being eliminated in the group stage — the greatest comeback story in the tournament's history. Geoff's team knows how to survive.
+
+Grandfather vs grandson. 54 years between them. Cooper has already started the trash talk. Geoff is letting the football do the talking. 🗣️`},
+
+  { id:"F1", date:"Saturday 20 June", group:"Group F", time:"00:00 IST",
+    home:"Japan🇯🇵", away:"Tunisia🇹🇳", owners:"Ruairí vs Ruairí",
+    people:["Ruairí"],
+    msg:`🇯🇵 JAPAN vs 🇹🇳 TUNISIA
+📅 Saturday 20 June · Group F · Monterrey
+
+🧘 THE SELF-DERBY — RUAIRÍ CANNOT LOSE
+
+Ruairí (7) drew BOTH of these teams. His teams are playing each other. He is guaranteed three points tonight. The rest of the sweepstake is furious.
+
+And here's the thing — both his teams are giant-killers. Japan beat GERMANY and SPAIN in the 2022 group stage, both times coming from behind, both times when the world had written them off. They topped a group containing two former world champions. The Blue Samurai are nobody's easy game.
+
+Tunisia, meanwhile, beat FRANCE — the reigning finalists — in their final 2022 group game. It wasn't enough to go through, but Tunisia have now beaten the world champions at a World Cup, which is more than most nations can say.
+
+So Ruairí holds two teams who have beaten Germany, Spain and France at the last World Cup alone. The 7-year-old built a portfolio of giant-killers and now they're fighting each other. Zen master. 🧘⚽`},
+
+  { id:"F2", date:"Saturday 20 June", group:"Group F", time:"03:00 IST",
+    home:"Netherlands🇳🇱", away:"Sweden🇸🇪", owners:"Wes vs Julian",
+    people:["Wes","Julian"],
+    msg:`🇳🇱 NETHERLANDS vs 🇸🇪 SWEDEN
+📅 Saturday 20 June · Group F · Houston
+
+🌷 THE NEARLY MEN vs THE TODDLER
+
+Wes (Netherlands 🇳🇱) vs Julian (2, Sweden 🇸🇪).
+
+The Netherlands are the greatest team NEVER to win the World Cup: three finals (1974, 1978, 2010), three defeats. They invented Total Football, produced Cruyff, Van Basten, Bergkamp and Van Persie's flying header — and have nothing to show for it but heartbreak and highlights reels. Wes, who is football mad and has loved the Dutch since Cruyff, knows this pain intimately. He has chosen it anyway. Repeatedly.
+
+Sweden are back at the World Cup for the first time since 2018, when they reached the quarter-finals after knocking out Italy in qualification. Historically excellent: a FINAL in 1958 (lost to 17-year-old Pelé's Brazil) and third place in 1994.
+
+Julian is 2. He will be asleep at kickoff. He has never experienced football disappointment. Wes has experienced 50 years of it. In many ways, Julian is the favourite here. 😴`},
+
+  // ══ JUNE 15 ══
+  { id:"G1", date:"Monday 15 June", group:"Group G", time:"23:00 IST",
+    home:"Belgium🇧🇪", away:"Egypt🇪🇬", owners:"Julian vs Peter",
+    people:["Julian","Peter"],
+    msg:`🇧🇪 BELGIUM vs 🇪🇬 EGYPT
+📅 Monday 15 June · Group G · Seattle
+
+👑 THE GOLDEN GENERATION'S LAST DANCE vs THE PHARAOHS
+
+Julian (2, Belgium 🇧🇪) vs Peter (Egypt 🇪🇬).
+
+Belgium spent SIX YEARS ranked #1 in the world without winning anything — the great unfulfilled team of their era. Third place in 2018 was the peak. De Bruyne and Lukaku are in their twilight now and this is realistically the golden generation's final World Cup. One last shot at justifying the hype. The toddler holds their fate.
+
+Egypt have Mo Salah — one of the greatest players of his generation — and a World Cup history that is almost cruelly thin: just four appearances despite being record SEVEN-time African champions. In 2018, Salah arrived injured after Sergio Ramos fell on him in the Champions League final, and Egypt lost all three games. He has unfinished World Cup business and time is running out.
+
+Peter is football mad and has done his homework on both squads. Julian has done his homework on stacking blocks. The leaderboard does not care. 🏆`},
+
+  { id:"G2", date:"Monday 15 June", group:"Group G", time:"02:00 IST",
+    home:"Iran🇮🇷", away:"New Zealand🇳🇿", owners:"Eric vs Catherine",
+    people:["Eric","Catherine"],
+    msg:`🇮🇷 IRAN vs 🇳🇿 NEW ZEALAND
+📅 Monday 15 June · Group G · Los Angeles
+
+🛡️ THE STREET FIGHTERS vs THE UNBEATEN
+
+Eric (Iran 🇮🇷) vs Catherine (New Zealand 🇳🇿) — son-in-law vs mother-in-law, at 2am, which feels appropriate.
+
+Iran are Asia's best team and a nightmare to play against — organised, physical, dangerous on the break. In 2022 they beat Wales and pushed the USA to the wire. In 1998 they beat the USA in one of the most politically charged matches in World Cup history. Eric's team shows up for the big occasions.
+
+But here's Catherine's trump card: New Zealand are the only team to go UNBEATEN at the 2010 World Cup. Not Spain, who won it — Spain lost a game. New Zealand drew all three matches, went home undefeated, and have dined out on it ever since. It is the single greatest pub-quiz fact in World Cup history and Catherine now owns it.
+
+The All Whites are back for the first time since that unbeaten tour. Catherine has three teams in this tournament and the best trivia in the family. Eric needs the points more. 📊`},
+
+  { id:"H1", date:"Monday 15 June", group:"Group H", time:"17:00 IST",
+    home:"Spain🇪🇸", away:"Cape Verde🇨🇻", owners:"Geoff vs Orlagh",
+    people:["Geoff","Orlagh"],
+    msg:`🇪🇸 SPAIN vs 🇨🇻 CAPE VERDE
+📅 Monday 15 June · Group H · Atlanta
+
+🏆 THE FAVOURITES ARRIVE
+
+Geoff (Spain 🇪🇸) vs Orlagh (Cape Verde 🇨🇻).
+
+Spain are ranked #2 in the world, reigning European champions, and many people's pick to win the whole thing. Their 2010 World Cup win was the peak of the greatest era any national team has produced — tiki-taka, Xavi, Iniesta, and a goalkeeper-captain lifting the trophy. The current side, built around teenage sensation Lamine Yamal, might be even more talented. Geoff drew the golden ticket and he knows it.
+
+Cape Verde: ten islands, half a million people, first World Cup ever. They qualified ahead of Cameroon — one of the great qualification shocks in African football history. The Blue Sharks have nothing to lose and a nation of islands plus a massive global diaspora behind them.
+
+Spain's only World Cup wobble: they LOST their opening game in 2010 (0-1 to Switzerland) and won the entire tournament anyway. So even if Orlagh nicks something here, Geoff shouldn't panic. He will panic. 📉📈`},
+
+  { id:"H2", date:"Monday 15 June", group:"Group H", time:"20:00 IST",
+    home:"Saudi Arabia🇸🇦", away:"Uruguay🇺🇾", owners:"Craig vs Leighanne",
+    people:["Craig","Leighanne"],
+    msg:`🇸🇦 SAUDI ARABIA vs 🇺🇾 URUGUAY
+📅 Monday 15 June · Group H · Miami
+
+💥 THE GIANT KILLERS vs THE ORIGINAL CHAMPIONS — HUSBAND vs WIFE, ROUND 2
+
+Craig (Saudi Arabia 🇸🇦) vs Leighanne (Uruguay 🇺🇾). These two are also facing off in Group E (Germany vs Curaçao). The household has too much riding on this World Cup.
+
+Saudi Arabia produced THE shock of the 2022 World Cup — beating eventual champions Argentina 2-1 after going behind, ending Argentina's 36-game unbeaten run. The King declared a national holiday. Craig's team has the single most famous giant-killing of the modern era on its CV.
+
+Uruguay won the FIRST World Cup ever (1930), won it again in 1950 by silencing 200,000 Brazilians in the Maracanã — still the biggest upset in football history — and have spent the century since punching miles above their weight. Population 3.4 million, two world titles, and the proud home of football's dark arts (see: Suárez handball vs Ghana, 2010).
+
+Two teams famous for ruining the party for bigger nations. One marriage. Elsie and Ruairí have stopped picking sides and started selling popcorn. 🍿`},
+
+  // ══ JUNE 16 ══
+  { id:"J1", date:"Tuesday 16 June", group:"Group J", time:"Late IST",
+    home:"Argentina🇦🇷", away:"Algeria🇩🇿", owners:"Matthew vs Aisling",
+    people:["Matthew","Aisling"],
+    msg:`🇦🇷 ARGENTINA vs 🇩🇿 ALGERIA
+📅 Tuesday 16 June · Group J · Kansas City
+
+🏆 THE CHAMPIONS BEGIN THEIR DEFENCE
+
+Matthew (Argentina 🇦🇷) vs Aisling (Algeria 🇩🇿) — cousins, and the most lopsided rankings clash of the round: #1 vs #28.
+
+Argentina arrive as REIGNING WORLD CHAMPIONS after the greatest final ever played in 2022. Whether Messi, now 38, plays much or at all, this is a machine: they've lost about three competitive games in five years. Matthew drew the tournament favourites and has been unbearable about it since draw night.
+
+But a word of warning for Matthew: the last time Argentina opened a World Cup as champions-elect against an unfancied side... Saudi Arabia happened. And Algeria have previous. In 1982 they beat West Germany in one of the great World Cup shocks — a result so inconvenient that Germany and Austria played out the infamous "Disgrace of Gijón" to eliminate them. In 2014 they took eventual champions Germany to extra time in the Round of 16.
+
+Algeria don't fear giants. Argentina were warned once before. Aisling is quietly circling the date. 🔥`},
+
+  { id:"J2", date:"Tuesday 16 June", group:"Group J", time:"Late IST",
+    home:"Austria🇦🇹", away:"Jordan🇯🇴", owners:"Evelyn vs Wes",
+    people:["Evelyn","Wes"],
+    msg:`🇦🇹 AUSTRIA vs 🇯🇴 JORDAN
+📅 Tuesday 16 June · Group J · SF Bay Area
+
+👵 GRANNY vs HER OWN SON
+
+Evelyn (80, Austria 🇦🇹) vs Wes (55, Jordan 🇯🇴). She raised him. She will now attempt to beat him.
+
+Austria are back at the World Cup for the first time since 1998 — but the deep history is glorious: third place in 1954, and the legendary "Córdoba" match of 1978 when they beat West Germany 3-2 and eliminated the holders, a result Austrians still toast and Germans still wince at. Under Ralf Rangnick they've become one of Europe's most aggressive pressing sides.
+
+Jordan are at their FIRST World Cup ever. They reached the 2023 Asian Cup final out of nowhere and have ridden that wave all the way here. Wes — football mad, raised on Cruyff and the Dutch — now finds himself emotionally invested in Jordanian counter-attacking patterns. Life comes at you fast.
+
+The 80-year-old vs her own son. Evelyn changed Wes's nappies. Now she wants his sweepstake points. No mercy in this family. 💛`},
+
+  { id:"J3", date:"Monday 22 June", group:"Group J", time:"Late IST",
+    home:"Algeria🇩🇿", away:"Jordan🇯🇴", owners:"Aisling vs Wes",
+    people:["Aisling","Wes"],
+    msg:`🇩🇿 ALGERIA vs 🇯🇴 JORDAN
+📅 Monday 22 June · Group J · SF Bay Area
+
+🐺 THE DESERT DERBY — NIECE vs UNCLE
+
+Aisling (Algeria 🇩🇿) vs Wes (Jordan 🇯🇴).
+
+Two Arab nations meet at a North American World Cup — Algeria with their proud history of giant-slaying (West Germany 1982, nearly Germany again 2014), Jordan at their first ever World Cup with house money and nothing to fear.
+
+In a group containing world champions Argentina, this fixture is realistically where second place gets decided. The loser probably needs a miracle against Messi and friends. The winner controls their own destiny.
+
+Aisling vs her uncle Wes. He's the football-mad one; she's the one holding the team with actual World Cup pedigree. Knowledge vs draw luck — the eternal sweepstake question. 🎲`},
+
+  { id:"K1", date:"Tuesday 23 June", group:"Group K", time:"18:00 IST",
+    home:"Colombia🇨🇴", away:"DR Congo🇨🇩", owners:"Eimíle vs Orlagh",
+    people:["Eimíle","Orlagh"],
+    msg:`🇨🇴 COLOMBIA vs 🇨🇩 DR CONGO
+📅 Tuesday 23 June · Group K · Guadalajara
+
+💃 LOS CAFETEROS vs THE LEOPARDS
+
+Eimíle (Colombia 🇨🇴) vs Orlagh (DR Congo 🇨🇩).
+
+Colombia's 2014 World Cup was a thing of beauty — James Rodríguez won the Golden Boot with six goals including THAT chest-and-volley against Uruguay, still one of the greatest World Cup goals ever scored. They reached the quarter-finals and danced their way through the tournament. The current side reached the 2024 Copa América final. Eimíle's team plays football the way football should look.
+
+DR Congo's only previous appearance was as Zaire in 1974 — which produced one of the most replayed World Cup clips ever: defender Mwepu Ilunga charging out of the wall to boot away a Brazilian free kick before it was taken. 52 years later, the Leopards are back, having won the inter-confederation playoff. Orlagh now owns the comeback story of the tournament.
+
+Orlagh holds Morocco, DR Congo AND Cape Verde — a full African portfolio. If this is Africa's World Cup, she wins everything. 🌍`},
+
+  { id:"K2", date:"Tuesday 23 June", group:"Group K", time:"21:00 IST",
+    home:"Portugal🇵🇹", away:"Uzbekistan🇺🇿", owners:"Catherine vs Matthew",
+    people:["Catherine","Matthew"],
+    msg:`🇵🇹 PORTUGAL vs 🇺🇿 UZBEKISTAN
+📅 Tuesday 23 June · Group K · Houston
+
+🐐 THE LAST DANCE vs THE DEBUTANTS
+
+Catherine (Portugal 🇵🇹) vs Matthew (Uzbekistan 🇺🇿) — aunt vs nephew.
+
+Cristiano Ronaldo is 41 years old and this is, surely, actually, finally, his last World Cup. He is the all-time men's international goalscorer and the only man to score at five World Cups — and a sixth is on the table here. Portugal's best ever finish remains third in 1966, when Eusébio scored nine goals and single-handedly destroyed North Korea. Catherine drew the most box-office team in the tournament.
+
+Uzbekistan are at their FIRST World Cup ever after decades of agonising near-misses — they once lost a playoff that had to be REPLAYED due to a refereeing error, then lost the replay. No nation has suffered more in qualification. They've finally made it.
+
+Matthew already holds Argentina, so he's hedged: the reigning champions AND the ultimate underdog story. Catherine has Ronaldo's farewell tour. Box office everywhere you look. 🎬`},
+
+  // ══ JUNE 17 ══
+  { id:"L1", date:"Wednesday 17 June", group:"Group L", time:"20:00 IST",
+    home:"England🏴󠁧󠁢󠁥󠁮󠁧󠁿", away:"Croatia🇭🇷", owners:"Aisling vs Sue",
+    people:["Aisling","Sue"],
+    msg:`🏴󠁧󠁢󠁥󠁮󠁧󠁿 ENGLAND vs 🇭🇷 CROATIA
+📅 Wednesday 17 June · Group L · Dallas
+
+🥊 THE HEAVYWEIGHT BOUT OF THE GROUP STAGE
+
+Aisling (England 🏴󠁧󠁢󠁥󠁮󠁧󠁿) vs Sue (Croatia 🇭🇷). Circle this one.
+
+These two have World Cup history: Croatia BEAT England in the 2018 semi-final, extra time, after England led — the night "It's Coming Home" died in Moscow. England fans have not forgotten. Croatia fans bring it up constantly.
+
+England: one World Cup (1966, at home), and since then the most documented near-miss collection in football — penalties in 1990, 1998, 2006, the lot. They reached the Euro 2024 final and lost that too. World-class squad, permanent scar tissue.
+
+Croatia: population 3.9 million, World Cup FINAL in 2018, third place in 2022, and the greatest penalty shootout record in World Cup history. Modrić, even at 40, may still be pulling the strings. They simply do not know how to be eliminated quietly.
+
+Aisling vs Sue. England's talent vs Croatia's refusal to die. The rematch of Moscow 2018, now with sweepstake points and family bragging rights attached. 🍿🔥`},
+
+  { id:"L2", date:"Wednesday 17 June", group:"Group L", time:"Late IST",
+    home:"Ghana🇬🇭", away:"Panama🇵🇦", owners:"Sue vs David",
+    people:["Sue","David"],
+    msg:`🇬🇭 GHANA vs 🇵🇦 PANAMA
+📅 Wednesday 17 June · Group L · Toronto
+
+✋ THE ROBBED vs THE ROMANTICS
+
+Sue (Ghana 🇬🇭) vs David (Panama 🇵🇦).
+
+Ghana were ONE PENALTY from becoming the first African semi-finalists in World Cup history in 2010 — until Luis Suárez handballed on the line in the final second of extra time, got sent off, and celebrated wildly when Gyan's penalty hit the bar. It remains the most infamous injustice in World Cup history. Ghana have been owed one by the football gods for 16 years. Sue is here to collect.
+
+Panama's 2018 debut yielded zero points and eleven goals conceded — but when Felipe Baloy scored their first ever World Cup goal against England, the entire nation celebrated like they'd won the final. The government declared a national holiday FOR QUALIFYING. Nobody enjoys a World Cup like Panama.
+
+Sue has Croatia, South Korea and Ghana — three teams, three continents, and now busy fixtures everywhere. David is hoping Panama's joy carries further than their defending. 🎉`},
+
+  { id:"K3", date:"Wednesday 17 June", group:"Group K", time:"Late IST",
+    home:"Uzbekistan🇺🇿", away:"Colombia🇨🇴", owners:"Matthew vs Eimíle",
+    people:["Matthew","Eimíle"],
+    msg:`🇺🇿 UZBEKISTAN vs 🇨🇴 COLOMBIA
+📅 Wednesday 17 June · Group K · Mexico City
+
+🌪️ THE DEBUTANTS' BIG TEST — COUSIN vs COUSIN
+
+Matthew (Uzbekistan 🇺🇿) vs Eimíle (Colombia 🇨🇴).
+
+Uzbekistan's second ever World Cup match comes against one of South America's form teams. The White Wolves built their qualification on an iron defence — they conceded just seven goals in the entire final qualifying round. Defensive discipline vs Colombian flair: the classic World Cup style clash.
+
+Colombia bring the rhythm — this is the nation of James's 2014 Golden Boot, of the Valderrama hair, of goal celebrations that double as dance routines. They went unbeaten through most of 2024 and pushed Argentina all the way in the Copa América final.
+
+Matthew vs Eimíle, cousin vs cousin. Matthew's hedge portfolio (champions Argentina + underdogs Uzbekistan) meets Eimíle's flair pick. If Uzbekistan nick a point here, the entire family group chat will hear about it. 📱`},
+
+  { id:"A4", date:"Thursday 18 June", group:"Group A", time:"21:00 IST",
+    home:"Czechia🇨🇿", away:"South Africa🇿🇦", owners:"Oliver vs Jane",
+    people:["Oliver","Jane"],
+    msg:`🇨🇿 CZECHIA vs 🇿🇦 SOUTH AFRICA
+📅 Thursday 18 June · Group A · Atlanta
+
+👦 MOTHER vs SON — THE DECIDER LOOMS
+
+Oliver (Czechia 🇨🇿) vs Jane (South Africa 🇿🇦).
+
+The household rivalry continues — Jane has already faced David (Mexico) and Cooper (Canada). Now her South Africa take on her eldest son's Czechia. At this point Jane is basically playing the entire family one by one, like a boss fight.
+
+Czechia's World Cup pedigree runs deep — as Czechoslovakia they lost the 1934 final to Italy in extra time and the 1962 final to Brazil. Their modern golden moment was Euro 96, where they lost the final to a golden goal. This nation has lost finals in three different ways. Oliver, football mad, considers this team "due."
+
+South Africa's greatest World Cup moment remains Tshabalala's 2010 thunderbolt — and if Jane's team got anything from the Mexico rematch in the opener, Group A is suddenly very alive.
+
+Mum vs the 7-year-old, with real group-stage consequences. Bragging rights at the school gate AND the breakfast table. 🏫`},
+
+  // ══ JUNE 18 ══
+  { id:"A3", date:"Thursday 18 June", group:"Group A", time:"Late IST",
+    home:"Mexico🇲🇽", away:"South Korea🇰🇷", owners:"David vs Sue",
+    people:["David","Sue"],
+    msg:`🇲🇽 MEXICO vs 🇰🇷 SOUTH KOREA
+📅 Thursday 18 June · Group A · Guadalajara
+
+🌮 EL TRI vs THE GIANT KILLERS
+
+David (Mexico 🇲🇽) vs Sue (South Korea 🇰🇷).
+
+Mexico are co-hosts and the Azteca factor is real — Mexico have NEVER lost a World Cup match played in Mexico (undefeated across 1970 and 1986). The bad news for David: this one's not at the Azteca.
+
+South Korea have eliminated Germany (2018) and beaten Portugal (2022) in their last two World Cups. Sue's team treats group stages like a demolition derby. These two met at the 1998 World Cup — Mexico won 3-1 after going behind. Ancient history, but David will take any omen he can get. ⚔️`},
+
+  { id:"B3", date:"Thursday 18 June", group:"Group B", time:"19:00 IST",
+    home:"Switzerland🇨🇭", away:"Bosnia & Hz.🇧🇦", owners:"Evelyn vs Jane",
+    people:["Evelyn","Jane"],
+    msg:`🇨🇭 SWITZERLAND vs 🇧🇦 BOSNIA & HERZEGOVINA
+📅 Thursday 18 June · Group B · Los Angeles
+
+⚖️ GRANNY'S MACHINE vs THE BALKAN SPIRIT
+
+Evelyn (Switzerland 🇨🇭) vs Jane (Bosnia 🇧🇦).
+
+The 80-year-old vs the apprentice soccer mom. Switzerland have made the knockouts in four of the last five World Cups — quietly the most reliable mid-tier nation in Europe. Granny's team doesn't do drama. Granny doesn't either.
+
+Bosnia knocked out Italy on penalties just to be here. Jane's team runs on pure emotion and a national outpouring of joy. Drama is the whole brand.
+
+Order vs chaos. The 2010-built Swiss machine vs the team that shouldn't be here and doesn't care. Granny is favourite. Granny is usually favourite. 🇨🇭`},
+
+  { id:"B4", date:"Thursday 18 June", group:"Group B", time:"19:00 IST",
+    home:"Canada🇨🇦", away:"Qatar🇶🇦", owners:"Cooper vs Eimíle",
+    people:["Cooper","Eimíle"],
+    msg:`🇨🇦 CANADA vs 🇶🇦 QATAR
+📅 Thursday 18 June · Group B · Vancouver
+
+🍁 THE HOSTS vs THE REDEEMERS
+
+Cooper (Canada 🇨🇦) vs Eimíle (Qatar 🇶🇦) — nephew vs aunt.
+
+Canada need a result on home soil and Cooper, 6, has personally guaranteed one. Qatar are still chasing their first ever World Cup WIN — zero from three in 2022. One of these teams' droughts ends here, possibly.
+
+Cooper's pre-match analysis: "Canada is where snow is from." Eimíle has no counter to this. ❄️`},
+
+  { id:"C3", date:"Friday 19 June", group:"Group C", time:"22:00 IST",
+    home:"Scotland🏴󠁧󠁢󠁳󠁣󠁴󠁿", away:"Morocco🇲🇦", owners:"Eric vs Orlagh",
+    people:["Eric","Orlagh"],
+    msg:`🏴󠁧󠁢󠁳󠁣󠁴󠁿 SCOTLAND vs 🇲🇦 MOROCCO
+📅 Friday 19 June · Group C · Boston
+
+😬 THE 1998 REMATCH NOBODY IN SCOTLAND WANTS
+
+Eric (Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿) vs Orlagh (Morocco 🇲🇦).
+
+These two met on the final day of the 1998 group stage. Morocco won 3-0 and Scotland went home bottom of the group. It remains one of the bleakest nights in Scottish football history, and Scottish football history has a lot of competition for that title.
+
+Morocco are now a global power — 2022 semi-finalists. Scotland are now... still Scotland. Eric is hoping 28 years is enough time for the universe to forget. Orlagh's team has only improved since. The omens are not subtle. 📉`},
+
+  // ══ JUNE 19 ══
+  { id:"D3", date:"Friday 19 June", group:"Group D", time:"19:00 IST",
+    home:"Turkey🇹🇷", away:"Paraguay🇵🇾", owners:"Siobhan vs Siobhan",
+    people:["Siobhan"],
+    msg:`🇹🇷 TURKEY vs 🇵🇾 PARAGUAY
+📅 Friday 19 June · Group D · SF Bay Area
+
+🪞 SIOBHAN vs SIOBHAN — THE SELF-DERBY, PART 2
+
+Siobhan drew BOTH of these teams. Like Ruairí before her, she is guaranteed points tonight and the family group chat is sick of hearing about it.
+
+Turkey finished THIRD at the 2002 World Cup. Paraguay reached the 2010 quarter-finals. Both nations punch above their weight, both are back after long absences, and both belong to the same woman.
+
+Siobhan has announced she will be supporting "the winner." Peter, football mad and married to her, finds this morally outrageous. Siobhan does not care. Three points is three points. 🧘‍♀️`},
+
+  { id:"E3", date:"Saturday 20 June", group:"Group E", time:"22:00 IST",
+    home:"Germany🇩🇪", away:"Ivory Coast🇨🇮", owners:"Craig vs Geoff",
+    people:["Craig","Geoff"],
+    msg:`🇩🇪 GERMANY vs 🇨🇮 IVORY COAST
+📅 Saturday 20 June · Group E · Toronto
+
+🦁 FOUR STARS vs THE ELEPHANTS
+
+Craig (Germany 🇩🇪) vs Geoff (Ivory Coast 🇨🇮).
+
+Germany's recent World Cup record against non-European opposition is genuinely alarming: lost to Mexico AND South Korea in 2018, lost to Japan in 2022. Four-time champions, serial group-stage victims. Craig is aware. Craig is nervous.
+
+Ivory Coast are reigning African champions after the most chaotic AFCON win ever — they sacked their manager MID-TOURNAMENT and won it anyway. Geoff's team does not believe in scripts.
+
+If Germany's underdog allergy flares up one more time, Geoff will dine out on this for the rest of the decade. 🍽️`},
+
+  { id:"E4", date:"Saturday 20 June", group:"Group E", time:"00:00 IST",
+    home:"Ecuador🇪🇨", away:"Curaçao🇨🇼", owners:"Cooper vs Leighanne",
+    people:["Cooper","Leighanne"],
+    msg:`🇪🇨 ECUADOR vs 🇨🇼 CURAÇAO
+📅 Saturday 20 June · Group E · Kansas City
+
+🌴 THE 6-YEAR-OLD vs HIS AUNT
+
+Cooper (Ecuador 🇪🇨) vs Leighanne (Curaçao 🇨🇼).
+
+Ecuador are ranked 23rd in the world and seriously good. Curaçao are the smallest nation ever at a World Cup. On paper this is straightforward. But Curaçao's manager is 78-year-old Dick Advocaat, who has seen everything football can offer, and the Blue Sharks have already overachieved just by existing here.
+
+Cooper has promised his aunt "no mercy." He is six. Leighanne has accepted these terms. 🤝`},
+
+  { id:"F3", date:"Sunday 14 June", group:"Group F", time:"Late IST",
+    home:"Netherlands🇳🇱", away:"Japan🇯🇵", owners:"Wes vs Ruairí",
+    people:["Wes","Ruairí"],
+    msg:`🇳🇱 NETHERLANDS vs 🇯🇵 JAPAN
+📅 Sunday 14 June · Group F · Dallas
+
+⚡ THE TIE OF THE ROUND — UNCLE WES vs THE 7-YEAR-OLD
+
+Wes (Netherlands 🇳🇱) vs Ruairí (Japan 🇯🇵).
+
+This is a serious football match. The Netherlands are ranked 8th in the world and unbeaten in their last two World Cup group stages. Japan beat Germany and Spain at the last World Cup and fear absolutely nobody.
+
+These two met in the 2010 group stage — Netherlands won 1-0 on their way to the final. But the 2026 Japan is a different animal: most of this squad plays in Europe's top leagues.
+
+Wes is football mad and has watched the Dutch break his heart for 50 years. Ruairí is 7 and holds the giant-killing portfolio. If Japan do to the Netherlands what they did to Germany and Spain, Wes may need a moment. 🫖`},
+
+  { id:"F4", date:"Sunday 14 June", group:"Group F", time:"Late IST",
+    home:"Sweden🇸🇪", away:"Tunisia🇹🇳", owners:"Julian vs Ruairí",
+    people:["Julian","Ruairí"],
+    msg:`🇸🇪 SWEDEN vs 🇹🇳 TUNISIA
+📅 Sunday 14 June · Group F · Monterrey
+
+👶 THE TODDLER vs THE 7-YEAR-OLD
+
+Julian (2, Sweden 🇸🇪) vs Ruairí (7, Japan + Tunisia 🇹🇳).
+
+Combined age of these two sweepstake managers: 9.
+
+Sweden reached the 2018 quarter-finals by knocking Italy out of qualification entirely — Italy didn't even get to the World Cup because of Julian's team. Tunisia beat France at the 2022 World Cup. Both teams have scalps. Neither owner can legally drive for at least a decade.
+
+Ruairí has been talking tactics all week. Julian has been napping. Both strategies are valid. 😴⚽`},
+
+  // ══ JUNE 20 ══
+  { id:"G3", date:"Sunday 21 June", group:"Group G", time:"20:00 IST",
+    home:"Belgium🇧🇪", away:"Iran🇮🇷", owners:"Julian vs Eric",
+    people:["Julian","Eric"],
+    msg:`🇧🇪 BELGIUM vs 🇮🇷 IRAN
+📅 Sunday 21 June · Group G · Los Angeles
+
+🛡️ THE GOLDEN GENERATION vs THE WALL
+
+Julian (2, Belgium 🇧🇪) vs Eric (Iran 🇮🇷).
+
+Belgium's ageing stars need results now — there is no next tournament for this generation. Iran are precisely the kind of organised, physical, counter-attacking side that ageing stars hate playing against.
+
+Eric is managing Iran AND Scotland this World Cup, a portfolio built entirely on grit and heartbreak potential. Julian is managing Belgium and Sweden, a portfolio built by his parents while he ate yoghurt.
+
+Father-of-Julian Eric is technically competing against his own son here. The family tree has become a tactical diagram. 🌳`},
+
+  { id:"G4", date:"Sunday 21 June", group:"Group G", time:"02:00 IST",
+    home:"New Zealand🇳🇿", away:"Egypt🇪🇬", owners:"Catherine vs Peter",
+    people:["Catherine","Peter"],
+    msg:`🇳🇿 NEW ZEALAND vs 🇪🇬 EGYPT
+📅 Sunday 21 June · Group G · Vancouver
+
+🥝 THE UNBEATEN vs THE PHARAOHS
+
+Catherine (New Zealand 🇳🇿) vs Peter (Egypt 🇪🇬).
+
+Catherine's All Whites remain the only team in history to go through a World Cup unbeaten without winning it (2010, three draws). Peter's Egypt have Mo Salah and a point to prove after the injury-wrecked 2018 campaign.
+
+Peter is football mad and will be awake at 2am for this with notes. Catherine will record it and check the score over breakfast like a civilised person. Both approaches have produced exactly the same number of World Cup wins so far. ☕`},
+
+  { id:"H3", date:"Sunday 21 June", group:"Group H", time:"17:00 IST",
+    home:"Spain🇪🇸", away:"Saudi Arabia🇸🇦", owners:"Geoff vs Craig",
+    people:["Geoff","Craig"],
+    msg:`🇪🇸 SPAIN vs 🇸🇦 SAUDI ARABIA
+📅 Sunday 21 June · Group H · Atlanta
+
+⚠️ THE FAVOURITES vs THE ARGENTINA SLAYERS
+
+Geoff (Spain 🇪🇸) vs Craig (Saudi Arabia 🇸🇦).
+
+Every neutral remembers what Saudi Arabia did to Argentina in 2022 — beat the eventual champions 2-1, triggered a national holiday, changed the entire narrative of the tournament for a week. Craig's team has done it to a giant before. Geoff's team IS a giant.
+
+Spain's history says don't panic: they lost their 2010 opener and won the whole World Cup. But Geoff isn't built for calm. He will be pacing by minute 20 regardless of the score.
+
+Brother-in-law vs brother-in-law. If Saudi do it again, Craig will never buy a drink at a family event for the rest of his life — he won't need to. 🏆`},
+
+  { id:"H4", date:"Sunday 21 June", group:"Group H", time:"23:00 IST",
+    home:"Uruguay🇺🇾", away:"Cape Verde🇨🇻", owners:"Leighanne vs Orlagh",
+    people:["Leighanne","Orlagh"],
+    msg:`🇺🇾 URUGUAY vs 🇨🇻 CAPE VERDE
+📅 Sunday 21 June · Group H · Miami
+
+🌊 TWO TITLES vs TEN ISLANDS
+
+Leighanne (Uruguay 🇺🇾) vs Orlagh (Cape Verde 🇨🇻).
+
+Uruguay: 3.4 million people, two World Cups, and a century of making bigger nations miserable. Cape Verde: half a million people, zero World Cups until now, and absolutely nothing to lose.
+
+Fun connection: both nations qualified at the expense of giants — Cape Verde edged out Cameroon, and Uruguay's entire identity is edging out giants.
+
+Orlagh's African treble (Morocco, DR Congo, Cape Verde) faces its toughest assignment yet. Leighanne's Uruguay simply do not do charity. 🇺🇾`},
+
+  // ══ JUNE 21 ══
+  { id:"J4", date:"Monday 22 June", group:"Group J", time:"18:00 IST",
+    home:"Argentina🇦🇷", away:"Austria🇦🇹", owners:"Matthew vs Evelyn",
+    people:["Matthew","Evelyn"],
+    msg:`🇦🇷 ARGENTINA vs 🇦🇹 AUSTRIA
+📅 Monday 22 June · Group J · Dallas
+
+👵 GRANNY vs THE GRANDSON — AND SHE'S NOT SCARED
+
+Matthew (Argentina 🇦🇷) vs Evelyn (80, Austria 🇦🇹).
+
+Matthew holds the world champions. Evelyn holds the team that famously eliminated holders West Germany in 1978 — the Córdoba miracle, still celebrated in Austria 48 years later. Granny's team has form against champions. Granny has form against everyone.
+
+Evelyn was 32 when Córdoba happened. She remembers it. Matthew wasn't born until 18 years later. When it comes to World Cup memories, this is the biggest mismatch in the sweepstake — in Granny's favour.
+
+Messi's farewell tour vs the 80-year-old's pressing machine. The grandson is favourite. The grandson is also terrified. 💛`},
+
+  { id:"K4", date:"Wednesday 17 June", group:"Group K", time:"20:00 IST",
+    home:"Portugal🇵🇹", away:"DR Congo🇨🇩", owners:"Catherine vs Orlagh",
+    people:["Catherine","Orlagh"],
+    msg:`🇵🇹 PORTUGAL vs 🇨🇩 DR CONGO
+📅 Wednesday 17 June · Group K · Houston
+
+🐐 RONALDO'S FAREWELL vs THE LEOPARDS' RETURN
+
+Catherine (Portugal 🇵🇹) vs Orlagh (DR Congo 🇨🇩).
+
+Ronaldo, 41, chasing goals at a SIXTH World Cup — a record nobody else has come close to. The Leopards, back after 52 years, chasing their first World Cup win ever.
+
+The two matriarchs of the sweepstake go head to head: Catherine with the box-office pick, Orlagh with the romance pick. Between them they hold six teams. The grandchildren should be taking notes. 📝`},
+
+  { id:"L3", date:"Tuesday 23 June", group:"Group L", time:"23:00 IST",
+    home:"England🏴󠁧󠁢󠁥󠁮󠁧󠁿", away:"Ghana🇬🇭", owners:"Aisling vs Sue",
+    people:["Aisling","Sue"],
+    msg:`🏴󠁧󠁢󠁥󠁮󠁧󠁿 ENGLAND vs 🇬🇭 GHANA
+📅 Tuesday 23 June · Group L · Boston
+
+🔁 AISLING vs SUE — THE REMATCH ALREADY
+
+Aisling (England 🏴󠁧󠁢󠁥󠁮󠁧󠁿) vs Sue (Ghana 🇬🇭).
+
+These two just played each other four days ago (England vs Croatia) and here they are again — Sue's THIRD team this time. Sue is everywhere in Group L. It's her group. Everyone else is just visiting.
+
+England have never lost to Ghana (one meeting, a 1-1 friendly in 2011 with one of the great Wembley atmospheres). Ghana are still chasing the justice the football gods owe them from 2010.
+
+If Sue takes points off Aisling twice in one week, the family WhatsApp will need a moderator. 📱🔥`},
+
+  // ══ JUNE 22 ══
+  { id:"I1", date:"Monday 22 June", group:"Group I", time:"19:00 IST",
+    home:"France🇫🇷", away:"Iraq🇮🇶", owners:"Jane vs Catherine",
+    people:["Jane","Catherine"],
+    msg:`🇫🇷 FRANCE vs 🇮🇶 IRAQ
+📅 Monday 22 June · Group I · Philadelphia
+
+🐓 LES BLEUS FINALLY ARRIVE
+
+Jane (France 🇫🇷) vs Catherine (Iraq 🇮🇶).
+
+France have reached the last TWO World Cup finals — champions in 2018, beaten on penalties in the greatest final ever in 2022. Mbappé scored a hat-trick in a World Cup final and LOST. Jane, the apprentice soccer mom, has drawn the most stacked squad on the planet. The apprenticeship is going well.
+
+Iraq's only World Cup was 1986 — three games, three narrow defeats. Their 2007 Asian Cup win during wartime remains one of sport's most moving stories. Catherine's third team has the best backstory in the tournament.
+
+Mother-in-law vs daughter-in-law. France are massive favourites. Catherine has two other teams. Everyone leaves satisfied. ✅`},
+
+  { id:"I2", date:"Tuesday 16 June", group:"Group I", time:"Late IST",
+    home:"Iraq🇮🇶", away:"Norway🇳🇴", owners:"Catherine vs Elsie",
+    people:["Catherine","Elsie"],
+    msg:`🇮🇶 IRAQ vs 🇳🇴 NORWAY
+📅 Tuesday 16 June · Group I · Boston
+
+⚡ HAALAND ARRIVES — AND AN 11-YEAR-OLD OWNS HIM
+
+Catherine (Iraq 🇮🇶) vs Elsie (11, Norway 🇳🇴).
+
+Norway are at their first World Cup since 1998 — and they've brought Erling Haaland, the most terrifying goalscorer of his generation, finally on the biggest stage. Elsie, 11, owns him now. She has already informed her classmates.
+
+Norway's 1998 World Cup included a famous group-stage win over BRAZIL. The current team is better. Catherine's Iraq will need the defensive game of their lives.
+
+The 11-year-old with the superstar vs the grandmother with the portfolio. Modern football in one fixture. ⚡`},
+
+  { id:"I3", date:"Monday 22 June", group:"Group I", time:"22:00 IST",
+    home:"Norway🇳🇴", away:"Senegal🇸🇳", owners:"Elsie vs Elsie",
+    people:["Elsie"],
+    msg:`🇳🇴 NORWAY vs 🇸🇳 SENEGAL
+📅 Monday 22 June · Group I · New York NJ
+
+🪞 ELSIE vs ELSIE — SELF-DERBY NUMBER THREE
+
+Elsie (11) drew both Norway AND Senegal — and they're in the same group. She joins Ruairí and Siobhan in the guaranteed-points club. The family demands an investigation into the draw. The draw was computerised and random. The family does not care.
+
+And what a pair she's holding: Haaland's Norway, plus Senegal — 2002 quarter-finalists who beat reigning champions FRANCE in their opening World Cup game ever, and 2022 Africa Cup of Nations winners.
+
+Elsie cannot lose tonight. She has prepared a neutral celebration for every goal. Her parents Craig and Leighanne, who face each other TWICE in this tournament, could learn from her diplomacy. 🕊️`},
+
+  { id:"L4", date:"Tuesday 23 June", group:"Group L", time:"01:00 IST",
+    home:"Panama🇵🇦", away:"Croatia🇭🇷", owners:"David vs Sue",
+    people:["David","Sue"],
+    msg:`🇵🇦 PANAMA vs 🇭🇷 CROATIA
+📅 Tuesday 23 June · Group L · Toronto
+
+🌉 THE ROMANTICS vs THE FINALISTS
+
+David (Panama 🇵🇦) vs Sue (Croatia 🇭🇷).
+
+Croatia have played in a World Cup final and a third-place match in the last two tournaments — from a country smaller than Ireland. Panama have won zero World Cup matches ever and celebrate like champions anyway.
+
+Sue's Croatia simply never lose shootouts and never go quietly. David's Panama bring the joy. One of these teams is going deep into this tournament and it's not a mystery which.
+
+David vs his sister-in-law's... actually, never mind the family tree. Everyone knows everyone. Croatia are favourites. 🇭🇷`},
+
+  // ══ JUNE 23 ══
+  { id:"A5", date:"Wednesday 24 June", group:"Group A", time:"03:00 IST",
+    home:"Czechia🇨🇿", away:"Mexico🇲🇽", owners:"Oliver vs David",
+    people:["Oliver","David"],
+    msg:`🇨🇿 CZECHIA vs 🇲🇽 MEXICO
+📅 Wednesday 24 June · Group A · Mexico City
+
+👨‍👦 FATHER vs SON — GROUP A DECIDER
+
+Oliver (Czechia 🇨🇿) vs David (Mexico 🇲🇽).
+
+The final round of Group A and it's father against son, potentially with qualification on the line. Mexico's seven-straight Round of 16 exits mean nothing if they don't get there first. Czechia's 20-year World Cup absence ends with a chance to make it count.
+
+Oliver is 7, football mad, and has been preparing trash talk all week. David is his father and controls his bedtime. The power dynamics are fascinating. 🛏️⚽`},
+
+  { id:"A6", date:"Wednesday 24 June", group:"Group A", time:"03:00 IST",
+    home:"South Africa🇿🇦", away:"South Korea🇰🇷", owners:"Jane vs Sue",
+    people:["Jane","Sue"],
+    msg:`🇿🇦 SOUTH AFRICA vs 🇰🇷 SOUTH KOREA
+📅 Wednesday 24 June · Group A · Monterrey
+
+🌍 SOUTH vs SOUTH — THE DECIDER
+
+Jane (South Africa 🇿🇦) vs Sue (South Korea 🇰🇷).
+
+Group A's final night. South Africa's 2010 heartbreak — they remain the only host nation ever eliminated in the group stage, despite beating France on the final day. Sixteen years later, Jane's team can finally finish a group-stage job.
+
+Sue's South Korea always save their best for final group games (see: Germany 2018, Portugal 2022 — both beaten on matchday three). If Korea need a result here, history says be afraid.
+
+Two of the sweepstake's busiest managers, simultaneous kickoffs, everything on the line. Set an alarm. ⏰`},
+
+  { id:"B5", date:"Wednesday 24 June", group:"Group B", time:"17:00 IST",
+    home:"Switzerland🇨🇭", away:"Canada🇨🇦", owners:"Evelyn vs Cooper",
+    people:["Evelyn","Cooper"],
+    msg:`🇨🇭 SWITZERLAND vs 🇨🇦 CANADA
+📅 Wednesday 24 June · Group B · Vancouver
+
+👵 GREAT-GRANNY vs THE 6-YEAR-OLD
+
+Evelyn (80, Switzerland 🇨🇭) vs Cooper (6, Canada 🇨🇦).
+
+74 years between them — the biggest age gap of the entire sweepstake. Evelyn's first World Cup memory predates colour television. Cooper's first World Cup memory is currently being formed.
+
+Switzerland's knockout-stage consistency vs Canada's host-nation desperation. If Canada haven't secured qualification by now, this becomes a knife-edge decider against the most reliably organised team in Europe, owned by the most reliably organised woman in the family. Cooper remains confident. Cooper is always confident. 💪`},
+
+  { id:"B6", date:"Wednesday 24 June", group:"Group B", time:"17:00 IST",
+    home:"Bosnia & Hz.🇧🇦", away:"Qatar🇶🇦", owners:"Jane vs Eimíle",
+    people:["Jane","Eimíle"],
+    msg:`🇧🇦 BOSNIA & HERZEGOVINA vs 🇶🇦 QATAR
+📅 Wednesday 24 June · Group B · Seattle
+
+🎭 THE PLAYOFF HEROES vs THE REDEMPTION ARC
+
+Jane (Bosnia 🇧🇦) vs Eimíle (Qatar 🇶🇦).
+
+Final round of Group B. Bosnia beat Italy on penalties to get here; Qatar are still chasing their first World Cup win in their second tournament. If it's still on the line tonight, this is the kind of game that makes group stages great.
+
+Jane is managing three teams across three groups like air traffic control. Eimíle just needs one Qatari win to justify the whole campaign. 🛫`},
+
+  { id:"C4", date:"Wednesday 24 June", group:"Group C", time:"22:00 IST",
+    home:"Morocco🇲🇦", away:"Haiti🇭🇹", owners:"Orlagh vs Geoff",
+    people:["Orlagh","Geoff"],
+    msg:`🇲🇦 MOROCCO vs 🇭🇹 HAITI
+📅 Wednesday 24 June · Group C · Atlanta
+
+🌍 THE ATLAS LIONS vs THE MIRACLE
+
+Orlagh (Morocco 🇲🇦) vs Geoff (Haiti 🇭🇹).
+
+The 2022 semi-finalists vs the 52-year returnees, final round of Group C. Morocco's defensive record at the last World Cup was absurd — one goal conceded to an opponent in five games before the semis.
+
+Geoff's Haiti would need something historic here. Then again, Haiti's entire qualification was historic. Orlagh and Geoff: the two eldest in-laws of the middle generation, fighting over African and Caribbean football at 10pm on a Tuesday. The draw has given this family strange new hobbies. 🦁`},
+
+  { id:"C5", date:"Wednesday 24 June", group:"Group C", time:"22:00 IST",
+    home:"Scotland🏴󠁧󠁢󠁳󠁣󠁴󠁿", away:"Brazil🇧🇷", owners:"Eric vs Oliver",
+    people:["Eric","Oliver"],
+    msg:`🏴󠁧󠁢󠁳󠁣󠁴󠁿 SCOTLAND vs 🇧🇷 BRAZIL
+📅 Wednesday 24 June · Group C · Miami
+
+😱 SCOTLAND NEED A RESULT AGAINST BRAZIL. SCOTLAND. AGAINST BRAZIL.
+
+Eric (Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿) vs Oliver (7, Brazil 🇧🇷).
+
+Of course it comes to this. Scotland's eternal quest to escape a group stage, and the final hurdle is the five-time champions. Scotland have played Brazil at World Cups before — the 1998 opening game (lost 2-1 to an own goal, naturally).
+
+If Scotland are still alive tonight, every Scot on Earth will believe and expect doom simultaneously, which is the national condition. Oliver, 7, will be up against bedtime AND his uncle-in-law's emotional state.
+
+The 11-tournament curse vs the 7-year-old with the most decorated team in history. Football, bloody hell. 🏴󠁧󠁢󠁳󠁣󠁴󠁿💔`},
+
+  // ══ JUNE 24 ══
+  { id:"D4", date:"Thursday 25 June", group:"Group D", time:"02:00 IST",
+    home:"USA🇺🇸", away:"Turkey🇹🇷", owners:"Peter vs Siobhan",
+    people:["Peter","Siobhan"],
+    msg:`🇺🇸 USA vs 🇹🇷 TURKEY
+📅 Thursday 25 June · Group D · Los Angeles
+
+💑 HUSBAND vs WIFE — THE REMATCH
+
+Peter (USA 🇺🇸) vs Siobhan (Turkey 🇹🇷).
+
+They opened the group against each other (USA vs Paraguay) and now they close it against each other too — Siobhan's OTHER team this time. Peter literally cannot escape his wife in Group D. There's a metaphor in there somewhere.
+
+Host nation pressure peaks on final matchday. Turkey's 2002 third-place run started exactly like this — quietly, then all at once. Matthew has now booked accommodation elsewhere for the night. 🏨`},
+
+  { id:"D5", date:"Thursday 25 June", group:"Group D", time:"02:00 IST",
+    home:"Paraguay🇵🇾", away:"Australia🇦🇺", owners:"Siobhan vs Leighanne",
+    people:["Siobhan","Leighanne"],
+    msg:`🇵🇾 PARAGUAY vs 🇦🇺 AUSTRALIA
+📅 Thursday 25 June · Group D · SF Bay Area
+
+👯 SISTERS, SIMULTANEOUSLY
+
+Siobhan (Paraguay 🇵🇾) vs Leighanne (Australia 🇦🇺).
+
+Final round of Group D, simultaneous kickoffs, and the sisters meet again — Siobhan's second team against Leighanne's first. Siobhan is somehow involved in BOTH final Group D games at once. She has two screens ready.
+
+Paraguay's iron defence vs Australia's running power, with knockout places likely on the line. The sister who wins this gets the Christmas dinner seat of honour. The sister who loses carves. 🔪`},
+
+  { id:"D6", date:"Friday 19 June", group:"Group D", time:"02:00 IST",
+    home:"Australia🇦🇺", away:"USA🇺🇸", owners:"Leighanne vs Peter",
+    people:["Leighanne","Peter"],
+    msg:`🇦🇺 AUSTRALIA vs 🇺🇸 USA
+📅 Friday 19 June · Group D · Seattle
+
+🦅 THE HOSTS' JUDGEMENT NIGHT
+
+Leighanne (Australia 🇦🇺) vs Peter (USA 🇺🇸).
+
+If the USA need a result on final matchday in their own World Cup, the pressure will be suffocating — no host nation has been eliminated in the group stage since South Africa in 2010, and the Americans have spent billions making sure they aren't next.
+
+Australia, meanwhile, have made a habit of final-day drama — their 2022 qualification for the knockouts came down to a 1-0 win and a famous Andrew Redmayne... wait, that was the playoff. Either way: Socceroos thrive on the brink.
+
+Leighanne vs Peter — sister-in-law vs brother-in-law, 2am Irish time, with the host nation's tournament possibly on the line. Peter, football mad, will not sleep regardless of the result. 🌙`},
+
+  { id:"E5", date:"Thursday 25 June", group:"Group E", time:"20:00 IST",
+    home:"Germany🇩🇪", away:"Ecuador🇪🇨", owners:"Craig vs Cooper",
+    people:["Craig","Cooper"],
+    msg:`🇩🇪 GERMANY vs 🇪🇨 ECUADOR
+📅 Thursday 25 June · Group E · New York NJ
+
+⚙️ THE MACHINE vs THE 6-YEAR-OLD'S SECOND TEAM
+
+Craig (Germany 🇩🇪) vs Cooper (Ecuador 🇪🇨).
+
+Germany on final matchday is historically must-watch: they've needed last-day rescues in both recent disasters and didn't get them. Ecuador's high-energy press is exactly the kind of test Germany keep failing.
+
+Cooper, 6, owns Ecuador AND Canada and has declared this "the easy one." Craig, 45, owns Germany and Saudi Arabia and has declared nothing — he's been burned before. Uncle vs nephew, with Group E possibly on the line. 🔥`},
+
+  { id:"E6", date:"Thursday 25 June", group:"Group E", time:"17:00 IST",
+    home:"Curaçao🇨🇼", away:"Ivory Coast🇨🇮", owners:"Leighanne vs Geoff",
+    people:["Leighanne","Geoff"],
+    msg:`🇨🇼 CURAÇAO vs 🇨🇮 IVORY COAST
+📅 Thursday 25 June · Group E · Philadelphia
+
+🏝️ THE SMALLEST NATION'S BIGGEST NIGHT
+
+Leighanne (Curaçao 🇨🇼) vs Geoff (Ivory Coast 🇨🇮).
+
+If Curaçao — population 150,000 — are still mathematically alive on final matchday, it's already one of the stories of the tournament. The African champions stand in their way.
+
+Leighanne vs her eldest brother. The youngest sibling with the smallest nation against the oldest sibling with the continental champions. Sibling order means nothing to Dick Advocaat. 🌊`},
+
+  // ══ JUNE 25 ══
+  { id:"F5", date:"Thursday 25 June", group:"Group F", time:"17:00 IST",
+    home:"Sweden🇸🇪", away:"Japan🇯🇵", owners:"Julian vs Ruairí",
+    people:["Julian","Ruairí"],
+    msg:`🇸🇪 SWEDEN vs 🇯🇵 JAPAN
+📅 Thursday 25 June · Group F · Dallas
+
+👶 THE KIDS' TABLE DECIDES GROUP F
+
+Julian (2, Sweden 🇸🇪) vs Ruairí (7, Japan 🇯🇵).
+
+Final round of Group F and it's the rematch of the toddler vs the 7-year-old. Between them they hold three of this group's four teams. The adults hold one. Let that sink in.
+
+Japan's final-matchday record is heroic — they've topped groups over Germany and Spain. Sweden knocked Italy out of a World Cup before it even started. The under-8s drafted brilliantly.
+
+Whichever child advances gets ice cream. Both children will get ice cream regardless. The stakes have never been lower or higher. 🍦`},
+
+  { id:"F6", date:"Thursday 25 June", group:"Group F", time:"20:00 IST",
+    home:"Tunisia🇹🇳", away:"Netherlands🇳🇱", owners:"Ruairí vs Wes",
+    people:["Ruairí","Wes"],
+    msg:`🇹🇳 TUNISIA vs 🇳🇱 NETHERLANDS
+📅 Thursday 25 June · Group F · Kansas City
+
+🍊 TOTAL FOOTBALL vs TOTAL CHAOS
+
+Ruairí (Japan + Tunisia 🇹🇳) vs Wes (Netherlands 🇳🇱).
+
+Wes's Dutch close the group against Ruairí's second team — and remember, Tunisia beat FRANCE on final matchday in 2022. Final-day giant-killing is literally Tunisia's signature move. Wes has seen this horror film before.
+
+Ruairí is involved in both Group F deciders simultaneously, like Siobhan in Group D and Sue in Group L. The 7-year-old has leverage everywhere. Great-uncle Wes just wants one calm group stage before he dies. He picked the wrong national team for that. 🧡`},
+
+  { id:"G5", date:"Friday 26 June", group:"Group G", time:"TBC",
+    home:"Egypt🇪🇬", away:"Iran🇮🇷", owners:"Peter vs Eric",
+    people:["Peter","Eric"],
+    msg:`🇪🇬 EGYPT vs 🇮🇷 IRAN
+📅 Friday 26 June · Group G · Seattle
+
+🐫 SALAH vs THE WALL — FINAL ROUND
+
+Peter (Egypt 🇪🇬) vs Eric (Iran 🇮🇷).
+
+Group G's final night. Egypt have never reached a World Cup knockout round, Salah is 34, and if qualification is on the line tonight it's the defining match of his international career. Iran are the great spoilers of world football — organised, ruthless on the break, and never more dangerous than when somebody needs to beat them.
+
+Peter is football mad and has waited his whole life for a stake in a night like this. Eric's Iran already beat the USA in 1998 and Wales in 2022 in big moments. Two of the family's grittiest portfolios collide.
+
+Brother-in-law Peter vs nephew-in-law Eric, 11pm kickoff, everything on the line. Set the coffee on. ☕🔥`},
+
+  { id:"G6", date:"Friday 26 June", group:"Group G", time:"TBC",
+    home:"New Zealand🇳🇿", away:"Belgium🇧🇪", owners:"Catherine vs Julian",
+    people:["Catherine","Julian"],
+    msg:`🇳🇿 NEW ZEALAND vs 🇧🇪 BELGIUM
+📅 Friday 26 June · Group G · Vancouver
+
+🥝 THE UNBEATEN vs THE LAST DANCE — FINAL ROUND
+
+Catherine (New Zealand 🇳🇿) vs Julian (2, Belgium 🇧🇪).
+
+Group G closes with the grandmother against the toddler. Catherine's All Whites still carry the greatest pub-quiz record in World Cup history — the only unbeaten team of 2010. Julian's Belgium are playing what is surely the golden generation's final group game ever: if De Bruyne and Lukaku need a result here, the pressure will be enormous and the opponent will be infuriatingly hard to break down.
+
+Catherine has three teams and the best trivia. Julian has the most talented squad of his lifetime, which is two years long.
+
+Granny vs the youngest manager in the sweepstake, with Belgium's era potentially ending in Vancouver. Football is cruel. Julian will sleep through it. 😴💛`},
+
+  // ══ JUNE 26 ══
+  { id:"H5", date:"Friday 26 June", group:"Group H", time:"20:00 IST",
+    home:"Spain🇪🇸", away:"Uruguay🇺🇾", owners:"Geoff vs Leighanne",
+    people:["Geoff","Leighanne"],
+    msg:`🇪🇸 SPAIN vs 🇺🇾 URUGUAY
+📅 Friday 26 June · Group H · Guadalajara
+
+🥩 THE HEAVYWEIGHT FINALE — BROTHER vs SISTER
+
+Geoff (Spain 🇪🇸) vs Leighanne (Uruguay 🇺🇾).
+
+The best game of the final round on paper: the world #2 vs the two-time champions, and the oldest sibling vs the youngest. Spain's tiki-taka heirs against Uruguay's beautiful dark arts — the team that invented winning ugly playing the team that invented winning pretty.
+
+These nations met in a classic 2010 group too (Spain won the World Cup; Uruguay finished fourth — both their best modern runs). Big tournaments bring out the best in both.
+
+Twenty years between Geoff and Leighanne. Neither is conceding the group OR the family group chat. 🏆`},
+
+  { id:"H6", date:"Friday 26 June", group:"Group H", time:"17:00 IST",
+    home:"Cape Verde🇨🇻", away:"Saudi Arabia🇸🇦", owners:"Orlagh vs Craig",
+    people:["Orlagh","Craig"],
+    msg:`🇨🇻 CAPE VERDE vs 🇸🇦 SAUDI ARABIA
+📅 Friday 26 June · Group H · Houston
+
+🦈 THE BLUE SHARKS' LAST STAND
+
+Orlagh (Cape Verde 🇨🇻) vs Craig (Saudi Arabia 🇸🇦).
+
+The debutants vs the Argentina-slayers, final round of Group H. If either team is still alive, this becomes box office; if not, it's pure pride — and these two teams have plenty.
+
+Saudi Arabia have now scored famous World Cup goals in multiple tournaments (don't forget Al-Owairan's 1994 solo run, one of the greatest individual goals ever). Cape Verde just want one famous moment of their own to take back to the islands.
+
+Orlagh vs Craig: the in-laws' in-law derby. Nobody can quite map the relationship. Everybody understands the points. 🗺️`},
+
+  { id:"I4", date:"Friday 26 June", group:"Group I", time:"22:00 IST",
+    home:"France🇫🇷", away:"Norway🇳🇴", owners:"Jane vs Elsie",
+    people:["Jane","Elsie"],
+    msg:`🇫🇷 FRANCE vs 🇳🇴 NORWAY
+📅 Friday 26 June · Group I · Boston
+
+⚔️ MBAPPÉ vs HAALAND — YES, REALLY
+
+Jane (France 🇫🇷) vs Elsie (11, Norway 🇳🇴).
+
+The fixture world football has waited a decade for: Mbappé vs Haaland at a World Cup. The two best forwards of their generation, finally on the same pitch at the biggest tournament. And in this family it's the apprentice soccer mom vs the 11-year-old.
+
+France's back-to-back final appearances vs Norway's first World Cup since 1998 — and Norway BEAT Brazil that year, so they don't do stage fright.
+
+Elsie has the Haaland posters. Jane has the better squad depth. The school playground and the kitchen table will both be unbearable on Saturday. ⚡🐓`},
+
+  { id:"I5", date:"Friday 26 June", group:"Group I", time:"22:00 IST",
+    home:"Senegal🇸🇳", away:"Iraq🇮🇶", owners:"Elsie vs Catherine",
+    people:["Elsie","Catherine"],
+    msg:`🇸🇳 SENEGAL vs 🇮🇶 IRAQ
+📅 Friday 26 June · Group I · Toronto
+
+🦁 THE LIONS OF TERANGA ROAR LAST
+
+Elsie (Senegal 🇸🇳) vs Catherine (Iraq 🇮🇶).
+
+Elsie's SECOND team of the night — she has both Norway and Senegal in Group I and is involved in both final-round games simultaneously. The 11-year-old joins the multi-screen club with Siobhan, Sue and Ruairí.
+
+Senegal's World Cup debut in 2002 began by beating champions France and ended in the quarter-finals — still joint-best by an African nation until Morocco 2022. Catherine's Iraq close out the best-backstory campaign in the tournament.
+
+Granny vs granddaughter to close Group I. The sweepstake's two best portfolio managers, head to head. 📊`},
+
+  { id:"I6", date:"Tuesday 16 June", group:"Group I", time:"TBC",
+    home:"France🇫🇷", away:"Senegal🇸🇳", owners:"Jane vs Elsie",
+    people:["Jane","Elsie"],
+    msg:`🇫🇷 FRANCE vs 🇸🇳 SENEGAL
+📅 Tuesday 16 June · Group I · New York NJ
+
+⚡ THE 2002 REMATCH — AS THE GROUP I OPENER
+
+Jane (France 🇫🇷) vs Elsie (11, Senegal 🇸🇳).
+
+You could not script this better: Group I OPENS with a rematch of the most famous opening game in World Cup history. Senegal 1, France 0 — Seoul, 2002. The debutants beating the reigning world champions, Papa Bouba Diop's goal, the shirt-dance around the corner flag. The single greatest World Cup opening-match shock ever.
+
+Twenty-four years later, FIFA have drawn them together again on day one of their group. France have since reached two more finals. Senegal have since won the Africa Cup of Nations. Both nations remember 2002 vividly, for opposite reasons.
+
+The apprentice soccer mom vs the 11-year-old, opening the group of death. Elsie's Senegal have done this to France before. Jane has been advised not to Google 2002. 🎓⚡`},
+
+  // ══ JUNE 27 ══
+  { id:"J5", date:"Saturday 27 June", group:"Group J", time:"19:00 IST",
+    home:"Jordan🇯🇴", away:"Argentina🇦🇷", owners:"Wes vs Matthew",
+    people:["Wes","Matthew"],
+    msg:`🇯🇴 JORDAN vs 🇦🇷 ARGENTINA
+📅 Saturday 27 June · Group J · Dallas
+
+👑 THE CHAMPIONS CLOSE THE GROUP
+
+Wes (Jordan 🇯🇴) vs Matthew (Argentina 🇦🇷).
+
+The world champions vs the debutants on final matchday. If Argentina have already qualified, Messi might rest — and Jordan's only chance of the most famous result in their history gets a little wider. Wes, football mad, knows exactly which scenario he's praying for.
+
+Uncle vs nephew. Matthew has the best team in the world. Wes has the hope of every neutral on Earth. Only one of those things wins football matches. Usually. 🙏`},
+
+  { id:"J6", date:"Saturday 27 June", group:"Group J", time:"19:00 IST",
+    home:"Austria🇦🇹", away:"Algeria🇩🇿", owners:"Evelyn vs Aisling",
+    people:["Evelyn","Aisling"],
+    msg:`🇦🇹 AUSTRIA vs 🇩🇿 ALGERIA
+📅 Saturday 27 June · Group J · Kansas City
+
+🤝 THE GIJÓN REDEMPTION
+
+Evelyn (Austria 🇦🇹) vs Aisling (Algeria 🇩🇿).
+
+Football historians, assemble: in 1982, Austria and West Germany played out the infamous "Disgrace of Gijón" — a mutually convenient 1-0 that eliminated Algeria and changed World Cup rules forever (simultaneous final group games exist BECAUSE of that match). 
+
+Forty-four years later: Austria vs Algeria, final round, simultaneous kickoff — the very rule their history created. Algeria have waited generations for this exact fixture. Granny's team owes Aisling's team a debt of honour.
+
+The 80-year-old vs her granddaughter, with 44 years of football history as the backdrop. This sweepstake has range. 📜`},
+
+  { id:"L5", date:"Saturday 27 June", group:"Group L", time:"23:00 IST",
+    home:"Panama🇵🇦", away:"England🏴󠁧󠁢󠁥󠁮󠁧󠁿", owners:"David vs Aisling",
+    people:["David","Aisling"],
+    msg:`🇵🇦 PANAMA vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 ENGLAND
+📅 Saturday 27 June · Group L · New York NJ
+
+🦁 THE 6-1 REMATCH — BROTHER vs SISTER
+
+David (Panama 🇵🇦) vs Aisling (England 🏴󠁧󠁢󠁥󠁮󠁧󠁿).
+
+These two met at the 2018 World Cup and England won 6-1 — their biggest ever World Cup victory, the Harry Kane hat-trick game, and the day Panama celebrated their consolation goal like a trophy. Both things were beautiful.
+
+Eight years on: brother vs sister on final matchday. England will expect. Panama will enjoy. David has lowered the bar to "score one goal and celebrate disgracefully," which Panama have proven they can deliver.
+
+If England need a result here and don't get one, Aisling will never hear the end of it from literally everyone. 🎉`},
+
+  { id:"L6", date:"Saturday 27 June", group:"Group L", time:"23:00 IST",
+    home:"Croatia🇭🇷", away:"Ghana🇬🇭", owners:"Sue vs Sue",
+    people:["Sue"],
+    msg:`🇭🇷 CROATIA vs 🇬🇭 GHANA
+📅 Saturday 27 June · Group L · Philadelphia
+
+🪞 SUE vs SUE — THE FINAL SELF-DERBY
+
+The group stage ends as it began: with somebody playing themselves. Sue drew Croatia AND Ghana, they share Group L, and they close it against each other. She joins Ruairí, Siobhan and Elsie in the self-derby club — four guaranteed-points fixtures in one sweepstake. The draw software has been asked to explain itself.
+
+And what a pairing: the 2018 finalists vs the team still owed justice from 2010. Modrić's endless farewell vs Ghana's eternal quest. If Group L comes down to this game, Sue decides her own fate — both of them.
+
+Sue cannot lose. Sue also cannot fully win. Wes, football mad and married to her, has tried to explain the optimal scenario four times. Sue is supporting "goals." 🥂`},
+
+  { id:"C6", date:"Friday 19 June", group:"Group C", time:"TBC",
+    home:"Brazil🇧🇷", away:"Haiti🇭🇹", owners:"Oliver vs Geoff",
+    people:["Oliver","Geoff"],
+    msg:`🇧🇷 BRAZIL vs 🇭🇹 HAITI
+📅 Friday 19 June · Group C · Philadelphia
+
+🏝️ THE FIVE-TIME CHAMPIONS vs THE MIRACLE — GRANDAD vs THE 7-YEAR-OLD
+
+Oliver (Brazil 🇧🇷) vs Geoff (Haiti 🇭🇹).
+
+The most lopsided fixture in Group C on paper: five World Cups vs one famous goal in 1974. But Haiti have already beaten impossible odds just by being here, and Brazil's aura has taken some dents — no title since 2002 and a quarter-final exit on penalties last time.
+
+These nations have met competitively before — at the 2016 Copa América, Brazil won 7-1. Geoff has chosen not to research this. Oliver researched it immediately and has shared it widely.
+
+Grandfather vs grandson, the 7-year-old holding the giants. If Haiti score even once, Geoff is declaring it the family moment of the tournament. 🇭🇹⚽`},
+
+  { id:"K7", date:"Saturday 27 June", group:"Group K", time:"TBC",
+    home:"Colombia🇨🇴", away:"Portugal🇵🇹", owners:"Eimíle vs Catherine",
+    people:["Eimíle","Catherine"],
+    msg:`🇨🇴 COLOMBIA vs 🇵🇹 PORTUGAL
+📅 Saturday 27 June · Group K · Miami
+
+🎬 RONALDO'S LAST GROUP GAME EVER — FINAL ROUND
+
+Eimíle (Colombia 🇨🇴) vs Catherine (Portugal 🇵🇹).
+
+Group K saves the best for last: Colombia's flair vs Portugal's farewell tour, in Miami, with top spot likely on the line. This is realistically the final World Cup group-stage match of Cristiano Ronaldo's career. Whatever happens after this is knockout football or nothing.
+
+James Rodríguez announced himself against this calibre of opponent in 2014. Colombia's current generation reached the Copa América final. They will not be playing a supporting role in anyone's farewell.
+
+Daughter vs mother. Eimíle's flair pick against Catherine's box-office pick, deciding the group between them. The family WhatsApp will be insufferable either way. 🐐💃`},
+
+  { id:"K8", date:"Saturday 27 June", group:"Group K", time:"TBC",
+    home:"DR Congo🇨🇩", away:"Uzbekistan🇺🇿", owners:"Orlagh vs Matthew",
+    people:["Orlagh","Matthew"],
+    msg:`🇨🇩 DR CONGO vs 🇺🇿 UZBEKISTAN
+📅 Saturday 27 June · Group K · Atlanta
+
+🐺 THE LEOPARDS vs THE WHITE WOLVES — FINAL ROUND
+
+Orlagh (DR Congo 🇨🇩) vs Matthew (Uzbekistan 🇺🇿).
+
+The two romance stories of Group K close it out against each other: 52 years of waiting vs a first World Cup ever. Whoever wins this probably claims the most famous result in their nation's modern football history — and possibly a knockout place as one of the best third-placed teams.
+
+Orlagh's African treble gets its final group-stage outing. Matthew, who also holds world champions Argentina, completes the most contrasting portfolio in the sweepstake: the best team on Earth and the newest.
+
+Leopards vs Wolves in Atlanta. Somebody's fairytale gets a next chapter. 🌍🐺`},
+];
+
+// ── RENDER ────────────────────────────────────────────────────
+let activeFilter = 'All';
+
+function buildFilters() {
+  const bar = document.getElementById('filterBar');
+  bar.innerHTML = PEOPLE.map(p =>
+    `<button class="filter-btn${p==='All'?' active':''}" onclick="setFilter('${p}')">${p}</button>`
+  ).join('');
+}
+
+function setFilter(name) {
+  activeFilter = name;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent === name);
+  });
+  render();
+}
+
+function copyMsg(idx, btn) {
+  const text = PREVIEWS[idx].msg;
+  navigator.clipboard.writeText(text).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+  });
+  btn.textContent = '✅ Copied!'; btn.classList.add('copied');
+  setTimeout(() => { btn.innerHTML = '📋 Copy to WhatsApp'; btn.classList.remove('copied'); }, 2000);
+}
+
+function render() {
+  const list = document.getElementById('previewList');
+  let filtered = activeFilter === 'All'
+    ? [...PREVIEWS]
+    : PREVIEWS.filter(p => p.people.includes(activeFilter));
+  filtered.sort((a,b) => parseInt(a.date.match(/\d+/)[0]) - parseInt(b.date.match(/\d+/)[0]));
+
+  if (!filtered.length) {
+    list.innerHTML = `<div style="text-align:center;padding:40px;color:var(--muted);font-style:italic">No previews yet for ${activeFilter}. Check back as the tournament progresses!</div>`;
+    return;
+  }
+
+  let html = '';
+  let lastDate = '';
+
+  filtered.forEach((p, i) => {
+    const globalIdx = PREVIEWS.indexOf(p);
+    if (p.date !== lastDate) {
+      html += `<div class="day-label">📅 ${p.date}</div>`;
+      lastDate = p.date;
+    }
+    html += `
+    <div class="preview-card">
+      <div class="card-header">
+        <div class="matchup">
+          <span>${p.home}</span>
+          <span class="vs">vs</span>
+          <span>${p.away}</span>
+        </div>
+        <div class="match-info">
+          ${p.group} · ${p.time}<br>
+          <span style="color:var(--gold-lt);font-weight:600">${p.owners}</span>
+        </div>
+      </div>
+      <div class="wa-box">
+        <div class="wa-label">📱 Tap message to select all · Button to copy</div>
+        <div class="wa-message">${escHtml(p.msg)}</div>
+        <button class="copy-btn" onclick="copyMsg(${globalIdx},this)">📋 Copy to WhatsApp</button>
+      </div>
+    </div>`;
+  });
+
+  html += `<div style="text-align:center;padding:32px;color:var(--muted);font-style:italic;font-size:0.85rem">That's every group-stage fixture: 71 previews, one family. Knockout previews to follow once the bracket is set ⚽</div>`;
+  list.innerHTML = html;
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+buildFilters();
+render();
+</script>
+</body>
+</html>
