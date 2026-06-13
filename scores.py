@@ -309,6 +309,17 @@ def main():
     matches = fetch_matches(args.api_key)
     print(f"  {len(matches)} matches returned from API")
 
+    # Debug: show what statuses the API is returning
+    from collections import Counter
+    status_counts = Counter(m.get("status", "?") for m in matches)
+    print(f"  Statuses: {dict(status_counts)}")
+    # Show first finished match score as sanity check
+    for m in matches:
+        if m.get("status") == "FINISHED":
+            ft = m.get("score", {}).get("fullTime", {})
+            print(f"  Sample finished: {m['homeTeam']['name']} {ft.get('home')}-{ft.get('away')} {m['awayTeam']['name']}")
+            break
+
     scores = build_scores(matches)
     finished = sum(1 for s in scores.values() if s["home"] != "")
     print(f"  {finished} completed match(es) found")
