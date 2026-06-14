@@ -28,7 +28,7 @@ body { background: var(--dark); color: var(--cream); font-family: 'Inter', sans-
 /* ── NAV ── */
 .topnav {
   background: rgba(9,18,8,0.92); border-bottom: 1px solid var(--border);
-  padding: 10px 24px; display: flex; gap: 12px; align-items: center; font-size: 0.82rem;
+  padding: 10px 24px; display: flex; gap: 8px; align-items: center; font-size: 0.82rem;
   position: sticky; top: 0; z-index: 100;
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
 }
@@ -39,6 +39,13 @@ body { background: var(--dark); color: var(--cream); font-family: 'Inter', sans-
 }
 .topnav a:hover { color: var(--cream); border-color: var(--border); }
 .topnav a.active { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+.nav-short { display: none; }
+@media(max-width: 600px) {
+  .topnav { padding: 8px 8px; gap: 2px; }
+  .topnav a { padding: 5px 8px; font-size: 0.8rem; letter-spacing: 0.04em; }
+  .nav-full { display: none; }
+  .nav-short { display: inline; }
+}
 
 /* ── HEADER ── */
 header {
@@ -437,11 +444,10 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
 </head>
 <body>
 <nav class="topnav">
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="active" id="nav-calendar">📅 Calendar</a>
-  <a href="#" onclick="document.getElementById('standings').scrollIntoView({behavior:'smooth'});return false;" id="nav-standings">🏆 Standings</a>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="active" id="nav-calendar">📅 <span class="nav-full">Calendar</span><span class="nav-short">Cal</span></a>
+  <a href="#" onclick="document.getElementById('standings').scrollIntoView({behavior:'smooth'});return false;" id="nav-standings">🏆 <span class="nav-full">Standings</span><span class="nav-short">Table</span></a>
   <a href="#" onclick="document.getElementById('group-tables-section').scrollIntoView({behavior:'smooth'});return false;" id="nav-groups">📋 Groups</a>
   <a href="#" onclick="document.getElementById('results-entry-section').scrollIntoView({behavior:'smooth'});return false;" id="nav-results">⚽ Results</a>
-  <a href="previews.html">💬 Previews</a>
   <a href="squads.html">👕 Squads</a>
 </nav>
 
