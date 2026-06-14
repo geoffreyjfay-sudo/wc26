@@ -13,6 +13,8 @@ Generates squads.html with all 48 team rosters embedded — no live API calls fr
 
 import argparse
 import json
+import re
+import unicodedata
 import sys
 import time
 from pathlib import Path
@@ -37,6 +39,27 @@ GROUPS = {
     "J": ["Argentina", "Austria", "Algeria", "Jordan"],
     "K": ["Portugal", "Colombia", "DR Congo", "Uzbekistan"],
     "L": ["England", "Croatia", "Ghana", "Panama"],
+}
+
+WIKI_TEAM_MAP = {
+    "Mexico": "Mexico", "South Korea": "South Korea", "Czech Republic": "Czechia",
+    "Czechia": "Czechia", "South Africa": "South Africa", "Canada": "Canada",
+    "Switzerland": "Switzerland", "Qatar": "Qatar",
+    "Bosnia and Herzegovina": "Bosnia & Hz.",
+    "Brazil": "Brazil", "Morocco": "Morocco", "Scotland": "Scotland", "Haiti": "Haiti",
+    "United States": "USA", "Australia": "Australia", "Turkey": "Turkey",
+    "Türkiye": "Turkey", "Paraguay": "Paraguay", "Germany": "Germany",
+    "Ecuador": "Ecuador", "Ivory Coast": "Ivory Coast", "Côte d'Ivoire": "Ivory Coast",
+    "Curaçao": "Curaçao", "Curacao": "Curaçao", "Netherlands": "Netherlands",
+    "Japan": "Japan", "Tunisia": "Tunisia", "Sweden": "Sweden", "Belgium": "Belgium",
+    "Iran": "Iran", "Egypt": "Egypt", "New Zealand": "New Zealand", "Spain": "Spain",
+    "Uruguay": "Uruguay", "Saudi Arabia": "Saudi Arabia", "Cape Verde": "Cape Verde",
+    "France": "France", "Senegal": "Senegal", "Norway": "Norway", "Iraq": "Iraq",
+    "Argentina": "Argentina", "Austria": "Austria", "Algeria": "Algeria",
+    "Jordan": "Jordan", "Portugal": "Portugal", "Colombia": "Colombia",
+    "DR Congo": "DR Congo", "Democratic Republic of the Congo": "DR Congo",
+    "Uzbekistan": "Uzbekistan", "England": "England", "Croatia": "Croatia",
+    "Ghana": "Ghana", "Panama": "Panama",
 }
 
 TEAM_IDS = {
@@ -176,6 +199,156 @@ def fetch_all_squads(api_key, cache_path):
     return cache
 
 
+# ── Wikipedia club data ───────────────────────────────────────────────────────
+
+def fetch_wikipedia_clubs(wiki_cache_path: Path) -> dict:
+    """Scrape club names from the 2026 FIFA World Cup squads Wikipedia page.
+    Returns {our_team_name: {surname_lower: club_name}}.
+    Caches result to wiki_cache_path.
+    """
+    if wiki_cache_path.exists():
+        data = json.loads(wiki_cache_path.read_text(encoding="utf-8"))
+        print(f"  Wikipedia clubs loaded from cache ({len(data)} teams)")
+        return data
+
+    try:
+        from bs4 import BeautifulSoup
+    except ImportError:
+        print("  beautifulsoup4 not installed — skipping club data (pip install beautifulsoup4)")
+        return {}
+
+    print("  Fetching Wikipedia squad page...")
+    try:
+        resp = requests.get(
+            "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads",
+            headers={"User-Agent": "WC2026-family-sweepstake/1.0"},
+            timeout=20,
+        )
+        resp.raise_for_status()
+    except Exception as e:
+        print(f"  Wikipedia fetch failed: {e}")
+        return {}
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+    result = {}
+
+    # Country headings may be <h3> (inside group sections) or wrapped in
+    # <div class="mw-heading mw-heading3"> in newer MediaWiki HTML.
+    def iter_country_headings():
+        for tag in soup.find_all(["h2", "h3"]):
+            hl = tag.find(class_="mw-headline") or tag
+            yield hl.get_text(strip=True), tag
+        for div in soup.find_all("div", class_=lambda c: c and "mw-heading" in c):
+            inner = div.find(["h2", "h3"])
+            if inner:
+                yield inner.get_text(strip=True), div
+
+    seen = set()
+    for country_raw, heading_tag in iter_country_headings():
+        country = WIKI_TEAM_MAP.get(country_raw)
+        if not country or country in seen:
+            continue
+
+        # Find the next wikitable sibling
+        table = None
+        for sib in heading_tag.next_siblings:
+            if not hasattr(sib, "name"):
+                continue
+            if sib.name == "table" and "wikitable" in " ".join(sib.get("class", [])):
+                table = sib
+                break
+            if sib.name in ("h2", "h3") or (
+                sib.name == "div" and "mw-heading" in " ".join(sib.get("class", []))
+            ):
+                break
+
+        if not table:
+            continue
+
+        players = {}
+        for row in table.find_all("tr"):
+            cells = row.find_all(["td", "th"])
+            if len(cells) < 7 or cells[0].name == "th":
+                continue
+
+            # Player name — prefer data-sort-value="Surname, Firstname"
+            name_cell = cells[2]
+            sort_span = name_cell.find(attrs={"data-sort-value": True})
+            if sort_span:
+                sort_val = sort_span["data-sort-value"]
+                surname = sort_val.split(",")[0].strip()
+            else:
+                link = name_cell.find("a")
+                full = (link.get_text(strip=True) if link else name_cell.get_text(strip=True))
+                surname = full.split()[-1] if full else ""
+
+            # Club — last <a> tag in column 6 (index 6)
+            club_cell = cells[6]
+            links = club_cell.find_all("a")
+            club = links[-1].get_text(strip=True) if links else club_cell.get_text(strip=True)
+            club = re.sub(r"\[.*?\]", "", club).strip()
+
+            if surname and club:
+                players[surname.lower()] = club
+
+        result[country] = players
+        seen.add(country)
+
+    print(f"  Got club data for {len(result)} teams from Wikipedia")
+    wiki_cache_path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+    return result
+
+
+def _norm(s: str) -> str:
+    """Lowercase + strip diacritics for fuzzy name matching."""
+    return unicodedata.normalize("NFD", s.lower()).encode("ascii", "ignore").decode().strip()
+
+
+def enrich_with_clubs(cache: dict, wiki_clubs: dict) -> None:
+    """Add 'club' field to each player dict in cache using Wikipedia data."""
+    if not wiki_clubs:
+        return
+    matched = total = 0
+    for team, players in cache.items():
+        if not players:
+            continue
+        team_clubs = wiki_clubs.get(team, {})
+        # Build normalized lookup so diacritics don't block matches
+        norm_lookup = {_norm(k): v for k, v in team_clubs.items()}
+
+        for p in players:
+            total += 1
+            if p.get("club"):
+                matched += 1
+                continue
+            name = p.get("name", "")
+            parts = name.split()
+            # Strip leading initials like "C.", "L."
+            non_init = [pt for pt in parts if not (len(pt) <= 2 and pt.endswith("."))]
+            if not non_init:
+                p["club"] = ""
+                continue
+
+            # Try several surname strategies in order:
+            # 1. Last word (Western names: "C. Acevedo" → "Acevedo")
+            # 2. First word (East-Asian family-name-first: "Park Jin-Seop" → "Park")
+            # 3. Last two words (Arabic/compound: "Sultan Al Braik" → "Al Braik")
+            candidates = [
+                _norm(non_init[-1]),
+                _norm(non_init[0]),
+                _norm(" ".join(non_init[-2:])) if len(non_init) >= 2 else "",
+            ]
+            club = ""
+            for c in candidates:
+                if c and c in norm_lookup:
+                    club = norm_lookup[c]
+                    break
+            p["club"] = club
+            if club:
+                matched += 1
+    print(f"  Clubs matched: {matched}/{total} players")
+
+
 # ── HTML generation ───────────────────────────────────────────────────────────
 
 def build_squad_data(squads):
@@ -196,6 +369,7 @@ def build_squad_data(squads):
                 "age": pl.get("age", ""),
                 "photo": pl.get("photo", ""),
                 "pos": pos,
+                "club": pl.get("club", ""),
             })
         for pos in POSITION_ORDER:
             by_pos[pos].sort(key=lambda p: p["n"] or 99)
@@ -438,7 +612,8 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 }}
 .pl-info {{ flex: 1; min-width: 0; }}
 .pl-name {{ font-size: 0.85rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
-.pl-age {{ font-size: 0.72rem; color: var(--muted); }}
+.pl-club {{ font-size: 0.72rem; color: var(--gold-lt); opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+.pl-age {{ font-size: 0.68rem; color: var(--muted); }}
 </style>
 </head>
 <body>
@@ -527,6 +702,7 @@ function openSquad(team) {{
         <span class="pl-num">${{p.n || '—'}}</span>
         <div class="pl-info">
           <div class="pl-name">${{p.name}}</div>
+          ${{p.club ? `<div class="pl-club">${{p.club}}</div>` : ''}}
           ${{p.age ? `<div class="pl-age">Age ${{p.age}}</div>` : ''}}
         </div>
       </div>`;
@@ -555,15 +731,28 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') closeSquad(
 def main():
     parser = argparse.ArgumentParser(description="Fetch WC 2026 squads and generate squads.html")
     parser.add_argument("--api-key", required=True, help="api-football.com API key")
-    parser.add_argument("--cache", default="squads_cache.json", help="Cache file path")
+    parser.add_argument("--cache", default="squads_cache.json", help="Squad cache file")
+    parser.add_argument("--wiki-cache", default="wiki_clubs_cache.json", help="Wikipedia clubs cache file")
     parser.add_argument("--output", default="squads.html", help="Output HTML file")
+    parser.add_argument("--refresh-wiki", action="store_true", help="Re-fetch Wikipedia club data")
     args = parser.parse_args()
 
     cache_path = Path(args.cache)
+    wiki_cache_path = Path(args.wiki_cache)
     output_path = Path(args.output)
 
-    print(f"Fetching WC 2026 squad rosters (48 teams, ~2s each)...")
+    if args.refresh_wiki and wiki_cache_path.exists():
+        wiki_cache_path.unlink()
+        print("Cleared Wikipedia club cache.")
+
+    print("Fetching WC 2026 squad rosters...")
     squads = fetch_all_squads(args.api_key, cache_path)
+
+    print("Enriching with club data from Wikipedia...")
+    wiki_clubs = fetch_wikipedia_clubs(wiki_cache_path)
+    enrich_with_clubs(squads, wiki_clubs)
+    # Persist enriched club data back to squad cache
+    cache_path.write_text(json.dumps(squads, indent=2, ensure_ascii=False), encoding="utf-8")
 
     fetched = sum(1 for v in squads.values() if v is not None and len(v) > 0)
     print(f"\nGenerating {output_path} ({fetched}/48 teams with data)...")
