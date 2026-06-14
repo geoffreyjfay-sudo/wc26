@@ -2633,18 +2633,6 @@
       "captain": false
     },
     {
-      "id": 349001,
-      "name": "Wesley",
-      "age": 22,
-      "number": 2,
-      "position": "Defender",
-      "photo": "https://media.api-sports.io/football/players/349001.png",
-      "club": "",
-      "caps": null,
-      "goals": null,
-      "captain": false
-    },
-    {
       "id": 618,
       "name": "Danilo",
       "age": 34,
@@ -2822,6 +2810,18 @@
       "club": "Real Madrid",
       "caps": 49,
       "goals": 9,
+      "captain": false
+    },
+    {
+      "id": 0,
+      "name": "Éderson Silva",
+      "age": 23,
+      "number": 0,
+      "position": "Attacker",
+      "photo": "",
+      "club": "Atalanta",
+      "caps": 3,
+      "goals": 0,
       "captain": false
     }
   ],
