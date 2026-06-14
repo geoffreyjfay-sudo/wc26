@@ -2,7 +2,7 @@
   "Mexico": [
     {
       "id": 35769,
-      "name": "C. Acevedo",
+      "name": "Carlos Acevedo",
       "age": 29,
       "number": 12,
       "position": "Goalkeeper",
@@ -14,7 +14,7 @@
     },
     {
       "id": 2098,
-      "name": "G. Ochoa",
+      "name": "Guillermo Ochoa",
       "age": 40,
       "number": 13,
       "position": "Goalkeeper",
@@ -26,7 +26,7 @@
     },
     {
       "id": 270774,
-      "name": "J. Rangel",
+      "name": "Raúl Rangel",
       "age": 25,
       "number": 1,
       "position": "Goalkeeper",
@@ -38,7 +38,7 @@
     },
     {
       "id": 2881,
-      "name": "J. Gallardo",
+      "name": "Jesús Gallardo",
       "age": 31,
       "number": 23,
       "position": "Defender",
@@ -50,7 +50,7 @@
     },
     {
       "id": 2873,
-      "name": "C. Montes",
+      "name": "César Montes",
       "age": 28,
       "number": 3,
       "position": "Defender",
@@ -62,7 +62,7 @@
     },
     {
       "id": 127227,
-      "name": "I. Reyes",
+      "name": "Israel Reyes",
       "age": 25,
       "number": 15,
       "position": "Defender",
@@ -74,7 +74,7 @@
     },
     {
       "id": 2878,
-      "name": "J. Sánchez",
+      "name": "Jorge Sánchez",
       "age": 28,
       "number": 2,
       "position": "Defender",
@@ -86,7 +86,7 @@
     },
     {
       "id": 35544,
-      "name": "J. Vásquez",
+      "name": "Johan Vásquez",
       "age": 27,
       "number": 5,
       "position": "Defender",
@@ -98,7 +98,7 @@
     },
     {
       "id": 2869,
-      "name": "E. Álvarez",
+      "name": "Edson Álvarez",
       "age": 28,
       "number": 4,
       "position": "Midfielder",
@@ -110,19 +110,19 @@
     },
     {
       "id": 390002,
-      "name": "M. Chávez",
+      "name": "Mateo Chávez",
       "age": 21,
       "number": 20,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/390002.png",
-      "club": "Dynamo Moscow",
-      "caps": 45,
-      "goals": 5,
+      "club": "AZ",
+      "caps": 10,
+      "goals": 0,
       "captain": false
     },
     {
       "id": 313383,
-      "name": "O. Vargas",
+      "name": "Obed Vargas",
       "age": 20,
       "number": 18,
       "position": "Midfielder",
@@ -134,7 +134,7 @@
     },
     {
       "id": 35690,
-      "name": "L. Chávez",
+      "name": "Luis Chávez",
       "age": 29,
       "number": 24,
       "position": "Midfielder",
@@ -158,7 +158,7 @@
     },
     {
       "id": 212233,
-      "name": "B. Gutiérrez",
+      "name": "Brian Gutiérrez",
       "age": 22,
       "number": 26,
       "position": "Midfielder",
@@ -170,7 +170,7 @@
     },
     {
       "id": 266345,
-      "name": "É. Lira",
+      "name": "Érik Lira",
       "age": 25,
       "number": 6,
       "position": "Midfielder",
@@ -182,7 +182,7 @@
     },
     {
       "id": 482605,
-      "name": "G. Mora",
+      "name": "Gilberto Mora",
       "age": 17,
       "number": 19,
       "position": "Midfielder",
@@ -194,7 +194,7 @@
     },
     {
       "id": 35576,
-      "name": "O. Pineda",
+      "name": "Orbelín Pineda",
       "age": 29,
       "number": 17,
       "position": "Midfielder",
@@ -206,7 +206,7 @@
     },
     {
       "id": 35970,
-      "name": "L. Romo",
+      "name": "Luis Romo",
       "age": 30,
       "number": 7,
       "position": "Midfielder",
@@ -218,7 +218,7 @@
     },
     {
       "id": 2879,
-      "name": "R. Alvarado",
+      "name": "Roberto Alvarado",
       "age": 27,
       "number": 25,
       "position": "Midfielder",
@@ -230,7 +230,7 @@
     },
     {
       "id": 94562,
-      "name": "S. Giménez",
+      "name": "Santiago Giménez",
       "age": 24,
       "number": 11,
       "position": "Attacker",
@@ -242,7 +242,7 @@
     },
     {
       "id": 291713,
-      "name": "A. González",
+      "name": "Armando González",
       "age": 22,
       "number": 14,
       "position": "Attacker",
@@ -254,7 +254,7 @@
     },
     {
       "id": 36111,
-      "name": "C. Huerta",
+      "name": "César Huerta",
       "age": 25,
       "number": 21,
       "position": "Midfielder",
@@ -266,7 +266,7 @@
     },
     {
       "id": 2887,
-      "name": "R. Jiménez",
+      "name": "Raúl Jiménez",
       "age": 34,
       "number": 9,
       "position": "Attacker",
@@ -278,7 +278,7 @@
     },
     {
       "id": 36088,
-      "name": "G. Martínez",
+      "name": "Guillermo Martínez",
       "age": 30,
       "number": 22,
       "position": "Attacker",
@@ -290,7 +290,7 @@
     },
     {
       "id": 35532,
-      "name": "J. Quiñones",
+      "name": "Julián Quiñones",
       "age": 28,
       "number": 16,
       "position": "Midfielder",
@@ -302,7 +302,7 @@
     },
     {
       "id": 2889,
-      "name": "A. Vega",
+      "name": "Alexis Vega",
       "age": 28,
       "number": 10,
       "position": "Attacker",
@@ -316,7 +316,7 @@
   "South Korea": [
     {
       "id": 2890,
-      "name": "Jo Hyeon-Woo",
+      "name": "Jo Hyeon-woo",
       "age": 34,
       "number": 21,
       "position": "Goalkeeper",
@@ -328,7 +328,7 @@
     },
     {
       "id": 2892,
-      "name": "Kim Seung-Gyu",
+      "name": "Kim Seung-gyu",
       "age": 35,
       "number": 1,
       "position": "Goalkeeper",
@@ -340,7 +340,7 @@
     },
     {
       "id": 34374,
-      "name": "Song Bum-Keun",
+      "name": "Song Bum-keun",
       "age": 28,
       "number": 12,
       "position": "Goalkeeper",
@@ -352,7 +352,7 @@
     },
     {
       "id": 547307,
-      "name": "Cho Wi-Je",
+      "name": "Cho Wi-je",
       "age": 24,
       "number": 14,
       "position": "Defender",
@@ -364,7 +364,7 @@
     },
     {
       "id": 2897,
-      "name": "Kim Min-Jae",
+      "name": "Kim Min-jae",
       "age": 29,
       "number": 4,
       "position": "Defender",
@@ -376,7 +376,7 @@
     },
     {
       "id": 2912,
-      "name": "Kim Moon-Hwan",
+      "name": "Kim Moon-hwan",
       "age": 30,
       "number": 15,
       "position": "Defender",
@@ -388,7 +388,7 @@
     },
     {
       "id": 34418,
-      "name": "Kim Tae-Hyeon",
+      "name": "Kim Tae-hyeon",
       "age": 25,
       "number": 5,
       "position": "Defender",
@@ -400,7 +400,7 @@
     },
     {
       "id": 237218,
-      "name": "Lee Han-Beom",
+      "name": "Lee Han-beom",
       "age": 23,
       "number": 2,
       "position": "Defender",
@@ -424,7 +424,7 @@
     },
     {
       "id": 237220,
-      "name": "Lee Tae-Seok",
+      "name": "Lee Tae-seok",
       "age": 23,
       "number": 13,
       "position": "Midfielder",
@@ -436,7 +436,7 @@
     },
     {
       "id": 197985,
-      "name": "Seol Young-Woo",
+      "name": "Seol Young-woo",
       "age": 27,
       "number": 22,
       "position": "Midfielder",
@@ -448,7 +448,7 @@
     },
     {
       "id": 280358,
-      "name": "J. Castrop",
+      "name": "Jens Castrop",
       "age": 22,
       "number": 23,
       "position": "Midfielder",
@@ -460,7 +460,7 @@
     },
     {
       "id": 304951,
-      "name": "Lee Gi-Hyuk",
+      "name": "Lee Gi-hyuk",
       "age": 25,
       "number": 3,
       "position": "Defender",
@@ -472,7 +472,7 @@
     },
     {
       "id": 357286,
-      "name": "Bae Jun-Ho",
+      "name": "Bae Jun-ho",
       "age": 22,
       "number": 17,
       "position": "Attacker",
@@ -484,7 +484,7 @@
     },
     {
       "id": 237050,
-      "name": "Eom Ji-Sung",
+      "name": "Eom Ji-sung",
       "age": 23,
       "number": 25,
       "position": "Attacker",
@@ -496,7 +496,7 @@
     },
     {
       "id": 2901,
-      "name": "Hwang In-Beom",
+      "name": "Hwang In-beom",
       "age": 29,
       "number": 6,
       "position": "Midfielder",
@@ -508,7 +508,7 @@
     },
     {
       "id": 34168,
-      "name": "Kim Jin-Gyu",
+      "name": "Kim Jin-gyu",
       "age": 28,
       "number": 24,
       "position": "Midfielder",
@@ -520,7 +520,7 @@
     },
     {
       "id": 34431,
-      "name": "Lee Dong-Gyeong",
+      "name": "Lee Dong-gyeong",
       "age": 28,
       "number": 26,
       "position": "Attacker",
@@ -532,7 +532,7 @@
     },
     {
       "id": 2906,
-      "name": "Lee Jae-Sung",
+      "name": "Lee Jae-sung",
       "age": 33,
       "number": 10,
       "position": "Attacker",
@@ -544,7 +544,7 @@
     },
     {
       "id": 927,
-      "name": "Lee Kang-In",
+      "name": "Lee Kang-in",
       "age": 24,
       "number": 19,
       "position": "Attacker",
@@ -556,7 +556,7 @@
     },
     {
       "id": 2909,
-      "name": "Paik Seung-Ho",
+      "name": "Paik Seung-ho",
       "age": 28,
       "number": 8,
       "position": "Midfielder",
@@ -568,7 +568,7 @@
     },
     {
       "id": 304958,
-      "name": "Yang Hyun-Jun",
+      "name": "Yang Hyun-jun",
       "age": 23,
       "number": 20,
       "position": "Attacker",
@@ -580,7 +580,7 @@
     },
     {
       "id": 24888,
-      "name": "Hwang Hee-Chan",
+      "name": "Hwang Hee-chan",
       "age": 29,
       "number": 11,
       "position": "Attacker",
@@ -592,7 +592,7 @@
     },
     {
       "id": 34211,
-      "name": "Cho Gue-Sung",
+      "name": "Cho Gue-sung",
       "age": 28,
       "number": 9,
       "position": "Attacker",
@@ -604,7 +604,7 @@
     },
     {
       "id": 34710,
-      "name": "Oh Hyeon-Gyu",
+      "name": "Oh Hyeon-gyu",
       "age": 24,
       "number": 18,
       "position": "Attacker",
@@ -616,7 +616,7 @@
     },
     {
       "id": 186,
-      "name": "Son Heung-Min",
+      "name": "Son Heung-min",
       "age": 33,
       "number": 7,
       "position": "Attacker",
@@ -630,7 +630,7 @@
   "South Africa": [
     {
       "id": 46417,
-      "name": "S. Chaine",
+      "name": "Sipho Chaine",
       "age": 29,
       "number": 16,
       "position": "Goalkeeper",
@@ -642,7 +642,7 @@
     },
     {
       "id": 46245,
-      "name": "R. Goss",
+      "name": "Ricardo Goss",
       "age": 31,
       "number": 22,
       "position": "Goalkeeper",
@@ -654,7 +654,7 @@
     },
     {
       "id": 3275,
-      "name": "R. Williams",
+      "name": "Ronwen Williams",
       "age": 33,
       "number": 1,
       "position": "Goalkeeper",
@@ -666,7 +666,7 @@
     },
     {
       "id": 163041,
-      "name": "B. Cross",
+      "name": "Bradley Cross",
       "age": 24,
       "number": 26,
       "position": "Defender",
@@ -678,7 +678,7 @@
     },
     {
       "id": 430078,
-      "name": "S. Kabini",
+      "name": "Samukele Kabini",
       "age": 21,
       "number": 18,
       "position": "Defender",
@@ -690,7 +690,7 @@
     },
     {
       "id": 392387,
-      "name": "O. Makhanya",
+      "name": "Olwethu Makhanya",
       "age": 21,
       "number": 24,
       "position": "Defender",
@@ -702,7 +702,7 @@
     },
     {
       "id": 510799,
-      "name": "M. Mbokazi",
+      "name": "Mbekezeli Mbokazi",
       "age": 20,
       "number": 14,
       "position": "Defender",
@@ -714,7 +714,7 @@
     },
     {
       "id": 46334,
-      "name": "A. Modiba",
+      "name": "Aubrey Modiba",
       "age": 30,
       "number": 6,
       "position": "Defender",
@@ -726,7 +726,7 @@
     },
     {
       "id": 46601,
-      "name": "K. Mudau",
+      "name": "Khuliso Mudau",
       "age": 30,
       "number": 20,
       "position": "Defender",
@@ -738,7 +738,7 @@
     },
     {
       "id": 474630,
-      "name": "K. Ndamane",
+      "name": "Khulumani Ndamane",
       "age": 21,
       "number": 3,
       "position": "Defender",
@@ -750,7 +750,7 @@
     },
     {
       "id": 406752,
-      "name": "I. Okon",
+      "name": "Ime Okon",
       "age": 21,
       "number": 21,
       "position": "Defender",
@@ -762,7 +762,7 @@
     },
     {
       "id": 46458,
-      "name": "N. Sibisi",
+      "name": "Nkosinathi Sibisi",
       "age": 30,
       "number": 19,
       "position": "Defender",
@@ -774,7 +774,7 @@
     },
     {
       "id": 330174,
-      "name": "T. Matuludi",
+      "name": "Thabang Matuludi",
       "age": 26,
       "number": 2,
       "position": "Defender",
@@ -786,7 +786,7 @@
     },
     {
       "id": 268710,
-      "name": "J. Adams",
+      "name": "Jayden Adams",
       "age": 24,
       "number": 23,
       "position": "Midfielder",
@@ -798,7 +798,7 @@
     },
     {
       "id": 194430,
-      "name": "T. Mbatha",
+      "name": "Thalente Mbatha",
       "age": 25,
       "number": 5,
       "position": "Midfielder",
@@ -810,7 +810,7 @@
     },
     {
       "id": 3287,
-      "name": "T. Mokoena",
+      "name": "Teboho Mokoena",
       "age": 28,
       "number": 4,
       "position": "Midfielder",
@@ -822,7 +822,7 @@
     },
     {
       "id": 158433,
-      "name": "S. Sithole",
+      "name": "Sphephelo Sithole",
       "age": 26,
       "number": 13,
       "position": "Midfielder",
@@ -834,7 +834,7 @@
     },
     {
       "id": 3289,
-      "name": "T. Zwane",
+      "name": "Themba Zwane",
       "age": 36,
       "number": 11,
       "position": "Midfielder",
@@ -846,7 +846,7 @@
     },
     {
       "id": 179893,
-      "name": "O. Appollis",
+      "name": "Oswin Appollis",
       "age": 24,
       "number": 7,
       "position": "Attacker",
@@ -858,7 +858,7 @@
     },
     {
       "id": 98936,
-      "name": "L. Foster",
+      "name": "Lyle Foster",
       "age": 25,
       "number": 9,
       "position": "Attacker",
@@ -870,7 +870,7 @@
     },
     {
       "id": 201354,
-      "name": "E. Makgopa",
+      "name": "Evidence Makgopa",
       "age": 25,
       "number": 99,
       "position": "Attacker",
@@ -882,7 +882,7 @@
     },
     {
       "id": 354831,
-      "name": "T. Maseko",
+      "name": "Thapelo Maseko",
       "age": 22,
       "number": 12,
       "position": "Attacker",
@@ -894,7 +894,7 @@
     },
     {
       "id": 414149,
-      "name": "R. Mofokeng",
+      "name": "Relebohile Mofokeng",
       "age": 21,
       "number": 10,
       "position": "Attacker",
@@ -906,7 +906,7 @@
     },
     {
       "id": 295977,
-      "name": "T. Moremi",
+      "name": "Tshepang Moremi",
       "age": 25,
       "number": 8,
       "position": "Midfielder",
@@ -918,7 +918,7 @@
     },
     {
       "id": 127429,
-      "name": "I. Rayners",
+      "name": "Iqraam Rayners",
       "age": 30,
       "number": 15,
       "position": "Attacker",
@@ -930,7 +930,7 @@
     },
     {
       "id": 359561,
-      "name": "K. Sebelebele",
+      "name": "Kamogelo Sebelebele",
       "age": 23,
       "number": 25,
       "position": "Midfielder",
@@ -944,7 +944,7 @@
   "Czechia": [
     {
       "id": 269349,
-      "name": "L. Hornícek",
+      "name": "Lukáš Horníček",
       "age": 23,
       "number": 23,
       "position": "Goalkeeper",
@@ -956,7 +956,7 @@
     },
     {
       "id": 138804,
-      "name": "M. Kovár",
+      "name": "Matěj Kovář",
       "age": 25,
       "number": 1,
       "position": "Goalkeeper",
@@ -968,7 +968,7 @@
     },
     {
       "id": 66347,
-      "name": "J. Stanek",
+      "name": "Jindřich Staněk",
       "age": 29,
       "number": 16,
       "position": "Goalkeeper",
@@ -980,7 +980,7 @@
     },
     {
       "id": 337740,
-      "name": "S. Chaloupek",
+      "name": "Štěpán Chaloupek",
       "age": 22,
       "number": 6,
       "position": "Defender",
@@ -992,7 +992,7 @@
     },
     {
       "id": 1231,
-      "name": "V. Coufal",
+      "name": "Vladimír Coufal",
       "age": 33,
       "number": 5,
       "position": "Midfielder",
@@ -1004,7 +1004,7 @@
     },
     {
       "id": 2252,
-      "name": "T. Holes",
+      "name": "Tomáš Holeš",
       "age": 32,
       "number": 3,
       "position": "Defender",
@@ -1016,7 +1016,7 @@
     },
     {
       "id": 162964,
-      "name": "R. Hranác",
+      "name": "Robin Hranáč",
       "age": 25,
       "number": 4,
       "position": "Defender",
@@ -1028,7 +1028,7 @@
     },
     {
       "id": 128793,
-      "name": "D. Jurásek",
+      "name": "David Jurásek",
       "age": 25,
       "number": 14,
       "position": "Defender",
@@ -1040,7 +1040,7 @@
     },
     {
       "id": 66407,
-      "name": "L. Krejcí",
+      "name": "Ladislav Krejčí",
       "age": 26,
       "number": 7,
       "position": "Defender",
@@ -1052,7 +1052,7 @@
     },
     {
       "id": 1237,
-      "name": "J. Zelený",
+      "name": "Jaroslav Zelený",
       "age": 33,
       "number": 20,
       "position": "Midfielder",
@@ -1064,7 +1064,7 @@
     },
     {
       "id": 128772,
-      "name": "D. Zima",
+      "name": "David Zima",
       "age": 25,
       "number": 2,
       "position": "Defender",
@@ -1076,7 +1076,7 @@
     },
     {
       "id": 66214,
-      "name": "D. Doudera",
+      "name": "David Douděra",
       "age": 27,
       "number": 21,
       "position": "Midfielder",
@@ -1088,7 +1088,7 @@
     },
     {
       "id": 162194,
-      "name": "L. Cerv",
+      "name": "Lukáš Červ",
       "age": 24,
       "number": 12,
       "position": "Midfielder",
@@ -1100,7 +1100,7 @@
     },
     {
       "id": 25348,
-      "name": "V. Darida",
+      "name": "Vladimír Darida",
       "age": 35,
       "number": 8,
       "position": "Midfielder",
@@ -1112,7 +1112,7 @@
     },
     {
       "id": 66353,
-      "name": "L. Provod",
+      "name": "Lukáš Provod",
       "age": 29,
       "number": 17,
       "position": "Attacker",
@@ -1124,7 +1124,7 @@
     },
     {
       "id": 241,
-      "name": "M. Sadílek",
+      "name": "Michal Sadílek",
       "age": 26,
       "number": 18,
       "position": "Midfielder",
@@ -1136,7 +1136,7 @@
     },
     {
       "id": 555437,
-      "name": "H. Sochurek",
+      "name": "Hugo Sochůrek",
       "age": 17,
       "number": 25,
       "position": "Midfielder",
@@ -1148,7 +1148,7 @@
     },
     {
       "id": 386837,
-      "name": "A. Sojka",
+      "name": "Alexandr Sojka",
       "age": 22,
       "number": 24,
       "position": "Midfielder",
@@ -1160,7 +1160,7 @@
     },
     {
       "id": 1243,
-      "name": "T. Soucek",
+      "name": "Tomáš Souček",
       "age": 30,
       "number": 22,
       "position": "Midfielder",
@@ -1172,7 +1172,7 @@
     },
     {
       "id": 66387,
-      "name": "P. Sulc",
+      "name": "Pavel Šulc",
       "age": 25,
       "number": 15,
       "position": "Attacker",
@@ -1184,7 +1184,7 @@
     },
     {
       "id": 818,
-      "name": "T. Chorý",
+      "name": "Tomáš Chorý",
       "age": 30,
       "number": 19,
       "position": "Attacker",
@@ -1196,7 +1196,7 @@
     },
     {
       "id": 66275,
-      "name": "M. Chytil",
+      "name": "Mojmír Chytil",
       "age": 26,
       "number": 13,
       "position": "Attacker",
@@ -1208,7 +1208,7 @@
     },
     {
       "id": 66019,
-      "name": "A. Hlozek",
+      "name": "Adam Hložek",
       "age": 23,
       "number": 9,
       "position": "Attacker",
@@ -1220,7 +1220,7 @@
     },
     {
       "id": 66340,
-      "name": "J. Kuchta",
+      "name": "Jan Kuchta",
       "age": 28,
       "number": 11,
       "position": "Attacker",
@@ -1232,7 +1232,7 @@
     },
     {
       "id": 794,
-      "name": "P. Schick",
+      "name": "Patrik Schick",
       "age": 29,
       "number": 10,
       "position": "Attacker",
@@ -1244,7 +1244,7 @@
     },
     {
       "id": 290212,
-      "name": "D. Visinský",
+      "name": "Denis Višinský",
       "age": 22,
       "number": 26,
       "position": "Midfielder",
@@ -1258,7 +1258,7 @@
   "Canada": [
     {
       "id": 51274,
-      "name": "M. Crépeau",
+      "name": "Maxime Crépeau",
       "age": 31,
       "number": 16,
       "position": "Goalkeeper",
@@ -1270,7 +1270,7 @@
     },
     {
       "id": 284554,
-      "name": "O. Goodman",
+      "name": "Owen Goodman",
       "age": 22,
       "number": 18,
       "position": "Goalkeeper",
@@ -1282,7 +1282,7 @@
     },
     {
       "id": 51148,
-      "name": "D. St. Clair",
+      "name": "Dayne St. Clair",
       "age": 28,
       "number": 1,
       "position": "Goalkeeper",
@@ -1294,7 +1294,7 @@
     },
     {
       "id": 51295,
-      "name": "D. Cornelius",
+      "name": "Derek Cornelius",
       "age": 28,
       "number": 13,
       "position": "Defender",
@@ -1306,7 +1306,7 @@
     },
     {
       "id": 327738,
-      "name": "L. De Fougerolles",
+      "name": "Luc de Fougerolles",
       "age": 20,
       "number": 4,
       "position": "Defender",
@@ -1318,7 +1318,7 @@
     },
     {
       "id": 50816,
-      "name": "R. Laryea",
+      "name": "Richie Laryea",
       "age": 30,
       "number": 22,
       "position": "Defender",
@@ -1330,7 +1330,7 @@
     },
     {
       "id": 78494,
-      "name": "J. Waterman",
+      "name": "Joel Waterman",
       "age": 29,
       "number": 5,
       "position": "Defender",
@@ -1342,7 +1342,7 @@
     },
     {
       "id": 78547,
-      "name": "A. Johnston",
+      "name": "Alistair Johnston",
       "age": 27,
       "number": 2,
       "position": "Defender",
@@ -1354,7 +1354,7 @@
     },
     {
       "id": 18938,
-      "name": "A. Jones",
+      "name": "Alfie Jones",
       "age": 28,
       "number": 3,
       "position": "Defender",
@@ -1366,7 +1366,7 @@
     },
     {
       "id": 407017,
-      "name": "M. Bombito",
+      "name": "Moïse Bombito",
       "age": 26,
       "number": 15,
       "position": "Defender",
@@ -1378,7 +1378,7 @@
     },
     {
       "id": 509,
-      "name": "A. Davies",
+      "name": "Alphonso Davies",
       "age": 25,
       "number": 19,
       "position": "Defender",
@@ -1390,7 +1390,7 @@
     },
     {
       "id": 416901,
-      "name": "N. Sigur",
+      "name": "Niko Sigur",
       "age": 22,
       "number": 23,
       "position": "Midfielder",
@@ -1402,7 +1402,7 @@
     },
     {
       "id": 50826,
-      "name": "J. Shaffelburg",
+      "name": "Jacob Shaffelburg",
       "age": 26,
       "number": 14,
       "position": "Midfielder",
@@ -1414,7 +1414,7 @@
     },
     {
       "id": 44798,
-      "name": "L. Millar",
+      "name": "Liam Millar",
       "age": 26,
       "number": 11,
       "position": "Midfielder",
@@ -1426,7 +1426,7 @@
     },
     {
       "id": 50788,
-      "name": "M. Choinière",
+      "name": "Mathieu Choinière",
       "age": 26,
       "number": 6,
       "position": "Midfielder",
@@ -1438,7 +1438,7 @@
     },
     {
       "id": 35570,
-      "name": "S. Eustáquio",
+      "name": "Stephen Eustáquio",
       "age": 29,
       "number": 7,
       "position": "Midfielder",
@@ -1450,7 +1450,7 @@
     },
     {
       "id": 328046,
-      "name": "I. Koné",
+      "name": "Ismaël Koné",
       "age": 23,
       "number": 8,
       "position": "Midfielder",
@@ -1462,7 +1462,7 @@
     },
     {
       "id": 50817,
-      "name": "J. Osorio",
+      "name": "Jonathan Osorio",
       "age": 33,
       "number": 21,
       "position": "Midfielder",
@@ -1474,7 +1474,7 @@
     },
     {
       "id": 294824,
-      "name": "N. Saliba",
+      "name": "Nathan Saliba",
       "age": 21,
       "number": 25,
       "position": "Midfielder",
@@ -1498,7 +1498,7 @@
     },
     {
       "id": 51016,
-      "name": "T. Buchanan",
+      "name": "Tajon Buchanan",
       "age": 26,
       "number": 17,
       "position": "Midfielder",
@@ -1510,19 +1510,19 @@
     },
     {
       "id": 8489,
-      "name": "J. David",
+      "name": "Jonathan David",
       "age": 25,
       "number": 10,
       "position": "Attacker",
       "photo": "https://media.api-sports.io/football/players/8489.png",
-      "club": "Union Saint-Gilloise",
-      "caps": 10,
-      "goals": 3,
+      "club": "Juventus",
+      "caps": 77,
+      "goals": 39,
       "captain": false
     },
     {
       "id": 313353,
-      "name": "P. David",
+      "name": "Promise David",
       "age": 24,
       "number": 24,
       "position": "Attacker",
@@ -1534,7 +1534,7 @@
     },
     {
       "id": 2001,
-      "name": "C. Larin",
+      "name": "Cyle Larin",
       "age": 30,
       "number": 9,
       "position": "Attacker",
@@ -1546,7 +1546,7 @@
     },
     {
       "id": 362145,
-      "name": "A. Ahmed",
+      "name": "Ali Ahmed",
       "age": 25,
       "number": 20,
       "position": "Midfielder",
@@ -1558,7 +1558,7 @@
     },
     {
       "id": 351587,
-      "name": "T. Oluwaseyi",
+      "name": "Tani Oluwaseyi",
       "age": 25,
       "number": 12,
       "position": "Attacker",
@@ -1572,7 +1572,7 @@
   "Switzerland": [
     {
       "id": 123468,
-      "name": "M. Keller",
+      "name": "Marvin Keller",
       "age": 23,
       "number": 21,
       "position": "Goalkeeper",
@@ -1584,7 +1584,7 @@
     },
     {
       "id": 25282,
-      "name": "G. Kobel",
+      "name": "Gregor Kobel",
       "age": 28,
       "number": 1,
       "position": "Goalkeeper",
@@ -1596,7 +1596,7 @@
     },
     {
       "id": 1142,
-      "name": "Y. Mvogo",
+      "name": "Yvon Mvogo",
       "age": 31,
       "number": 12,
       "position": "Goalkeeper",
@@ -1608,7 +1608,7 @@
     },
     {
       "id": 5,
-      "name": "M. Akanji",
+      "name": "Manuel Akanji",
       "age": 30,
       "number": 5,
       "position": "Defender",
@@ -1620,7 +1620,7 @@
     },
     {
       "id": 162414,
-      "name": "A. Amenda",
+      "name": "Aurèle Amenda",
       "age": 22,
       "number": 24,
       "position": "Defender",
@@ -1632,7 +1632,7 @@
     },
     {
       "id": 48372,
-      "name": "E. Cömert",
+      "name": "Eray Cömert",
       "age": 27,
       "number": 18,
       "position": "Defender",
@@ -1644,7 +1644,7 @@
     },
     {
       "id": 2803,
-      "name": "N. Elvedi",
+      "name": "Nico Elvedi",
       "age": 29,
       "number": 4,
       "position": "Defender",
@@ -1656,7 +1656,7 @@
     },
     {
       "id": 349344,
-      "name": "L. Jaquez",
+      "name": "Luca Jaquez",
       "age": 22,
       "number": 25,
       "position": "Defender",
@@ -1668,7 +1668,7 @@
     },
     {
       "id": 48489,
-      "name": "M. Muheim",
+      "name": "Miro Muheim",
       "age": 27,
       "number": 2,
       "position": "Defender",
@@ -1680,7 +1680,7 @@
     },
     {
       "id": 1631,
-      "name": "R. Rodríguez",
+      "name": "Ricardo Rodriguez",
       "age": 33,
       "number": 13,
       "position": "Defender",
@@ -1692,7 +1692,7 @@
     },
     {
       "id": 48378,
-      "name": "S. Widmer",
+      "name": "Silvan Widmer",
       "age": 32,
       "number": 3,
       "position": "Defender",
@@ -1704,7 +1704,7 @@
     },
     {
       "id": 951,
-      "name": "M. Aebischer",
+      "name": "Michel Aebischer",
       "age": 28,
       "number": 20,
       "position": "Midfielder",
@@ -1716,7 +1716,7 @@
     },
     {
       "id": 2807,
-      "name": "R. Freuler",
+      "name": "Remo Freuler",
       "age": 33,
       "number": 8,
       "position": "Midfielder",
@@ -1728,7 +1728,7 @@
     },
     {
       "id": 264705,
-      "name": "A. Jashari",
+      "name": "Ardon Jashari",
       "age": 23,
       "number": 14,
       "position": "Midfielder",
@@ -1740,7 +1740,7 @@
     },
     {
       "id": 957,
-      "name": "D. Sow",
+      "name": "Djibril Sow",
       "age": 28,
       "number": 15,
       "position": "Midfielder",
@@ -1752,7 +1752,7 @@
     },
     {
       "id": 1464,
-      "name": "G. Xhaka",
+      "name": "Granit Xhaka",
       "age": 33,
       "number": 10,
       "position": "Midfielder",
@@ -1764,7 +1764,7 @@
     },
     {
       "id": 2810,
-      "name": "D. Zakaria",
+      "name": "Denis Zakaria",
       "age": 29,
       "number": 6,
       "position": "Midfielder",
@@ -1776,7 +1776,7 @@
     },
     {
       "id": 952,
-      "name": "C. Fassnacht",
+      "name": "Christian Fassnacht",
       "age": 32,
       "number": 16,
       "position": "Midfielder",
@@ -1788,7 +1788,7 @@
     },
     {
       "id": 48497,
-      "name": "C. Itten",
+      "name": "Cedric Itten",
       "age": 29,
       "number": 26,
       "position": "Attacker",
@@ -1800,7 +1800,7 @@
     },
     {
       "id": 163032,
-      "name": "F. Rieder",
+      "name": "Fabian Rieder",
       "age": 23,
       "number": 22,
       "position": "Midfielder",
@@ -1812,7 +1812,7 @@
     },
     {
       "id": 48471,
-      "name": "R. Vargas",
+      "name": "Rubén Vargas",
       "age": 27,
       "number": 17,
       "position": "Attacker",
@@ -1824,7 +1824,7 @@
     },
     {
       "id": 123469,
-      "name": "Z. Amdouni",
+      "name": "Zeki Amdouni",
       "age": 25,
       "number": 23,
       "position": "Attacker",
@@ -1836,7 +1836,7 @@
     },
     {
       "id": 421,
-      "name": "B. Embolo",
+      "name": "Breel Embolo",
       "age": 28,
       "number": 7,
       "position": "Attacker",
@@ -1848,7 +1848,7 @@
     },
     {
       "id": 406244,
-      "name": "J. Manzambi",
+      "name": "Johan Manzambi",
       "age": 20,
       "number": 9,
       "position": "Attacker",
@@ -1860,7 +1860,7 @@
     },
     {
       "id": 48389,
-      "name": "N. Okafor",
+      "name": "Noah Okafor",
       "age": 25,
       "number": 19,
       "position": "Attacker",
@@ -1872,7 +1872,7 @@
     },
     {
       "id": 48648,
-      "name": "D. Ndoye",
+      "name": "Dan Ndoye",
       "age": 25,
       "number": 11,
       "position": "Midfielder",
@@ -2006,7 +2006,7 @@
     },
     {
       "id": 366516,
-      "name": "G. Laye",
+      "name": "Issa Laye",
       "age": 27,
       "number": 4,
       "position": "Midfielder",
@@ -2042,7 +2042,7 @@
     },
     {
       "id": 42286,
-      "name": "Ahmed Al Ganehi",
+      "name": "Homam Ahmed",
       "age": 25,
       "number": 17,
       "position": "Attacker",
@@ -2078,7 +2078,7 @@
     },
     {
       "id": 2539,
-      "name": "Ahmed Fathi",
+      "name": "Homam Ahmed",
       "age": 32,
       "number": 20,
       "position": "Midfielder",
@@ -2102,7 +2102,7 @@
     },
     {
       "id": 283174,
-      "name": "Mohamed Al Manai",
+      "name": "Mohamed Manai",
       "age": 22,
       "number": 26,
       "position": "Midfielder",
@@ -2114,7 +2114,7 @@
     },
     {
       "id": 542541,
-      "name": "Y. Abdurisag",
+      "name": "Yusuf Abdurisag",
       "age": 26,
       "number": 15,
       "position": "Attacker",
@@ -2138,7 +2138,7 @@
     },
     {
       "id": 2542,
-      "name": "Ahmed Alaa",
+      "name": "Homam Ahmed",
       "age": 32,
       "number": 7,
       "position": "Attacker",
@@ -2200,7 +2200,7 @@
   "Bosnia & Hz.": [
     {
       "id": 446130,
-      "name": "M. Jurkas",
+      "name": "Mladen Jurkas",
       "age": 29,
       "number": 12,
       "position": "Goalkeeper",
@@ -2212,7 +2212,7 @@
     },
     {
       "id": 9026,
-      "name": "N. Vasilj",
+      "name": "Nikola Vasilj",
       "age": 30,
       "number": 1,
       "position": "Goalkeeper",
@@ -2224,7 +2224,7 @@
     },
     {
       "id": 108370,
-      "name": "M. Zlomislic",
+      "name": "Martin Zlomislić",
       "age": 27,
       "number": 22,
       "position": "Goalkeeper",
@@ -2248,7 +2248,7 @@
     },
     {
       "id": 7318,
-      "name": "A. Dedic",
+      "name": "Amar Dedić",
       "age": 23,
       "number": 7,
       "position": "Defender",
@@ -2260,7 +2260,7 @@
     },
     {
       "id": 53517,
-      "name": "D. Hadzikadunic",
+      "name": "Dennis Hadžikadunić",
       "age": 27,
       "number": 3,
       "position": "Defender",
@@ -2272,7 +2272,7 @@
     },
     {
       "id": 1741,
-      "name": "N. Katic",
+      "name": "Nikola Katić",
       "age": 29,
       "number": 18,
       "position": "Defender",
@@ -2284,7 +2284,7 @@
     },
     {
       "id": 1442,
-      "name": "S. Kolasinac",
+      "name": "Sead Kolašinac",
       "age": 32,
       "number": 5,
       "position": "Defender",
@@ -2296,7 +2296,7 @@
     },
     {
       "id": 271350,
-      "name": "T. Muharemovic",
+      "name": "Tarik Muharemović",
       "age": 22,
       "number": 4,
       "position": "Defender",
@@ -2308,7 +2308,7 @@
     },
     {
       "id": 76867,
-      "name": "N. Mujakic",
+      "name": "Nihad Mujakić",
       "age": 27,
       "number": 2,
       "position": "Defender",
@@ -2320,7 +2320,7 @@
     },
     {
       "id": 14301,
-      "name": "S. Radeljic",
+      "name": "Stjepan Radeljić",
       "age": 28,
       "number": 21,
       "position": "Defender",
@@ -2332,7 +2332,7 @@
     },
     {
       "id": 162222,
-      "name": "I. Basic",
+      "name": "Ivan Bašić",
       "age": 23,
       "number": 13,
       "position": "Midfielder",
@@ -2344,7 +2344,7 @@
     },
     {
       "id": 70514,
-      "name": "A. Gigovic",
+      "name": "Armin Gigović",
       "age": 23,
       "number": 8,
       "position": "Midfielder",
@@ -2356,7 +2356,7 @@
     },
     {
       "id": 50006,
-      "name": "A. Hadziahmetovic",
+      "name": "Amir Hadžiahmetović",
       "age": 28,
       "number": 16,
       "position": "Midfielder",
@@ -2368,7 +2368,7 @@
     },
     {
       "id": 340173,
-      "name": "Ermin Mahmic",
+      "name": "Ermin Mahmić",
       "age": 20,
       "number": 26,
       "position": "Midfielder",
@@ -2380,7 +2380,7 @@
     },
     {
       "id": 1324,
-      "name": "I. Sunjic",
+      "name": "Ivan Šunjić",
       "age": 29,
       "number": 14,
       "position": "Midfielder",
@@ -2392,7 +2392,7 @@
     },
     {
       "id": 264094,
-      "name": "B. Tahirovic",
+      "name": "Benjamin Tahirović",
       "age": 22,
       "number": 6,
       "position": "Midfielder",
@@ -2404,7 +2404,7 @@
     },
     {
       "id": 322101,
-      "name": "A. Memic",
+      "name": "Amar Memić",
       "age": 24,
       "number": 15,
       "position": "Midfielder",
@@ -2416,7 +2416,7 @@
     },
     {
       "id": 25129,
-      "name": "D. Burnic",
+      "name": "Dženis Burnić",
       "age": 27,
       "number": 17,
       "position": "Midfielder",
@@ -2428,7 +2428,7 @@
     },
     {
       "id": 395559,
-      "name": "Kerim-Sam Alajbegovic",
+      "name": "Kerim Alajbegović",
       "age": 18,
       "number": 19,
       "position": "Midfielder",
@@ -2440,7 +2440,7 @@
     },
     {
       "id": 329409,
-      "name": "E. Bajraktarevic",
+      "name": "Esmir Bajraktarević",
       "age": 20,
       "number": 20,
       "position": "Midfielder",
@@ -2452,7 +2452,7 @@
     },
     {
       "id": 314377,
-      "name": "S. Bazdar",
+      "name": "Samed Baždar",
       "age": 21,
       "number": 9,
       "position": "Attacker",
@@ -2464,7 +2464,7 @@
     },
     {
       "id": 46930,
-      "name": "E. Demirovic",
+      "name": "Ermedin Demirović",
       "age": 27,
       "number": 10,
       "position": "Attacker",
@@ -2476,7 +2476,7 @@
     },
     {
       "id": 790,
-      "name": "E. Dzeko",
+      "name": "Edin Džeko",
       "age": 39,
       "number": 11,
       "position": "Attacker",
@@ -2488,7 +2488,7 @@
     },
     {
       "id": 77037,
-      "name": "J. Lukic",
+      "name": "Jovo Lukić",
       "age": 27,
       "number": 25,
       "position": "Attacker",
@@ -2500,7 +2500,7 @@
     },
     {
       "id": 28382,
-      "name": "H. Tabakovic",
+      "name": "Haris Tabaković",
       "age": 31,
       "number": 23,
       "position": "Attacker",
@@ -2514,7 +2514,7 @@
   "Brazil": [
     {
       "id": 280,
-      "name": "Alisson Becker",
+      "name": "Alisson",
       "age": 33,
       "number": 1,
       "position": "Goalkeeper",
@@ -2586,7 +2586,7 @@
     },
     {
       "id": 30424,
-      "name": "Ibañez",
+      "name": "Roger Ibañez",
       "age": 27,
       "number": 24,
       "position": "Defender",
@@ -2622,7 +2622,7 @@
     },
     {
       "id": 24866,
-      "name": "Douglas Santos",
+      "name": "Danilo Santos",
       "age": 31,
       "number": 16,
       "position": "Defender",
@@ -2802,7 +2802,7 @@
     },
     {
       "id": 196156,
-      "name": "Thiago",
+      "name": "Igor Thiago",
       "age": 24,
       "number": 25,
       "position": "Attacker",
@@ -2828,7 +2828,7 @@
   "Morocco": [
     {
       "id": 2701,
-      "name": "Y. Bounou",
+      "name": "Yassine Bounou",
       "age": 34,
       "number": 1,
       "position": "Goalkeeper",
@@ -2840,7 +2840,7 @@
     },
     {
       "id": 2702,
-      "name": "M. Mohamedi",
+      "name": "Munir Mohamedi",
       "age": 36,
       "number": 12,
       "position": "Goalkeeper",
@@ -2852,7 +2852,7 @@
     },
     {
       "id": 2703,
-      "name": "A. Tagnaouti",
+      "name": "Ahmed Reda Tagnaouti",
       "age": 29,
       "number": 22,
       "position": "Goalkeeper",
@@ -2876,7 +2876,7 @@
     },
     {
       "id": 18814,
-      "name": "I. Diop",
+      "name": "Issa Diop",
       "age": 28,
       "number": 14,
       "position": "Defender",
@@ -2888,7 +2888,7 @@
     },
     {
       "id": 283252,
-      "name": "Z. El Ouahdi",
+      "name": "Zakaria El Ouahdi",
       "age": 24,
       "number": 13,
       "position": "Defender",
@@ -2900,7 +2900,7 @@
     },
     {
       "id": 9,
-      "name": "A. Hakimi",
+      "name": "Achraf Hakimi",
       "age": 27,
       "number": 2,
       "position": "Defender",
@@ -2912,7 +2912,7 @@
     },
     {
       "id": 326183,
-      "name": "R. Halhal",
+      "name": "Redouane Halhal",
       "age": 22,
       "number": 25,
       "position": "Defender",
@@ -2924,7 +2924,7 @@
     },
     {
       "id": 545,
-      "name": "N. Mazraoui",
+      "name": "Noussair Mazraoui",
       "age": 28,
       "number": 3,
       "position": "Defender",
@@ -2936,7 +2936,7 @@
     },
     {
       "id": 278898,
-      "name": "C. Riad",
+      "name": "Chadi Riad",
       "age": 22,
       "number": 18,
       "position": "Defender",
@@ -2948,7 +2948,7 @@
     },
     {
       "id": 162451,
-      "name": "A. Salah-Eddine",
+      "name": "Anass Salah-Eddine",
       "age": 24,
       "number": 26,
       "position": "Defender",
@@ -2960,7 +2960,7 @@
     },
     {
       "id": 146772,
-      "name": "Y. Belammari",
+      "name": "Youssef Belammari",
       "age": 27,
       "number": 19,
       "position": "Defender",
@@ -2972,7 +2972,7 @@
     },
     {
       "id": 74,
-      "name": "S. Amrabat",
+      "name": "Sofyan Amrabat",
       "age": 29,
       "number": 4,
       "position": "Midfielder",
@@ -2984,7 +2984,7 @@
     },
     {
       "id": 438688,
-      "name": "A. Bouaddi",
+      "name": "Ayyoub Bouaddi",
       "age": 18,
       "number": 6,
       "position": "Midfielder",
@@ -2996,7 +2996,7 @@
     },
     {
       "id": 277003,
-      "name": "N. El Aynaoui",
+      "name": "Neil El Aynaoui",
       "age": 24,
       "number": 24,
       "position": "Midfielder",
@@ -3008,7 +3008,7 @@
     },
     {
       "id": 340573,
-      "name": "B. El Khannouss",
+      "name": "Bilal El Khannouss",
       "age": 21,
       "number": 23,
       "position": "Midfielder",
@@ -3020,7 +3020,7 @@
     },
     {
       "id": 415431,
-      "name": "S. El Mourabet",
+      "name": "Samir El Mourabet",
       "age": 20,
       "number": 15,
       "position": "Midfielder",
@@ -3032,7 +3032,7 @@
     },
     {
       "id": 129678,
-      "name": "A. Ounahi",
+      "name": "Azzedine Ounahi",
       "age": 25,
       "number": 8,
       "position": "Midfielder",
@@ -3044,7 +3044,7 @@
     },
     {
       "id": 161897,
-      "name": "I. Saibari",
+      "name": "Ismael Saibari",
       "age": 24,
       "number": 11,
       "position": "Attacker",
@@ -3056,7 +3056,7 @@
     },
     {
       "id": 336659,
-      "name": "C. Talbi",
+      "name": "Chemsdine Talbi",
       "age": 20,
       "number": 7,
       "position": "Midfielder",
@@ -3092,7 +3092,7 @@
     },
     {
       "id": 535046,
-      "name": "A. Amaimouni",
+      "name": "Ayoube Amaimouni",
       "age": 20,
       "number": 21,
       "position": "Midfielder",
@@ -3104,7 +3104,7 @@
     },
     {
       "id": 2722,
-      "name": "A. El Kaabi",
+      "name": "Ayoub El Kaabi",
       "age": 32,
       "number": 20,
       "position": "Attacker",
@@ -3128,7 +3128,7 @@
     },
     {
       "id": 36579,
-      "name": "S. Rahimi",
+      "name": "Soufiane Rahimi",
       "age": 29,
       "number": 9,
       "position": "Attacker",
@@ -3142,7 +3142,7 @@
   "Scotland": [
     {
       "id": 1106,
-      "name": "C. Gordon",
+      "name": "Craig Gordon",
       "age": 43,
       "number": 21,
       "position": "Goalkeeper",
@@ -3154,7 +3154,7 @@
     },
     {
       "id": 18933,
-      "name": "A. Gunn",
+      "name": "Angus Gunn",
       "age": 29,
       "number": 1,
       "position": "Goalkeeper",
@@ -3166,7 +3166,7 @@
     },
     {
       "id": 44937,
-      "name": "L. Kelly",
+      "name": "Liam Kelly",
       "age": 29,
       "number": 12,
       "position": "Goalkeeper",
@@ -3178,7 +3178,7 @@
     },
     {
       "id": 19066,
-      "name": "G. Hanley",
+      "name": "Grant Hanley",
       "age": 34,
       "number": 5,
       "position": "Defender",
@@ -3190,7 +3190,7 @@
     },
     {
       "id": 1111,
-      "name": "J. Hendry",
+      "name": "Jack Hendry",
       "age": 30,
       "number": 13,
       "position": "Defender",
@@ -3202,7 +3202,7 @@
     },
     {
       "id": 44871,
-      "name": "A. Hickey",
+      "name": "Aaron Hickey",
       "age": 23,
       "number": 2,
       "position": "Defender",
@@ -3214,7 +3214,7 @@
     },
     {
       "id": 19987,
-      "name": "D. Hyam",
+      "name": "Dominic Hyam",
       "age": 30,
       "number": 16,
       "position": "Defender",
@@ -3226,7 +3226,7 @@
     },
     {
       "id": 44811,
-      "name": "S. McKenna",
+      "name": "Scott McKenna",
       "age": 29,
       "number": 26,
       "position": "Defender",
@@ -3238,7 +3238,7 @@
     },
     {
       "id": 138417,
-      "name": "N. Patterson",
+      "name": "Nathan Patterson",
       "age": 24,
       "number": 22,
       "position": "Defender",
@@ -3250,7 +3250,7 @@
     },
     {
       "id": 1115,
-      "name": "A. Ralston",
+      "name": "Anthony Ralston",
       "age": 27,
       "number": 24,
       "position": "Defender",
@@ -3262,7 +3262,7 @@
     },
     {
       "id": 289,
-      "name": "A. Robertson",
+      "name": "Andy Robertson",
       "age": 31,
       "number": 3,
       "position": "Defender",
@@ -3274,7 +3274,7 @@
     },
     {
       "id": 44865,
-      "name": "J. Souttar",
+      "name": "John Souttar",
       "age": 29,
       "number": 15,
       "position": "Defender",
@@ -3286,7 +3286,7 @@
     },
     {
       "id": 1117,
-      "name": "K. Tierney",
+      "name": "Kieran Tierney",
       "age": 28,
       "number": 6,
       "position": "Defender",
@@ -3298,7 +3298,7 @@
     },
     {
       "id": 1125,
-      "name": "R. Christie",
+      "name": "Ryan Christie",
       "age": 30,
       "number": 11,
       "position": "Midfielder",
@@ -3310,7 +3310,7 @@
     },
     {
       "id": 44814,
-      "name": "L. Ferguson",
+      "name": "Lewis Ferguson",
       "age": 26,
       "number": 19,
       "position": "Midfielder",
@@ -3322,7 +3322,7 @@
     },
     {
       "id": 557460,
-      "name": "T. Fletcher",
+      "name": "Tyler Fletcher",
       "age": 18,
       "number": 8,
       "position": "Midfielder",
@@ -3334,7 +3334,7 @@
     },
     {
       "id": 19191,
-      "name": "J.  McGinn",
+      "name": "John McGinn",
       "age": 31,
       "number": 7,
       "position": "Midfielder",
@@ -3346,7 +3346,7 @@
     },
     {
       "id": 19077,
-      "name": "K. McLean",
+      "name": "Kenny McLean",
       "age": 33,
       "number": 23,
       "position": "Midfielder",
@@ -3358,7 +3358,7 @@
     },
     {
       "id": 903,
-      "name": "S. McTominay",
+      "name": "Scott McTominay",
       "age": 29,
       "number": 4,
       "position": "Midfielder",
@@ -3370,7 +3370,7 @@
     },
     {
       "id": 19524,
-      "name": "C. Adams",
+      "name": "Ché Adams",
       "age": 29,
       "number": 10,
       "position": "Attacker",
@@ -3382,7 +3382,7 @@
     },
     {
       "id": 45307,
-      "name": "L. Dykes",
+      "name": "Lyndon Dykes",
       "age": 30,
       "number": 9,
       "position": "Attacker",
@@ -3406,7 +3406,7 @@
     },
     {
       "id": 8794,
-      "name": "G. Hirst",
+      "name": "George Hirst",
       "age": 26,
       "number": 18,
       "position": "Attacker",
@@ -3418,7 +3418,7 @@
     },
     {
       "id": 45175,
-      "name": "L. Shankland",
+      "name": "Lawrence Shankland",
       "age": 30,
       "number": 20,
       "position": "Attacker",
@@ -3430,7 +3430,7 @@
     },
     {
       "id": 45078,
-      "name": "R. Stewart",
+      "name": "Ross Stewart",
       "age": 29,
       "number": 14,
       "position": "Attacker",
@@ -3456,7 +3456,7 @@
   "Haiti": [
     {
       "id": 123742,
-      "name": "J. Duverger",
+      "name": "Josué Duverger",
       "age": 23,
       "number": 23,
       "position": "Goalkeeper",
@@ -3468,19 +3468,19 @@
     },
     {
       "id": 174768,
-      "name": "A. Pierre",
+      "name": "Alexandre Pierre",
       "age": 24,
       "number": 12,
       "position": "Goalkeeper",
       "photo": "https://media.api-sports.io/football/players/174768.png",
-      "club": "Violette",
-      "caps": 1,
+      "club": "Sochaux",
+      "caps": 16,
       "goals": 0,
       "captain": false
     },
     {
       "id": 87789,
-      "name": "J. Placide",
+      "name": "Johny Placide",
       "age": 38,
       "number": 1,
       "position": "Goalkeeper",
@@ -3492,7 +3492,7 @@
     },
     {
       "id": 20850,
-      "name": "C. Arcus",
+      "name": "Carlens Arcus",
       "age": 29,
       "number": 2,
       "position": "Defender",
@@ -3504,7 +3504,7 @@
     },
     {
       "id": 573613,
-      "name": "K. Thermoncy",
+      "name": "Keeto Thermoncy",
       "age": 20,
       "number": 3,
       "position": "Defender",
@@ -3516,7 +3516,7 @@
     },
     {
       "id": 12303,
-      "name": "Ricardo Ade",
+      "name": "Ricardo Adé",
       "age": 35,
       "number": 4,
       "position": "Defender",
@@ -3528,7 +3528,7 @@
     },
     {
       "id": 1411,
-      "name": "H. Delcroix",
+      "name": "Hannes Delcroix",
       "age": 26,
       "number": 5,
       "position": "Defender",
@@ -3540,7 +3540,7 @@
     },
     {
       "id": 20655,
-      "name": "J. Duverne",
+      "name": "Jean-Kévin Duverne",
       "age": 28,
       "number": 22,
       "position": "Defender",
@@ -3552,7 +3552,7 @@
     },
     {
       "id": 190747,
-      "name": "M. Expérience",
+      "name": "Martin Expérience",
       "age": 26,
       "number": 8,
       "position": "Defender",
@@ -3564,7 +3564,7 @@
     },
     {
       "id": 102505,
-      "name": "D. Lacroix",
+      "name": "Duke Lacroix",
       "age": 32,
       "number": 13,
       "position": "Defender",
@@ -3576,7 +3576,7 @@
     },
     {
       "id": 275367,
-      "name": "W. Paugain",
+      "name": "Wilguens Paugain",
       "age": 24,
       "number": 24,
       "position": "Defender",
@@ -3588,7 +3588,7 @@
     },
     {
       "id": 20665,
-      "name": "J. Bellegarde",
+      "name": "Jean-Ricner Bellegarde",
       "age": 27,
       "number": 10,
       "position": "Midfielder",
@@ -3612,7 +3612,7 @@
     },
     {
       "id": 20538,
-      "name": "L. Pierre",
+      "name": "Woodensky Pierre",
       "age": 27,
       "number": 14,
       "position": "Midfielder",
@@ -3624,7 +3624,7 @@
     },
     {
       "id": 371050,
-      "name": "W. Pierre",
+      "name": "Woodensky Pierre",
       "age": 21,
       "number": 26,
       "position": "Midfielder",
@@ -3636,7 +3636,7 @@
     },
     {
       "id": 540857,
-      "name": "C. F. Sainte",
+      "name": "Carl Sainté",
       "age": 23,
       "number": 6,
       "position": "Midfielder",
@@ -3648,7 +3648,7 @@
     },
     {
       "id": 194242,
-      "name": "D. Simon",
+      "name": "Dominique Simon",
       "age": 25,
       "number": 25,
       "position": "Midfielder",
@@ -3660,7 +3660,7 @@
     },
     {
       "id": 174915,
-      "name": "J. Casimir",
+      "name": "Josué Casimir",
       "age": 24,
       "number": 21,
       "position": "Attacker",
@@ -3672,7 +3672,7 @@
     },
     {
       "id": 128766,
-      "name": "L. Deedson",
+      "name": "Louicius Deedson",
       "age": 24,
       "number": 11,
       "position": "Midfielder",
@@ -3696,7 +3696,7 @@
     },
     {
       "id": 48535,
-      "name": "Y. Fortuné",
+      "name": "Yassin Fortuné",
       "age": 26,
       "number": 19,
       "position": "Attacker",
@@ -3708,7 +3708,7 @@
     },
     {
       "id": 84087,
-      "name": "W. Isidor",
+      "name": "Wilson Isidor",
       "age": 25,
       "number": 18,
       "position": "Attacker",
@@ -3720,7 +3720,7 @@
     },
     {
       "id": 21613,
-      "name": "L. Joseph",
+      "name": "Lenny Joseph",
       "age": 25,
       "number": 16,
       "position": "Attacker",
@@ -3732,7 +3732,7 @@
     },
     {
       "id": 45020,
-      "name": "D. Nazon",
+      "name": "Duckens Nazon",
       "age": 31,
       "number": 9,
       "position": "Attacker",
@@ -3744,7 +3744,7 @@
     },
     {
       "id": 8601,
-      "name": "F. Pierrot",
+      "name": "Frantzdy Pierrot",
       "age": 30,
       "number": 20,
       "position": "Attacker",
@@ -3756,7 +3756,7 @@
     },
     {
       "id": 162733,
-      "name": "R. Providence",
+      "name": "Ruben Providence",
       "age": 24,
       "number": 15,
       "position": "Midfielder",
@@ -3770,7 +3770,7 @@
   "Australia": [
     {
       "id": 353883,
-      "name": "P. Beach",
+      "name": "Patrick Beach",
       "age": 22,
       "number": 18,
       "position": "Goalkeeper",
@@ -3782,7 +3782,7 @@
     },
     {
       "id": 6870,
-      "name": "P. Izzo",
+      "name": "Paul Izzo",
       "age": 30,
       "number": 12,
       "position": "Goalkeeper",
@@ -3794,7 +3794,7 @@
     },
     {
       "id": 2741,
-      "name": "M. Ryan",
+      "name": "Mathew Ryan",
       "age": 33,
       "number": 1,
       "position": "Goalkeeper",
@@ -3806,7 +3806,7 @@
     },
     {
       "id": 225,
-      "name": "A. Behich",
+      "name": "Aziz Behich",
       "age": 35,
       "number": 16,
       "position": "Midfielder",
@@ -3818,7 +3818,7 @@
     },
     {
       "id": 337587,
-      "name": "J. Bos",
+      "name": "Jordan Bos",
       "age": 23,
       "number": 5,
       "position": "Defender",
@@ -3830,7 +3830,7 @@
     },
     {
       "id": 20457,
-      "name": "C. Burgess",
+      "name": "Cameron Burgess",
       "age": 30,
       "number": 21,
       "position": "Defender",
@@ -3842,7 +3842,7 @@
     },
     {
       "id": 348568,
-      "name": "A. Circati",
+      "name": "Alessandro Circati",
       "age": 22,
       "number": 3,
       "position": "Defender",
@@ -3854,7 +3854,7 @@
     },
     {
       "id": 33847,
-      "name": "J. Geria",
+      "name": "Jason Geria",
       "age": 32,
       "number": 6,
       "position": "Defender",
@@ -3866,7 +3866,7 @@
     },
     {
       "id": 426480,
-      "name": "L. Herrington",
+      "name": "Lucas Herrington",
       "age": 18,
       "number": 25,
       "position": "Defender",
@@ -3878,7 +3878,7 @@
     },
     {
       "id": 20079,
-      "name": "H. Souttar",
+      "name": "Harry Souttar",
       "age": 27,
       "number": 19,
       "position": "Defender",
@@ -3890,7 +3890,7 @@
     },
     {
       "id": 2742,
-      "name": "M. Degenek",
+      "name": "Miloš Degenek",
       "age": 31,
       "number": 2,
       "position": "Defender",
@@ -3902,7 +3902,7 @@
     },
     {
       "id": 6808,
-      "name": "J. Italiano",
+      "name": "Jacob Italiano",
       "age": 24,
       "number": 4,
       "position": "Defender",
@@ -3914,7 +3914,7 @@
     },
     {
       "id": 153622,
-      "name": "K. Trewin",
+      "name": "Kai Trewin",
       "age": 24,
       "number": 15,
       "position": "Midfielder",
@@ -3926,7 +3926,7 @@
     },
     {
       "id": 2749,
-      "name": "J. Irvine",
+      "name": "Jackson Irvine",
       "age": 32,
       "number": 22,
       "position": "Midfielder",
@@ -3938,7 +3938,7 @@
     },
     {
       "id": 6832,
-      "name": "C. Devlin",
+      "name": "Cammy Devlin",
       "age": 27,
       "number": 14,
       "position": "Midfielder",
@@ -3974,7 +3974,7 @@
     },
     {
       "id": 6904,
-      "name": "C. Metcalfe",
+      "name": "Connor Metcalfe",
       "age": 26,
       "number": 8,
       "position": "Midfielder",
@@ -3986,7 +3986,7 @@
     },
     {
       "id": 38123,
-      "name": "A. Hrustic",
+      "name": "Ajdin Hrustic",
       "age": 29,
       "number": 10,
       "position": "Midfielder",
@@ -3998,7 +3998,7 @@
     },
     {
       "id": 342035,
-      "name": "C. Volpato",
+      "name": "Cristian Volpato",
       "age": 22,
       "number": 20,
       "position": "Attacker",
@@ -4010,7 +4010,7 @@
     },
     {
       "id": 338014,
-      "name": "N. Irankunda",
+      "name": "Nestory Irankunda",
       "age": 19,
       "number": 17,
       "position": "Attacker",
@@ -4022,7 +4022,7 @@
     },
     {
       "id": 2751,
-      "name": "M. Leckie",
+      "name": "Mathew Leckie",
       "age": 34,
       "number": 7,
       "position": "Attacker",
@@ -4034,7 +4034,7 @@
     },
     {
       "id": 2755,
-      "name": "A. Mabil",
+      "name": "Awer Mabil",
       "age": 30,
       "number": 11,
       "position": "Midfielder",
@@ -4046,7 +4046,7 @@
     },
     {
       "id": 296645,
-      "name": "T. Yengi",
+      "name": "Tete Yengi",
       "age": 25,
       "number": 26,
       "position": "Attacker",
@@ -4058,7 +4058,7 @@
     },
     {
       "id": 198352,
-      "name": "M. Touré",
+      "name": "Mohamed Touré",
       "age": 21,
       "number": 9,
       "position": "Attacker",
@@ -4070,7 +4070,7 @@
     },
     {
       "id": 312459,
-      "name": "N. Velupillay",
+      "name": "Nishan Velupillay",
       "age": 24,
       "number": 23,
       "position": "Attacker",
@@ -4084,7 +4084,7 @@
   "Paraguay": [
     {
       "id": 535737,
-      "name": "R. Fernandez",
+      "name": "Gatito Fernández",
       "age": 37,
       "number": 1,
       "position": "Goalkeeper",
@@ -4096,7 +4096,7 @@
     },
     {
       "id": 70852,
-      "name": "O. Gill",
+      "name": "Orlando Gill",
       "age": 25,
       "number": 12,
       "position": "Goalkeeper",
@@ -4108,7 +4108,7 @@
     },
     {
       "id": 51733,
-      "name": "G. Olveira",
+      "name": "Gastón Olveira",
       "age": 32,
       "number": 22,
       "position": "Goalkeeper",
@@ -4120,7 +4120,7 @@
     },
     {
       "id": 6168,
-      "name": "O. Alderete",
+      "name": "Omar Alderete",
       "age": 29,
       "number": 3,
       "position": "Defender",
@@ -4132,7 +4132,7 @@
     },
     {
       "id": 2499,
-      "name": "J. Alonso",
+      "name": "Júnior Alonso",
       "age": 32,
       "number": 6,
       "position": "Defender",
@@ -4144,7 +4144,7 @@
     },
     {
       "id": 195992,
-      "name": "J. Cáceres",
+      "name": "Juan José Cáceres",
       "age": 25,
       "number": 4,
       "position": "Defender",
@@ -4156,7 +4156,7 @@
     },
     {
       "id": 2500,
-      "name": "F. Balbuena",
+      "name": "Fabián Balbuena",
       "age": 34,
       "number": 5,
       "position": "Defender",
@@ -4168,7 +4168,7 @@
     },
     {
       "id": 2502,
-      "name": "G. Gómez",
+      "name": "Gustavo Gómez",
       "age": 32,
       "number": 15,
       "position": "Defender",
@@ -4180,7 +4180,7 @@
     },
     {
       "id": 425020,
-      "name": "A. Maidana",
+      "name": "Alexandro Maidana",
       "age": 20,
       "number": 26,
       "position": "Defender",
@@ -4192,7 +4192,7 @@
     },
     {
       "id": 35808,
-      "name": "G. Velázquez",
+      "name": "Gustavo Velázquez",
       "age": 34,
       "number": 2,
       "position": "Defender",
@@ -4204,7 +4204,7 @@
     },
     {
       "id": 70732,
-      "name": "J. Canale",
+      "name": "José Canale",
       "age": 29,
       "number": 13,
       "position": "Defender",
@@ -4216,7 +4216,7 @@
     },
     {
       "id": 195107,
-      "name": "D. Bobadilla",
+      "name": "Damián Bobadilla",
       "age": 24,
       "number": 16,
       "position": "Midfielder",
@@ -4228,7 +4228,7 @@
     },
     {
       "id": 119128,
-      "name": "G. Caballero",
+      "name": "Gustavo Caballero",
       "age": 24,
       "number": 24,
       "position": "Midfielder",
@@ -4240,7 +4240,7 @@
     },
     {
       "id": 6236,
-      "name": "A. Cubas",
+      "name": "Andrés Cubas",
       "age": 29,
       "number": 14,
       "position": "Midfielder",
@@ -4252,7 +4252,7 @@
     },
     {
       "id": 305832,
-      "name": "M. Galarza",
+      "name": "Matías Galarza",
       "age": 23,
       "number": 23,
       "position": "Midfielder",
@@ -4264,15 +4264,15 @@
     },
     {
       "id": 278370,
-      "name": "D. Gómez",
+      "name": "Diego Gómez",
       "age": 22,
       "number": 8,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/278370.png",
-      "club": "Palmeiras",
-      "caps": 89,
-      "goals": 4,
-      "captain": true
+      "club": "Brighton & Hove Albion",
+      "caps": 24,
+      "goals": 3,
+      "captain": false
     },
     {
       "id": 106485,
@@ -4288,7 +4288,7 @@
     },
     {
       "id": 70767,
-      "name": "B. Ojeda",
+      "name": "Braian Ojeda",
       "age": 25,
       "number": 20,
       "position": "Midfielder",
@@ -4300,7 +4300,7 @@
     },
     {
       "id": 196298,
-      "name": "R. Sosa",
+      "name": "Ramón Sosa",
       "age": 26,
       "number": 7,
       "position": "Attacker",
@@ -4312,7 +4312,7 @@
     },
     {
       "id": 2507,
-      "name": "M. Almirón",
+      "name": "Miguel Almirón",
       "age": 31,
       "number": 10,
       "position": "Midfielder",
@@ -4336,7 +4336,7 @@
     },
     {
       "id": 95460,
-      "name": "A. Arce",
+      "name": "Álex Arce",
       "age": 30,
       "number": 18,
       "position": "Attacker",
@@ -4348,7 +4348,7 @@
     },
     {
       "id": 6483,
-      "name": "G. Ávalos",
+      "name": "Gabriel Ávalos",
       "age": 35,
       "number": 21,
       "position": "Attacker",
@@ -4360,7 +4360,7 @@
     },
     {
       "id": 70747,
-      "name": "J. Enciso",
+      "name": "Julio Enciso",
       "age": 21,
       "number": 19,
       "position": "Attacker",
@@ -4372,7 +4372,7 @@
     },
     {
       "id": 70670,
-      "name": "I. Pitta",
+      "name": "Isidro Pitta",
       "age": 26,
       "number": 25,
       "position": "Attacker",
@@ -4384,7 +4384,7 @@
     },
     {
       "id": 2522,
-      "name": "A. Sanabria",
+      "name": "Antonio Sanabria",
       "age": 29,
       "number": 9,
       "position": "Attacker",
@@ -4422,7 +4422,7 @@
     },
     {
       "id": 49837,
-      "name": "M. Günok",
+      "name": "Mert Günok",
       "age": 36,
       "number": 1,
       "position": "Goalkeeper",
@@ -4434,7 +4434,7 @@
     },
     {
       "id": 62490,
-      "name": "S. Akaydin",
+      "name": "Samet Akaydin",
       "age": 31,
       "number": 25,
       "position": "Defender",
@@ -4458,7 +4458,7 @@
     },
     {
       "id": 22222,
-      "name": "Z. Çelik",
+      "name": "Zeki Çelik",
       "age": 28,
       "number": 2,
       "position": "Defender",
@@ -4470,7 +4470,7 @@
     },
     {
       "id": 30521,
-      "name": "M. Demiral",
+      "name": "Merih Demiral",
       "age": 27,
       "number": 3,
       "position": "Defender",
@@ -4494,7 +4494,7 @@
     },
     {
       "id": 26300,
-      "name": "O. Kabak",
+      "name": "Ozan Kabak",
       "age": 25,
       "number": 15,
       "position": "Defender",
@@ -4518,7 +4518,7 @@
     },
     {
       "id": 1719,
-      "name": "M. Müldür",
+      "name": "Mert Müldür",
       "age": 26,
       "number": 18,
       "position": "Defender",
@@ -4530,7 +4530,7 @@
     },
     {
       "id": 18776,
-      "name": "Ç. Söyüncü",
+      "name": "Çağlar Söyüncü",
       "age": 29,
       "number": 4,
       "position": "Defender",
@@ -4542,7 +4542,7 @@
     },
     {
       "id": 1640,
-      "name": "H. Çalhanoglu",
+      "name": "Hakan Çalhanoğlu",
       "age": 31,
       "number": 10,
       "position": "Midfielder",
@@ -4554,7 +4554,7 @@
     },
     {
       "id": 25448,
-      "name": "K. Ayhan",
+      "name": "Kaan Ayhan",
       "age": 31,
       "number": 22,
       "position": "Defender",
@@ -4566,7 +4566,7 @@
     },
     {
       "id": 37155,
-      "name": "O. Kokçu",
+      "name": "Orkun Kökçü",
       "age": 25,
       "number": 6,
       "position": "Midfielder",
@@ -4578,7 +4578,7 @@
     },
     {
       "id": 24807,
-      "name": "S. Özcan",
+      "name": "Salih Özcan",
       "age": 27,
       "number": 5,
       "position": "Midfielder",
@@ -4590,7 +4590,7 @@
     },
     {
       "id": 214463,
-      "name": "I. Yüksek",
+      "name": "İsmail Yüksek",
       "age": 27,
       "number": 16,
       "position": "Midfielder",
@@ -4602,7 +4602,7 @@
     },
     {
       "id": 339887,
-      "name": "C. Uzun",
+      "name": "Can Uzun",
       "age": 20,
       "number": 26,
       "position": "Midfielder",
@@ -4626,7 +4626,7 @@
     },
     {
       "id": 291964,
-      "name": "A. Güler",
+      "name": "Arda Güler",
       "age": 20,
       "number": 8,
       "position": "Midfielder",
@@ -4638,7 +4638,7 @@
     },
     {
       "id": 454,
-      "name": "Y. Akgün",
+      "name": "Yunus Akgün",
       "age": 25,
       "number": 19,
       "position": "Attacker",
@@ -4650,7 +4650,7 @@
     },
     {
       "id": 142959,
-      "name": "K. Aktürkoglu",
+      "name": "Kerem Aktürkoğlu",
       "age": 27,
       "number": 7,
       "position": "Attacker",
@@ -4662,7 +4662,7 @@
     },
     {
       "id": 388570,
-      "name": "D. Gül",
+      "name": "Deniz Gül",
       "age": 21,
       "number": 9,
       "position": "Attacker",
@@ -4674,7 +4674,7 @@
     },
     {
       "id": 49857,
-      "name": "I. Kahveci",
+      "name": "İrfan Can Kahveci",
       "age": 30,
       "number": 17,
       "position": "Midfielder",
@@ -4712,7 +4712,7 @@
   "Germany": [
     {
       "id": 702,
-      "name": "O. Baumann",
+      "name": "Oliver Baumann",
       "age": 35,
       "number": 12,
       "position": "Goalkeeper",
@@ -4724,7 +4724,7 @@
     },
     {
       "id": 497,
-      "name": "M. Neuer",
+      "name": "Manuel Neuer",
       "age": 39,
       "number": 1,
       "position": "Goalkeeper",
@@ -4736,7 +4736,7 @@
     },
     {
       "id": 399,
-      "name": "A. Nübel",
+      "name": "Alexander Nübel",
       "age": 29,
       "number": 21,
       "position": "Goalkeeper",
@@ -4748,7 +4748,7 @@
     },
     {
       "id": 25368,
-      "name": "W. Anton",
+      "name": "Waldemar Anton",
       "age": 29,
       "number": 3,
       "position": "Defender",
@@ -4760,7 +4760,7 @@
     },
     {
       "id": 280074,
-      "name": "N. Brown",
+      "name": "Nathaniel Brown",
       "age": 22,
       "number": 18,
       "position": "Defender",
@@ -4772,7 +4772,7 @@
     },
     {
       "id": 25158,
-      "name": "D. Raum",
+      "name": "David Raum",
       "age": 27,
       "number": 22,
       "position": "Defender",
@@ -4784,7 +4784,7 @@
     },
     {
       "id": 2285,
-      "name": "A. Rüdiger",
+      "name": "Antonio Rüdiger",
       "age": 32,
       "number": 2,
       "position": "Defender",
@@ -4796,7 +4796,7 @@
     },
     {
       "id": 26243,
-      "name": "N. Schlotterbeck",
+      "name": "Nico Schlotterbeck",
       "age": 26,
       "number": 15,
       "position": "Defender",
@@ -4808,7 +4808,7 @@
     },
     {
       "id": 972,
-      "name": "J. Tah",
+      "name": "Jonathan Tah",
       "age": 29,
       "number": 4,
       "position": "Defender",
@@ -4820,7 +4820,7 @@
     },
     {
       "id": 163189,
-      "name": "M. Thiaw",
+      "name": "Malick Thiaw",
       "age": 24,
       "number": 24,
       "position": "Defender",
@@ -4832,7 +4832,7 @@
     },
     {
       "id": 502,
-      "name": "J. Kimmich",
+      "name": "Joshua Kimmich",
       "age": 30,
       "number": 6,
       "position": "Defender",
@@ -4844,7 +4844,7 @@
     },
     {
       "id": 714,
-      "name": "N. Amiri",
+      "name": "Nadiem Amiri",
       "age": 29,
       "number": 20,
       "position": "Midfielder",
@@ -4856,7 +4856,7 @@
     },
     {
       "id": 511,
-      "name": "L. Goretzka",
+      "name": "Leon Goretzka",
       "age": 30,
       "number": 8,
       "position": "Midfielder",
@@ -4868,7 +4868,7 @@
     },
     {
       "id": 18970,
-      "name": "P. Groß",
+      "name": "Pascal Groß",
       "age": 34,
       "number": 13,
       "position": "Midfielder",
@@ -4892,7 +4892,7 @@
     },
     {
       "id": 128533,
-      "name": "J. Leweling",
+      "name": "Jamie Leweling",
       "age": 24,
       "number": 9,
       "position": "Attacker",
@@ -4904,7 +4904,7 @@
     },
     {
       "id": 181812,
-      "name": "J. Musiala",
+      "name": "Jamal Musiala",
       "age": 22,
       "number": 10,
       "position": "Midfielder",
@@ -4916,7 +4916,7 @@
     },
     {
       "id": 637,
-      "name": "F. Nmecha",
+      "name": "Felix Nmecha",
       "age": 25,
       "number": 23,
       "position": "Midfielder",
@@ -4928,7 +4928,7 @@
     },
     {
       "id": 328033,
-      "name": "A. Pavlovic",
+      "name": "Aleksandar Pavlović",
       "age": 21,
       "number": 5,
       "position": "Midfielder",
@@ -4940,7 +4940,7 @@
     },
     {
       "id": 644,
-      "name": "L. Sané",
+      "name": "Leroy Sané",
       "age": 30,
       "number": 19,
       "position": "Midfielder",
@@ -4952,7 +4952,7 @@
     },
     {
       "id": 137210,
-      "name": "A. Stiller",
+      "name": "Angelo Stiller",
       "age": 24,
       "number": 16,
       "position": "Midfielder",
@@ -4964,7 +4964,7 @@
     },
     {
       "id": 203224,
-      "name": "F. Wirtz",
+      "name": "Florian Wirtz",
       "age": 22,
       "number": 17,
       "position": "Midfielder",
@@ -4976,7 +4976,7 @@
     },
     {
       "id": 978,
-      "name": "K. Havertz",
+      "name": "Kai Havertz",
       "age": 26,
       "number": 7,
       "position": "Attacker",
@@ -4988,7 +4988,7 @@
     },
     {
       "id": 158644,
-      "name": "M. Beier",
+      "name": "Maximilian Beier",
       "age": 23,
       "number": 14,
       "position": "Attacker",
@@ -5000,7 +5000,7 @@
     },
     {
       "id": 26475,
-      "name": "D. Undav",
+      "name": "Deniz Undav",
       "age": 29,
       "number": 26,
       "position": "Attacker",
@@ -5012,7 +5012,7 @@
     },
     {
       "id": 158054,
-      "name": "N. Woltemade",
+      "name": "Nick Woltemade",
       "age": 23,
       "number": 11,
       "position": "Attacker",
@@ -5067,9 +5067,9 @@
       "number": 3,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/145465.png",
-      "club": "Dibba",
-      "caps": 72,
-      "goals": 27,
+      "club": "Pogoń Szczecin",
+      "caps": 27,
+      "goals": 1,
       "captain": false
     },
     {
@@ -5122,7 +5122,7 @@
     },
     {
       "id": 296373,
-      "name": "Zayed Tahseen",
+      "name": "Zaid Tahseen",
       "age": 24,
       "number": 4,
       "position": "Defender",
@@ -5194,7 +5194,7 @@
     },
     {
       "id": 140747,
-      "name": "Ibraheem Bayesh",
+      "name": "Ibrahim Bayesh",
       "age": 25,
       "number": 8,
       "position": "Midfielder",
@@ -5230,7 +5230,7 @@
     },
     {
       "id": 48129,
-      "name": "A. Sher",
+      "name": "Aimar Sher",
       "age": 23,
       "number": 20,
       "position": "Midfielder",
@@ -5254,7 +5254,7 @@
     },
     {
       "id": 542644,
-      "name": "A. Jasim",
+      "name": "Ali Jasim",
       "age": 21,
       "number": 17,
       "position": "Attacker",
@@ -5266,7 +5266,7 @@
     },
     {
       "id": 299813,
-      "name": "Ali Al Hamadi",
+      "name": "Mohanad Ali",
       "age": 23,
       "number": 9,
       "position": "Attacker",
@@ -5278,7 +5278,7 @@
     },
     {
       "id": 265448,
-      "name": "M. Farji",
+      "name": "Marko Farji",
       "age": 21,
       "number": 21,
       "position": "Midfielder",
@@ -5314,7 +5314,7 @@
     },
     {
       "id": 229112,
-      "name": "A. Qasem",
+      "name": "Ahmed Qasem",
       "age": 22,
       "number": 11,
       "position": "Midfielder",
@@ -5326,7 +5326,7 @@
     },
     {
       "id": 542842,
-      "name": "A. Y. Hashim",
+      "name": "Akam Hashim",
       "age": 29,
       "number": 13,
       "position": "Attacker",
@@ -5340,7 +5340,7 @@
   "Argentina": [
     {
       "id": 19599,
-      "name": "E. Martínez",
+      "name": "Emiliano Martínez",
       "age": 33,
       "number": 23,
       "position": "Goalkeeper",
@@ -5352,7 +5352,7 @@
     },
     {
       "id": 2465,
-      "name": "J. Musso",
+      "name": "Juan Musso",
       "age": 31,
       "number": 1,
       "position": "Goalkeeper",
@@ -5364,7 +5364,7 @@
     },
     {
       "id": 47296,
-      "name": "G. Rulli",
+      "name": "Gerónimo Rulli",
       "age": 33,
       "number": 12,
       "position": "Goalkeeper",
@@ -5388,19 +5388,19 @@
     },
     {
       "id": 2467,
-      "name": "Lisandro Martínez",
+      "name": "Lautaro Martínez",
       "age": 27,
       "number": 6,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/2467.png",
-      "club": "Aston Villa",
-      "caps": 59,
-      "goals": 0,
+      "club": "Inter Milan",
+      "caps": 77,
+      "goals": 37,
       "captain": false
     },
     {
       "id": 6231,
-      "name": "F. Medina",
+      "name": "Facundo Medina",
       "age": 26,
       "number": 25,
       "position": "Defender",
@@ -5412,7 +5412,7 @@
     },
     {
       "id": 6503,
-      "name": "N. Molina",
+      "name": "Nahuel Molina",
       "age": 27,
       "number": 26,
       "position": "Defender",
@@ -5424,7 +5424,7 @@
     },
     {
       "id": 2468,
-      "name": "G. Montiel",
+      "name": "Gonzalo Montiel",
       "age": 28,
       "number": 4,
       "position": "Defender",
@@ -5436,7 +5436,7 @@
     },
     {
       "id": 624,
-      "name": "N. Otamendi",
+      "name": "Nicolás Otamendi",
       "age": 37,
       "number": 19,
       "position": "Defender",
@@ -5448,7 +5448,7 @@
     },
     {
       "id": 30776,
-      "name": "C. Romero",
+      "name": "Cristian Romero",
       "age": 27,
       "number": 13,
       "position": "Defender",
@@ -5460,7 +5460,7 @@
     },
     {
       "id": 529,
-      "name": "N. Tagliafico",
+      "name": "Nicolás Tagliafico",
       "age": 33,
       "number": 3,
       "position": "Defender",
@@ -5472,7 +5472,7 @@
     },
     {
       "id": 319572,
-      "name": "V. Barco",
+      "name": "Valentín Barco",
       "age": 21,
       "number": 8,
       "position": "Midfielder",
@@ -5484,7 +5484,7 @@
     },
     {
       "id": 5996,
-      "name": "E. Fernández",
+      "name": "Enzo Fernández",
       "age": 24,
       "number": 24,
       "position": "Midfielder",
@@ -5496,7 +5496,7 @@
     },
     {
       "id": 1578,
-      "name": "G. Lo Celso",
+      "name": "Giovani Lo Celso",
       "age": 29,
       "number": 11,
       "position": "Midfielder",
@@ -5508,7 +5508,7 @@
     },
     {
       "id": 6716,
-      "name": "A. Mac Allister",
+      "name": "Alexis Mac Allister",
       "age": 27,
       "number": 20,
       "position": "Midfielder",
@@ -5520,7 +5520,7 @@
     },
     {
       "id": 6002,
-      "name": "E. Palacios",
+      "name": "Exequiel Palacios",
       "age": 27,
       "number": 14,
       "position": "Midfielder",
@@ -5532,7 +5532,7 @@
     },
     {
       "id": 271,
-      "name": "L. Paredes",
+      "name": "Leandro Paredes",
       "age": 31,
       "number": 5,
       "position": "Midfielder",
@@ -5544,7 +5544,7 @@
     },
     {
       "id": 26315,
-      "name": "N. González",
+      "name": "Nicolás González",
       "age": 27,
       "number": 15,
       "position": "Attacker",
@@ -5556,7 +5556,7 @@
     },
     {
       "id": 2472,
-      "name": "R. De Paul",
+      "name": "Rodrigo De Paul",
       "age": 31,
       "number": 7,
       "position": "Midfielder",
@@ -5568,7 +5568,7 @@
     },
     {
       "id": 6067,
-      "name": "T. Almada",
+      "name": "Thiago Almada",
       "age": 24,
       "number": 16,
       "position": "Midfielder",
@@ -5580,7 +5580,7 @@
     },
     {
       "id": 6009,
-      "name": "J. Álvarez",
+      "name": "Julián Alvarez",
       "age": 25,
       "number": 9,
       "position": "Attacker",
@@ -5592,7 +5592,7 @@
     },
     {
       "id": 350037,
-      "name": "N. Paz",
+      "name": "Nico Paz",
       "age": 21,
       "number": 18,
       "position": "Attacker",
@@ -5604,7 +5604,7 @@
     },
     {
       "id": 295513,
-      "name": "J. López",
+      "name": "José Manuel López",
       "age": 25,
       "number": 21,
       "position": "Attacker",
@@ -5621,14 +5621,14 @@
       "number": 22,
       "position": "Attacker",
       "photo": "https://media.api-sports.io/football/players/217.png",
-      "club": "Aston Villa",
-      "caps": 59,
-      "goals": 0,
+      "club": "Inter Milan",
+      "caps": 77,
+      "goals": 37,
       "captain": false
     },
     {
       "id": 154,
-      "name": "L. Messi",
+      "name": "Lionel Messi",
       "age": 38,
       "number": 10,
       "position": "Attacker",
@@ -5640,7 +5640,7 @@
     },
     {
       "id": 323935,
-      "name": "G. Simeone",
+      "name": "Giuliano Simeone",
       "age": 23,
       "number": 17,
       "position": "Midfielder",
@@ -5654,7 +5654,7 @@
   "Austria": [
     {
       "id": 7598,
-      "name": "P. Pentz",
+      "name": "Patrick Pentz",
       "age": 28,
       "number": 13,
       "position": "Goalkeeper",
@@ -5666,19 +5666,19 @@
     },
     {
       "id": 7525,
-      "name": "A. Schlager",
+      "name": "Alexander Schlager",
       "age": 29,
       "number": 1,
       "position": "Goalkeeper",
       "photo": "https://media.api-sports.io/football/players/7525.png",
-      "club": "RB Leipzig",
-      "caps": 51,
-      "goals": 4,
+      "club": "Red Bull Salzburg",
+      "caps": 26,
+      "goals": 0,
       "captain": false
     },
     {
       "id": 221605,
-      "name": "F. Wiegele",
+      "name": "Florian Wiegele",
       "age": 24,
       "number": 12,
       "position": "Goalkeeper",
@@ -5690,7 +5690,7 @@
     },
     {
       "id": 126640,
-      "name": "D. Affengruber",
+      "name": "David Affengruber",
       "age": 24,
       "number": 2,
       "position": "Defender",
@@ -5702,7 +5702,7 @@
     },
     {
       "id": 505,
-      "name": "D. Alaba",
+      "name": "David Alaba",
       "age": 33,
       "number": 8,
       "position": "Defender",
@@ -5714,7 +5714,7 @@
     },
     {
       "id": 25287,
-      "name": "K. Danso",
+      "name": "Kevin Danso",
       "age": 27,
       "number": 3,
       "position": "Defender",
@@ -5726,7 +5726,7 @@
     },
     {
       "id": 25314,
-      "name": "M. Friedl",
+      "name": "Marco Friedl",
       "age": 27,
       "number": 23,
       "position": "Defender",
@@ -5738,7 +5738,7 @@
     },
     {
       "id": 26240,
-      "name": "P. Lienhart",
+      "name": "Philipp Lienhart",
       "age": 29,
       "number": 15,
       "position": "Defender",
@@ -5750,7 +5750,7 @@
     },
     {
       "id": 25915,
-      "name": "P. Mwene",
+      "name": "Phillipp Mwene",
       "age": 31,
       "number": 16,
       "position": "Defender",
@@ -5762,7 +5762,7 @@
     },
     {
       "id": 711,
-      "name": "S. Posch",
+      "name": "Stefan Posch",
       "age": 28,
       "number": 5,
       "position": "Defender",
@@ -5774,7 +5774,7 @@
     },
     {
       "id": 7090,
-      "name": "M. Svoboda",
+      "name": "Michael Svoboda",
       "age": 27,
       "number": 25,
       "position": "Defender",
@@ -5798,7 +5798,7 @@
     },
     {
       "id": 138935,
-      "name": "C. Chukwuemeka",
+      "name": "Carney Chukwuemeka",
       "age": 22,
       "number": 17,
       "position": "Midfielder",
@@ -5810,7 +5810,7 @@
     },
     {
       "id": 719,
-      "name": "F. Grillitsch",
+      "name": "Florian Grillitsch",
       "age": 30,
       "number": 10,
       "position": "Midfielder",
@@ -5822,7 +5822,7 @@
     },
     {
       "id": 1157,
-      "name": "K. Laimer",
+      "name": "Konrad Laimer",
       "age": 28,
       "number": 20,
       "position": "Defender",
@@ -5834,7 +5834,7 @@
     },
     {
       "id": 7327,
-      "name": "A. Prass",
+      "name": "Alexander Prass",
       "age": 24,
       "number": 22,
       "position": "Defender",
@@ -5846,7 +5846,7 @@
     },
     {
       "id": 1159,
-      "name": "M. Sabitzer",
+      "name": "Marcel Sabitzer",
       "age": 31,
       "number": 9,
       "position": "Midfielder",
@@ -5858,7 +5858,7 @@
     },
     {
       "id": 1095,
-      "name": "X. Schlager",
+      "name": "Xaver Schlager",
       "age": 28,
       "number": 4,
       "position": "Midfielder",
@@ -5870,7 +5870,7 @@
     },
     {
       "id": 7562,
-      "name": "R. Schmid",
+      "name": "Romano Schmid",
       "age": 25,
       "number": 18,
       "position": "Midfielder",
@@ -5882,7 +5882,7 @@
     },
     {
       "id": 417,
-      "name": "A. Schöpf",
+      "name": "Alessandro Schöpf",
       "age": 31,
       "number": 26,
       "position": "Midfielder",
@@ -5894,7 +5894,7 @@
     },
     {
       "id": 7328,
-      "name": "N. Seiwald",
+      "name": "Nicolas Seiwald",
       "age": 24,
       "number": 6,
       "position": "Midfielder",
@@ -5906,7 +5906,7 @@
     },
     {
       "id": 327895,
-      "name": "P. Wanner",
+      "name": "Paul Wanner",
       "age": 20,
       "number": 24,
       "position": "Midfielder",
@@ -5918,7 +5918,7 @@
     },
     {
       "id": 126642,
-      "name": "P. Wimmer",
+      "name": "Patrick Wimmer",
       "age": 24,
       "number": 21,
       "position": "Midfielder",
@@ -5930,7 +5930,7 @@
     },
     {
       "id": 18830,
-      "name": "M. Arnautovic",
+      "name": "Marko Arnautović",
       "age": 36,
       "number": 7,
       "position": "Attacker",
@@ -5942,7 +5942,7 @@
     },
     {
       "id": 25297,
-      "name": "M. Gregoritsch",
+      "name": "Michael Gregoritsch",
       "age": 31,
       "number": 11,
       "position": "Midfielder",
@@ -5954,7 +5954,7 @@
     },
     {
       "id": 7722,
-      "name": "S. Kalajdzic",
+      "name": "Saša Kalajdžić",
       "age": 28,
       "number": 14,
       "position": "Attacker",
@@ -5968,7 +5968,7 @@
   "Algeria": [
     {
       "id": 4414,
-      "name": "O. Benbot",
+      "name": "Oussama Benbot",
       "age": 31,
       "number": 16,
       "position": "Goalkeeper",
@@ -5980,7 +5980,7 @@
     },
     {
       "id": 304229,
-      "name": "M. Mastil",
+      "name": "Melvin Mastil",
       "age": 25,
       "number": 1,
       "position": "Goalkeeper",
@@ -5992,7 +5992,7 @@
     },
     {
       "id": 732,
-      "name": "L. Zidane",
+      "name": "Luca Zidane",
       "age": 27,
       "number": 23,
       "position": "Goalkeeper",
@@ -6004,7 +6004,7 @@
     },
     {
       "id": 342740,
-      "name": "A. Abada",
+      "name": "Achref Abada",
       "age": 26,
       "number": 3,
       "position": "Defender",
@@ -6016,7 +6016,7 @@
     },
     {
       "id": 21138,
-      "name": "R. Aït-Nouri",
+      "name": "Rayan Aït-Nouri",
       "age": 24,
       "number": 15,
       "position": "Defender",
@@ -6028,7 +6028,7 @@
     },
     {
       "id": 4561,
-      "name": "Z. Belaïd",
+      "name": "Zineddine Belaïd",
       "age": 27,
       "number": 5,
       "position": "Defender",
@@ -6040,7 +6040,7 @@
     },
     {
       "id": 303362,
-      "name": "R. Belghali",
+      "name": "Rafik Belghali",
       "age": 23,
       "number": 17,
       "position": "Defender",
@@ -6052,7 +6052,7 @@
     },
     {
       "id": 2194,
-      "name": "R. Bensebaïni",
+      "name": "Ramy Bensebaini",
       "age": 30,
       "number": 21,
       "position": "Defender",
@@ -6064,7 +6064,7 @@
     },
     {
       "id": 20869,
-      "name": "S. Chergui",
+      "name": "Samir Chergui",
       "age": 26,
       "number": 26,
       "position": "Defender",
@@ -6076,7 +6076,7 @@
     },
     {
       "id": 271539,
-      "name": "J. Hadjam",
+      "name": "Jaouen Hadjam",
       "age": 22,
       "number": 13,
       "position": "Defender",
@@ -6088,7 +6088,7 @@
     },
     {
       "id": 1567,
-      "name": "A. Mandi",
+      "name": "Aïssa Mandi",
       "age": 34,
       "number": 2,
       "position": "Defender",
@@ -6100,7 +6100,7 @@
     },
     {
       "id": 4569,
-      "name": "M. Tougai",
+      "name": "Mohamed Amine Tougai",
       "age": 26,
       "number": 4,
       "position": "Defender",
@@ -6112,7 +6112,7 @@
     },
     {
       "id": 658,
-      "name": "H. Aouar",
+      "name": "Houssem Aouar",
       "age": 27,
       "number": 8,
       "position": "Midfielder",
@@ -6124,7 +6124,7 @@
     },
     {
       "id": 409,
-      "name": "N. Bentaleb",
+      "name": "Nabil Bentaleb",
       "age": 31,
       "number": 19,
       "position": "Midfielder",
@@ -6136,7 +6136,7 @@
     },
     {
       "id": 4399,
-      "name": "H. Boudaoui",
+      "name": "Hicham Boudaoui",
       "age": 26,
       "number": 14,
       "position": "Midfielder",
@@ -6148,7 +6148,7 @@
     },
     {
       "id": 380587,
-      "name": "I. Maza",
+      "name": "Ibrahim Maza",
       "age": 20,
       "number": 22,
       "position": "Midfielder",
@@ -6160,7 +6160,7 @@
     },
     {
       "id": 327599,
-      "name": "Y. Titraoui",
+      "name": "Yacine Titraoui",
       "age": 22,
       "number": 24,
       "position": "Midfielder",
@@ -6172,7 +6172,7 @@
     },
     {
       "id": 129047,
-      "name": "R. Zerrouki",
+      "name": "Ramiz Zerrouki",
       "age": 27,
       "number": 6,
       "position": "Midfielder",
@@ -6184,7 +6184,7 @@
     },
     {
       "id": 276670,
-      "name": "F. Chaïbi",
+      "name": "Farès Chaïbi",
       "age": 23,
       "number": 10,
       "position": "Midfielder",
@@ -6196,7 +6196,7 @@
     },
     {
       "id": 200139,
-      "name": "M. Amoura",
+      "name": "Mohamed Amoura",
       "age": 26,
       "number": 18,
       "position": "Attacker",
@@ -6208,7 +6208,7 @@
     },
     {
       "id": 292924,
-      "name": "A. Benbouali",
+      "name": "Nadhir Benbouali",
       "age": 26,
       "number": 12,
       "position": "Attacker",
@@ -6220,7 +6220,7 @@
     },
     {
       "id": 329163,
-      "name": "A. Boulbina",
+      "name": "Adil Boulbina",
       "age": 22,
       "number": 20,
       "position": "Attacker",
@@ -6232,7 +6232,7 @@
     },
     {
       "id": 334915,
-      "name": "F. Ghedjemis",
+      "name": "Farès Ghedjemis",
       "age": 23,
       "number": 25,
       "position": "Attacker",
@@ -6244,7 +6244,7 @@
     },
     {
       "id": 85041,
-      "name": "A. Gouiri",
+      "name": "Amine Gouiri",
       "age": 25,
       "number": 9,
       "position": "Attacker",
@@ -6268,7 +6268,7 @@
     },
     {
       "id": 635,
-      "name": "R. Mahrez",
+      "name": "Riyad Mahrez",
       "age": 34,
       "number": 7,
       "position": "Attacker",
@@ -6318,7 +6318,7 @@
     },
     {
       "id": 542822,
-      "name": "H. Abu Al Dahab",
+      "name": "Husam Abu Dahab",
       "age": 25,
       "number": 4,
       "position": "Defender",
@@ -6342,7 +6342,7 @@
     },
     {
       "id": 102538,
-      "name": "M. Abualnadi",
+      "name": "Mo Abualnadi",
       "age": 24,
       "number": 16,
       "position": "Defender",
@@ -6378,7 +6378,7 @@
     },
     {
       "id": 664028,
-      "name": "A. Badawi",
+      "name": "Anas Badawi",
       "age": 28,
       "number": 26,
       "position": "Defender",
@@ -6402,7 +6402,7 @@
     },
     {
       "id": 72140,
-      "name": "Saleem Obaid",
+      "name": "Salim Obaid",
       "age": 33,
       "number": 17,
       "position": "Defender",
@@ -6414,7 +6414,7 @@
     },
     {
       "id": 53902,
-      "name": "Ehsan Haddad",
+      "name": "Ihsan Haddad",
       "age": 31,
       "number": 23,
       "position": "Defender",
@@ -6546,7 +6546,7 @@
     },
     {
       "id": 575283,
-      "name": "A. Azaizeh",
+      "name": "Ali Azaizeh",
       "age": 21,
       "number": 24,
       "position": "Attacker",
@@ -6601,8 +6601,8 @@
       "number": 1,
       "position": "Goalkeeper",
       "photo": "https://media.api-sports.io/football/players/369.png",
-      "club": "Mallorca",
-      "caps": 6,
+      "club": "Porto",
+      "caps": 43,
       "goals": 0,
       "captain": false
     },
@@ -6757,9 +6757,9 @@
       "number": 15,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/335051.png",
-      "club": "Al-Hilal",
-      "caps": 67,
-      "goals": 1,
+      "club": "Paris Saint-Germain",
+      "caps": 22,
+      "goals": 3,
       "captain": false
     },
     {
@@ -6793,9 +6793,9 @@
       "number": 10,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/636.png",
-      "club": "Sporting CP",
-      "caps": 3,
-      "goals": 0,
+      "club": "Manchester City",
+      "caps": 109,
+      "goals": 14,
       "captain": false
     },
     {
@@ -6896,7 +6896,7 @@
     },
     {
       "id": 41112,
-      "name": "Trincão",
+      "name": "Francisco Trincão",
       "age": 26,
       "number": 16,
       "position": "Midfielder",
@@ -6910,7 +6910,7 @@
   "Colombia": [
     {
       "id": 2481,
-      "name": "Á. Montero",
+      "name": "Álvaro Montero",
       "age": 30,
       "number": 24,
       "position": "Goalkeeper",
@@ -6922,7 +6922,7 @@
     },
     {
       "id": 313,
-      "name": "D. Ospina",
+      "name": "David Ospina",
       "age": 37,
       "number": 1,
       "position": "Goalkeeper",
@@ -6934,7 +6934,7 @@
     },
     {
       "id": 2482,
-      "name": "C. Vargas",
+      "name": "Camilo Vargas",
       "age": 36,
       "number": 12,
       "position": "Goalkeeper",
@@ -6946,19 +6946,19 @@
     },
     {
       "id": 30,
-      "name": "S. Arias",
+      "name": "Santiago Arias",
       "age": 33,
       "number": 4,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/30.png",
-      "club": "Palmeiras",
-      "caps": 38,
-      "goals": 6,
+      "club": "Independiente",
+      "caps": 68,
+      "goals": 0,
       "captain": false
     },
     {
       "id": 13571,
-      "name": "W. Ditta",
+      "name": "Willer Ditta",
       "age": 28,
       "number": 18,
       "position": "Defender",
@@ -6970,7 +6970,7 @@
     },
     {
       "id": 1929,
-      "name": "J. Lucumí",
+      "name": "Jhon Lucumí",
       "age": 27,
       "number": 3,
       "position": "Defender",
@@ -6982,7 +6982,7 @@
     },
     {
       "id": 2483,
-      "name": "D. Machado",
+      "name": "Deiver Machado",
       "age": 32,
       "number": 22,
       "position": "Defender",
@@ -6994,7 +6994,7 @@
     },
     {
       "id": 2484,
-      "name": "Y. Mina",
+      "name": "Yerry Mina",
       "age": 31,
       "number": 13,
       "position": "Defender",
@@ -7006,7 +7006,7 @@
     },
     {
       "id": 64268,
-      "name": "J. Mojica",
+      "name": "Johan Mojica",
       "age": 33,
       "number": 17,
       "position": "Defender",
@@ -7018,7 +7018,7 @@
     },
     {
       "id": 13736,
-      "name": "D. Muñoz",
+      "name": "Daniel Muñoz",
       "age": 29,
       "number": 2,
       "position": "Defender",
@@ -7030,7 +7030,7 @@
     },
     {
       "id": 324034,
-      "name": "G. Puerta",
+      "name": "Gustavo Puerta",
       "age": 22,
       "number": 14,
       "position": "Midfielder",
@@ -7042,7 +7042,7 @@
     },
     {
       "id": 168,
-      "name": "D. Sánchez",
+      "name": "Davinson Sánchez",
       "age": 29,
       "number": 23,
       "position": "Defender",
@@ -7054,7 +7054,7 @@
     },
     {
       "id": 289592,
-      "name": "K. Castaño",
+      "name": "Kevin Castaño",
       "age": 25,
       "number": 5,
       "position": "Midfielder",
@@ -7066,7 +7066,7 @@
     },
     {
       "id": 2490,
-      "name": "J. Lerma",
+      "name": "Jefferson Lerma",
       "age": 31,
       "number": 16,
       "position": "Midfielder",
@@ -7078,7 +7078,7 @@
     },
     {
       "id": 13151,
-      "name": "J. Portilla",
+      "name": "Juan Portilla",
       "age": 27,
       "number": 15,
       "position": "Midfielder",
@@ -7090,7 +7090,7 @@
     },
     {
       "id": 13708,
-      "name": "J. Arias",
+      "name": "Jhon Arias",
       "age": 28,
       "number": 11,
       "position": "Midfielder",
@@ -7102,7 +7102,7 @@
     },
     {
       "id": 5994,
-      "name": "J. Carrascal",
+      "name": "Jorge Carrascal",
       "age": 27,
       "number": 8,
       "position": "Midfielder",
@@ -7114,7 +7114,7 @@
     },
     {
       "id": 6005,
-      "name": "J. Quintero",
+      "name": "Juan Fernando Quintero",
       "age": 32,
       "number": 20,
       "position": "Midfielder",
@@ -7126,7 +7126,7 @@
     },
     {
       "id": 195104,
-      "name": "R. Rios",
+      "name": "Richard Ríos",
       "age": 25,
       "number": 6,
       "position": "Midfielder",
@@ -7138,7 +7138,7 @@
     },
     {
       "id": 517,
-      "name": "J. Rodríguez",
+      "name": "James Rodríguez",
       "age": 34,
       "number": 10,
       "position": "Midfielder",
@@ -7150,7 +7150,7 @@
     },
     {
       "id": 13376,
-      "name": "J. Campaz",
+      "name": "Jaminton Campaz",
       "age": 25,
       "number": 21,
       "position": "Midfielder",
@@ -7162,7 +7162,7 @@
     },
     {
       "id": 24810,
-      "name": "J. Córdoba",
+      "name": "Jhon Córdoba",
       "age": 32,
       "number": 9,
       "position": "Attacker",
@@ -7174,7 +7174,7 @@
     },
     {
       "id": 47582,
-      "name": "C. Hernández",
+      "name": "Cucho Hernández",
       "age": 26,
       "number": 19,
       "position": "Attacker",
@@ -7186,7 +7186,7 @@
     },
     {
       "id": 2489,
-      "name": "L. Díaz",
+      "name": "Luis Díaz",
       "age": 28,
       "number": 7,
       "position": "Midfielder",
@@ -7198,7 +7198,7 @@
     },
     {
       "id": 345748,
-      "name": "A. Gómez",
+      "name": "Andrés Gómez",
       "age": 23,
       "number": 26,
       "position": "Midfielder",
@@ -7210,7 +7210,7 @@
     },
     {
       "id": 47237,
-      "name": "L. Suárez",
+      "name": "Luis Suárez",
       "age": 28,
       "number": 25,
       "position": "Attacker",
@@ -7490,7 +7490,7 @@
   "Uzbekistan": [
     {
       "id": 72120,
-      "name": "B. Ergashev",
+      "name": "Botirali Ergashev",
       "age": 30,
       "number": 16,
       "position": "Goalkeeper",
@@ -7502,7 +7502,7 @@
     },
     {
       "id": 73507,
-      "name": "A. Nematov",
+      "name": "Abduvohid Nematov",
       "age": 24,
       "number": 12,
       "position": "Goalkeeper",
@@ -7514,7 +7514,7 @@
     },
     {
       "id": 73534,
-      "name": "U. Yusupov",
+      "name": "Utkir Yusupov",
       "age": 34,
       "number": 1,
       "position": "Goalkeeper",
@@ -7526,7 +7526,7 @@
     },
     {
       "id": 72122,
-      "name": "K. Alijonov",
+      "name": "Khojiakbar Alijonov",
       "age": 28,
       "number": 3,
       "position": "Defender",
@@ -7538,7 +7538,7 @@
     },
     {
       "id": 34121,
-      "name": "R. Ashurmatov",
+      "name": "Rustam Ashurmatov",
       "age": 29,
       "number": 5,
       "position": "Defender",
@@ -7550,7 +7550,7 @@
     },
     {
       "id": 73510,
-      "name": "U. Eshmurodov",
+      "name": "Umar Eshmurodov",
       "age": 33,
       "number": 15,
       "position": "Defender",
@@ -7562,7 +7562,7 @@
     },
     {
       "id": 416964,
-      "name": "B. Karimov",
+      "name": "Bekhruz Karimov",
       "age": 18,
       "number": 24,
       "position": "Defender",
@@ -7574,7 +7574,7 @@
     },
     {
       "id": 360114,
-      "name": "A. Khusanov",
+      "name": "Abdukodir Khusanov",
       "age": 21,
       "number": 2,
       "position": "Defender",
@@ -7598,7 +7598,7 @@
     },
     {
       "id": 532759,
-      "name": "F. Sayfiev",
+      "name": "Farrukh Sayfiev",
       "age": 34,
       "number": 4,
       "position": "Defender",
@@ -7610,7 +7610,7 @@
     },
     {
       "id": 358427,
-      "name": "J. Urozov",
+      "name": "Jakhongir Urozov",
       "age": 22,
       "number": 27,
       "position": "Defender",
@@ -7622,7 +7622,7 @@
     },
     {
       "id": 73418,
-      "name": "A. Abdullaev",
+      "name": "Abdulla Abdullaev",
       "age": 28,
       "number": 18,
       "position": "Defender",
@@ -7634,7 +7634,7 @@
     },
     {
       "id": 65571,
-      "name": "A. Ulmasaliev",
+      "name": "Avazbek Ulmasaliev",
       "age": 26,
       "number": 25,
       "position": "Defender",
@@ -7646,7 +7646,7 @@
     },
     {
       "id": 53836,
-      "name": "J. Masharipov",
+      "name": "Jaloliddin Masharipov",
       "age": 32,
       "number": 10,
       "position": "Midfielder",
@@ -7670,7 +7670,7 @@
     },
     {
       "id": 65576,
-      "name": "J. Iskanderov",
+      "name": "Jamshid Iskanderov",
       "age": 32,
       "number": 8,
       "position": "Midfielder",
@@ -7682,7 +7682,7 @@
     },
     {
       "id": 53835,
-      "name": "O. Hamrobekov",
+      "name": "Odiljon Hamrobekov",
       "age": 29,
       "number": 9,
       "position": "Midfielder",
@@ -7694,7 +7694,7 @@
     },
     {
       "id": 73522,
-      "name": "A. Mozgovoy",
+      "name": "Akmal Mozgovoy",
       "age": 26,
       "number": 6,
       "position": "Midfielder",
@@ -7706,7 +7706,7 @@
     },
     {
       "id": 50272,
-      "name": "O. Shukurov",
+      "name": "Otabek Shukurov",
       "age": 29,
       "number": 7,
       "position": "Midfielder",
@@ -7718,7 +7718,7 @@
     },
     {
       "id": 263676,
-      "name": "A. Fayzullaev",
+      "name": "Abbosbek Fayzullaev",
       "age": 22,
       "number": 22,
       "position": "Attacker",
@@ -7730,7 +7730,7 @@
     },
     {
       "id": 363723,
-      "name": "S. Esanov",
+      "name": "Sherzod Esanov",
       "age": 23,
       "number": 23,
       "position": "Midfielder",
@@ -7754,7 +7754,7 @@
     },
     {
       "id": 53834,
-      "name": "D. Khamdamov",
+      "name": "Dostonbek Khamdamov",
       "age": 29,
       "number": 17,
       "position": "Midfielder",
@@ -7766,7 +7766,7 @@
     },
     {
       "id": 65584,
-      "name": "A. Amonov",
+      "name": "Azizbek Amonov",
       "age": 28,
       "number": 28,
       "position": "Attacker",
@@ -7778,7 +7778,7 @@
     },
     {
       "id": 72128,
-      "name": "I. Sergeev",
+      "name": "Igor Sergeev",
       "age": 32,
       "number": 21,
       "position": "Attacker",
@@ -7790,7 +7790,7 @@
     },
     {
       "id": 53535,
-      "name": "E. Shomurodov",
+      "name": "Eldor Shomurodov",
       "age": 30,
       "number": 14,
       "position": "Attacker",
@@ -7804,19 +7804,19 @@
   "England": [
     {
       "id": 19088,
-      "name": "D. Henderson",
+      "name": "Dean Henderson",
       "age": 28,
       "number": 13,
       "position": "Goalkeeper",
       "photo": "https://media.api-sports.io/football/players/19088.png",
-      "club": "Brentford",
-      "caps": 90,
-      "goals": 3,
+      "club": "Crystal Palace",
+      "caps": 5,
+      "goals": 0,
       "captain": false
     },
     {
       "id": 2932,
-      "name": "J. Pickford",
+      "name": "Jordan Pickford",
       "age": 31,
       "number": 1,
       "position": "Goalkeeper",
@@ -7828,7 +7828,7 @@
     },
     {
       "id": 162489,
-      "name": "J. Trafford",
+      "name": "James Trafford",
       "age": 23,
       "number": 23,
       "position": "Goalkeeper",
@@ -7840,7 +7840,7 @@
     },
     {
       "id": 18961,
-      "name": "D. Burn",
+      "name": "Dan Burn",
       "age": 33,
       "number": 15,
       "position": "Defender",
@@ -7852,7 +7852,7 @@
     },
     {
       "id": 67971,
-      "name": "M. Guéhi",
+      "name": "Marc Guéhi",
       "age": 25,
       "number": 6,
       "position": "Defender",
@@ -7864,7 +7864,7 @@
     },
     {
       "id": 19545,
-      "name": "R. James",
+      "name": "Reece James",
       "age": 26,
       "number": 24,
       "position": "Defender",
@@ -7876,7 +7876,7 @@
     },
     {
       "id": 19354,
-      "name": "E. Konsa",
+      "name": "Ezri Konsa",
       "age": 28,
       "number": 2,
       "position": "Defender",
@@ -7888,7 +7888,7 @@
     },
     {
       "id": 158694,
-      "name": "T. Livramento",
+      "name": "Tino Livramento",
       "age": 23,
       "number": 12,
       "position": "Defender",
@@ -7912,7 +7912,7 @@
     },
     {
       "id": 158698,
-      "name": "J. Quansah",
+      "name": "Jarell Quansah",
       "age": 22,
       "number": 26,
       "position": "Defender",
@@ -7924,7 +7924,7 @@
     },
     {
       "id": 19235,
-      "name": "D. Spence",
+      "name": "Djed Spence",
       "age": 25,
       "number": 25,
       "position": "Defender",
@@ -7936,7 +7936,7 @@
     },
     {
       "id": 626,
-      "name": "J. Stones",
+      "name": "John Stones",
       "age": 31,
       "number": 5,
       "position": "Defender",
@@ -7948,7 +7948,7 @@
     },
     {
       "id": 138908,
-      "name": "E. Anderson",
+      "name": "Elliot Anderson",
       "age": 23,
       "number": 8,
       "position": "Midfielder",
@@ -7960,7 +7960,7 @@
     },
     {
       "id": 129718,
-      "name": "J. Bellingham",
+      "name": "Jude Bellingham",
       "age": 22,
       "number": 10,
       "position": "Midfielder",
@@ -7972,7 +7972,7 @@
     },
     {
       "id": 19586,
-      "name": "E. Eze",
+      "name": "Eberechi Eze",
       "age": 27,
       "number": 21,
       "position": "Midfielder",
@@ -7984,7 +7984,7 @@
     },
     {
       "id": 292,
-      "name": "J. Henderson",
+      "name": "Jordan Henderson",
       "age": 35,
       "number": 14,
       "position": "Midfielder",
@@ -7996,7 +7996,7 @@
     },
     {
       "id": 284322,
-      "name": "K. Mainoo",
+      "name": "Kobbie Mainoo",
       "age": 20,
       "number": 16,
       "position": "Midfielder",
@@ -8008,7 +8008,7 @@
     },
     {
       "id": 2937,
-      "name": "D. Rice",
+      "name": "Declan Rice",
       "age": 26,
       "number": 4,
       "position": "Midfielder",
@@ -8020,7 +8020,7 @@
     },
     {
       "id": 19170,
-      "name": "M. Rogers",
+      "name": "Morgan Rogers",
       "age": 23,
       "number": 17,
       "position": "Midfielder",
@@ -8032,7 +8032,7 @@
     },
     {
       "id": 138787,
-      "name": "A. Gordon",
+      "name": "Anthony Gordon",
       "age": 24,
       "number": 18,
       "position": "Midfielder",
@@ -8044,7 +8044,7 @@
     },
     {
       "id": 184,
-      "name": "H. Kane",
+      "name": "Harry Kane",
       "age": 32,
       "number": 9,
       "position": "Attacker",
@@ -8056,7 +8056,7 @@
     },
     {
       "id": 136723,
-      "name": "N. Madueke",
+      "name": "Noni Madueke",
       "age": 23,
       "number": 20,
       "position": "Midfielder",
@@ -8068,7 +8068,7 @@
     },
     {
       "id": 909,
-      "name": "M. Rashford",
+      "name": "Marcus Rashford",
       "age": 28,
       "number": 11,
       "position": "Midfielder",
@@ -8080,7 +8080,7 @@
     },
     {
       "id": 1460,
-      "name": "B. Saka",
+      "name": "Bukayo Saka",
       "age": 24,
       "number": 7,
       "position": "Attacker",
@@ -8092,7 +8092,7 @@
     },
     {
       "id": 19974,
-      "name": "I. Toney",
+      "name": "Ivan Toney",
       "age": 29,
       "number": 22,
       "position": "Attacker",
@@ -8104,7 +8104,7 @@
     },
     {
       "id": 19366,
-      "name": "O. Watkins",
+      "name": "Ollie Watkins",
       "age": 30,
       "number": 19,
       "position": "Midfielder",
@@ -8118,7 +8118,7 @@
   "USA": [
     {
       "id": 266606,
-      "name": "C. Brady",
+      "name": "Chris Brady",
       "age": 21,
       "number": 25,
       "position": "Goalkeeper",
@@ -8130,7 +8130,7 @@
     },
     {
       "id": 50728,
-      "name": "M. Freese",
+      "name": "Matt Freese",
       "age": 27,
       "number": 24,
       "position": "Goalkeeper",
@@ -8142,7 +8142,7 @@
     },
     {
       "id": 50999,
-      "name": "M. Turner",
+      "name": "Matt Turner",
       "age": 31,
       "number": 1,
       "position": "Goalkeeper",
@@ -8154,7 +8154,7 @@
     },
     {
       "id": 38735,
-      "name": "S. Dest",
+      "name": "Sergiño Dest",
       "age": 25,
       "number": 2,
       "position": "Midfielder",
@@ -8166,7 +8166,7 @@
     },
     {
       "id": 355994,
-      "name": "A. Freeman",
+      "name": "Alex Freeman",
       "age": 21,
       "number": 16,
       "position": "Defender",
@@ -8178,7 +8178,7 @@
     },
     {
       "id": 50735,
-      "name": "M. McKenzie",
+      "name": "Mark McKenzie",
       "age": 26,
       "number": 22,
       "position": "Defender",
@@ -8190,7 +8190,7 @@
     },
     {
       "id": 19023,
-      "name": "T. Ream",
+      "name": "Tim Ream",
       "age": 38,
       "number": 13,
       "position": "Defender",
@@ -8202,7 +8202,7 @@
     },
     {
       "id": 126949,
-      "name": "C. Richards",
+      "name": "Chris Richards",
       "age": 25,
       "number": 3,
       "position": "Defender",
@@ -8214,19 +8214,19 @@
     },
     {
       "id": 19549,
-      "name": "A. Robinson",
+      "name": "Antonee Robinson",
       "age": 28,
       "number": 5,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/19549.png",
-      "club": "FC Cincinnati",
-      "caps": 40,
-      "goals": 3,
+      "club": "Fulham",
+      "caps": 54,
+      "goals": 5,
       "captain": false
     },
     {
       "id": 50879,
-      "name": "M. Robinson",
+      "name": "Miles Robinson",
       "age": 28,
       "number": 12,
       "position": "Defender",
@@ -8238,7 +8238,7 @@
     },
     {
       "id": 50852,
-      "name": "J. Scally",
+      "name": "Joe Scally",
       "age": 23,
       "number": 23,
       "position": "Defender",
@@ -8250,7 +8250,7 @@
     },
     {
       "id": 50737,
-      "name": "A. Trusty",
+      "name": "Auston Trusty",
       "age": 27,
       "number": 6,
       "position": "Defender",
@@ -8262,7 +8262,7 @@
     },
     {
       "id": 362400,
-      "name": "M. Arfsten",
+      "name": "Max Arfsten",
       "age": 24,
       "number": 18,
       "position": "Midfielder",
@@ -8274,7 +8274,7 @@
     },
     {
       "id": 201713,
-      "name": "S. Berhalter",
+      "name": "Sebastian Berhalter",
       "age": 24,
       "number": 14,
       "position": "Midfielder",
@@ -8286,7 +8286,7 @@
     },
     {
       "id": 415,
-      "name": "W. McKennie",
+      "name": "Weston McKennie",
       "age": 27,
       "number": 8,
       "position": "Midfielder",
@@ -8298,7 +8298,7 @@
     },
     {
       "id": 161921,
-      "name": "G. Reyna",
+      "name": "Giovanni Reyna",
       "age": 23,
       "number": 7,
       "position": "Midfielder",
@@ -8310,7 +8310,7 @@
     },
     {
       "id": 51114,
-      "name": "C. Roldan",
+      "name": "Cristian Roldan",
       "age": 30,
       "number": 15,
       "position": "Midfielder",
@@ -8322,7 +8322,7 @@
     },
     {
       "id": 162037,
-      "name": "M. Tillman",
+      "name": "Malik Tillman",
       "age": 23,
       "number": 17,
       "position": "Midfielder",
@@ -8334,7 +8334,7 @@
     },
     {
       "id": 1150,
-      "name": "T. Adams",
+      "name": "Tyler Adams",
       "age": 27,
       "number": 4,
       "position": "Midfielder",
@@ -8346,7 +8346,7 @@
     },
     {
       "id": 1138,
-      "name": "T. Weah",
+      "name": "Timothy Weah",
       "age": 25,
       "number": 21,
       "position": "Attacker",
@@ -8358,7 +8358,7 @@
     },
     {
       "id": 35885,
-      "name": "A. Zendejas",
+      "name": "Alejandro Zendejas",
       "age": 28,
       "number": 26,
       "position": "Attacker",
@@ -8370,7 +8370,7 @@
     },
     {
       "id": 50739,
-      "name": "B. Aaronson",
+      "name": "Brenden Aaronson",
       "age": 25,
       "number": 11,
       "position": "Midfielder",
@@ -8382,7 +8382,7 @@
     },
     {
       "id": 138835,
-      "name": "F. Balogun",
+      "name": "Folarin Balogun",
       "age": 24,
       "number": 20,
       "position": "Attacker",
@@ -8394,7 +8394,7 @@
     },
     {
       "id": 73868,
-      "name": "R. Pepi",
+      "name": "Ricardo Pepi",
       "age": 22,
       "number": 9,
       "position": "Attacker",
@@ -8406,7 +8406,7 @@
     },
     {
       "id": 17,
-      "name": "C. Pulisic",
+      "name": "Christian Pulisic",
       "age": 27,
       "number": 10,
       "position": "Midfielder",
@@ -8418,7 +8418,7 @@
     },
     {
       "id": 427,
-      "name": "H. Wright",
+      "name": "Haji Wright",
       "age": 27,
       "number": 19,
       "position": "Attacker",
@@ -8432,7 +8432,7 @@
   "Ecuador": [
     {
       "id": 16380,
-      "name": "H. Galíndez",
+      "name": "Hernán Galíndez",
       "age": 38,
       "number": 1,
       "position": "Goalkeeper",
@@ -8444,7 +8444,7 @@
     },
     {
       "id": 81224,
-      "name": "M. Ramírez",
+      "name": "Moisés Ramírez",
       "age": 25,
       "number": 12,
       "position": "Goalkeeper",
@@ -8456,7 +8456,7 @@
     },
     {
       "id": 16642,
-      "name": "G. Valle",
+      "name": "Gonzalo Valle",
       "age": 29,
       "number": 22,
       "position": "Goalkeeper",
@@ -8468,7 +8468,7 @@
     },
     {
       "id": 46731,
-      "name": "P. Estupiñán",
+      "name": "Pervis Estupiñán",
       "age": 27,
       "number": 7,
       "position": "Defender",
@@ -8480,7 +8480,7 @@
     },
     {
       "id": 127817,
-      "name": "P. Hincapié",
+      "name": "Piero Hincapié",
       "age": 23,
       "number": 3,
       "position": "Defender",
@@ -8492,7 +8492,7 @@
     },
     {
       "id": 306940,
-      "name": "Y. Medina",
+      "name": "Yaimar Medina",
       "age": 21,
       "number": 26,
       "position": "Midfielder",
@@ -8504,7 +8504,7 @@
     },
     {
       "id": 354027,
-      "name": "J. Ordoñez",
+      "name": "Joel Ordóñez",
       "age": 21,
       "number": 4,
       "position": "Defender",
@@ -8516,7 +8516,7 @@
     },
     {
       "id": 16367,
-      "name": "W. Pacho",
+      "name": "Willian Pacho",
       "age": 24,
       "number": 6,
       "position": "Defender",
@@ -8528,7 +8528,7 @@
     },
     {
       "id": 2575,
-      "name": "J. Porozo",
+      "name": "Jackson Porozo",
       "age": 25,
       "number": 25,
       "position": "Defender",
@@ -8540,7 +8540,7 @@
     },
     {
       "id": 2583,
-      "name": "A. Preciado",
+      "name": "Ángelo Preciado",
       "age": 27,
       "number": 17,
       "position": "Defender",
@@ -8552,7 +8552,7 @@
     },
     {
       "id": 63964,
-      "name": "F. Torres",
+      "name": "Félix Torres",
       "age": 28,
       "number": 2,
       "position": "Defender",
@@ -8564,7 +8564,7 @@
     },
     {
       "id": 16470,
-      "name": "J. Alcívar",
+      "name": "Jordy Alcívar",
       "age": 26,
       "number": 5,
       "position": "Midfielder",
@@ -8576,7 +8576,7 @@
     },
     {
       "id": 116117,
-      "name": "M. Caicedo",
+      "name": "Moisés Caicedo",
       "age": 24,
       "number": 23,
       "position": "Midfielder",
@@ -8588,7 +8588,7 @@
     },
     {
       "id": 338045,
-      "name": "D. Castillo",
+      "name": "Denil Castillo",
       "age": 21,
       "number": 18,
       "position": "Midfielder",
@@ -8600,7 +8600,7 @@
     },
     {
       "id": 16360,
-      "name": "A. Franco",
+      "name": "Alan Franco",
       "age": 27,
       "number": 21,
       "position": "Defender",
@@ -8612,7 +8612,7 @@
     },
     {
       "id": 406303,
-      "name": "K. Páez",
+      "name": "Kendry Páez",
       "age": 18,
       "number": 10,
       "position": "Attacker",
@@ -8624,7 +8624,7 @@
     },
     {
       "id": 280695,
-      "name": "A. Minda",
+      "name": "Alan Minda",
       "age": 22,
       "number": 14,
       "position": "Midfielder",
@@ -8636,19 +8636,19 @@
     },
     {
       "id": 198347,
-      "name": "A. Valencia",
+      "name": "Anthony Valencia",
       "age": 22,
       "number": 8,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/198347.png",
-      "club": "Pachuca",
-      "caps": 105,
-      "goals": 49,
-      "captain": true
+      "club": "Antwerp",
+      "caps": 3,
+      "goals": 1,
+      "captain": false
     },
     {
       "id": 237078,
-      "name": "P. Vite",
+      "name": "Pedro Vite",
       "age": 23,
       "number": 15,
       "position": "Midfielder",
@@ -8660,7 +8660,7 @@
     },
     {
       "id": 361966,
-      "name": "K. Rodríguez",
+      "name": "Kevin Rodríguez",
       "age": 25,
       "number": 11,
       "position": "Attacker",
@@ -8672,7 +8672,7 @@
     },
     {
       "id": 25414,
-      "name": "J. Yeboah",
+      "name": "John Yeboah",
       "age": 25,
       "number": 9,
       "position": "Attacker",
@@ -8684,7 +8684,7 @@
     },
     {
       "id": 311543,
-      "name": "N. Angulo",
+      "name": "Nilson Angulo",
       "age": 22,
       "number": 20,
       "position": "Attacker",
@@ -8696,14 +8696,14 @@
     },
     {
       "id": 16590,
-      "name": "J. Caicedo",
+      "name": "Jordy Caicedo",
       "age": 28,
       "number": 16,
       "position": "Attacker",
       "photo": "https://media.api-sports.io/football/players/16590.png",
-      "club": "Chelsea",
-      "caps": 61,
-      "goals": 3,
+      "club": "Huracán",
+      "caps": 20,
+      "goals": 4,
       "captain": false
     },
     {
@@ -8720,7 +8720,7 @@
     },
     {
       "id": 16369,
-      "name": "G. Plata",
+      "name": "Gonzalo Plata",
       "age": 25,
       "number": 19,
       "position": "Attacker",
@@ -8732,7 +8732,7 @@
     },
     {
       "id": 35533,
-      "name": "E. Valencia",
+      "name": "Enner Valencia",
       "age": 36,
       "number": 13,
       "position": "Attacker",
@@ -8746,19 +8746,19 @@
   "Ivory Coast": [
     {
       "id": 64190,
-      "name": "Y. Fofana",
+      "name": "Yahia Fofana",
       "age": 25,
       "number": 1,
       "position": "Goalkeeper",
       "photo": "https://media.api-sports.io/football/players/64190.png",
-      "club": "Porto",
-      "caps": 32,
-      "goals": 7,
+      "club": "Çaykur Rizespor",
+      "caps": 35,
+      "goals": 0,
       "captain": false
     },
     {
       "id": 277046,
-      "name": "M. Koné",
+      "name": "Mohamed Koné",
       "age": 23,
       "number": 16,
       "position": "Goalkeeper",
@@ -8770,7 +8770,7 @@
     },
     {
       "id": 30393,
-      "name": "A. Lafont",
+      "name": "Alban Lafont",
       "age": 26,
       "number": 23,
       "position": "Goalkeeper",
@@ -8782,7 +8782,7 @@
     },
     {
       "id": 135068,
-      "name": "E. Agbadou",
+      "name": "Emmanuel Agbadou",
       "age": 28,
       "number": 20,
       "position": "Defender",
@@ -8794,19 +8794,19 @@
     },
     {
       "id": 354753,
-      "name": "O. Diomande",
+      "name": "Ousmane Diomande",
       "age": 22,
       "number": 2,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/354753.png",
-      "club": "RB Leipzig",
-      "caps": 10,
-      "goals": 3,
+      "club": "Sporting CP",
+      "caps": 15,
+      "goals": 1,
       "captain": false
     },
     {
       "id": 161747,
-      "name": "G. Doué",
+      "name": "Guéla Doué",
       "age": 23,
       "number": 17,
       "position": "Defender",
@@ -8818,7 +8818,7 @@
     },
     {
       "id": 22002,
-      "name": "G. Konan",
+      "name": "Ghislain Konan",
       "age": 30,
       "number": 3,
       "position": "Defender",
@@ -8830,7 +8830,7 @@
     },
     {
       "id": 48119,
-      "name": "O. Kossounou",
+      "name": "Odilon Kossounou",
       "age": 24,
       "number": 7,
       "position": "Defender",
@@ -8842,7 +8842,7 @@
     },
     {
       "id": 1807,
-      "name": "E. Ndicka",
+      "name": "Evan Ndicka",
       "age": 26,
       "number": 21,
       "position": "Defender",
@@ -8854,7 +8854,7 @@
     },
     {
       "id": 20836,
-      "name": "C. Operi",
+      "name": "Christopher Opéri",
       "age": 28,
       "number": 13,
       "position": "Defender",
@@ -8866,7 +8866,7 @@
     },
     {
       "id": 30504,
-      "name": "W. Singo",
+      "name": "Wilfried Singo",
       "age": 25,
       "number": 5,
       "position": "Defender",
@@ -8878,7 +8878,7 @@
     },
     {
       "id": 30807,
-      "name": "S. Fofana",
+      "name": "Seko Fofana",
       "age": 30,
       "number": 6,
       "position": "Midfielder",
@@ -8890,7 +8890,7 @@
     },
     {
       "id": 474591,
-      "name": "C. Inao Oulai",
+      "name": "Christ Inao Oulaï",
       "age": 19,
       "number": 26,
       "position": "Midfielder",
@@ -8902,7 +8902,7 @@
     },
     {
       "id": 1642,
-      "name": "F. Kessié",
+      "name": "Franck Kessié",
       "age": 29,
       "number": 8,
       "position": "Midfielder",
@@ -8914,7 +8914,7 @@
     },
     {
       "id": 22149,
-      "name": "I. Sangaré",
+      "name": "Ibrahim Sangaré",
       "age": 28,
       "number": 18,
       "position": "Midfielder",
@@ -8926,7 +8926,7 @@
     },
     {
       "id": 3243,
-      "name": "J. Seri",
+      "name": "Jean Michaël Seri",
       "age": 34,
       "number": 4,
       "position": "Midfielder",
@@ -8938,7 +8938,7 @@
     },
     {
       "id": 263228,
-      "name": "P. Guiagon",
+      "name": "Parfait Guiagon",
       "age": 24,
       "number": 25,
       "position": "Midfielder",
@@ -8950,7 +8950,7 @@
     },
     {
       "id": 387643,
-      "name": "B. Touré",
+      "name": "Bazoumana Touré",
       "age": 19,
       "number": 24,
       "position": "Attacker",
@@ -8962,7 +8962,7 @@
     },
     {
       "id": 301771,
-      "name": "S. Adingra",
+      "name": "Simon Adingra",
       "age": 23,
       "number": 10,
       "position": "Attacker",
@@ -8974,7 +8974,7 @@
     },
     {
       "id": 275651,
-      "name": "A. Bonny",
+      "name": "Ange-Yoan Bonny",
       "age": 22,
       "number": 9,
       "position": "Attacker",
@@ -8986,7 +8986,7 @@
     },
     {
       "id": 334429,
-      "name": "O. Diakité",
+      "name": "Oumar Diakité",
       "age": 22,
       "number": 14,
       "position": "Midfielder",
@@ -8998,7 +8998,7 @@
     },
     {
       "id": 157997,
-      "name": "A. Diallo",
+      "name": "Amad Diallo",
       "age": 23,
       "number": 15,
       "position": "Attacker",
@@ -9010,7 +9010,7 @@
     },
     {
       "id": 513776,
-      "name": "Y. Diomande",
+      "name": "Yan Diomande",
       "age": 19,
       "number": 11,
       "position": "Midfielder",
@@ -9022,7 +9022,7 @@
     },
     {
       "id": 137303,
-      "name": "E. Guessand",
+      "name": "Evann Guessand",
       "age": 24,
       "number": 22,
       "position": "Attacker",
@@ -9034,7 +9034,7 @@
     },
     {
       "id": 3246,
-      "name": "N. Pépé",
+      "name": "Nicolas Pépé",
       "age": 30,
       "number": 19,
       "position": "Attacker",
@@ -9046,7 +9046,7 @@
     },
     {
       "id": 162707,
-      "name": "E. Wahi",
+      "name": "Elye Wahi",
       "age": 22,
       "number": 12,
       "position": "Attacker",
@@ -9060,7 +9060,7 @@
   "Curaçao": [
     {
       "id": 214129,
-      "name": "T. Bodak",
+      "name": "Tyrick Bodak",
       "age": 23,
       "number": 25,
       "position": "Goalkeeper",
@@ -9072,7 +9072,7 @@
     },
     {
       "id": 36967,
-      "name": "T. Doornbusch",
+      "name": "Trevor Doornbusch",
       "age": 26,
       "number": 26,
       "position": "Goalkeeper",
@@ -9084,7 +9084,7 @@
     },
     {
       "id": 221,
-      "name": "E. Room",
+      "name": "Eloy Room",
       "age": 36,
       "number": 1,
       "position": "Goalkeeper",
@@ -9096,7 +9096,7 @@
     },
     {
       "id": 37175,
-      "name": "R. Bazoer",
+      "name": "Riechedly Bazoer",
       "age": 29,
       "number": 23,
       "position": "Defender",
@@ -9108,7 +9108,7 @@
     },
     {
       "id": 706,
-      "name": "J. Brenet",
+      "name": "Joshua Brenet",
       "age": 31,
       "number": 20,
       "position": "Defender",
@@ -9120,7 +9120,7 @@
     },
     {
       "id": 36970,
-      "name": "S. Floranus",
+      "name": "Sherel Floranus",
       "age": 27,
       "number": 5,
       "position": "Defender",
@@ -9144,7 +9144,7 @@
     },
     {
       "id": 36857,
-      "name": "J. Gaari",
+      "name": "Juriën Gaari",
       "age": 32,
       "number": 3,
       "position": "Defender",
@@ -9156,7 +9156,7 @@
     },
     {
       "id": 194645,
-      "name": "S. Sambo",
+      "name": "Shurandy Sambo",
       "age": 24,
       "number": 2,
       "position": "Defender",
@@ -9168,7 +9168,7 @@
     },
     {
       "id": 37066,
-      "name": "R. van Eijma",
+      "name": "Roshon van Eijma",
       "age": 27,
       "number": 4,
       "position": "Defender",
@@ -9180,7 +9180,7 @@
     },
     {
       "id": 228,
-      "name": "A. Obispo",
+      "name": "Armando Obispo",
       "age": 26,
       "number": 18,
       "position": "Defender",
@@ -9192,7 +9192,7 @@
     },
     {
       "id": 18997,
-      "name": "L. Bacuna",
+      "name": "Leandro Bacuna",
       "age": 34,
       "number": 10,
       "position": "Midfielder",
@@ -9204,7 +9204,7 @@
     },
     {
       "id": 162199,
-      "name": "A. Martha",
+      "name": "Ar'jany Martha",
       "age": 22,
       "number": 15,
       "position": "Midfielder",
@@ -9216,7 +9216,7 @@
     },
     {
       "id": 406846,
-      "name": "T. Noslin",
+      "name": "Tyrese Noslin",
       "age": 23,
       "number": 13,
       "position": "Midfielder",
@@ -9228,7 +9228,7 @@
     },
     {
       "id": 309763,
-      "name": "L. Comenencia",
+      "name": "Livano Comenencia",
       "age": 21,
       "number": 8,
       "position": "Midfielder",
@@ -9240,7 +9240,7 @@
     },
     {
       "id": 37461,
-      "name": "K. Felida",
+      "name": "Kevin Felida",
       "age": 26,
       "number": 22,
       "position": "Midfielder",
@@ -9252,7 +9252,7 @@
     },
     {
       "id": 906,
-      "name": "T. Chong",
+      "name": "Tahith Chong",
       "age": 26,
       "number": 21,
       "position": "Midfielder",
@@ -9264,7 +9264,7 @@
     },
     {
       "id": 36842,
-      "name": "G. Roemeratoe",
+      "name": "Godfried Roemeratoe",
       "age": 26,
       "number": 6,
       "position": "Midfielder",
@@ -9276,19 +9276,19 @@
     },
     {
       "id": 19047,
-      "name": "J. Bacuna",
+      "name": "Juninho Bacuna",
       "age": 28,
       "number": 7,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/19047.png",
-      "club": "Iğdır",
-      "caps": 72,
-      "goals": 16,
-      "captain": true
+      "club": "Volendam",
+      "caps": 49,
+      "goals": 15,
+      "captain": false
     },
     {
       "id": 163220,
-      "name": "J. Antonisse",
+      "name": "Jeremy Antonisse",
       "age": 23,
       "number": 11,
       "position": "Attacker",
@@ -9300,7 +9300,7 @@
     },
     {
       "id": 37272,
-      "name": "B. Kuwas",
+      "name": "Brandley Kuwas",
       "age": 33,
       "number": 17,
       "position": "Attacker",
@@ -9312,7 +9312,7 @@
     },
     {
       "id": 41627,
-      "name": "K. Gorré",
+      "name": "Kenji Gorré",
       "age": 31,
       "number": 14,
       "position": "Attacker",
@@ -9324,7 +9324,7 @@
     },
     {
       "id": 161884,
-      "name": "S. Hansen",
+      "name": "Sontje Hansen",
       "age": 23,
       "number": 12,
       "position": "Attacker",
@@ -9336,7 +9336,7 @@
     },
     {
       "id": 38708,
-      "name": "G. Kastaneer",
+      "name": "Gervane Kastaneer",
       "age": 29,
       "number": 19,
       "position": "Attacker",
@@ -9348,7 +9348,7 @@
     },
     {
       "id": 18981,
-      "name": "J. Locadia",
+      "name": "Jürgen Locadia",
       "age": 32,
       "number": 9,
       "position": "Attacker",
@@ -9360,7 +9360,7 @@
     },
     {
       "id": 195067,
-      "name": "J. Margaritha",
+      "name": "Jearl Margaritha",
       "age": 25,
       "number": 16,
       "position": "Attacker",
@@ -9374,7 +9374,7 @@
   "Netherlands": [
     {
       "id": 26232,
-      "name": "M. Flekken",
+      "name": "Mark Flekken",
       "age": 32,
       "number": 23,
       "position": "Goalkeeper",
@@ -9386,7 +9386,7 @@
     },
     {
       "id": 194536,
-      "name": "R. Roefs",
+      "name": "Robin Roefs",
       "age": 22,
       "number": 13,
       "position": "Goalkeeper",
@@ -9398,7 +9398,7 @@
     },
     {
       "id": 129058,
-      "name": "B. Verbruggen",
+      "name": "Bart Verbruggen",
       "age": 23,
       "number": 1,
       "position": "Goalkeeper",
@@ -9410,7 +9410,7 @@
     },
     {
       "id": 18861,
-      "name": "N. Aké",
+      "name": "Nathan Aké",
       "age": 30,
       "number": 5,
       "position": "Defender",
@@ -9422,7 +9422,7 @@
     },
     {
       "id": 226,
-      "name": "D. Dumfries",
+      "name": "Denzel Dumfries",
       "age": 29,
       "number": 22,
       "position": "Defender",
@@ -9434,7 +9434,7 @@
     },
     {
       "id": 341642,
-      "name": "J. Hato",
+      "name": "Jorrel Hato",
       "age": 19,
       "number": 25,
       "position": "Defender",
@@ -9446,7 +9446,7 @@
     },
     {
       "id": 38746,
-      "name": "J. Timber",
+      "name": "Quinten Timber",
       "age": 24,
       "number": 2,
       "position": "Defender",
@@ -9458,7 +9458,7 @@
     },
     {
       "id": 290,
-      "name": "V. van Dijk",
+      "name": "Virgil van Dijk",
       "age": 34,
       "number": 4,
       "position": "Defender",
@@ -9470,7 +9470,7 @@
     },
     {
       "id": 38695,
-      "name": "J. van Hecke",
+      "name": "Jan Paul van Hecke",
       "age": 25,
       "number": 6,
       "position": "Defender",
@@ -9482,7 +9482,7 @@
     },
     {
       "id": 152849,
-      "name": "M. van de Ven",
+      "name": "Micky van de Ven",
       "age": 24,
       "number": 15,
       "position": "Defender",
@@ -9494,7 +9494,7 @@
     },
     {
       "id": 92993,
-      "name": "M. Wieffer",
+      "name": "Mats Wieffer",
       "age": 26,
       "number": 12,
       "position": "Defender",
@@ -9506,7 +9506,7 @@
     },
     {
       "id": 542,
-      "name": "R. Gravenberch",
+      "name": "Ryan Gravenberch",
       "age": 23,
       "number": 8,
       "position": "Midfielder",
@@ -9518,7 +9518,7 @@
     },
     {
       "id": 36899,
-      "name": "T. Koopmeiners",
+      "name": "Teun Koopmeiners",
       "age": 27,
       "number": 20,
       "position": "Midfielder",
@@ -9530,7 +9530,7 @@
     },
     {
       "id": 36902,
-      "name": "T. Reijnders",
+      "name": "Tijjani Reijnders",
       "age": 27,
       "number": 14,
       "position": "Midfielder",
@@ -9542,7 +9542,7 @@
     },
     {
       "id": 36905,
-      "name": "G. Til",
+      "name": "Guus Til",
       "age": 28,
       "number": 16,
       "position": "Midfielder",
@@ -9554,7 +9554,7 @@
     },
     {
       "id": 38747,
-      "name": "Q. Timber",
+      "name": "Quinten Timber",
       "age": 24,
       "number": 26,
       "position": "Midfielder",
@@ -9566,7 +9566,7 @@
     },
     {
       "id": 538,
-      "name": "F. de Jong",
+      "name": "Frenkie de Jong",
       "age": 28,
       "number": 21,
       "position": "Midfielder",
@@ -9578,7 +9578,7 @@
     },
     {
       "id": 30432,
-      "name": "M. de Roon",
+      "name": "Marten de Roon",
       "age": 34,
       "number": 3,
       "position": "Midfielder",
@@ -9590,7 +9590,7 @@
     },
     {
       "id": 792,
-      "name": "J. Kluivert",
+      "name": "Justin Kluivert",
       "age": 26,
       "number": 7,
       "position": "Attacker",
@@ -9602,7 +9602,7 @@
     },
     {
       "id": 38750,
-      "name": "B. Brobbey",
+      "name": "Brian Brobbey",
       "age": 23,
       "number": 19,
       "position": "Attacker",
@@ -9614,7 +9614,7 @@
     },
     {
       "id": 667,
-      "name": "M. Depay",
+      "name": "Memphis Depay",
       "age": 31,
       "number": 10,
       "position": "Attacker",
@@ -9626,7 +9626,7 @@
     },
     {
       "id": 247,
-      "name": "C. Gakpo",
+      "name": "Cody Gakpo",
       "age": 26,
       "number": 11,
       "position": "Attacker",
@@ -9638,7 +9638,7 @@
     },
     {
       "id": 544,
-      "name": "N. Lang",
+      "name": "Noa Lang",
       "age": 26,
       "number": 17,
       "position": "Attacker",
@@ -9650,7 +9650,7 @@
     },
     {
       "id": 249,
-      "name": "D. Malen",
+      "name": "Donyell Malen",
       "age": 26,
       "number": 18,
       "position": "Attacker",
@@ -9662,7 +9662,7 @@
     },
     {
       "id": 37724,
-      "name": "C. Summerville",
+      "name": "Crysencio Summerville",
       "age": 24,
       "number": 24,
       "position": "Attacker",
@@ -9674,7 +9674,7 @@
     },
     {
       "id": 25416,
-      "name": "W. Weghorst",
+      "name": "Wout Weghorst",
       "age": 33,
       "number": 9,
       "position": "Attacker",
@@ -9688,7 +9688,7 @@
   "Japan": [
     {
       "id": 304782,
-      "name": "T. Hayakawa",
+      "name": "Tomoki Hayakawa",
       "age": 26,
       "number": 23,
       "position": "Goalkeeper",
@@ -9700,7 +9700,7 @@
     },
     {
       "id": 33034,
-      "name": "K. Osako",
+      "name": "Keisuke Ōsako",
       "age": 26,
       "number": 12,
       "position": "Goalkeeper",
@@ -9712,19 +9712,19 @@
     },
     {
       "id": 199578,
-      "name": "Z. Suzuki",
+      "name": "Zion Suzuki",
       "age": 23,
       "number": 1,
       "position": "Goalkeeper",
       "photo": "https://media.api-sports.io/football/players/199578.png",
-      "club": "Copenhagen",
-      "caps": 6,
+      "club": "Parma",
+      "caps": 24,
       "goals": 0,
       "captain": false
     },
     {
       "id": 38114,
-      "name": "K. Itakura",
+      "name": "Kō Itakura",
       "age": 28,
       "number": 4,
       "position": "Defender",
@@ -9736,7 +9736,7 @@
     },
     {
       "id": 32893,
-      "name": "H. Ito",
+      "name": "Hiroki Itō",
       "age": 26,
       "number": 21,
       "position": "Defender",
@@ -9748,7 +9748,7 @@
     },
     {
       "id": 440,
-      "name": "Y. Nagatomo",
+      "name": "Yūto Nagatomo",
       "age": 39,
       "number": 5,
       "position": "Defender",
@@ -9760,7 +9760,7 @@
     },
     {
       "id": 33165,
-      "name": "A. Seko",
+      "name": "Ayumu Seko",
       "age": 25,
       "number": 20,
       "position": "Defender",
@@ -9772,7 +9772,7 @@
     },
     {
       "id": 32887,
-      "name": "Y. Sugawara",
+      "name": "Yukinari Sugawara",
       "age": 25,
       "number": 2,
       "position": "Defender",
@@ -9784,7 +9784,7 @@
     },
     {
       "id": 351014,
-      "name": "J. Suzuki",
+      "name": "Junnosuke Suzuki",
       "age": 22,
       "number": 25,
       "position": "Defender",
@@ -9796,7 +9796,7 @@
     },
     {
       "id": 32954,
-      "name": "S. Taniguchi",
+      "name": "Shōgo Taniguchi",
       "age": 34,
       "number": 3,
       "position": "Defender",
@@ -9808,7 +9808,7 @@
     },
     {
       "id": 2597,
-      "name": "T. Tomiyasu",
+      "name": "Takehiro Tomiyasu",
       "age": 27,
       "number": 22,
       "position": "Defender",
@@ -9820,7 +9820,7 @@
     },
     {
       "id": 32858,
-      "name": "T. Watanabe",
+      "name": "Tsuyoshi Watanabe",
       "age": 28,
       "number": 16,
       "position": "Defender",
@@ -9832,7 +9832,7 @@
     },
     {
       "id": 2598,
-      "name": "R. Doan",
+      "name": "Ritsu Dōan",
       "age": 27,
       "number": 10,
       "position": "Midfielder",
@@ -9856,7 +9856,7 @@
     },
     {
       "id": 2601,
-      "name": "D. Kamada",
+      "name": "Daichi Kamada",
       "age": 29,
       "number": 15,
       "position": "Midfielder",
@@ -9868,7 +9868,7 @@
     },
     {
       "id": 33889,
-      "name": "K. Sano",
+      "name": "Kaishū Sano",
       "age": 25,
       "number": 24,
       "position": "Midfielder",
@@ -9880,7 +9880,7 @@
     },
     {
       "id": 32966,
-      "name": "A. Tanaka",
+      "name": "Ao Tanaka",
       "age": 27,
       "number": 7,
       "position": "Midfielder",
@@ -9892,19 +9892,19 @@
     },
     {
       "id": 1942,
-      "name": "J. Ito",
+      "name": "Junya Itō",
       "age": 32,
       "number": 14,
       "position": "Attacker",
       "photo": "https://media.api-sports.io/football/players/1942.png",
-      "club": "Bayern Munich",
-      "caps": 24,
-      "goals": 1,
+      "club": "Genk",
+      "caps": 69,
+      "goals": 15,
       "captain": false
     },
     {
       "id": 32862,
-      "name": "T. Kubo",
+      "name": "Takefusa Kubo",
       "age": 24,
       "number": 8,
       "position": "Attacker",
@@ -9916,7 +9916,7 @@
     },
     {
       "id": 33224,
-      "name": "D. Maeda",
+      "name": "Daizen Maeda",
       "age": 28,
       "number": 11,
       "position": "Attacker",
@@ -9940,19 +9940,19 @@
     },
     {
       "id": 199143,
-      "name": "Y. Suzuki",
+      "name": "Yuito Suzuki",
       "age": 24,
       "number": 17,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/199143.png",
-      "club": "Copenhagen",
+      "club": "SC Freiburg",
       "caps": 6,
       "goals": 0,
       "captain": false
     },
     {
       "id": 375930,
-      "name": "K. Goto",
+      "name": "Keisuke Gotō",
       "age": 20,
       "number": 9,
       "position": "Attacker",
@@ -9964,7 +9964,7 @@
     },
     {
       "id": 33289,
-      "name": "Koki Ogawa",
+      "name": "Kōki Ogawa",
       "age": 28,
       "number": 19,
       "position": "Attacker",
@@ -9976,7 +9976,7 @@
     },
     {
       "id": 422572,
-      "name": "K. Shiogai",
+      "name": "Kento Shiogai",
       "age": 20,
       "number": 26,
       "position": "Attacker",
@@ -9988,7 +9988,7 @@
     },
     {
       "id": 72155,
-      "name": "A. Ueda",
+      "name": "Ayase Ueda",
       "age": 27,
       "number": 18,
       "position": "Attacker",
@@ -10026,7 +10026,7 @@
     },
     {
       "id": 49424,
-      "name": "A. Dahmen",
+      "name": "Aymen Dahmen",
       "age": 28,
       "number": 16,
       "position": "Goalkeeper",
@@ -10038,7 +10038,7 @@
     },
     {
       "id": 49583,
-      "name": "A. Abdi",
+      "name": "Ali Abdi",
       "age": 32,
       "number": 2,
       "position": "Defender",
@@ -10050,7 +10050,7 @@
     },
     {
       "id": 393977,
-      "name": "A. Arous",
+      "name": "Adem Arous",
       "age": 21,
       "number": 5,
       "position": "Defender",
@@ -10074,7 +10074,7 @@
     },
     {
       "id": 2945,
-      "name": "D. Bronn",
+      "name": "Dylan Bronn",
       "age": 30,
       "number": 6,
       "position": "Defender",
@@ -10086,7 +10086,7 @@
     },
     {
       "id": 533360,
-      "name": "R. Chikhaoui",
+      "name": "Raed Chikhaoui",
       "age": 21,
       "number": 24,
       "position": "Defender",
@@ -10098,7 +10098,7 @@
     },
     {
       "id": 375608,
-      "name": "M. Neffati",
+      "name": "Moutaz Neffati",
       "age": 21,
       "number": 23,
       "position": "Defender",
@@ -10110,7 +10110,7 @@
     },
     {
       "id": 163068,
-      "name": "O. Rekik",
+      "name": "Omar Rekik",
       "age": 24,
       "number": 4,
       "position": "Defender",
@@ -10122,7 +10122,7 @@
     },
     {
       "id": 50030,
-      "name": "M. Talbi",
+      "name": "Montassar Talbi",
       "age": 27,
       "number": 3,
       "position": "Defender",
@@ -10134,7 +10134,7 @@
     },
     {
       "id": 18942,
-      "name": "Y. Valery",
+      "name": "Yan Valery",
       "age": 26,
       "number": 20,
       "position": "Defender",
@@ -10146,7 +10146,7 @@
     },
     {
       "id": 49469,
-      "name": "M. Ben Ouanes",
+      "name": "Mortadha Ben Ouanes",
       "age": 31,
       "number": 12,
       "position": "Midfielder",
@@ -10158,7 +10158,7 @@
     },
     {
       "id": 533295,
-      "name": "K. Ayari",
+      "name": "Khalil Ayari",
       "age": 20,
       "number": 14,
       "position": "Midfielder",
@@ -10182,7 +10182,7 @@
     },
     {
       "id": 25300,
-      "name": "R. Khedira",
+      "name": "Rani Khedira",
       "age": 31,
       "number": 13,
       "position": "Midfielder",
@@ -10194,7 +10194,7 @@
     },
     {
       "id": 180560,
-      "name": "H. Mejbri",
+      "name": "Hannibal Mejbri",
       "age": 22,
       "number": 10,
       "position": "Midfielder",
@@ -10206,7 +10206,7 @@
     },
     {
       "id": 21587,
-      "name": "E. Skhiri",
+      "name": "Ellyes Skhiri",
       "age": 30,
       "number": 17,
       "position": "Midfielder",
@@ -10218,7 +10218,7 @@
     },
     {
       "id": 199310,
-      "name": "A. Ben Slimane",
+      "name": "Anis Ben Slimane",
       "age": 24,
       "number": 25,
       "position": "Midfielder",
@@ -10230,7 +10230,7 @@
     },
     {
       "id": 67195,
-      "name": "H. Mahmoud",
+      "name": "Hadj Mahmoud",
       "age": 25,
       "number": 15,
       "position": "Midfielder",
@@ -10242,7 +10242,7 @@
     },
     {
       "id": 57518,
-      "name": "S. Tounekti",
+      "name": "Sebastian Tounekti",
       "age": 23,
       "number": 26,
       "position": "Attacker",
@@ -10254,7 +10254,7 @@
     },
     {
       "id": 42012,
-      "name": "E. Achouri",
+      "name": "Elias Achouri",
       "age": 26,
       "number": 7,
       "position": "Midfielder",
@@ -10266,7 +10266,7 @@
     },
     {
       "id": 2962,
-      "name": "F. Chaouat",
+      "name": "Firas Chaouat",
       "age": 29,
       "number": 19,
       "position": "Attacker",
@@ -10278,7 +10278,7 @@
     },
     {
       "id": 566059,
-      "name": "R. Elloumi",
+      "name": "Rayan Elloumi",
       "age": 18,
       "number": 18,
       "position": "Attacker",
@@ -10290,7 +10290,7 @@
     },
     {
       "id": 344862,
-      "name": "H. Mastouri",
+      "name": "Hazem Mastouri",
       "age": 28,
       "number": 9,
       "position": "Attacker",
@@ -10302,7 +10302,7 @@
     },
     {
       "id": 323974,
-      "name": "E. Saad",
+      "name": "Elias Saad",
       "age": 26,
       "number": 8,
       "position": "Attacker",
@@ -10316,7 +10316,7 @@
   "Sweden": [
     {
       "id": 158700,
-      "name": "V. Johansson",
+      "name": "Viktor Johansson",
       "age": 27,
       "number": 12,
       "position": "Goalkeeper",
@@ -10328,7 +10328,7 @@
     },
     {
       "id": 2851,
-      "name": "K. Nordfeldt",
+      "name": "Kristoffer Nordfeldt",
       "age": 36,
       "number": 23,
       "position": "Goalkeeper",
@@ -10340,7 +10340,7 @@
     },
     {
       "id": 48033,
-      "name": "J. Widell Zetterström",
+      "name": "Jacob Widell Zetterström",
       "age": 27,
       "number": 1,
       "position": "Goalkeeper",
@@ -10352,7 +10352,7 @@
     },
     {
       "id": 47903,
-      "name": "H. Ekdal",
+      "name": "Hjalmar Ekdal",
       "age": 27,
       "number": 14,
       "position": "Defender",
@@ -10364,7 +10364,7 @@
     },
     {
       "id": 47969,
-      "name": "G. Gudmundsson",
+      "name": "Gabriel Gudmundsson",
       "age": 26,
       "number": 5,
       "position": "Midfielder",
@@ -10376,7 +10376,7 @@
     },
     {
       "id": 137976,
-      "name": "I. Hien",
+      "name": "Isak Hien",
       "age": 26,
       "number": 4,
       "position": "Defender",
@@ -10388,7 +10388,7 @@
     },
     {
       "id": 137721,
-      "name": "G. Lagerbielke",
+      "name": "Gustaf Lagerbielke",
       "age": 25,
       "number": 2,
       "position": "Defender",
@@ -10400,7 +10400,7 @@
     },
     {
       "id": 889,
-      "name": "V. Lindelöf",
+      "name": "Victor Lindelöf",
       "age": 31,
       "number": 3,
       "position": "Defender",
@@ -10412,7 +10412,7 @@
     },
     {
       "id": 47988,
-      "name": "C. Starfelt",
+      "name": "Carl Starfelt",
       "age": 30,
       "number": 15,
       "position": "Defender",
@@ -10424,19 +10424,19 @@
     },
     {
       "id": 161504,
-      "name": "H. Johansson",
+      "name": "Herman Johansson",
       "age": 28,
       "number": 6,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/161504.png",
-      "club": "Stoke City",
-      "caps": 12,
+      "club": "FC Dallas",
+      "caps": 3,
       "goals": 0,
       "captain": false
     },
     {
       "id": 8486,
-      "name": "E. Smith",
+      "name": "Eric Smith",
       "age": 28,
       "number": 20,
       "position": "Defender",
@@ -10448,7 +10448,7 @@
     },
     {
       "id": 226765,
-      "name": "E. Stroud",
+      "name": "Elliot Stroud",
       "age": 23,
       "number": 24,
       "position": "Midfielder",
@@ -10460,7 +10460,7 @@
     },
     {
       "id": 198654,
-      "name": "D. Svensson",
+      "name": "Daniel Svensson",
       "age": 23,
       "number": 8,
       "position": "Defender",
@@ -10472,7 +10472,7 @@
     },
     {
       "id": 47696,
-      "name": "A. Bernhardsson",
+      "name": "Alexander Bernhardsson",
       "age": 27,
       "number": 21,
       "position": "Midfielder",
@@ -10484,7 +10484,7 @@
     },
     {
       "id": 265820,
-      "name": "Y. Ayari",
+      "name": "Yasin Ayari",
       "age": 22,
       "number": 18,
       "position": "Midfielder",
@@ -10496,7 +10496,7 @@
     },
     {
       "id": 347316,
-      "name": "L. Bergvall",
+      "name": "Lucas Bergvall",
       "age": 19,
       "number": 7,
       "position": "Midfielder",
@@ -10508,7 +10508,7 @@
     },
     {
       "id": 48002,
-      "name": "B. Nygren",
+      "name": "Benjamin Nygren",
       "age": 24,
       "number": 10,
       "position": "Attacker",
@@ -10520,7 +10520,7 @@
     },
     {
       "id": 48047,
-      "name": "J. Karlström",
+      "name": "Jesper Karlström",
       "age": 30,
       "number": 16,
       "position": "Midfielder",
@@ -10532,7 +10532,7 @@
     },
     {
       "id": 2860,
-      "name": "K. Sema",
+      "name": "Ken Sema",
       "age": 32,
       "number": 13,
       "position": "Midfielder",
@@ -10544,7 +10544,7 @@
     },
     {
       "id": 30484,
-      "name": "M. Svanberg",
+      "name": "Mattias Svanberg",
       "age": 26,
       "number": 19,
       "position": "Midfielder",
@@ -10556,7 +10556,7 @@
     },
     {
       "id": 350850,
-      "name": "B. Zeneli",
+      "name": "Besfort Zeneli",
       "age": 23,
       "number": 22,
       "position": "Midfielder",
@@ -10568,7 +10568,7 @@
     },
     {
       "id": 160925,
-      "name": "T. Ali",
+      "name": "Taha Ali",
       "age": 27,
       "number": 26,
       "position": "Midfielder",
@@ -10580,7 +10580,7 @@
     },
     {
       "id": 153430,
-      "name": "A. Elanga",
+      "name": "Anthony Elanga",
       "age": 23,
       "number": 11,
       "position": "Attacker",
@@ -10592,7 +10592,7 @@
     },
     {
       "id": 18979,
-      "name": "V. Gyökeres",
+      "name": "Viktor Gyökeres",
       "age": 27,
       "number": 17,
       "position": "Attacker",
@@ -10604,7 +10604,7 @@
     },
     {
       "id": 2864,
-      "name": "A. Isak",
+      "name": "Alexander Isak",
       "age": 26,
       "number": 9,
       "position": "Attacker",
@@ -10616,7 +10616,7 @@
     },
     {
       "id": 15683,
-      "name": "G. Nilsson",
+      "name": "Gustaf Nilsson",
       "age": 28,
       "number": 25,
       "position": "Attacker",
@@ -10630,7 +10630,7 @@
   "Belgium": [
     {
       "id": 730,
-      "name": "T. Courtois",
+      "name": "Thibaut Courtois",
       "age": 33,
       "number": 1,
       "position": "Goalkeeper",
@@ -10642,7 +10642,7 @@
     },
     {
       "id": 162511,
-      "name": "S. Lammens",
+      "name": "Senne Lammens",
       "age": 23,
       "number": 12,
       "position": "Goalkeeper",
@@ -10654,7 +10654,7 @@
     },
     {
       "id": 340151,
-      "name": "M. Penders",
+      "name": "Mike Penders",
       "age": 20,
       "number": 13,
       "position": "Goalkeeper",
@@ -10666,7 +10666,7 @@
     },
     {
       "id": 2920,
-      "name": "T. Castagne",
+      "name": "Timothy Castagne",
       "age": 30,
       "number": 21,
       "position": "Defender",
@@ -10678,7 +10678,7 @@
     },
     {
       "id": 162007,
-      "name": "M. De Cuyper",
+      "name": "Maxim De Cuyper",
       "age": 25,
       "number": 5,
       "position": "Defender",
@@ -10690,7 +10690,7 @@
     },
     {
       "id": 162141,
-      "name": "K. De Winter",
+      "name": "Koni De Winter",
       "age": 23,
       "number": 16,
       "position": "Defender",
@@ -10702,7 +10702,7 @@
     },
     {
       "id": 304228,
-      "name": "Z. Debast",
+      "name": "Zeno Debast",
       "age": 22,
       "number": 2,
       "position": "Defender",
@@ -10714,7 +10714,7 @@
     },
     {
       "id": 69,
-      "name": "B. Mechele",
+      "name": "Brandon Mechele",
       "age": 32,
       "number": 4,
       "position": "Defender",
@@ -10726,7 +10726,7 @@
     },
     {
       "id": 264,
-      "name": "T. Meunier",
+      "name": "Thomas Meunier",
       "age": 34,
       "number": 15,
       "position": "Defender",
@@ -10738,7 +10738,7 @@
     },
     {
       "id": 312964,
-      "name": "N. Ngoy",
+      "name": "Nathan Ngoy",
       "age": 22,
       "number": 25,
       "position": "Defender",
@@ -10750,7 +10750,7 @@
     },
     {
       "id": 375974,
-      "name": "J. Seys",
+      "name": "Joaquin Seys",
       "age": 20,
       "number": 18,
       "position": "Defender",
@@ -10762,7 +10762,7 @@
     },
     {
       "id": 204043,
-      "name": "A. Theate",
+      "name": "Arthur Theate",
       "age": 25,
       "number": 3,
       "position": "Defender",
@@ -10774,7 +10774,7 @@
     },
     {
       "id": 629,
-      "name": "K. De Bruyne",
+      "name": "Kevin De Bruyne",
       "age": 34,
       "number": 7,
       "position": "Midfielder",
@@ -10786,7 +10786,7 @@
     },
     {
       "id": 162714,
-      "name": "A. Onana",
+      "name": "Amadou Onana",
       "age": 24,
       "number": 24,
       "position": "Midfielder",
@@ -10798,7 +10798,7 @@
     },
     {
       "id": 2120,
-      "name": "N. Raskin",
+      "name": "Nicolas Raskin",
       "age": 24,
       "number": 23,
       "position": "Midfielder",
@@ -10810,7 +10810,7 @@
     },
     {
       "id": 1417,
-      "name": "A. Saelemaekers",
+      "name": "Alexis Saelemaekers",
       "age": 26,
       "number": 22,
       "position": "Attacker",
@@ -10822,7 +10822,7 @@
     },
     {
       "id": 2926,
-      "name": "Y. Tielemans",
+      "name": "Youri Tielemans",
       "age": 28,
       "number": 8,
       "position": "Midfielder",
@@ -10834,7 +10834,7 @@
     },
     {
       "id": 335056,
-      "name": "D. Moreira",
+      "name": "Diego Moreira",
       "age": 21,
       "number": 19,
       "position": "Attacker",
@@ -10846,7 +10846,7 @@
     },
     {
       "id": 78,
-      "name": "H. Vanaken",
+      "name": "Hans Vanaken",
       "age": 33,
       "number": 20,
       "position": "Midfielder",
@@ -10858,7 +10858,7 @@
     },
     {
       "id": 20,
-      "name": "A. Witsel",
+      "name": "Axel Witsel",
       "age": 36,
       "number": 6,
       "position": "Midfielder",
@@ -10870,7 +10870,7 @@
     },
     {
       "id": 1422,
-      "name": "J. Doku",
+      "name": "Jérémy Doku",
       "age": 23,
       "number": 11,
       "position": "Midfielder",
@@ -10882,7 +10882,7 @@
     },
     {
       "id": 340077,
-      "name": "M. Fernandez-Pardo",
+      "name": "Matias Fernandez-Pardo",
       "age": 20,
       "number": 26,
       "position": "Attacker",
@@ -10894,7 +10894,7 @@
     },
     {
       "id": 907,
-      "name": "R. Lukaku",
+      "name": "Romelu Lukaku",
       "age": 32,
       "number": 9,
       "position": "Attacker",
@@ -10906,7 +10906,7 @@
     },
     {
       "id": 25458,
-      "name": "D. Lukebakio",
+      "name": "Dodi Lukébakio",
       "age": 28,
       "number": 14,
       "position": "Attacker",
@@ -10918,7 +10918,7 @@
     },
     {
       "id": 147859,
-      "name": "C. De Ketelaere",
+      "name": "Charles De Ketelaere",
       "age": 24,
       "number": 17,
       "position": "Attacker",
@@ -10930,7 +10930,7 @@
     },
     {
       "id": 1946,
-      "name": "L. Trossard",
+      "name": "Leandro Trossard",
       "age": 31,
       "number": 10,
       "position": "Midfielder",
@@ -10944,7 +10944,7 @@
   "Iran": [
     {
       "id": 2682,
-      "name": "A. Beiranvand",
+      "name": "Alireza Beiranvand",
       "age": 33,
       "number": 1,
       "position": "Goalkeeper",
@@ -10956,7 +10956,7 @@
     },
     {
       "id": 29755,
-      "name": "H. Hosseini",
+      "name": "Hossein Hosseini",
       "age": 33,
       "number": 22,
       "position": "Goalkeeper",
@@ -10968,7 +10968,7 @@
     },
     {
       "id": 2681,
-      "name": "P. Niazmand",
+      "name": "Payam Niazmand",
       "age": 30,
       "number": 12,
       "position": "Goalkeeper",
@@ -10980,7 +10980,7 @@
     },
     {
       "id": 532950,
-      "name": "D. Eiri",
+      "name": "Danial Eiri",
       "age": 21,
       "number": 25,
       "position": "Defender",
@@ -10992,7 +10992,7 @@
     },
     {
       "id": 2691,
-      "name": "R. Rezaeian",
+      "name": "Ramin Rezaeian",
       "age": 35,
       "number": 23,
       "position": "Defender",
@@ -11040,7 +11040,7 @@
     },
     {
       "id": 29704,
-      "name": "S. Khalilzadeh",
+      "name": "Shojae Khalilzadeh",
       "age": 36,
       "number": 4,
       "position": "Defender",
@@ -11052,7 +11052,7 @@
     },
     {
       "id": 2688,
-      "name": "M. Mohammadi",
+      "name": "Milad Mohammadi",
       "age": 32,
       "number": 5,
       "position": "Defender",
@@ -11064,7 +11064,7 @@
     },
     {
       "id": 533035,
-      "name": "A. Nemati",
+      "name": "Ali Nemati",
       "age": 29,
       "number": 19,
       "position": "Defender",
@@ -11076,7 +11076,7 @@
     },
     {
       "id": 343405,
-      "name": "A. Yousefi",
+      "name": "Aria Yousefi",
       "age": 23,
       "number": 17,
       "position": "Defender",
@@ -11088,7 +11088,7 @@
     },
     {
       "id": 2700,
-      "name": "A. Jahanbakhsh",
+      "name": "Alireza Jahanbakhsh",
       "age": 32,
       "number": 7,
       "position": "Midfielder",
@@ -11100,7 +11100,7 @@
     },
     {
       "id": 2683,
-      "name": "R. Cheshmi",
+      "name": "Rouzbeh Cheshmi",
       "age": 32,
       "number": 15,
       "position": "Midfielder",
@@ -11112,7 +11112,7 @@
     },
     {
       "id": 19614,
-      "name": "S. Ezatolahi",
+      "name": "Saeid Ezatolahi",
       "age": 29,
       "number": 6,
       "position": "Midfielder",
@@ -11124,7 +11124,7 @@
     },
     {
       "id": 2699,
-      "name": "S. Ghoddos",
+      "name": "Saman Ghoddos",
       "age": 32,
       "number": 14,
       "position": "Midfielder",
@@ -11136,7 +11136,7 @@
     },
     {
       "id": 423753,
-      "name": "A. Razzaghinia",
+      "name": "Amirmohammad Razzaghinia",
       "age": 19,
       "number": 26,
       "position": "Midfielder",
@@ -11148,7 +11148,7 @@
     },
     {
       "id": 341844,
-      "name": "M. Ghorbani",
+      "name": "Mohammad Ghorbani",
       "age": 24,
       "number": 21,
       "position": "Midfielder",
@@ -11160,7 +11160,7 @@
     },
     {
       "id": 134217,
-      "name": "M. Mohebi",
+      "name": "Mohammad Mohebi",
       "age": 27,
       "number": 8,
       "position": "Attacker",
@@ -11172,7 +11172,7 @@
     },
     {
       "id": 2697,
-      "name": "M. Torabi",
+      "name": "Mehdi Torabi",
       "age": 31,
       "number": 16,
       "position": "Midfielder",
@@ -11196,7 +11196,7 @@
     },
     {
       "id": 29937,
-      "name": "A. Hosseinzadeh",
+      "name": "Amirhossein Hosseinzadeh",
       "age": 25,
       "number": 18,
       "position": "Attacker",
@@ -11208,7 +11208,7 @@
     },
     {
       "id": 29720,
-      "name": "A. Alipour",
+      "name": "Ali Alipour",
       "age": 30,
       "number": 11,
       "position": "Attacker",
@@ -11220,7 +11220,7 @@
     },
     {
       "id": 89982,
-      "name": "S. Moghanlou",
+      "name": "Shahriyar Moghanlou",
       "age": 31,
       "number": 20,
       "position": "Attacker",
@@ -11232,7 +11232,7 @@
     },
     {
       "id": 37892,
-      "name": "D. Eckert Ayensa",
+      "name": "Dennis Eckert",
       "age": 28,
       "number": 24,
       "position": "Attacker",
@@ -11244,7 +11244,7 @@
     },
     {
       "id": 42315,
-      "name": "M. Taremi",
+      "name": "Mehdi Taremi",
       "age": 33,
       "number": 9,
       "position": "Attacker",
@@ -11258,7 +11258,7 @@
   "Egypt": [
     {
       "id": 550469,
-      "name": "M. Alaa",
+      "name": "Mohamed Alaa",
       "age": 26,
       "number": 26,
       "position": "Goalkeeper",
@@ -11294,7 +11294,7 @@
     },
     {
       "id": 16831,
-      "name": "Al Mahdi Soliman",
+      "name": "El Mahdy Soliman",
       "age": 38,
       "number": 16,
       "position": "Goalkeeper",
@@ -11378,7 +11378,7 @@
     },
     {
       "id": 16805,
-      "name": "Rami Rabia",
+      "name": "Ramy Rabia",
       "age": 32,
       "number": 5,
       "position": "Defender",
@@ -11390,13 +11390,13 @@
     },
     {
       "id": 550371,
-      "name": "T. Alaa",
+      "name": "Tarek Alaa",
       "age": 23,
       "number": 24,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/550371.png",
-      "club": "El Gouna",
-      "caps": 0,
+      "club": "ZED",
+      "caps": 3,
       "goals": 0,
       "captain": false
     },
@@ -11438,7 +11438,7 @@
     },
     {
       "id": 16813,
-      "name": "Hamdi Fathy",
+      "name": "Hamdy Fathy",
       "age": 31,
       "number": 14,
       "position": "Defender",
@@ -11498,7 +11498,7 @@
     },
     {
       "id": 20844,
-      "name": "H. Hassan",
+      "name": "Haissem Hassan",
       "age": 23,
       "number": 12,
       "position": "Midfielder",
@@ -11510,7 +11510,7 @@
     },
     {
       "id": 664079,
-      "name": "Ahmed Zizo",
+      "name": "Zizo",
       "age": 30,
       "number": 25,
       "position": "Attacker",
@@ -11522,7 +11522,7 @@
     },
     {
       "id": 550547,
-      "name": "H. Abdelkarim",
+      "name": "Hamza Abdelkarim",
       "age": 17,
       "number": 9,
       "position": "Attacker",
@@ -11572,7 +11572,7 @@
   "New Zealand": [
     {
       "id": 18110,
-      "name": "M. Crocombe",
+      "name": "Max Crocombe",
       "age": 32,
       "number": 1,
       "position": "Goalkeeper",
@@ -11584,7 +11584,7 @@
     },
     {
       "id": 94360,
-      "name": "A. Paulsen",
+      "name": "Alex Paulsen",
       "age": 23,
       "number": 12,
       "position": "Goalkeeper",
@@ -11596,7 +11596,7 @@
     },
     {
       "id": 36777,
-      "name": "M. Woud",
+      "name": "Michael Woud",
       "age": 26,
       "number": 22,
       "position": "Goalkeeper",
@@ -11620,7 +11620,7 @@
     },
     {
       "id": 51149,
-      "name": "M. Boxall",
+      "name": "Michael Boxall",
       "age": 37,
       "number": 5,
       "position": "Defender",
@@ -11632,7 +11632,7 @@
     },
     {
       "id": 6931,
-      "name": "L. Cacace",
+      "name": "Liberato Cacace",
       "age": 25,
       "number": 13,
       "position": "Defender",
@@ -11644,7 +11644,7 @@
     },
     {
       "id": 94405,
-      "name": "F. de Vries",
+      "name": "Francis de Vries",
       "age": 31,
       "number": 3,
       "position": "Defender",
@@ -11656,7 +11656,7 @@
     },
     {
       "id": 6932,
-      "name": "C. Elliot",
+      "name": "Callan Elliot",
       "age": 26,
       "number": 24,
       "position": "Defender",
@@ -11668,7 +11668,7 @@
     },
     {
       "id": 94346,
-      "name": "T. Payne",
+      "name": "Tim Payne",
       "age": 31,
       "number": 2,
       "position": "Defender",
@@ -11680,7 +11680,7 @@
     },
     {
       "id": 94344,
-      "name": "N. Pijnaker",
+      "name": "Nando Pijnaker",
       "age": 26,
       "number": 15,
       "position": "Defender",
@@ -11692,7 +11692,7 @@
     },
     {
       "id": 51307,
-      "name": "T. Smith",
+      "name": "Tommy Smith",
       "age": 35,
       "number": 26,
       "position": "Defender",
@@ -11704,7 +11704,7 @@
     },
     {
       "id": 210165,
-      "name": "F. Surman",
+      "name": "Finn Surman",
       "age": 22,
       "number": 16,
       "position": "Defender",
@@ -11716,7 +11716,7 @@
     },
     {
       "id": 405957,
-      "name": "L. Bayliss",
+      "name": "Lachlan Bayliss",
       "age": 23,
       "number": 25,
       "position": "Midfielder",
@@ -11728,7 +11728,7 @@
     },
     {
       "id": 94541,
-      "name": "J. Bell",
+      "name": "Joe Bell",
       "age": 26,
       "number": 6,
       "position": "Midfielder",
@@ -11740,7 +11740,7 @@
     },
     {
       "id": 180455,
-      "name": "M. Garbett",
+      "name": "Matthew Garbett",
       "age": 23,
       "number": 7,
       "position": "Midfielder",
@@ -11752,7 +11752,7 @@
     },
     {
       "id": 94322,
-      "name": "C. McCowatt",
+      "name": "Callum McCowatt",
       "age": 26,
       "number": 20,
       "position": "Midfielder",
@@ -11764,7 +11764,7 @@
     },
     {
       "id": 6934,
-      "name": "A. Rufer",
+      "name": "Alex Rufer",
       "age": 29,
       "number": 14,
       "position": "Midfielder",
@@ -11776,7 +11776,7 @@
     },
     {
       "id": 6935,
-      "name": "S. Singh",
+      "name": "Sarpreet Singh",
       "age": 26,
       "number": 10,
       "position": "Midfielder",
@@ -11788,7 +11788,7 @@
     },
     {
       "id": 179862,
-      "name": "M. Stamenic",
+      "name": "Marko Stamenić",
       "age": 23,
       "number": 8,
       "position": "Midfielder",
@@ -11800,7 +11800,7 @@
     },
     {
       "id": 242,
-      "name": "R. Thomas",
+      "name": "Ryan Thomas",
       "age": 31,
       "number": 23,
       "position": "Midfielder",
@@ -11812,7 +11812,7 @@
     },
     {
       "id": 94333,
-      "name": "E. Just",
+      "name": "Elijah Just",
       "age": 25,
       "number": 11,
       "position": "Midfielder",
@@ -11824,7 +11824,7 @@
     },
     {
       "id": 179856,
-      "name": "B. Old",
+      "name": "Ben Old",
       "age": 23,
       "number": 19,
       "position": "Attacker",
@@ -11836,7 +11836,7 @@
     },
     {
       "id": 6865,
-      "name": "K. Barbarouses",
+      "name": "Kosta Barbarouses",
       "age": 35,
       "number": 17,
       "position": "Attacker",
@@ -11848,7 +11848,7 @@
     },
     {
       "id": 158688,
-      "name": "J. Randall",
+      "name": "Jesse Randall",
       "age": 23,
       "number": 21,
       "position": "Attacker",
@@ -11860,7 +11860,7 @@
     },
     {
       "id": 6938,
-      "name": "B. Waine",
+      "name": "Ben Waine",
       "age": 24,
       "number": 18,
       "position": "Attacker",
@@ -11872,7 +11872,7 @@
     },
     {
       "id": 18931,
-      "name": "C. Wood",
+      "name": "Chris Wood",
       "age": 34,
       "number": 9,
       "position": "Attacker",
@@ -11886,7 +11886,7 @@
   "Spain": [
     {
       "id": 182718,
-      "name": "Joan García",
+      "name": "Joan Garcia",
       "age": 24,
       "number": 13,
       "position": "Goalkeeper",
@@ -11952,7 +11952,7 @@
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/619.png",
       "club": "Barcelona",
-      "caps": 2,
+      "caps": 21,
       "goals": 0,
       "captain": false
     },
@@ -12162,7 +12162,7 @@
     },
     {
       "id": 184226,
-      "name": "Yeremy Pino",
+      "name": "Yéremy Pino",
       "age": 23,
       "number": 11,
       "position": "Midfielder",
@@ -12200,7 +12200,7 @@
   "Uruguay": [
     {
       "id": 61895,
-      "name": "S. Mele",
+      "name": "Santiago Mele",
       "age": 28,
       "number": 12,
       "position": "Goalkeeper",
@@ -12212,7 +12212,7 @@
     },
     {
       "id": 429,
-      "name": "F. Muslera",
+      "name": "Fernando Muslera",
       "age": 39,
       "number": 23,
       "position": "Goalkeeper",
@@ -12224,7 +12224,7 @@
     },
     {
       "id": 50077,
-      "name": "S. Rochet",
+      "name": "Sergio Rochet",
       "age": 32,
       "number": 1,
       "position": "Goalkeeper",
@@ -12236,19 +12236,19 @@
     },
     {
       "id": 101814,
-      "name": "R. Araújo",
+      "name": "Ronald Araújo",
       "age": 26,
       "number": 4,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/101814.png",
-      "club": "Sporting CP",
-      "caps": 28,
-      "goals": 3,
+      "club": "Barcelona",
+      "caps": 27,
+      "goals": 1,
       "captain": false
     },
     {
       "id": 135334,
-      "name": "S. Bueno",
+      "name": "Santiago Bueno",
       "age": 27,
       "number": 24,
       "position": "Defender",
@@ -12260,7 +12260,7 @@
     },
     {
       "id": 51535,
-      "name": "S. Cáceres",
+      "name": "Sebastián Cáceres",
       "age": 26,
       "number": 3,
       "position": "Defender",
@@ -12272,7 +12272,7 @@
     },
     {
       "id": 31,
-      "name": "J. Giménez",
+      "name": "José María Giménez",
       "age": 30,
       "number": 2,
       "position": "Defender",
@@ -12284,7 +12284,7 @@
     },
     {
       "id": 47254,
-      "name": "M. Olivera",
+      "name": "Mathías Olivera",
       "age": 28,
       "number": 16,
       "position": "Defender",
@@ -12296,7 +12296,7 @@
     },
     {
       "id": 1290,
-      "name": "G. Varela",
+      "name": "Guillermo Varela",
       "age": 32,
       "number": 13,
       "position": "Defender",
@@ -12308,7 +12308,7 @@
     },
     {
       "id": 51572,
-      "name": "M. Viña",
+      "name": "Matías Viña",
       "age": 28,
       "number": 17,
       "position": "Defender",
@@ -12320,7 +12320,7 @@
     },
     {
       "id": 863,
-      "name": "R. Bentancur",
+      "name": "Rodrigo Bentancur",
       "age": 28,
       "number": 6,
       "position": "Midfielder",
@@ -12332,7 +12332,7 @@
     },
     {
       "id": 153083,
-      "name": "E. Martínez",
+      "name": "Emiliano Martínez",
       "age": 26,
       "number": 15,
       "position": "Midfielder",
@@ -12344,7 +12344,7 @@
     },
     {
       "id": 162891,
-      "name": "J. Sanabria",
+      "name": "Juan Manuel Sanabria",
       "age": 25,
       "number": 25,
       "position": "Midfielder",
@@ -12356,7 +12356,7 @@
     },
     {
       "id": 51494,
-      "name": "M. Ugarte",
+      "name": "Manuel Ugarte",
       "age": 24,
       "number": 5,
       "position": "Midfielder",
@@ -12368,7 +12368,7 @@
     },
     {
       "id": 756,
-      "name": "F. Valverde",
+      "name": "Federico Valverde",
       "age": 27,
       "number": 8,
       "position": "Midfielder",
@@ -12380,7 +12380,7 @@
     },
     {
       "id": 108563,
-      "name": "R. Zalazar",
+      "name": "Rodrigo Zalazar",
       "age": 26,
       "number": 26,
       "position": "Midfielder",
@@ -12392,7 +12392,7 @@
     },
     {
       "id": 2612,
-      "name": "G. de Arrascaeta",
+      "name": "Giorgian de Arrascaeta",
       "age": 31,
       "number": 10,
       "position": "Midfielder",
@@ -12404,7 +12404,7 @@
     },
     {
       "id": 5995,
-      "name": "N. de la Cruz",
+      "name": "Nicolás de la Cruz",
       "age": 28,
       "number": 7,
       "position": "Midfielder",
@@ -12416,7 +12416,7 @@
     },
     {
       "id": 51776,
-      "name": "M. Araújo",
+      "name": "Maximiliano Araújo",
       "age": 25,
       "number": 20,
       "position": "Midfielder",
@@ -12428,7 +12428,7 @@
     },
     {
       "id": 51603,
-      "name": "A. Canobbio",
+      "name": "Agustín Canobbio",
       "age": 27,
       "number": 14,
       "position": "Midfielder",
@@ -12440,7 +12440,7 @@
     },
     {
       "id": 16482,
-      "name": "R. Aguirre",
+      "name": "Rodrigo Aguirre",
       "age": 31,
       "number": 19,
       "position": "Attacker",
@@ -12452,7 +12452,7 @@
     },
     {
       "id": 51466,
-      "name": "J. Piquerez",
+      "name": "Joaquín Piquerez",
       "age": 27,
       "number": 22,
       "position": "Attacker",
@@ -12464,7 +12464,7 @@
     },
     {
       "id": 51617,
-      "name": "D. Núñez",
+      "name": "Darwin Núñez",
       "age": 26,
       "number": 9,
       "position": "Attacker",
@@ -12476,7 +12476,7 @@
     },
     {
       "id": 70078,
-      "name": "F. Pellistri",
+      "name": "Facundo Pellistri",
       "age": 24,
       "number": 11,
       "position": "Attacker",
@@ -12488,7 +12488,7 @@
     },
     {
       "id": 51618,
-      "name": "B. Rodríguez",
+      "name": "Brian Rodríguez",
       "age": 25,
       "number": 18,
       "position": "Attacker",
@@ -12500,7 +12500,7 @@
     },
     {
       "id": 51530,
-      "name": "F. Viñas",
+      "name": "Federico Viñas",
       "age": 27,
       "number": 21,
       "position": "Attacker",
@@ -12658,7 +12658,7 @@
     },
     {
       "id": 543059,
-      "name": "J. Thakri",
+      "name": "Jehad Thakri",
       "age": 24,
       "number": 25,
       "position": "Defender",
@@ -12840,7 +12840,7 @@
     },
     {
       "id": 15304,
-      "name": "Vózinha",
+      "name": "Vozinha",
       "age": 39,
       "number": 1,
       "position": "Goalkeeper",
@@ -12852,7 +12852,7 @@
     },
     {
       "id": 163200,
-      "name": "C. dos Santos",
+      "name": "CJ dos Santos",
       "age": 25,
       "number": 23,
       "position": "Goalkeeper",
@@ -12864,7 +12864,7 @@
     },
     {
       "id": 41608,
-      "name": "Diney Borges",
+      "name": "Diney",
       "age": 30,
       "number": 3,
       "position": "Defender",
@@ -12881,14 +12881,14 @@
       "number": 5,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/21997.png",
-      "club": "İstanbul Başakşehir",
-      "caps": 9,
-      "goals": 2,
+      "club": "Villarreal",
+      "caps": 28,
+      "goals": 0,
       "captain": false
     },
     {
       "id": 308689,
-      "name": "S. Lopes Cabral",
+      "name": "Sidny Lopes Cabral",
       "age": 23,
       "number": 13,
       "position": "Defender",
@@ -12912,7 +12912,7 @@
     },
     {
       "id": 22139,
-      "name": "S. Moreira",
+      "name": "Steven Moreira",
       "age": 31,
       "number": 22,
       "position": "Defender",
@@ -12977,14 +12977,14 @@
       "number": 14,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/37435.png",
-      "club": "Puskás Akadémia",
-      "caps": 20,
-      "goals": 1,
+      "club": "Ludogorets Razgrad",
+      "caps": 33,
+      "goals": 0,
       "captain": false
     },
     {
       "id": 37436,
-      "name": "L. Duarte",
+      "name": "Laros Duarte",
       "age": 28,
       "number": 15,
       "position": "Midfielder",
@@ -13013,9 +13013,9 @@
       "number": 6,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/96512.png",
-      "club": "Trabzonspor",
-      "caps": 14,
-      "goals": 0,
+      "club": "Krasnodar",
+      "caps": 31,
+      "goals": 3,
       "captain": false
     },
     {
@@ -13037,9 +13037,9 @@
       "number": 16,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/128007.png",
-      "club": "Omonia",
-      "caps": 38,
-      "goals": 3,
+      "club": "Farense",
+      "caps": 11,
+      "goals": 1,
       "captain": false
     },
     {
@@ -13073,8 +13073,8 @@
       "number": 7,
       "position": "Attacker",
       "photo": "https://media.api-sports.io/football/players/1494.png",
-      "club": "Benfica",
-      "caps": 11,
+      "club": "Estrela Amadora",
+      "caps": 29,
       "goals": 3,
       "captain": false
     },
@@ -13128,7 +13128,7 @@
     },
     {
       "id": 343287,
-      "name": "D. Livramento",
+      "name": "Dailon Livramento",
       "age": 24,
       "number": 19,
       "position": "Attacker",
@@ -13142,7 +13142,7 @@
   "France": [
     {
       "id": 22221,
-      "name": "M. Maignan",
+      "name": "Mike Maignan",
       "age": 30,
       "number": 16,
       "position": "Goalkeeper",
@@ -13154,7 +13154,7 @@
     },
     {
       "id": 347211,
-      "name": "R. Risser",
+      "name": "Robin Risser",
       "age": 21,
       "number": 23,
       "position": "Goalkeeper",
@@ -13166,7 +13166,7 @@
     },
     {
       "id": 21628,
-      "name": "B. Samba",
+      "name": "Brice Samba",
       "age": 31,
       "number": 1,
       "position": "Goalkeeper",
@@ -13178,7 +13178,7 @@
     },
     {
       "id": 2724,
-      "name": "L. Digne",
+      "name": "Lucas Digne",
       "age": 32,
       "number": 3,
       "position": "Defender",
@@ -13190,7 +13190,7 @@
     },
     {
       "id": 161907,
-      "name": "M. Gusto",
+      "name": "Malo Gusto",
       "age": 22,
       "number": 2,
       "position": "Defender",
@@ -13202,7 +13202,7 @@
     },
     {
       "id": 33,
-      "name": "L. Hernández",
+      "name": "Lucas Hernandez",
       "age": 29,
       "number": 21,
       "position": "Defender",
@@ -13214,19 +13214,19 @@
     },
     {
       "id": 47300,
-      "name": "T. Hernández",
+      "name": "Théo Hernandez",
       "age": 28,
       "number": 19,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/47300.png",
-      "club": "Paris Saint-Germain",
-      "caps": 42,
-      "goals": 0,
+      "club": "Al-Hilal",
+      "caps": 44,
+      "goals": 2,
       "captain": false
     },
     {
       "id": 1145,
-      "name": "I. Konaté",
+      "name": "Ibrahima Konaté",
       "age": 26,
       "number": 15,
       "position": "Defender",
@@ -13238,7 +13238,7 @@
     },
     {
       "id": 1257,
-      "name": "J. Koundé",
+      "name": "Jules Koundé",
       "age": 27,
       "number": 5,
       "position": "Defender",
@@ -13250,7 +13250,7 @@
     },
     {
       "id": 20995,
-      "name": "M. Lacroix",
+      "name": "Maxence Lacroix",
       "age": 25,
       "number": 26,
       "position": "Defender",
@@ -13262,7 +13262,7 @@
     },
     {
       "id": 22090,
-      "name": "W. Saliba",
+      "name": "William Saliba",
       "age": 24,
       "number": 17,
       "position": "Defender",
@@ -13274,7 +13274,7 @@
     },
     {
       "id": 1149,
-      "name": "D. Upamecano",
+      "name": "Dayot Upamecano",
       "age": 27,
       "number": 4,
       "position": "Defender",
@@ -13286,7 +13286,7 @@
     },
     {
       "id": 156477,
-      "name": "R. Cherki",
+      "name": "Rayan Cherki",
       "age": 22,
       "number": 24,
       "position": "Midfielder",
@@ -13298,7 +13298,7 @@
     },
     {
       "id": 2290,
-      "name": "N. Kanté",
+      "name": "N'Golo Kanté",
       "age": 34,
       "number": 13,
       "position": "Midfielder",
@@ -13310,7 +13310,7 @@
     },
     {
       "id": 22147,
-      "name": "M. Koné",
+      "name": "Manu Koné",
       "age": 24,
       "number": 6,
       "position": "Midfielder",
@@ -13322,7 +13322,7 @@
     },
     {
       "id": 272,
-      "name": "A. Rabiot",
+      "name": "Adrien Rabiot",
       "age": 30,
       "number": 14,
       "position": "Midfielder",
@@ -13334,7 +13334,7 @@
     },
     {
       "id": 1271,
-      "name": "A. Tchouaméni",
+      "name": "Aurélien Tchouaméni",
       "age": 25,
       "number": 8,
       "position": "Midfielder",
@@ -13346,7 +13346,7 @@
     },
     {
       "id": 336657,
-      "name": "W. Zaïre-Emery",
+      "name": "Warren Zaïre-Emery",
       "age": 19,
       "number": 18,
       "position": "Midfielder",
@@ -13358,7 +13358,7 @@
     },
     {
       "id": 274300,
-      "name": "M. Akliouche",
+      "name": "Maghnes Akliouche",
       "age": 23,
       "number": 25,
       "position": "Midfielder",
@@ -13370,7 +13370,7 @@
     },
     {
       "id": 161904,
-      "name": "B. Barcola",
+      "name": "Bradley Barcola",
       "age": 23,
       "number": 12,
       "position": "Attacker",
@@ -13382,7 +13382,7 @@
     },
     {
       "id": 25927,
-      "name": "J. Mateta",
+      "name": "Jean-Philippe Mateta",
       "age": 28,
       "number": 22,
       "position": "Attacker",
@@ -13394,7 +13394,7 @@
     },
     {
       "id": 153,
-      "name": "O. Dembélé",
+      "name": "Ousmane Dembélé",
       "age": 28,
       "number": 7,
       "position": "Midfielder",
@@ -13406,7 +13406,7 @@
     },
     {
       "id": 343027,
-      "name": "D. Doué",
+      "name": "Désiré Doué",
       "age": 20,
       "number": 20,
       "position": "Midfielder",
@@ -13430,7 +13430,7 @@
     },
     {
       "id": 21509,
-      "name": "M. Thuram",
+      "name": "Marcus Thuram",
       "age": 28,
       "number": 9,
       "position": "Midfielder",
@@ -13442,7 +13442,7 @@
     },
     {
       "id": 19617,
-      "name": "M. Olise",
+      "name": "Michael Olise",
       "age": 24,
       "number": 11,
       "position": "Midfielder",
@@ -13456,7 +13456,7 @@
   "Senegal": [
     {
       "id": 119853,
-      "name": "M. Diaw",
+      "name": "Mory Diaw",
       "age": 32,
       "number": 23,
       "position": "Goalkeeper",
@@ -13468,19 +13468,19 @@
     },
     {
       "id": 20566,
-      "name": "Y. Diouf",
+      "name": "Yehvann Diouf",
       "age": 26,
       "number": 1,
       "position": "Goalkeeper",
       "photo": "https://media.api-sports.io/football/players/20566.png",
-      "club": "West Ham United",
-      "caps": 20,
-      "goals": 1,
+      "club": "Nice",
+      "caps": 2,
+      "goals": 0,
       "captain": false
     },
     {
       "id": 2986,
-      "name": "É. Mendy",
+      "name": "Antoine Mendy",
       "age": 33,
       "number": 16,
       "position": "Goalkeeper",
@@ -13492,7 +13492,7 @@
     },
     {
       "id": 409303,
-      "name": "E. Diouf",
+      "name": "El Hadji Malick Diouf",
       "age": 21,
       "number": 25,
       "position": "Defender",
@@ -13504,7 +13504,7 @@
     },
     {
       "id": 158121,
-      "name": "I. Jakobs",
+      "name": "Ismail Jakobs",
       "age": 26,
       "number": 14,
       "position": "Midfielder",
@@ -13516,7 +13516,7 @@
     },
     {
       "id": 318,
-      "name": "K. Koulibaly",
+      "name": "Kalidou Koulibaly",
       "age": 34,
       "number": 3,
       "position": "Defender",
@@ -13528,7 +13528,7 @@
     },
     {
       "id": 313937,
-      "name": "A. Mendy",
+      "name": "Antoine Mendy",
       "age": 21,
       "number": 24,
       "position": "Defender",
@@ -13540,7 +13540,7 @@
     },
     {
       "id": 25916,
-      "name": "M. Niakhaté",
+      "name": "Moussa Niakhaté",
       "age": 29,
       "number": 19,
       "position": "Defender",
@@ -13552,19 +13552,19 @@
     },
     {
       "id": 276184,
-      "name": "M. Sarr",
+      "name": "Mamadou Sarr",
       "age": 20,
       "number": 2,
       "position": "Defender",
       "photo": "https://media.api-sports.io/football/players/276184.png",
-      "club": "Crystal Palace",
-      "caps": 83,
-      "goals": 19,
+      "club": "Chelsea",
+      "caps": 8,
+      "goals": 0,
       "captain": false
     },
     {
       "id": 8450,
-      "name": "A. Seck",
+      "name": "Abdoulaye Seck",
       "age": 33,
       "number": 4,
       "position": "Defender",
@@ -13576,7 +13576,7 @@
     },
     {
       "id": 81,
-      "name": "K. Diatta",
+      "name": "Krépin Diatta",
       "age": 26,
       "number": 15,
       "position": "Defender",
@@ -13588,7 +13588,7 @@
     },
     {
       "id": 374058,
-      "name": "L. Camara",
+      "name": "Lamine Camara",
       "age": 21,
       "number": 8,
       "position": "Midfielder",
@@ -13600,7 +13600,7 @@
     },
     {
       "id": 41552,
-      "name": "P. Ciss",
+      "name": "Pathé Ciss",
       "age": 31,
       "number": 6,
       "position": "Midfielder",
@@ -13612,7 +13612,7 @@
     },
     {
       "id": 327631,
-      "name": "H. Diarra",
+      "name": "Habib Diarra",
       "age": 21,
       "number": 21,
       "position": "Attacker",
@@ -13624,19 +13624,19 @@
     },
     {
       "id": 2990,
-      "name": "I. Gueye",
+      "name": "Idrissa Gueye",
       "age": 36,
       "number": 5,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/2990.png",
-      "club": "Villarreal",
-      "caps": 41,
-      "goals": 5,
+      "club": "Everton",
+      "caps": 131,
+      "goals": 7,
       "captain": false
     },
     {
       "id": 20696,
-      "name": "P. Gueye",
+      "name": "Pape Gueye",
       "age": 26,
       "number": 26,
       "position": "Midfielder",
@@ -13648,7 +13648,7 @@
     },
     {
       "id": 630895,
-      "name": "Bara Ndiaye",
+      "name": "Bara Sapoko Ndiaye",
       "age": 18,
       "number": 22,
       "position": "Midfielder",
@@ -13660,14 +13660,14 @@
     },
     {
       "id": 237129,
-      "name": "P. Sarr",
+      "name": "Pape Matar Sarr",
       "age": 23,
       "number": 17,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/237129.png",
-      "club": "Crystal Palace",
-      "caps": 83,
-      "goals": 19,
+      "club": "Tottenham Hotspur",
+      "caps": 40,
+      "goals": 4,
       "captain": false
     },
     {
@@ -13684,7 +13684,7 @@
     },
     {
       "id": 284072,
-      "name": "B. Dieng",
+      "name": "Bamba Dieng",
       "age": 25,
       "number": 9,
       "position": "Attacker",
@@ -13696,7 +13696,7 @@
     },
     {
       "id": 283058,
-      "name": "N. Jackson",
+      "name": "Nicolas Jackson",
       "age": 24,
       "number": 11,
       "position": "Attacker",
@@ -13708,7 +13708,7 @@
     },
     {
       "id": 304,
-      "name": "S. Mané",
+      "name": "Sadio Mané",
       "age": 33,
       "number": 10,
       "position": "Attacker",
@@ -13720,7 +13720,7 @@
     },
     {
       "id": 446249,
-      "name": "I. Mbaye",
+      "name": "Ibrahim Mbaye",
       "age": 17,
       "number": 20,
       "position": "Attacker",
@@ -13732,31 +13732,31 @@
     },
     {
       "id": 14379,
-      "name": "C. Ndiaye",
+      "name": "Cherif Ndiaye",
       "age": 30,
       "number": 12,
       "position": "Attacker",
       "photo": "https://media.api-sports.io/football/players/14379.png",
-      "club": "Bayern Munich",
-      "caps": 1,
-      "goals": 0,
+      "club": "Samsunspor",
+      "caps": 19,
+      "goals": 4,
       "captain": false
     },
     {
       "id": 18592,
-      "name": "I. Ndiaye",
+      "name": "Iliman Ndiaye",
       "age": 25,
       "number": 13,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/18592.png",
-      "club": "Bayern Munich",
-      "caps": 1,
-      "goals": 0,
+      "club": "Everton",
+      "caps": 40,
+      "goals": 4,
       "captain": false
     },
     {
       "id": 2218,
-      "name": "I. Sarr",
+      "name": "Ismaïla Sarr",
       "age": 27,
       "number": 18,
       "position": "Attacker",
@@ -13770,7 +13770,7 @@
   "Norway": [
     {
       "id": 19172,
-      "name": "Ø. Nyland",
+      "name": "Ørjan Nyland",
       "age": 35,
       "number": 1,
       "position": "Goalkeeper",
@@ -13782,7 +13782,7 @@
     },
     {
       "id": 39082,
-      "name": "E. Selvik",
+      "name": "Egil Selvik",
       "age": 28,
       "number": 13,
       "position": "Goalkeeper",
@@ -13794,7 +13794,7 @@
     },
     {
       "id": 264378,
-      "name": "S. Tangvik",
+      "name": "Sander Tangvik",
       "age": 23,
       "number": 12,
       "position": "Goalkeeper",
@@ -13806,7 +13806,7 @@
     },
     {
       "id": 1119,
-      "name": "K. Ajer",
+      "name": "Kristoffer Ajer",
       "age": 27,
       "number": 3,
       "position": "Defender",
@@ -13818,7 +13818,7 @@
     },
     {
       "id": 39058,
-      "name": "F. Bjørkan",
+      "name": "Fredrik André Bjørkan",
       "age": 27,
       "number": 15,
       "position": "Defender",
@@ -13830,7 +13830,7 @@
     },
     {
       "id": 180937,
-      "name": "H. Falchener",
+      "name": "Henrik Falchener",
       "age": 22,
       "number": 25,
       "position": "Defender",
@@ -13842,7 +13842,7 @@
     },
     {
       "id": 265444,
-      "name": "S. Langås",
+      "name": "Sondre Langås",
       "age": 24,
       "number": 24,
       "position": "Defender",
@@ -13854,7 +13854,7 @@
     },
     {
       "id": 39254,
-      "name": "T. Heggem",
+      "name": "Torbjørn Heggem",
       "age": 26,
       "number": 17,
       "position": "Defender",
@@ -13866,7 +13866,7 @@
     },
     {
       "id": 18967,
-      "name": "L. Østigård",
+      "name": "Leo Østigård",
       "age": 26,
       "number": 4,
       "position": "Defender",
@@ -13878,7 +13878,7 @@
     },
     {
       "id": 39362,
-      "name": "M. Pedersen",
+      "name": "Marcus Holmgren Pedersen",
       "age": 25,
       "number": 16,
       "position": "Defender",
@@ -13890,7 +13890,7 @@
     },
     {
       "id": 265782,
-      "name": "D. Møller Wolfe",
+      "name": "David Møller Wolfe",
       "age": 23,
       "number": 5,
       "position": "Defender",
@@ -13902,7 +13902,7 @@
     },
     {
       "id": 277930,
-      "name": "T. Aasgaard",
+      "name": "Thelo Aasgaard",
       "age": 23,
       "number": 19,
       "position": "Midfielder",
@@ -13914,7 +13914,7 @@
     },
     {
       "id": 39043,
-      "name": "F. Aursnes",
+      "name": "Fredrik Aursnes",
       "age": 30,
       "number": 14,
       "position": "Midfielder",
@@ -13926,7 +13926,7 @@
     },
     {
       "id": 39064,
-      "name": "P. Berg",
+      "name": "Patrick Berg",
       "age": 28,
       "number": 6,
       "position": "Midfielder",
@@ -13938,7 +13938,7 @@
     },
     {
       "id": 1934,
-      "name": "S. Berge",
+      "name": "Sander Berge",
       "age": 27,
       "number": 8,
       "position": "Midfielder",
@@ -13962,7 +13962,7 @@
     },
     {
       "id": 37127,
-      "name": "M. Ødegaard",
+      "name": "Martin Ødegaard",
       "age": 27,
       "number": 10,
       "position": "Midfielder",
@@ -13974,7 +13974,7 @@
     },
     {
       "id": 36980,
-      "name": "M. Thorsby",
+      "name": "Morten Thorsby",
       "age": 29,
       "number": 2,
       "position": "Midfielder",
@@ -13986,7 +13986,7 @@
     },
     {
       "id": 39143,
-      "name": "K. Thorstvedt",
+      "name": "Kristian Thorstvedt",
       "age": 26,
       "number": 18,
       "position": "Midfielder",
@@ -13998,7 +13998,7 @@
     },
     {
       "id": 301528,
-      "name": "A. Schjelderup",
+      "name": "Andreas Schjelderup",
       "age": 21,
       "number": 21,
       "position": "Attacker",
@@ -14010,7 +14010,7 @@
     },
     {
       "id": 39073,
-      "name": "J. Hauge",
+      "name": "Jens Petter Hauge",
       "age": 26,
       "number": 23,
       "position": "Midfielder",
@@ -14022,7 +14022,7 @@
     },
     {
       "id": 1100,
-      "name": "E. Haaland",
+      "name": "Erling Haaland",
       "age": 25,
       "number": 9,
       "position": "Attacker",
@@ -14034,7 +14034,7 @@
     },
     {
       "id": 2032,
-      "name": "J. Strand Larsen",
+      "name": "Jørgen Strand Larsen",
       "age": 25,
       "number": 11,
       "position": "Attacker",
@@ -14046,7 +14046,7 @@
     },
     {
       "id": 314511,
-      "name": "A. Nusa",
+      "name": "Antonio Nusa",
       "age": 20,
       "number": 20,
       "position": "Attacker",
@@ -14058,7 +14058,7 @@
     },
     {
       "id": 8492,
-      "name": "A. Sørloth",
+      "name": "Alexander Sørloth",
       "age": 30,
       "number": 7,
       "position": "Attacker",
@@ -14070,7 +14070,7 @@
     },
     {
       "id": 24845,
-      "name": "J. Ryerson",
+      "name": "Julian Ryerson",
       "age": 28,
       "number": 26,
       "position": "Defender",
@@ -14084,7 +14084,7 @@
   "Croatia": [
     {
       "id": 524,
-      "name": "D. Kotarski",
+      "name": "Dominik Kotarski",
       "age": 25,
       "number": 23,
       "position": "Goalkeeper",
@@ -14096,7 +14096,7 @@
     },
     {
       "id": 1305,
-      "name": "D. Livakovic",
+      "name": "Dominik Livaković",
       "age": 31,
       "number": 1,
       "position": "Goalkeeper",
@@ -14108,7 +14108,7 @@
     },
     {
       "id": 14268,
-      "name": "I. Pandur",
+      "name": "Ivor Pandur",
       "age": 25,
       "number": 12,
       "position": "Goalkeeper",
@@ -14120,7 +14120,7 @@
     },
     {
       "id": 1902,
-      "name": "D. Caleta-Car",
+      "name": "Duje Ćaleta-Car",
       "age": 29,
       "number": 5,
       "position": "Defender",
@@ -14132,7 +14132,7 @@
     },
     {
       "id": 30827,
-      "name": "M. Erlic",
+      "name": "Martin Erlić",
       "age": 27,
       "number": 25,
       "position": "Defender",
@@ -14144,7 +14144,7 @@
     },
     {
       "id": 129033,
-      "name": "J. Gvardiol",
+      "name": "Joško Gvardiol",
       "age": 23,
       "number": 4,
       "position": "Defender",
@@ -14156,7 +14156,7 @@
     },
     {
       "id": 1084,
-      "name": "M. Pongracic",
+      "name": "Marin Pongračić",
       "age": 28,
       "number": 3,
       "position": "Defender",
@@ -14168,7 +14168,7 @@
     },
     {
       "id": 125171,
-      "name": "J. Stanisic",
+      "name": "Josip Stanišić",
       "age": 25,
       "number": 2,
       "position": "Defender",
@@ -14180,7 +14180,7 @@
     },
     {
       "id": 14701,
-      "name": "J. Sutalo",
+      "name": "Josip Šutalo",
       "age": 25,
       "number": 6,
       "position": "Defender",
@@ -14192,7 +14192,7 @@
     },
     {
       "id": 387521,
-      "name": "L. Vuskovic",
+      "name": "Luka Vušković",
       "age": 18,
       "number": 22,
       "position": "Defender",
@@ -14204,7 +14204,7 @@
     },
     {
       "id": 295026,
-      "name": "M. Baturina",
+      "name": "Martin Baturina",
       "age": 22,
       "number": 16,
       "position": "Midfielder",
@@ -14216,7 +14216,7 @@
     },
     {
       "id": 284869,
-      "name": "T. Fruk",
+      "name": "Toni Fruk",
       "age": 24,
       "number": 19,
       "position": "Midfielder",
@@ -14228,7 +14228,7 @@
     },
     {
       "id": 14395,
-      "name": "K. Jakic",
+      "name": "Kristijan Jakić",
       "age": 28,
       "number": 18,
       "position": "Midfielder",
@@ -14240,7 +14240,7 @@
     },
     {
       "id": 2291,
-      "name": "M. Kovacic",
+      "name": "Mateo Kovačić",
       "age": 31,
       "number": 8,
       "position": "Midfielder",
@@ -14252,7 +14252,7 @@
     },
     {
       "id": 754,
-      "name": "L. Modric",
+      "name": "Luka Modrić",
       "age": 40,
       "number": 10,
       "position": "Midfielder",
@@ -14264,7 +14264,7 @@
     },
     {
       "id": 1322,
-      "name": "N. Moro",
+      "name": "Nikola Moro",
       "age": 27,
       "number": 7,
       "position": "Midfielder",
@@ -14276,7 +14276,7 @@
     },
     {
       "id": 2763,
-      "name": "M. Pasalic",
+      "name": "Marco Pašalić",
       "age": 30,
       "number": 15,
       "position": "Midfielder",
@@ -14288,7 +14288,7 @@
     },
     {
       "id": 7332,
-      "name": "L. Sucic",
+      "name": "Luka Sučić",
       "age": 23,
       "number": 21,
       "position": "Midfielder",
@@ -14300,19 +14300,19 @@
     },
     {
       "id": 348205,
-      "name": "P. Sucic",
+      "name": "Petar Sučić",
       "age": 22,
       "number": 17,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/348205.png",
-      "club": "Real Sociedad",
-      "caps": 21,
+      "club": "Inter Milan",
+      "caps": 17,
       "goals": 1,
       "captain": false
     },
     {
       "id": 842,
-      "name": "N. Vlasic",
+      "name": "Nikola Vlašić",
       "age": 28,
       "number": 13,
       "position": "Midfielder",
@@ -14324,7 +14324,7 @@
     },
     {
       "id": 46746,
-      "name": "A. Budimir",
+      "name": "Ante Budimir",
       "age": 34,
       "number": 11,
       "position": "Attacker",
@@ -14336,7 +14336,7 @@
     },
     {
       "id": 726,
-      "name": "A. Kramaric",
+      "name": "Andrej Kramarić",
       "age": 34,
       "number": 9,
       "position": "Midfielder",
@@ -14348,7 +14348,7 @@
     },
     {
       "id": 202696,
-      "name": "I. Matanovic",
+      "name": "Igor Matanović",
       "age": 22,
       "number": 20,
       "position": "Attacker",
@@ -14360,7 +14360,7 @@
     },
     {
       "id": 66055,
-      "name": "P. Musa",
+      "name": "Petar Musa",
       "age": 27,
       "number": 26,
       "position": "Attacker",
@@ -14372,7 +14372,7 @@
     },
     {
       "id": 260865,
-      "name": "M. Pasalic",
+      "name": "Marco Pašalić",
       "age": 25,
       "number": 24,
       "position": "Midfielder",
@@ -14384,7 +14384,7 @@
     },
     {
       "id": 207,
-      "name": "I. Perisic",
+      "name": "Ivan Perišić",
       "age": 36,
       "number": 14,
       "position": "Midfielder",
@@ -14398,7 +14398,7 @@
   "Ghana": [
     {
       "id": 480108,
-      "name": "B. Asare",
+      "name": "Benjamin Asare",
       "age": 33,
       "number": 16,
       "position": "Goalkeeper",
@@ -14410,7 +14410,7 @@
     },
     {
       "id": 144709,
-      "name": "J. Anang",
+      "name": "Joseph Anang",
       "age": 25,
       "number": 12,
       "position": "Goalkeeper",
@@ -14434,7 +14434,7 @@
     },
     {
       "id": 369425,
-      "name": "J. Adjetey",
+      "name": "Jonas Adjetey",
       "age": 22,
       "number": 4,
       "position": "Defender",
@@ -14446,7 +14446,7 @@
     },
     {
       "id": 25341,
-      "name": "D. Luckassen",
+      "name": "Derrick Luckassen",
       "age": 30,
       "number": 23,
       "position": "Defender",
@@ -14458,7 +14458,7 @@
     },
     {
       "id": 7578,
-      "name": "G. Mensah",
+      "name": "Gideon Mensah",
       "age": 27,
       "number": 14,
       "position": "Defender",
@@ -14470,7 +14470,7 @@
     },
     {
       "id": 196187,
-      "name": "A. Seidu",
+      "name": "Alidu Seidu",
       "age": 26,
       "number": 2,
       "position": "Defender",
@@ -14482,7 +14482,7 @@
     },
     {
       "id": 137223,
-      "name": "J. Opoku",
+      "name": "Jerome Opoku",
       "age": 27,
       "number": 18,
       "position": "Defender",
@@ -14494,7 +14494,7 @@
     },
     {
       "id": 404172,
-      "name": "K. Peprah Oppong",
+      "name": "Kojo Peprah Oppong",
       "age": 21,
       "number": 21,
       "position": "Defender",
@@ -14506,7 +14506,7 @@
     },
     {
       "id": 15900,
-      "name": "A. Mumin",
+      "name": "Abdul Mumin",
       "age": 28,
       "number": 6,
       "position": "Defender",
@@ -14518,7 +14518,7 @@
     },
     {
       "id": 191240,
-      "name": "M. Senaya",
+      "name": "Marvin Senaya",
       "age": 24,
       "number": 26,
       "position": "Defender",
@@ -14530,7 +14530,7 @@
     },
     {
       "id": 21996,
-      "name": "A. Baba",
+      "name": "Abdul Rahman Baba",
       "age": 31,
       "number": 17,
       "position": "Defender",
@@ -14542,7 +14542,7 @@
     },
     {
       "id": 21010,
-      "name": "E. Owusu",
+      "name": "Elisha Owusu",
       "age": 28,
       "number": 15,
       "position": "Midfielder",
@@ -14554,7 +14554,7 @@
     },
     {
       "id": 49,
-      "name": "T. Partey",
+      "name": "Thomas Partey",
       "age": 32,
       "number": 5,
       "position": "Midfielder",
@@ -14566,7 +14566,7 @@
     },
     {
       "id": 3608,
-      "name": "K. Sibo",
+      "name": "Kwasi Sibo",
       "age": 27,
       "number": 8,
       "position": "Midfielder",
@@ -14578,7 +14578,7 @@
     },
     {
       "id": 475575,
-      "name": "Caleb Marfo Yirenkyi",
+      "name": "Caleb Yirenkyi",
       "age": 19,
       "number": 3,
       "position": "Midfielder",
@@ -14590,7 +14590,7 @@
     },
     {
       "id": 19281,
-      "name": "A. Semenyo",
+      "name": "Antoine Semenyo",
       "age": 25,
       "number": 11,
       "position": "Attacker",
@@ -14602,7 +14602,7 @@
     },
     {
       "id": 337426,
-      "name": "A. Boakye",
+      "name": "Augustine Boakye",
       "age": 25,
       "number": 20,
       "position": "Midfielder",
@@ -14614,7 +14614,7 @@
     },
     {
       "id": 303467,
-      "name": "A. Fatawu",
+      "name": "Abdul Fatawu",
       "age": 21,
       "number": 7,
       "position": "Midfielder",
@@ -14626,7 +14626,7 @@
     },
     {
       "id": 410016,
-      "name": "P. Adu",
+      "name": "Prince Kwabena Adu",
       "age": 22,
       "number": 25,
       "position": "Midfielder",
@@ -14638,7 +14638,7 @@
     },
     {
       "id": 82090,
-      "name": "B. Thomas-Asante",
+      "name": "Brandon Thomas-Asante",
       "age": 27,
       "number": 10,
       "position": "Attacker",
@@ -14650,7 +14650,7 @@
     },
     {
       "id": 3428,
-      "name": "J. Ayew",
+      "name": "Jordan Ayew",
       "age": 34,
       "number": 9,
       "position": "Attacker",
@@ -14662,7 +14662,7 @@
     },
     {
       "id": 411800,
-      "name": "C. Bonsu Baah",
+      "name": "Christopher Bonsu Baah",
       "age": 21,
       "number": 13,
       "position": "Attacker",
@@ -14674,7 +14674,7 @@
     },
     {
       "id": 47294,
-      "name": "I. Williams",
+      "name": "Iñaki Williams",
       "age": 31,
       "number": 19,
       "position": "Attacker",
@@ -14686,7 +14686,7 @@
     },
     {
       "id": 350856,
-      "name": "E. Nuamah",
+      "name": "Ernest Nuamah",
       "age": 22,
       "number": 24,
       "position": "Attacker",
@@ -14698,7 +14698,7 @@
     },
     {
       "id": 199837,
-      "name": "K. Sulemana",
+      "name": "Kamaldeen Sulemana",
       "age": 23,
       "number": 22,
       "position": "Attacker",
@@ -14712,7 +14712,7 @@
   "Panama": [
     {
       "id": 2967,
-      "name": "L. Mejía",
+      "name": "Luis Mejía",
       "age": 34,
       "number": 1,
       "position": "Goalkeeper",
@@ -14724,7 +14724,7 @@
     },
     {
       "id": 2968,
-      "name": "O. Mosquera",
+      "name": "Orlando Mosquera",
       "age": 31,
       "number": 22,
       "position": "Goalkeeper",
@@ -14736,7 +14736,7 @@
     },
     {
       "id": 57861,
-      "name": "C. Samudio",
+      "name": "César Samudio",
       "age": 31,
       "number": 12,
       "position": "Goalkeeper",
@@ -14748,7 +14748,7 @@
     },
     {
       "id": 7197,
-      "name": "A. Andrade",
+      "name": "Andrés Andrade",
       "age": 27,
       "number": 16,
       "position": "Defender",
@@ -14760,7 +14760,7 @@
     },
     {
       "id": 2975,
-      "name": "C. Blackman",
+      "name": "César Blackman",
       "age": 27,
       "number": 2,
       "position": "Defender",
@@ -14772,7 +14772,7 @@
     },
     {
       "id": 57739,
-      "name": "J. Córdoba",
+      "name": "José Córdoba",
       "age": 24,
       "number": 3,
       "position": "Defender",
@@ -14784,7 +14784,7 @@
     },
     {
       "id": 2970,
-      "name": "É. Davis",
+      "name": "Eric Davis",
       "age": 34,
       "number": 15,
       "position": "Defender",
@@ -14796,7 +14796,7 @@
     },
     {
       "id": 2971,
-      "name": "F. Escobar",
+      "name": "Fidel Escobar",
       "age": 30,
       "number": 4,
       "position": "Defender",
@@ -14808,7 +14808,7 @@
     },
     {
       "id": 328148,
-      "name": "E. Fariña",
+      "name": "Edgardo Fariña",
       "age": 24,
       "number": 5,
       "position": "Defender",
@@ -14820,7 +14820,7 @@
     },
     {
       "id": 57803,
-      "name": "J. Gutiérrez",
+      "name": "Jorge Gutiérrez",
       "age": 27,
       "number": 26,
       "position": "Defender",
@@ -14832,7 +14832,7 @@
     },
     {
       "id": 71230,
-      "name": "C. Harvey",
+      "name": "Carlos Harvey",
       "age": 25,
       "number": 14,
       "position": "Midfielder",
@@ -14844,7 +14844,7 @@
     },
     {
       "id": 81659,
-      "name": "R. Miller",
+      "name": "Roderick Miller",
       "age": 33,
       "number": 25,
       "position": "Defender",
@@ -14856,7 +14856,7 @@
     },
     {
       "id": 2973,
-      "name": "A. Murillo",
+      "name": "Michael Amir Murillo",
       "age": 29,
       "number": 23,
       "position": "Defender",
@@ -14868,7 +14868,7 @@
     },
     {
       "id": 57667,
-      "name": "J. Ramos",
+      "name": "Jiovany Ramos",
       "age": 28,
       "number": 13,
       "position": "Defender",
@@ -14880,7 +14880,7 @@
     },
     {
       "id": 57807,
-      "name": "A. Carrasquilla",
+      "name": "Adalberto Carrasquilla",
       "age": 27,
       "number": 8,
       "position": "Midfielder",
@@ -14892,7 +14892,7 @@
     },
     {
       "id": 2977,
-      "name": "A. Godoy",
+      "name": "Aníbal Godoy",
       "age": 35,
       "number": 20,
       "position": "Midfielder",
@@ -14904,7 +14904,7 @@
     },
     {
       "id": 554208,
-      "name": "C. Martinez",
+      "name": "Cristian Martínez",
       "age": 28,
       "number": 6,
       "position": "Midfielder",
@@ -14916,19 +14916,19 @@
     },
     {
       "id": 2979,
-      "name": "J. Rodríguez",
+      "name": "José Luis Rodríguez",
       "age": 27,
       "number": 7,
       "position": "Midfielder",
       "photo": "https://media.api-sports.io/football/players/2979.png",
-      "club": "Saprissa",
-      "caps": 13,
-      "goals": 4,
+      "club": "Juárez",
+      "caps": 70,
+      "goals": 8,
       "captain": false
     },
     {
       "id": 46855,
-      "name": "Y. Bárcenas",
+      "name": "Yoel Bárcenas",
       "age": 32,
       "number": 11,
       "position": "Midfielder",
@@ -14940,7 +14940,7 @@
     },
     {
       "id": 96615,
-      "name": "I. Díaz",
+      "name": "Ismael Díaz",
       "age": 28,
       "number": 10,
       "position": "Midfielder",
@@ -14952,7 +14952,7 @@
     },
     {
       "id": 2978,
-      "name": "A. Quintero",
+      "name": "Alberto Quintero",
       "age": 38,
       "number": 19,
       "position": "Midfielder",
@@ -14964,7 +14964,7 @@
     },
     {
       "id": 57875,
-      "name": "C. Yanis",
+      "name": "César Yanis",
       "age": 29,
       "number": 21,
       "position": "Midfielder",
@@ -14976,7 +14976,7 @@
     },
     {
       "id": 2983,
-      "name": "J. Fajardo",
+      "name": "José Fajardo",
       "age": 32,
       "number": 17,
       "position": "Attacker",
@@ -14988,7 +14988,7 @@
     },
     {
       "id": 292396,
-      "name": "A. Londoño",
+      "name": "Azarias Londoño",
       "age": 24,
       "number": 24,
       "position": "Midfielder",
@@ -15000,7 +15000,7 @@
     },
     {
       "id": 57910,
-      "name": "T. Rodríguez",
+      "name": "Tomás Rodríguez",
       "age": 26,
       "number": 9,
       "position": "Attacker",
@@ -15012,7 +15012,7 @@
     },
     {
       "id": 51648,
-      "name": "C. Waterman",
+      "name": "Cecilio Waterman",
       "age": 34,
       "number": 18,
       "position": "Attacker",

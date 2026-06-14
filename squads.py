@@ -271,49 +271,64 @@ def fetch_wikipedia_clubs(wiki_cache_path: Path) -> dict:
         if not table:
             continue
 
+        def _int_cell(cell):
+            txt = re.sub(r"\[.*?\]", "", cell.get_text(strip=True))
+            try:
+                return int(txt)
+            except ValueError:
+                return None
+
         players = {}
         for row in table.find_all("tr"):
             cells = row.find_all(["td", "th"])
             if len(cells) < 7 or cells[0].name == "th":
                 continue
 
-            # Player name — prefer data-sort-value="Surname, Firstname"
             name_cell = cells[2]
+
+            # Full display name — first <a> link text, stripped of (captain) etc.
+            name_link = name_cell.find("a", href=lambda h: h and "/wiki/" in (h or "")
+                                       and "Captain" not in (h or ""))
+            fullname = re.sub(r"\s*\(.*?\)\s*", " ",
+                              name_link.get_text(strip=True) if name_link
+                              else name_cell.get_text(strip=True)).strip()
+            fullname = re.sub(r"\[.*?\]", "", fullname).strip()
+
+            # Surname + first initial from data-sort-value="Surname, Firstname"
             sort_span = name_cell.find(attrs={"data-sort-value": True})
             if sort_span:
-                sort_val = sort_span["data-sort-value"]
-                surname = sort_val.split(",")[0].strip()
+                parts = sort_span["data-sort-value"].split(",", 1)
+                surname  = parts[0].strip()
+                firstname = parts[1].strip() if len(parts) > 1 else ""
             else:
-                link = name_cell.find("a")
-                full = (link.get_text(strip=True) if link else name_cell.get_text(strip=True))
-                surname = full.split()[-1] if full else ""
+                words = fullname.split()
+                surname   = words[-1] if words else ""
+                firstname = words[0]  if len(words) > 1 else ""
 
-            def _int_cell(cell):
-                txt = re.sub(r"\[.*?\]", "", cell.get_text(strip=True))
-                try:
-                    return int(txt)
-                except ValueError:
-                    return None
+            first_initial = firstname[0].lower() if firstname else ""
 
-            # Caps (col 4), Goals (col 5), Club (col 6)
-            caps  = _int_cell(cells[4])
-            goals = _int_cell(cells[5])
+            # Key: normalised "surname_initial" for disambiguation; fall back to surname only
+            norm_surname = unicodedata.normalize("NFD", surname.lower()).encode("ascii","ignore").decode().strip()
+            key = f"{norm_surname}_{first_initial}" if first_initial else norm_surname
+
+            caps   = _int_cell(cells[4])
+            goals  = _int_cell(cells[5])
             club_cell = cells[6]
-            links = club_cell.find_all("a")
-            club = links[-1].get_text(strip=True) if links else club_cell.get_text(strip=True)
-            club = re.sub(r"\[.*?\]", "", club).strip()
+            links  = club_cell.find_all("a")
+            club   = links[-1].get_text(strip=True) if links else club_cell.get_text(strip=True)
+            club   = re.sub(r"\[.*?\]", "", club).strip()
 
-            # Captain marked with link to Captain_(association_football)
             is_captain = bool(
                 name_cell.find("a", href=lambda h: h and "Captain_(association_football)" in h)
             )
 
-            if surname:
-                players[surname.lower()] = {
-                    "club": club,
-                    "caps": caps,
-                    "goals": goals,
-                    "captain": is_captain,
+            if key:
+                players[key] = {
+                    "fullname": fullname,
+                    "club":     club,
+                    "caps":     caps,
+                    "goals":    goals,
+                    "captain":  is_captain,
                 }
 
         result[country] = {"players": players, "notes": notes}
@@ -330,51 +345,60 @@ def _norm(s: str) -> str:
 
 
 def enrich_with_clubs(cache: dict, wiki_clubs: dict) -> dict:
-    """Add club, caps, goals to each player. Returns {team: [note_str, ...]}."""
+    """Enrich player dicts with Wikipedia data. Returns {team: [note_str]}."""
     notes_by_team = {}
     if not wiki_clubs:
         return notes_by_team
     matched = total = 0
+
     for team, players in cache.items():
         if not players:
             continue
         raw = wiki_clubs.get(team, {})
-        # Support old format (surname→str or surname→{club,caps,goals})
-        # and new format ({players:{...}, notes:[...]})
         if isinstance(raw, dict) and "players" in raw:
             player_map = raw["players"]
             notes_by_team[team] = raw.get("notes", [])
         else:
             player_map = raw
-        def _entry(v):
-            if isinstance(v, dict):
-                return v
-            return {"club": v, "caps": None, "goals": None}
-        norm_lookup = {_norm(k): _entry(v) for k, v in player_map.items()}
+
+        # Build two lookups: specific (surname_initial) and fallback (surname only)
+        specific = {}   # "surname_i"  → entry
+        fallback = {}   # "surname"    → entry  (last writer wins for same surname)
+        for k, v in player_map.items():
+            entry = v if isinstance(v, dict) else {"club": v}
+            specific[_norm(k)] = entry          # key already includes initial
+            base = _norm(k.rsplit("_", 1)[0]) if "_" in k else _norm(k)
+            fallback[base] = entry
 
         for p in players:
             total += 1
             name = p.get("name", "")
             parts = name.split()
+            initials = [pt.rstrip(".").lower() for pt in parts if len(pt) <= 2 and pt.endswith(".")]
             non_init = [pt for pt in parts if not (len(pt) <= 2 and pt.endswith("."))]
-            if not non_init:
-                p.setdefault("club", "")
-                p.setdefault("caps", None)
-                p.setdefault("goals", None)
-                continue
 
-            candidates = [
-                _norm(non_init[-1]),
-                _norm(non_init[0]),
-                _norm(" ".join(non_init[-2:])) if len(non_init) >= 2 else "",
-            ]
+            first_initial = initials[0] if initials else (non_init[0][0].lower() if non_init else "")
+
+            # Surname candidates: last word, first word, last two words
+            surname_candidates = []
+            if non_init:
+                surname_candidates.append(_norm(non_init[-1]))
+                surname_candidates.append(_norm(non_init[0]))
+                if len(non_init) >= 2:
+                    surname_candidates.append(_norm(" ".join(non_init[-2:])))
+
             entry = None
-            for c in candidates:
-                if c and c in norm_lookup:
-                    entry = norm_lookup[c]
+            for sc in surname_candidates:
+                if not sc:
+                    continue
+                # Try specific match with initial first, then surname-only fallback
+                entry = specific.get(f"{sc}_{first_initial}") or fallback.get(sc)
+                if entry:
                     break
 
             if entry:
+                if entry.get("fullname"):
+                    p["name"] = entry["fullname"]
                 p["club"]    = entry.get("club", "")
                 p["caps"]    = entry.get("caps")
                 p["goals"]   = entry.get("goals")
@@ -385,6 +409,7 @@ def enrich_with_clubs(cache: dict, wiki_clubs: dict) -> dict:
                 p.setdefault("caps", None)
                 p.setdefault("goals", None)
                 p.setdefault("captain", False)
+
     print(f"  Players enriched: {matched}/{total}")
     return notes_by_team
 
