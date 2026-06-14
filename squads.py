@@ -439,6 +439,9 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 <nav class="topnav">
   <a href="index.html">📅 Calendar</a>
   <a href="index.html#standings">🏆 Standings</a>
+  <a href="index.html#group-tables-section">📋 Groups</a>
+  <a href="index.html#results-entry-section">⚽ Results</a>
+  <a href="previews.html">💬 Previews</a>
   <a href="squads.html" class="active">👕 Squads</a>
 </nav>
 
