@@ -1,38 +1,16 @@
 #!/usr/bin/env python3
 """
-scores.py — Fetch World Cup 2026 results and update index.html
+scores.py — Fetch World Cup 2026 results and events, update index.html
 
-Fetches completed match scores from football-data.org and patches the
-AUTO_SCORES block in the HTML so the page shows current results without
-manual entry.
-
-
-
-
-Get a free API key at: https://www.football-data.org/
-The free tier (Tier One) includes World Cup data.
+Two data sources:
+  1. football-data.org  — full-time & half-time scores, match status/winner
+  2. ESPN (no key)      — goal scorers, minutes, pen/OG flags, red cards
 
 Usage:
-cd /Users/geofffay/wc26                         
-pip3 install requests                                                         
-python3 scores.py --api-key ebfb2f93b2d84919a843ecf10ee2ee95
+  python3 scores.py --api-key YOUR_FOOTBALL_DATA_KEY
+  (get a free key at https://www.football-data.org/)
 
-
- Workflow going forward:                                                    
-                         
-  # 1. Update scores
-  python3 scores.py --api-key YOUR_KEY                                          
-   
-  # 2. Push to GitHub (site updates automatically)                              
-  git add index.html                                             
-  git commit -m "Update scores"                                                 
-  git push                                                                   
-                                                                                
-  The site reflects the new scores within ~30 seconds of pushing.     
-
-
-https://geoffreyjfay-sudo.github.io/wc26/   
-
+Site: https://geoffreyjfay-sudo.github.io/wc26/
 ===============================
 """
 
@@ -40,6 +18,7 @@ import argparse
 import json
 import re
 import sys
+from datetime import date, timedelta
 from pathlib import Path
 
 try:
@@ -195,6 +174,142 @@ FIXTURES = {
 # Build reverse lookup: (home, away) → fixture_id
 FIXTURE_LOOKUP = {v: k for k, v in FIXTURES.items()}
 
+# ── ESPN (no key required) ───────────────────────────────────────────────────
+ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
+GROUP_STAGE_START = date(2026, 6, 11)
+GROUP_STAGE_END = date(2026, 6, 28)
+
+ESPN_TEAM_MAP = {
+    "Bosnia-Herzegovina": "Bosnia & Hz.",
+    "United States": "USA",
+    "Türkiye": "Turkey",
+    "Czech Republic": "Czechia",
+    "Republic of Korea": "South Korea",
+    "Dem. Republic of Congo": "DR Congo",
+    "DR Congo": "DR Congo",
+    "Ivory Coast": "Ivory Coast",
+    "Côte d'Ivoire": "Ivory Coast",
+    "Cape Verde Islands": "Cape Verde",
+    "IR Iran": "Iran",
+    "Curacao": "Curaçao",
+}
+
+def normalize_espn(name: str) -> str:
+    return ESPN_TEAM_MAP.get(name, name)
+
+
+def fetch_espn_events() -> dict:
+    """Fetch goal/red-card events for completed WC 2026 group matches from ESPN."""
+    events = {}
+    today = date.today()
+    end = min(today + timedelta(days=1), GROUP_STAGE_END)
+
+    d = GROUP_STAGE_START
+    while d <= end:
+        date_str = d.strftime("%Y%m%d")
+        try:
+            resp = requests.get(ESPN_BASE, params={"dates": date_str}, timeout=10)
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception as exc:
+            print(f"  ESPN warning: could not fetch {date_str}: {exc}")
+            d += timedelta(days=1)
+            continue
+
+        for event in data.get("events", []):
+            comp = event.get("competitions", [{}])[0]
+            competitors = comp.get("competitors", [])
+            if len(competitors) < 2:
+                continue
+
+            # Use homeAway field — don't rely on array order
+            home_raw = away_raw = ""
+            for c in competitors:
+                if c.get("homeAway") == "home":
+                    home_raw = c["team"]["displayName"]
+                elif c.get("homeAway") == "away":
+                    away_raw = c["team"]["displayName"]
+            if not home_raw or not away_raw:
+                home_raw = competitors[0]["team"]["displayName"]
+                away_raw = competitors[1]["team"]["displayName"]
+
+            home = normalize_espn(home_raw)
+            away = normalize_espn(away_raw)
+
+            fixture_id = FIXTURE_LOOKUP.get((home, away))
+            if not fixture_id:
+                continue
+
+            # Map ESPN team id → our normalised name
+            team_id_map = {
+                str(c["team"]["id"]): normalize_espn(c["team"]["displayName"])
+                for c in competitors
+            }
+
+            goals, reds = [], []
+            for det in comp.get("details", []):
+                is_goal = det.get("scoringPlay", False)
+                is_red  = det.get("redCard", False)
+                if not is_goal and not is_red:
+                    continue
+
+                minute = det.get("clock", {}).get("displayValue", "?")
+                athletes = det.get("athletesInvolved", [])
+                raw_name = (athletes[0].get("fullName") or athletes[0].get("displayName", "?")) if athletes else "?"
+                # ESPN occasionally returns "Firstname null" — strip trailing " null"
+                player = raw_name.removesuffix(" null").strip() if raw_name else "?"
+                team_name = team_id_map.get(str(det.get("team", {}).get("id", "")), "")
+
+                if is_goal:
+                    goals.append({
+                        "min": minute,
+                        "player": player,
+                        "team": team_name,
+                        "pen": det.get("penaltyKick", False),
+                        "og": det.get("ownGoal", False),
+                    })
+                elif is_red:
+                    reds.append({
+                        "min": minute,
+                        "player": player,
+                        "team": team_name,
+                    })
+
+            entry = {}
+            if goals:
+                entry["goals"] = goals
+            if reds:
+                entry["reds"] = reds
+            if entry:
+                events[fixture_id] = entry
+
+        d += timedelta(days=1)
+
+    return events
+
+
+def patch_events_html(html_path: Path, events: dict) -> None:
+    content = html_path.read_text(encoding="utf-8")
+    events_json = json.dumps(events, indent=2, ensure_ascii=False)
+    new_block = (
+        "// AUTO_EVENTS_START\n"
+        f"const AUTO_EVENTS = {events_json};\n"
+        "// AUTO_EVENTS_END"
+    )
+    updated, n = re.subn(
+        r"// AUTO_EVENTS_START.*?// AUTO_EVENTS_END",
+        new_block,
+        content,
+        flags=re.DOTALL,
+    )
+    if n == 0:
+        sys.exit(
+            "Could not find AUTO_EVENTS block in HTML. "
+            "Make sure // AUTO_EVENTS_START and // AUTO_EVENTS_END markers exist."
+        )
+    html_path.write_text(updated, encoding="utf-8")
+    print(f"✓ Patched {len(events)} match event(s) into {html_path}")
+
 
 def normalize(name: str) -> str:
     return TEAM_NAME_MAP.get(name, name)
@@ -318,15 +433,19 @@ def main():
     if not html_path.exists():
         sys.exit(f"HTML file not found: {html_path}")
 
-    print(f"Fetching WC {SEASON} group stage results...")
+    print(f"Fetching WC {SEASON} group stage scores from football-data.org...")
     matches = fetch_matches(args.api_key)
     print(f"  {len(matches)} matches returned from API")
-
     scores = build_scores(matches)
     finished = sum(1 for s in scores.values() if s["home"] != "")
     print(f"  {finished} completed match(es) found")
-
     patch_html(html_path, scores)
+
+    print("Fetching goal events from ESPN...")
+    events = fetch_espn_events()
+    print(f"  {len(events)} fixture(s) with events")
+    patch_events_html(html_path, events)
+
     print("Done. Re-upload the HTML to Netlify/GitHub Pages to publish.")
 
 

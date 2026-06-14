@@ -429,6 +429,9 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
 .cal-ht { font-family:'Inter',sans-serif; font-size:0.62rem; color:var(--muted); letter-spacing:0; font-weight:normal; margin-left:8px; align-self:center; }
 .live-badge { display:block; font-size:0.6rem; font-family:'Inter',sans-serif; letter-spacing:0.06em; font-weight:700; color:var(--green-lt); animation:livepulse 1.4s ease-in-out infinite; margin-top:2px; }
 @keyframes livepulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
+.cal-events { display:flex; flex-wrap:wrap; gap:2px 12px; padding-top:4px; }
+.cal-goal { font-size:0.72rem; color:var(--cream); opacity:0.85; white-space:nowrap; }
+.cal-red  { font-size:0.72rem; color:var(--red-lt); white-space:nowrap; }
 
 </style>
 </head>
@@ -822,6 +825,20 @@ function render() {
         : `<div style="font-size:0.7rem;color:var(--muted);padding:1px 0 1px 28px">vs</div>`;
       const liveTag = isLive ? `<span class="live-badge">● LIVE</span>` : '';
 
+      // Goal / red-card events from AUTO_EVENTS
+      const ev = AUTO_EVENTS[m.id];
+      const evParts = [];
+      if (ev) {
+        for (const g of (ev.goals || [])) {
+          const flag = getTeamFlag(g.team);
+          const suffix = g.og ? ' (OG)' : g.pen ? ' (P)' : '';
+          evParts.push(`<span class="cal-goal">⚽ ${flag} ${g.min}' ${g.player}${suffix}</span>`);
+        }
+        for (const r of (ev.reds || [])) {
+          evParts.push(`<span class="cal-red">🟥 ${getTeamFlag(r.team)} ${r.min}' ${r.player}</span>`);
+        }
+      }
+
       html += `<div class="match-card ${isFam?'family':''}">
         <div class="match-time">${timeDisplay}<span class="tz">IST</span>${liveTag}</div>
         <div class="match-teams">
@@ -845,6 +862,7 @@ function render() {
           ${homeInfo.map(p => `<span class="ptag t${p.tier}">${p.person} (${m.home})</span>`).join('')}
           ${awayInfo.map(p => `<span class="ptag t${p.tier}">${p.person} (${m.away})</span>`).join('')}
         </div>` : ''}
+        ${evParts.length ? `<div class="cal-events" style="grid-column:2/4">${evParts.join('')}</div>` : ''}
         ${PREVIEW_BY_ID[m.id] ? `<div style="grid-column:2/4;margin-top:2px"><button class="preview-btn" onclick="openPreview('${m.id}')">💬 Match Preview</button></div>` : ''}
       </div>`;
     }
@@ -2208,6 +2226,192 @@ const AUTO_SCORES = {
   }
 };
 // AUTO_SCORES_END
+// AUTO_EVENTS_START
+const AUTO_EVENTS = {
+  "A1": {
+    "goals": [
+      {
+        "min": "9'",
+        "player": "Julián Quiñones",
+        "team": "Mexico",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "67'",
+        "player": "Raúl Jiménez",
+        "team": "Mexico",
+        "pen": false,
+        "og": false
+      }
+    ],
+    "reds": [
+      {
+        "min": "49'",
+        "player": "Sphephelo Sithole",
+        "team": "South Africa"
+      },
+      {
+        "min": "84'",
+        "player": "Themba Zwane",
+        "team": "South Africa"
+      },
+      {
+        "min": "90'+2'",
+        "player": "César Montes",
+        "team": "Mexico"
+      }
+    ]
+  },
+  "A2": {
+    "goals": [
+      {
+        "min": "59'",
+        "player": "Ladislav Krejcí",
+        "team": "Czechia",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "67'",
+        "player": "Hwang In-Beom",
+        "team": "South Korea",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "80'",
+        "player": "Oh Hyeon-Gyu",
+        "team": "South Korea",
+        "pen": false,
+        "og": false
+      }
+    ]
+  },
+  "B1": {
+    "goals": [
+      {
+        "min": "21'",
+        "player": "Jovo Lukic",
+        "team": "Bosnia & Hz.",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "78'",
+        "player": "Cyle Larin",
+        "team": "Canada",
+        "pen": false,
+        "og": false
+      }
+    ]
+  },
+  "D1": {
+    "goals": [
+      {
+        "min": "7'",
+        "player": "Damián Bobadilla",
+        "team": "USA",
+        "pen": false,
+        "og": true
+      },
+      {
+        "min": "31'",
+        "player": "Folarin Balogun",
+        "team": "USA",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "45'+5'",
+        "player": "Folarin Balogun",
+        "team": "USA",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "73'",
+        "player": "Maurício",
+        "team": "Paraguay",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "90'+8'",
+        "player": "Giovanni Reyna",
+        "team": "USA",
+        "pen": false,
+        "og": false
+      }
+    ]
+  },
+  "B2": {
+    "goals": [
+      {
+        "min": "17'",
+        "player": "Breel Embolo",
+        "team": "Switzerland",
+        "pen": true,
+        "og": false
+      },
+      {
+        "min": "90'+4'",
+        "player": "Miro Muheim",
+        "team": "Qatar",
+        "pen": false,
+        "og": true
+      }
+    ]
+  },
+  "C1": {
+    "goals": [
+      {
+        "min": "21'",
+        "player": "Ismael Saibari",
+        "team": "Morocco",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "32'",
+        "player": "Vinícius Júnior",
+        "team": "Brazil",
+        "pen": false,
+        "og": false
+      }
+    ]
+  },
+  "C2": {
+    "goals": [
+      {
+        "min": "28'",
+        "player": "John McGinn",
+        "team": "Scotland",
+        "pen": false,
+        "og": false
+      }
+    ]
+  },
+  "D2": {
+    "goals": [
+      {
+        "min": "27'",
+        "player": "Nestory Irankunda",
+        "team": "Australia",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "75'",
+        "player": "Connor Metcalfe",
+        "team": "Australia",
+        "pen": false,
+        "og": false
+      }
+    ]
+  }
+};
+// AUTO_EVENTS_END
 let results = Object.assign({}, AUTO_SCORES, loadData());
 
 // ── TEAM OWNER LOOKUP ────────────────────────────────────────
