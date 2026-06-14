@@ -178,77 +178,61 @@ def fetch_all_squads(api_key, cache_path):
 
 # ── HTML generation ───────────────────────────────────────────────────────────
 
-def squad_html(team, players):
-    """Render the expandable squad section for one team."""
-    if players is None:
-        return '<div class="squad-error">Squad data unavailable</div>'
-    if not players:
-        return '<div class="squad-error">No squad data found</div>'
-
-    by_pos = {p: [] for p in POSITION_ORDER}
-    for pl in players:
-        pos = pl.get("position", "Attacker")
-        if pos not in by_pos:
-            pos = "Attacker"
-        by_pos[pos].append(pl)
-
-    for pos in POSITION_ORDER:
-        by_pos[pos].sort(key=lambda p: p.get("number") or 99)
-
-    html = ""
-    for pos in POSITION_ORDER:
-        group = by_pos[pos]
-        if not group:
+def build_squad_data(squads):
+    """Return squads dict as compact JSON for embedding in the page."""
+    out = {}
+    for team, players in squads.items():
+        if not players:
+            out[team] = []
             continue
-        html += f'<div class="pos-group"><div class="pos-label">{POSITION_LABEL[pos]}</div>'
-        for pl in group:
-            num = pl.get("number") or "—"
-            name = pl.get("name", "Unknown")
-            age = pl.get("age", "")
-            photo = pl.get("photo", "")
-            age_str = f'<span class="pl-age">{age}</span>' if age else ""
-            photo_str = f'<img class="pl-photo" src="{photo}" alt="" loading="lazy" onerror="this.style.display=\'none\'">' if photo else '<span class="pl-photo-empty"></span>'
-            html += f'<div class="player-row">{photo_str}<span class="pl-num">{num}</span><span class="pl-name">{name}</span>{age_str}</div>'
-        html += "</div>"
-    return html
+        by_pos = {p: [] for p in POSITION_ORDER}
+        for pl in players:
+            pos = pl.get("position", "Attacker")
+            if pos not in by_pos:
+                pos = "Attacker"
+            by_pos[pos].append({
+                "n": pl.get("number") or 0,
+                "name": pl.get("name", ""),
+                "age": pl.get("age", ""),
+                "photo": pl.get("photo", ""),
+                "pos": pos,
+            })
+        for pos in POSITION_ORDER:
+            by_pos[pos].sort(key=lambda p: p["n"] or 99)
+        out[team] = [p for pos in POSITION_ORDER for p in by_pos[pos]]
+    return out
 
 
 def generate_html(squads):
     tier_cls = {1: "t1", 2: "t2", 3: "t3"}
+    squad_data = build_squad_data(squads)
+    squad_json = json.dumps(squad_data, ensure_ascii=False)
 
+    # Build team tiles grouped by group
     groups_html = ""
     for grp_letter, teams in GROUPS.items():
-        teams_html = ""
+        tiles = ""
         for team in teams:
             flag = FLAGS.get(team, "🏳")
             owner = TEAM_OWNER.get(team, "")
             tier = TEAM_TIER.get(team, 2)
             tc = tier_cls.get(tier, "t2")
-            players = squads.get(team)
-            squad_inner = squad_html(team, players)
-            safe_id = team.replace(" ", "-").replace("&", "and").replace(".", "").replace("ç", "c").replace("ã", "a")
+            safe = team.replace('"', '\\"')
+            tiles += f"""
+      <div class="team-tile" onclick="openSquad('{safe}')">
+        <span class="tile-flag">{flag}</span>
+        <span class="tile-name">{team}</span>
+        <span class="tile-owner {tc}">{owner}</span>
+      </div>"""
 
-            teams_html += f"""
-    <div class="team-card">
-      <div class="team-header" onclick="toggleSquad('{safe_id}', this)">
-        <span class="team-flag">{flag}</span>
-        <div class="team-info">
-          <span class="team-name">{team}</span>
-          <span class="owner-badge {tc}">{owner} · {TIER_LABEL[tier]}</span>
-        </div>
-        <span class="squad-arrow">▼</span>
-      </div>
-      <div class="squad-body" id="sq-{safe_id}">
-        {squad_inner}
+        groups_html += f"""
+    <div class="group-section">
+      <div class="group-label">Group {grp_letter}</div>
+      <div class="team-grid">{tiles}
       </div>
     </div>"""
 
-        groups_html += f"""
-  <div class="group-block">
-    <div class="group-heading">Group {grp_letter}</div>
-    <div class="teams-list">{teams_html}
-    </div>
-  </div>"""
+    pos_label_js = json.dumps(POSITION_LABEL)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -262,6 +246,7 @@ def generate_html(squads):
 :root {{
   --dark:    #0d1a0e;
   --panel:   #132015;
+  --panel2:  #1a2e1c;
   --border:  rgba(255,255,255,0.09);
   --gold:    #d4a017;
   --gold-lt: #f0c040;
@@ -270,16 +255,14 @@ def generate_html(squads):
   --t1:      #f0c040;
   --t2:      #4dcf6a;
   --t3:      #ff8a8a;
-  --green-lt: #4dcf6a;
 }}
 body {{ background: var(--dark); color: var(--cream); font-family: 'Inter', sans-serif; min-height: 100vh; }}
 
-/* NAV */
+/* ── NAV ── */
 .topnav {{
   background: rgba(9,18,8,0.92); border-bottom: 1px solid var(--border);
   padding: 10px 24px; display: flex; gap: 12px; align-items: center;
-  position: sticky; top: 0; z-index: 100;
-  backdrop-filter: blur(8px);
+  position: sticky; top: 0; z-index: 200; backdrop-filter: blur(8px);
 }}
 .topnav a {{
   color: var(--muted); text-decoration: none; padding: 5px 14px; border-radius: 20px;
@@ -289,15 +272,15 @@ body {{ background: var(--dark); color: var(--cream); font-family: 'Inter', sans
 .topnav a:hover {{ color: var(--cream); border-color: var(--border); }}
 .topnav a.active {{ background: var(--gold); color: var(--dark); border-color: var(--gold); }}
 
-/* HEADER */
+/* ── HEADER ── */
 header {{
   background: linear-gradient(160deg, #0a2e0e 0%, #0d1a0e 60%);
   border-bottom: 2px solid var(--gold);
   padding: 36px 24px 28px; text-align: center; position: relative; overflow: hidden;
 }}
 header::before {{
-  content: '⚽'; position: absolute; font-size: 260px; opacity: 0.04;
-  top: -40px; right: -40px; line-height: 1; pointer-events: none;
+  content: '👕'; position: absolute; font-size: 220px; opacity: 0.04;
+  top: -30px; right: -20px; line-height: 1; pointer-events: none;
 }}
 header h1 {{
   font-family: 'Bebas Neue', sans-serif;
@@ -308,100 +291,147 @@ header h1 {{
 }}
 header p {{ color: var(--muted); margin-top: 8px; font-size: 0.95rem; }}
 
-/* LEGEND */
+/* ── LEGEND ── */
 .legend {{
   display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
   padding: 14px 24px; border-bottom: 1px solid var(--border);
   background: rgba(255,255,255,0.02);
 }}
 .leg-item {{ display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--muted); }}
-.leg-dot {{ width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }}
+.leg-dot {{ width: 10px; height: 10px; border-radius: 50%; }}
 
-/* LAYOUT */
-main {{ max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }}
+/* ── MAIN ── */
+main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 
-/* GROUPS GRID */
-.groups-grid {{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}}
-@media(max-width: 900px) {{ .groups-grid {{ grid-template-columns: repeat(2, 1fr); }} }}
-@media(max-width: 560px) {{ .groups-grid {{ grid-template-columns: 1fr; }} }}
-
-/* GROUP BLOCK */
-.group-block {{
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-}}
-.group-heading {{
+/* ── GROUP SECTION ── */
+.group-section {{ margin-bottom: 36px; }}
+.group-label {{
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1rem; letter-spacing: 0.12em; color: var(--gold-lt);
-  padding: 8px 14px;
-  background: rgba(255,255,255,0.04);
+  font-size: 1.1rem; letter-spacing: 0.12em; color: var(--gold-lt);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
   border-bottom: 1px solid var(--border);
 }}
-.teams-list {{ display: flex; flex-direction: column; }}
 
-/* TEAM CARD */
-.team-card {{ border-bottom: 1px solid rgba(255,255,255,0.04); }}
-.team-card:last-child {{ border-bottom: none; }}
-.team-header {{
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px; cursor: pointer;
-  transition: background 0.15s; user-select: none;
+/* ── TEAM TILES ── */
+.team-grid {{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
 }}
-.team-header:hover {{ background: rgba(255,255,255,0.04); }}
-.team-flag {{ font-size: 1.4rem; flex-shrink: 0; }}
-.team-info {{ flex: 1; min-width: 0; }}
-.team-name {{ display: block; font-weight: 600; font-size: 0.92rem; }}
-.owner-badge {{
-  display: inline-block; font-size: 0.68rem; padding: 1px 7px; border-radius: 8px;
-  font-weight: 600; margin-top: 2px; letter-spacing: 0.02em;
+@media(max-width: 700px) {{ .team-grid {{ grid-template-columns: repeat(2, 1fr); }} }}
+
+.team-tile {{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 12px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
 }}
-.owner-badge.t1 {{ background: rgba(240,192,64,0.2); color: var(--t1); border: 1px solid rgba(240,192,64,0.3); }}
-.owner-badge.t2 {{ background: rgba(77,207,106,0.15); color: var(--t2); border: 1px solid rgba(77,207,106,0.25); }}
-.owner-badge.t3 {{ background: rgba(255,138,138,0.15); color: var(--t3); border: 1px solid rgba(255,138,138,0.25); }}
-.squad-arrow {{ color: var(--muted); font-size: 0.7rem; flex-shrink: 0; transition: transform 0.2s; }}
-.squad-arrow.open {{ transform: rotate(180deg); }}
+.team-tile:hover {{
+  border-color: var(--gold);
+  background: rgba(212,160,23,0.07);
+  transform: translateY(-2px);
+}}
+.tile-flag {{ font-size: 2.4rem; line-height: 1; }}
+.tile-name {{ font-weight: 600; font-size: 0.88rem; color: var(--cream); line-height: 1.2; }}
+.tile-owner {{
+  font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; font-weight: 600;
+}}
+.tile-owner.t1 {{ background: rgba(240,192,64,0.2); color: var(--t1); border: 1px solid rgba(240,192,64,0.3); }}
+.tile-owner.t2 {{ background: rgba(77,207,106,0.15); color: var(--t2); border: 1px solid rgba(77,207,106,0.25); }}
+.tile-owner.t3 {{ background: rgba(255,138,138,0.15); color: var(--t3); border: 1px solid rgba(255,138,138,0.25); }}
 
-/* SQUAD BODY */
-.squad-body {{ display: none; padding: 0 14px 12px; }}
-.squad-body.open {{ display: block; }}
-.squad-error {{ font-size: 0.8rem; color: var(--muted); font-style: italic; padding: 8px 0; }}
+/* ── MODAL ── */
+.modal-overlay {{
+  display: none; position: fixed; inset: 0; z-index: 300;
+  background: rgba(0,0,0,0.8); align-items: center; justify-content: center;
+  padding: 16px; backdrop-filter: blur(4px);
+}}
+.modal-overlay.open {{ display: flex; }}
+.modal-box {{
+  background: var(--panel); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px; max-width: 820px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.8);
+  display: flex; flex-direction: column;
+}}
 
-/* POSITION GROUP */
-.pos-group {{ margin-top: 10px; }}
-.pos-label {{
+/* Modal header */
+.modal-head {{
+  background: var(--panel2);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+  display: flex; align-items: center; gap: 16px;
+  position: sticky; top: 0; z-index: 1;
+  border-radius: 14px 14px 0 0;
+}}
+.modal-flag {{ font-size: 3rem; line-height: 1; flex-shrink: 0; }}
+.modal-title {{
+  flex: 1;
+}}
+.modal-team-name {{
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.72rem; letter-spacing: 0.1em;
-  color: var(--muted); margin-bottom: 4px;
-  padding-bottom: 3px; border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 2rem; letter-spacing: 0.06em; color: var(--cream); line-height: 1;
 }}
+.modal-meta {{ font-size: 0.82rem; color: var(--muted); margin-top: 4px; }}
+.modal-owner-badge {{
+  font-size: 0.75rem; padding: 3px 10px; border-radius: 12px; font-weight: 600;
+  margin-left: 8px;
+}}
+.modal-owner-badge.t1 {{ background: rgba(240,192,64,0.2); color: var(--t1); border: 1px solid rgba(240,192,64,0.3); }}
+.modal-owner-badge.t2 {{ background: rgba(77,207,106,0.15); color: var(--t2); border: 1px solid rgba(77,207,106,0.25); }}
+.modal-owner-badge.t3 {{ background: rgba(255,138,138,0.15); color: var(--t3); border: 1px solid rgba(255,138,138,0.25); }}
+.modal-close {{
+  background: rgba(255,255,255,0.08); border: none; color: rgba(240,234,216,0.6);
+  border-radius: 50%; width: 34px; height: 34px; font-size: 1.1rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s; flex-shrink: 0;
+}}
+.modal-close:hover {{ background: rgba(255,255,255,0.18); color: var(--cream); }}
+
+/* Modal body */
+.modal-body {{ padding: 20px 24px 24px; }}
+.positions-grid {{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}}
+@media(max-width: 560px) {{ .positions-grid {{ grid-template-columns: 1fr; }} }}
+
+.pos-section {{ }}
+.pos-heading {{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem; letter-spacing: 0.12em; color: var(--muted);
+  padding-bottom: 6px; margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}}
+
+/* Player row */
 .player-row {{
-  display: flex; align-items: center; gap: 8px;
-  padding: 4px 0; font-size: 0.8rem;
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }}
 .player-row:last-child {{ border-bottom: none; }}
 .pl-photo {{
-  width: 32px; height: 32px; border-radius: 50%; object-fit: cover;
-  flex-shrink: 0; background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-}}
-.pl-photo-empty {{
-  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
   background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
 }}
-.pl-num {{
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.85rem; color: var(--gold-lt);
-  min-width: 20px; text-align: right; flex-shrink: 0;
+.pl-photo-empty {{
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
 }}
-.pl-name {{ flex: 1; color: var(--cream); }}
-.pl-age {{ font-size: 0.72rem; color: var(--muted); flex-shrink: 0; }}
+.pl-num {{
+  font-family: 'Bebas Neue', sans-serif; font-size: 1rem;
+  color: var(--gold-lt); min-width: 22px; text-align: right; flex-shrink: 0;
+}}
+.pl-info {{ flex: 1; min-width: 0; }}
+.pl-name {{ font-size: 0.85rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+.pl-age {{ font-size: 0.72rem; color: var(--muted); }}
 </style>
 </head>
 <body>
@@ -414,7 +444,7 @@ main {{ max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }}
 
 <header>
   <h1>Squad Lists 2026</h1>
-  <p>All 48 teams · Click any team to expand their roster</p>
+  <p>All 48 teams · Click any team to view their squad</p>
 </header>
 
 <div class="legend">
@@ -424,18 +454,88 @@ main {{ max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }}
 </div>
 
 <main>
-  <div class="groups-grid">
 {groups_html}
-  </div>
 </main>
 
+<!-- SQUAD MODAL -->
+<div class="modal-overlay" id="squadModal" onclick="if(event.target===this)closeSquad()">
+  <div class="modal-box">
+    <div class="modal-head">
+      <span class="modal-flag" id="modalFlag"></span>
+      <div class="modal-title">
+        <div class="modal-team-name" id="modalTeamName"></div>
+        <div class="modal-meta" id="modalMeta"></div>
+      </div>
+      <button class="modal-close" onclick="closeSquad()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="positions-grid" id="modalSquad"></div>
+    </div>
+  </div>
+</div>
+
 <script>
-function toggleSquad(id, headerEl) {{
-  const body = document.getElementById('sq-' + id);
-  const arrow = headerEl.querySelector('.squad-arrow');
-  const open = body.classList.toggle('open');
-  arrow.classList.toggle('open', open);
+const SQUADS = {squad_json};
+const DRAW = {json.dumps({t: person for person, teams in DRAW.items() for t, _ in teams}, ensure_ascii=False)};
+const TIERS = {json.dumps(TEAM_TIER, ensure_ascii=False)};
+const FLAGS = {json.dumps(FLAGS, ensure_ascii=False)};
+const POS_LABEL = {pos_label_js};
+const POS_ORDER = {json.dumps(POSITION_ORDER)};
+const TIER_LABEL = {json.dumps(TIER_LABEL)};
+const TIER_CLS = {{1:"t1",2:"t2",3:"t3"}};
+
+function openSquad(team) {{
+  const players = SQUADS[team] || [];
+  const flag = FLAGS[team] || '🏳';
+  const owner = DRAW[team] || '';
+  const tier = TIERS[team] || 2;
+  const tc = TIER_CLS[tier] || 't2';
+
+  document.getElementById('modalFlag').textContent = flag;
+  document.getElementById('modalTeamName').textContent = team;
+  document.getElementById('modalMeta').innerHTML =
+    `${{owner ? `<span class="modal-owner-badge ${{tc}}">${{owner}} · ${{TIER_LABEL[tier]}}</span>` : ''}}`;
+
+  // Group by position
+  const byPos = {{}};
+  for (const pos of POS_ORDER) byPos[pos] = [];
+  for (const p of players) {{
+    const pos = p.pos || 'Attacker';
+    (byPos[pos] || (byPos['Attacker'])).push(p);
+  }}
+
+  let html = '';
+  for (const pos of POS_ORDER) {{
+    const group = byPos[pos];
+    if (!group.length) continue;
+    html += `<div class="pos-section"><div class="pos-heading">${{POS_LABEL[pos]}}</div>`;
+    for (const p of group) {{
+      const photo = p.photo
+        ? `<img class="pl-photo" src="${{p.photo}}" alt="" loading="lazy" onerror="this.classList.add('pl-photo-empty');this.removeAttribute('src')">`
+        : `<span class="pl-photo-empty"></span>`;
+      html += `<div class="player-row">
+        ${{photo}}
+        <span class="pl-num">${{p.n || '—'}}</span>
+        <div class="pl-info">
+          <div class="pl-name">${{p.name}}</div>
+          ${{p.age ? `<div class="pl-age">Age ${{p.age}}</div>` : ''}}
+        </div>
+      </div>`;
+    }}
+    html += '</div>';
+  }}
+
+  document.getElementById('modalSquad').innerHTML = html;
+  document.getElementById('squadModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }}
+
+function closeSquad() {{
+  document.getElementById('squadModal').classList.remove('open');
+  document.body.style.overflow = '';
+}}
+
+document.addEventListener('keydown', e => {{ if (e.key === 'Escape') closeSquad(); }});
 </script>
 </body>
 </html>"""
