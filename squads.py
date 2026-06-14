@@ -340,8 +340,10 @@ def fetch_wikipedia_clubs(wiki_cache_path: Path) -> dict:
 
 
 def _norm(s: str) -> str:
-    """Lowercase + strip diacritics for fuzzy name matching."""
-    return unicodedata.normalize("NFD", s.lower()).encode("ascii", "ignore").decode().strip()
+    """Lowercase + strip diacritics + strip punctuation for fuzzy name matching."""
+    s = unicodedata.normalize("NFD", s.lower()).encode("ascii", "ignore").decode().strip()
+    # Strip apostrophes and hyphens so O'Reilly → oreilly, al-dawsari → aldawsari
+    return re.sub(r"['\-]", "", s)
 
 
 def enrich_with_clubs(cache: dict, wiki_clubs: dict) -> dict:
@@ -432,7 +434,7 @@ def build_squad_data(squads):
                 "n":       pl.get("number") or 0,
                 "name":    pl.get("name", ""),
                 "age":     pl.get("age", ""),
-                "photo":   pl.get("photo", ""),
+                "photo":   pl.get("photo_local") or pl.get("photo", ""),
                 "pos":     pos,
                 "club":    pl.get("club", ""),
                 "caps":    pl.get("caps"),
@@ -445,11 +447,158 @@ def build_squad_data(squads):
     return out
 
 
+def build_stats(squads):
+    """Return a dict of fun/useless tournament stats for embedding."""
+    from collections import defaultdict, Counter
+
+    club_players = defaultdict(list)   # club → [(player, team)]
+    nation_league = defaultdict(list)  # team → [leagues]
+    all_players = []
+    league_players = defaultdict(list) # league → [(player, team)]
+
+    # Club → league mapping (rough, by known clubs)
+    # We'll derive leagues from club names via a simple heuristic: not worth a full DB,
+    # so we embed a manually-maintained short list of top clubs → league.
+    CLUB_LEAGUE = {
+        # Premier League
+        "Arsenal": "Premier League", "Aston Villa": "Premier League",
+        "Brentford": "Premier League", "Brighton": "Premier League",
+        "Chelsea": "Premier League", "Crystal Palace": "Premier League",
+        "Everton": "Premier League", "Fulham": "Premier League",
+        "Liverpool": "Premier League", "Manchester City": "Premier League",
+        "Manchester United": "Premier League", "Newcastle United": "Premier League",
+        "Nottingham Forest": "Premier League", "Tottenham Hotspur": "Premier League",
+        "West Ham United": "Premier League", "Wolves": "Premier League",
+        "Bournemouth": "Premier League", "Bayer Leverkusen": "Bundesliga",
+        # La Liga
+        "Real Madrid": "La Liga", "Barcelona": "La Liga", "Atletico Madrid": "La Liga",
+        "Atlético Madrid": "La Liga", "Real Sociedad": "La Liga",
+        "Villarreal": "La Liga", "Athletic Club": "La Liga", "Sevilla": "La Liga",
+        "Real Betis": "La Liga", "Valencia": "La Liga",
+        # Bundesliga
+        "Bayern Munich": "Bundesliga", "Borussia Dortmund": "Bundesliga",
+        "RB Leipzig": "Bundesliga", "Eintracht Frankfurt": "Bundesliga",
+        "Wolfsburg": "Bundesliga", "Stuttgart": "Bundesliga",
+        "Freiburg": "Bundesliga", "Mainz": "Bundesliga",
+        # Serie A
+        "Juventus": "Serie A", "Inter Milan": "Serie A", "AC Milan": "Serie A",
+        "Napoli": "Serie A", "Roma": "Serie A", "Lazio": "Serie A",
+        "Atalanta": "Serie A", "Fiorentina": "Serie A", "Torino": "Serie A",
+        "Bologna": "Serie A",
+        # Ligue 1
+        "Paris Saint-Germain": "Ligue 1", "Monaco": "Ligue 1",
+        "Lyon": "Ligue 1", "Marseille": "Ligue 1", "Lens": "Ligue 1",
+        "Rennes": "Ligue 1", "Lille": "Ligue 1",
+        # Eredivisie
+        "Ajax": "Eredivisie", "PSV": "Eredivisie", "Feyenoord": "Eredivisie",
+        "AZ": "Eredivisie",
+        # Portuguese
+        "Benfica": "Primeira Liga", "Porto": "Primeira Liga",
+        "Sporting CP": "Primeira Liga",
+        # Brazilian
+        "Flamengo": "Brasileirão", "Palmeiras": "Brasileirão",
+        "Santos": "Brasileirão", "Fluminense": "Brasileirão",
+        "Grêmio": "Brasileirão", "Botafogo": "Brasileirão",
+        "Atlético Mineiro": "Brasileirão",
+        # Argentine
+        "River Plate": "Argentine Primera", "Boca Juniors": "Argentine Primera",
+        # MLS
+        "Inter Miami": "MLS", "LA Galaxy": "MLS", "Seattle Sounders": "MLS",
+        "Atlanta United": "MLS",
+        # Saudi Pro League
+        "Al-Hilal": "Saudi Pro League", "Al-Nassr": "Saudi Pro League",
+        "Al-Ittihad": "Saudi Pro League", "Al-Qadsiah": "Saudi Pro League",
+        "Al-Ahli": "Saudi Pro League",
+    }
+
+    for team, players in squads.items():
+        for p in (players or []):
+            club = p.get("club", "") or ""
+            caps = p.get("caps")
+            goals = p.get("goals")
+            age = p.get("age")
+            name = p.get("name", "")
+            if not name:
+                continue
+            entry = {"player": name, "team": team, "club": club,
+                     "caps": caps, "goals": goals, "age": age}
+            all_players.append(entry)
+            if club:
+                club_players[club].append({"player": name, "team": team})
+                league = CLUB_LEAGUE.get(club)
+                if league:
+                    league_players[league].append({"player": name, "team": team, "club": club})
+
+    # Top clubs by player count
+    top_clubs = sorted(club_players.items(), key=lambda x: -len(x[1]))[:15]
+    top_clubs_out = [{"club": c, "count": len(ps),
+                      "teams": sorted(set(p["team"] for p in ps))} for c, ps in top_clubs]
+
+    # Top leagues by player count
+    top_leagues = sorted(league_players.items(), key=lambda x: -len(x[1]))[:8]
+    top_leagues_out = [{"league": l, "count": len(ps)} for l, ps in top_leagues]
+
+    # Most capped players
+    capped = [p for p in all_players if p["caps"] is not None]
+    most_capped = sorted(capped, key=lambda p: -p["caps"])[:10]
+
+    # Top scorers (international goals)
+    scorers = [p for p in all_players if p["goals"] is not None and p["goals"] > 0]
+    top_scorers = sorted(scorers, key=lambda p: -p["goals"])[:10]
+
+    # Oldest and youngest (requires age)
+    aged = [p for p in all_players if p["age"]]
+    oldest = sorted(aged, key=lambda p: -p["age"])[:5]
+    youngest = sorted(aged, key=lambda p: p["age"])[:5]
+
+    # Which team has the most players from a single club?
+    team_club_combos = defaultdict(Counter)
+    for team, players in squads.items():
+        for p in (players or []):
+            club = p.get("club", "") or ""
+            if club:
+                team_club_combos[team][club] += 1
+    team_top_club = []
+    for team, counter in team_club_combos.items():
+        if counter:
+            top_club, count = counter.most_common(1)[0]
+            if count >= 3:
+                team_top_club.append({"team": team, "club": top_club, "count": count})
+    team_top_club.sort(key=lambda x: -x["count"])
+
+    # How many players have 0 caps?
+    zero_caps = sum(1 for p in capped if p["caps"] == 0)
+
+    # Average squad age per team
+    avg_ages = []
+    for team, players in squads.items():
+        ages = [p.get("age") for p in (players or []) if p.get("age")]
+        if ages:
+            avg_ages.append({"team": team, "avg": round(sum(ages)/len(ages), 1)})
+    avg_ages.sort(key=lambda x: -x["avg"])
+
+    return {
+        "top_clubs": top_clubs_out,
+        "top_leagues": top_leagues_out,
+        "most_capped": most_capped,
+        "top_scorers": top_scorers,
+        "oldest": oldest,
+        "youngest": youngest,
+        "team_top_club": team_top_club[:10],
+        "zero_caps": zero_caps,
+        "total_players": len(all_players),
+        "oldest_squad": avg_ages[:3],
+        "youngest_squad": avg_ages[-3:][::-1],
+    }
+
+
 def generate_html(squads, notes_by_team=None):
     tier_cls = {1: "t1", 2: "t2", 3: "t3"}
     squad_data = build_squad_data(squads)
     squad_json = json.dumps(squad_data, ensure_ascii=False)
     notes_json = json.dumps(notes_by_team or {}, ensure_ascii=False)
+    stats = build_stats(squads)
+    stats_json = json.dumps(stats, ensure_ascii=False)
 
     # Build team tiles grouped by group
     groups_html = ""
@@ -712,6 +861,47 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 .player-row:hover {{ background: rgba(255,255,255,0.04); }}
 .player-row.open .pl-stats {{ display: flex; }}
 .player-row.open {{ background: rgba(212,160,23,0.07); }}
+
+/* ── STATS SECTION ── */
+.stats-section {{
+  max-width: 960px; margin: 0 auto 60px; padding: 0 16px;
+}}
+.stats-section-title {{
+  font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.06em;
+  color: var(--gold); border-bottom: 2px solid rgba(212,160,23,0.3);
+  padding-bottom: 8px; margin-bottom: 24px;
+}}
+.stats-grid {{
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}}
+.stat-card {{
+  background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+  padding: 16px 18px;
+}}
+.stat-card-title {{
+  font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.12em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 12px;
+}}
+.stat-row {{
+  display: flex; align-items: center; gap: 10px; padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.82rem;
+}}
+.stat-row:last-child {{ border-bottom: none; }}
+.stat-rank {{
+  color: var(--muted); font-size: 0.72rem; width: 18px; flex-shrink: 0; text-align: right;
+}}
+.stat-name {{ flex: 1; color: var(--cream); }}
+.stat-team {{ color: var(--muted); font-size: 0.75rem; }}
+.stat-val {{
+  font-weight: 600; color: var(--gold-lt); font-size: 0.9rem;
+  background: rgba(212,160,23,0.12); border-radius: 4px;
+  padding: 1px 7px; flex-shrink: 0;
+}}
+.stat-bar-wrap {{ flex: 1; background: rgba(255,255,255,0.06); border-radius: 3px; height: 6px; }}
+.stat-bar {{ height: 6px; border-radius: 3px; background: var(--gold); }}
+.stat-trivia {{ font-size: 0.82rem; color: var(--muted); line-height: 1.6; }}
+.stat-trivia strong {{ color: var(--cream); }}
 </style>
 </head>
 <body>
@@ -739,6 +929,11 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 {groups_html}
 </main>
 
+<section class="stats-section">
+  <div class="stats-section-title">⚽ Tournament Trivia</div>
+  <div class="stats-grid" id="statsGrid"><!-- rendered by JS --></div>
+</section>
+
 <!-- SQUAD MODAL -->
 <div class="modal-overlay" id="squadModal" onclick="if(event.target===this)closeSquad()">
   <div class="modal-box">
@@ -760,6 +955,7 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 <script>
 const SQUADS = {squad_json};
 const NOTES  = {notes_json};
+const STATS  = {stats_json};
 const DRAW = {json.dumps({t: person for person, teams in DRAW.items() for t, _ in teams}, ensure_ascii=False)};
 const TIERS = {json.dumps(TEAM_TIER, ensure_ascii=False)};
 const FLAGS = {json.dumps(FLAGS, ensure_ascii=False)};
@@ -843,6 +1039,127 @@ function closeSquad() {{
 }}
 
 document.addEventListener('keydown', e => {{ if (e.key === 'Escape') closeSquad(); }});
+
+// ── Stats section rendering ──────────────────────────────────────────────────
+(function renderStats() {{
+  const grid = document.getElementById('statsGrid');
+  if (!grid || !STATS) return;
+
+  function card(title, rows) {{
+    return `<div class="stat-card"><div class="stat-card-title">${{title}}</div>
+      ${{rows.join('')}}</div>`;
+  }}
+  function row(rank, name, sub, val) {{
+    return `<div class="stat-row">
+      <span class="stat-rank">${{rank}}</span>
+      <span class="stat-name">${{name}}<br><span class="stat-team">${{sub}}</span></span>
+      <span class="stat-val">${{val}}</span>
+    </div>`;
+  }}
+  function barRow(rank, name, val, max) {{
+    const pct = max ? Math.round(val/max*100) : 0;
+    return `<div class="stat-row">
+      <span class="stat-rank">${{rank}}</span>
+      <div style="flex:1;min-width:0">
+        <div class="stat-name">${{name}}</div>
+        <div class="stat-bar-wrap"><div class="stat-bar" style="width:${{pct}}%"></div></div>
+      </div>
+      <span class="stat-val">${{val}}</span>
+    </div>`;
+  }}
+
+  const cards = [];
+
+  // Club with most players
+  if (STATS.top_clubs?.length) {{
+    const max = STATS.top_clubs[0].count;
+    cards.push(card('🏟️ Club with Most Players at WC',
+      STATS.top_clubs.slice(0,8).map((c,i) =>
+        barRow(i+1, c.club, c.count, max)
+      )
+    ));
+  }}
+
+  // League breakdown
+  if (STATS.top_leagues?.length) {{
+    const max = STATS.top_leagues[0].count;
+    cards.push(card('🌍 League with Most Players',
+      STATS.top_leagues.map((l,i) =>
+        barRow(i+1, l.league, l.count, max)
+      )
+    ));
+  }}
+
+  // Most capped
+  if (STATS.most_capped?.length) {{
+    cards.push(card('🎖️ Most International Caps',
+      STATS.most_capped.slice(0,8).map((p,i) =>
+        row(i+1, p.player, `${{p.team}} · ${{p.club || '—'}}`, p.caps)
+      )
+    ));
+  }}
+
+  // Top international scorers
+  if (STATS.top_scorers?.length) {{
+    cards.push(card('⚽ Top International Scorers',
+      STATS.top_scorers.slice(0,8).map((p,i) =>
+        row(i+1, p.player, `${{p.team}} · ${{p.club || '—'}}`, p.goals)
+      )
+    ));
+  }}
+
+  // Teams with most players from one club
+  if (STATS.team_top_club?.length) {{
+    cards.push(card('🤝 Most Teammates from Same Club',
+      STATS.team_top_club.slice(0,8).map((e,i) =>
+        row(i+1, `${{e.team}}`, e.club, e.count + ' players')
+      )
+    ));
+  }}
+
+  // Oldest / youngest
+  if (STATS.oldest?.length || STATS.youngest?.length) {{
+    const ageRows = [];
+    if (STATS.oldest?.[0]) {{
+      const o = STATS.oldest[0];
+      ageRows.push(`<div class="stat-row"><span class="stat-rank">👴</span>
+        <span class="stat-name">Oldest: <strong>${{o.player}}</strong><br><span class="stat-team">${{o.team}}</span></span>
+        <span class="stat-val">${{o.age}}</span></div>`);
+    }}
+    if (STATS.youngest?.[0]) {{
+      const y = STATS.youngest[0];
+      ageRows.push(`<div class="stat-row"><span class="stat-rank">👶</span>
+        <span class="stat-name">Youngest: <strong>${{y.player}}</strong><br><span class="stat-team">${{y.team}}</span></span>
+        <span class="stat-val">${{y.age}}</span></div>`);
+    }}
+    if (STATS.oldest_squad?.[0]) {{
+      const s = STATS.oldest_squad[0];
+      ageRows.push(`<div class="stat-row"><span class="stat-rank">📅</span>
+        <span class="stat-name">Oldest squad: <strong>${{s.team}}</strong></span>
+        <span class="stat-val">avg ${{s.avg}}</span></div>`);
+    }}
+    if (STATS.youngest_squad?.[0]) {{
+      const s = STATS.youngest_squad[0];
+      ageRows.push(`<div class="stat-row"><span class="stat-rank">🌱</span>
+        <span class="stat-name">Youngest squad: <strong>${{s.team}}</strong></span>
+        <span class="stat-val">avg ${{s.avg}}</span></div>`);
+    }}
+    cards.push(card('🎂 Age Facts', ageRows));
+  }}
+
+  // Trivia nugget
+  if (STATS.zero_caps !== undefined) {{
+    cards.push(card('🎲 Completely Useless Facts', [
+      `<div class="stat-trivia">
+        <strong>${{STATS.zero_caps}}</strong> players at this tournament have <strong>0</strong> international caps — they've never played a senior international before.<br><br>
+        The combined squad lists contain <strong>${{STATS.total_players}}</strong> players from <strong>48</strong> nations.<br><br>
+        If every squad player attended a single dinner, they'd fill roughly <strong>${{Math.ceil(STATS.total_players/8)}}</strong> tables of eight. Seating plan: not our problem.
+      </div>`
+    ]));
+  }}
+
+  grid.innerHTML = cards.join('');
+}})();
 </script>
 </body>
 </html>"""
