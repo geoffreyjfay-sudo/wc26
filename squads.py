@@ -212,7 +212,7 @@ def fetch_wikipedia_clubs(wiki_cache_path: Path) -> dict:
         return data
 
     try:
-        from bs4 import BeautifulSoup
+        from bs4 import BeautifulSoup, NavigableString
     except ImportError:
         print("  beautifulsoup4 not installed — skipping club data (pip install beautifulsoup4)")
         return {}
@@ -249,10 +249,12 @@ def fetch_wikipedia_clubs(wiki_cache_path: Path) -> dict:
         if not country or country in seen:
             continue
 
-        # Find the next wikitable sibling
+        # Walk siblings: collect pre-table notes and find the wikitable
+        notes = []
         table = None
+        note_kws = ("replaced", "withdrew", "injury", "injured", "ruled out", "called up")
         for sib in heading_tag.next_siblings:
-            if not hasattr(sib, "name"):
+            if isinstance(sib, NavigableString):
                 continue
             if sib.name == "table" and "wikitable" in " ".join(sib.get("class", [])):
                 table = sib
@@ -261,6 +263,10 @@ def fetch_wikipedia_clubs(wiki_cache_path: Path) -> dict:
                 sib.name == "div" and "mw-heading" in " ".join(sib.get("class", []))
             ):
                 break
+            if sib.name == "p":
+                txt = re.sub(r"\[.*?\]", "", sib.get_text(" ", strip=True)).strip()
+                if txt and any(k in txt.lower() for k in note_kws):
+                    notes.append(txt)
 
         if not table:
             continue
@@ -304,7 +310,7 @@ def fetch_wikipedia_clubs(wiki_cache_path: Path) -> dict:
                     "goals": goals,
                 }
 
-        result[country] = players
+        result[country] = {"players": players, "notes": notes}
         seen.add(country)
 
     print(f"  Got player data for {len(result)} teams from Wikipedia")
@@ -317,21 +323,28 @@ def _norm(s: str) -> str:
     return unicodedata.normalize("NFD", s.lower()).encode("ascii", "ignore").decode().strip()
 
 
-def enrich_with_clubs(cache: dict, wiki_clubs: dict) -> None:
-    """Add club, caps, goals fields to each player dict using Wikipedia data."""
+def enrich_with_clubs(cache: dict, wiki_clubs: dict) -> dict:
+    """Add club, caps, goals to each player. Returns {team: [note_str, ...]}."""
+    notes_by_team = {}
     if not wiki_clubs:
-        return
+        return notes_by_team
     matched = total = 0
     for team, players in cache.items():
         if not players:
             continue
-        team_data = wiki_clubs.get(team, {})
-        # Support both old format (surname→club string) and new (surname→{club,caps,goals})
+        raw = wiki_clubs.get(team, {})
+        # Support old format (surname→str or surname→{club,caps,goals})
+        # and new format ({players:{...}, notes:[...]})
+        if isinstance(raw, dict) and "players" in raw:
+            player_map = raw["players"]
+            notes_by_team[team] = raw.get("notes", [])
+        else:
+            player_map = raw
         def _entry(v):
             if isinstance(v, dict):
                 return v
             return {"club": v, "caps": None, "goals": None}
-        norm_lookup = {_norm(k): _entry(v) for k, v in team_data.items()}
+        norm_lookup = {_norm(k): _entry(v) for k, v in player_map.items()}
 
         for p in players:
             total += 1
@@ -365,6 +378,7 @@ def enrich_with_clubs(cache: dict, wiki_clubs: dict) -> None:
                 p.setdefault("caps", None)
                 p.setdefault("goals", None)
     print(f"  Players enriched: {matched}/{total}")
+    return notes_by_team
 
 
 # ── HTML generation ───────────────────────────────────────────────────────────
@@ -397,10 +411,11 @@ def build_squad_data(squads):
     return out
 
 
-def generate_html(squads):
+def generate_html(squads, notes_by_team=None):
     tier_cls = {1: "t1", 2: "t2", 3: "t3"}
     squad_data = build_squad_data(squads)
     squad_json = json.dumps(squad_data, ensure_ascii=False)
+    notes_json = json.dumps(notes_by_team or {}, ensure_ascii=False)
 
     # Build team tiles grouped by group
     groups_html = ""
@@ -596,6 +611,16 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 
 /* Modal body */
 .modal-body {{ padding: 20px 24px 24px; }}
+.modal-notes {{
+  margin-bottom: 16px; padding: 10px 14px;
+  background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);
+  border-radius: 8px;
+}}
+.modal-notes-title {{
+  font-family: 'Bebas Neue', sans-serif; font-size: 0.78rem; letter-spacing: 0.1em;
+  color: var(--gold-lt); margin-bottom: 6px;
+}}
+.modal-note {{ font-size: 0.78rem; color: var(--cream); line-height: 1.5; padding: 2px 0; }}
 .positions-grid {{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -691,6 +716,7 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
       <button class="modal-close" onclick="closeSquad()">✕</button>
     </div>
     <div class="modal-body">
+      <div id="modalNotes"></div>
       <div class="positions-grid" id="modalSquad"></div>
     </div>
   </div>
@@ -698,6 +724,7 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 
 <script>
 const SQUADS = {squad_json};
+const NOTES  = {notes_json};
 const DRAW = {json.dumps({t: person for person, teams in DRAW.items() for t, _ in teams}, ensure_ascii=False)};
 const TIERS = {json.dumps(TEAM_TIER, ensure_ascii=False)};
 const FLAGS = {json.dumps(FLAGS, ensure_ascii=False)};
@@ -705,6 +732,7 @@ const POS_LABEL = {pos_label_js};
 const POS_ORDER = {json.dumps(POSITION_ORDER)};
 const TIER_LABEL = {json.dumps(TIER_LABEL)};
 const TIER_CLS = {{1:"t1",2:"t2",3:"t3"}};
+const POS_ABBR = {{Goalkeeper:"GK",Defender:"DF",Midfielder:"MF",Attacker:"FW"}};
 
 function openSquad(team) {{
   const players = SQUADS[team] || [];
@@ -717,6 +745,14 @@ function openSquad(team) {{
   document.getElementById('modalTeamName').textContent = team;
   document.getElementById('modalMeta').innerHTML =
     `${{owner ? `<span class="modal-owner-badge ${{tc}}">${{owner}} · ${{TIER_LABEL[tier]}}</span>` : ''}}`;
+
+  // Replacement / withdrawal notes
+  const teamNotes = NOTES[team] || [];
+  document.getElementById('modalNotes').innerHTML = teamNotes.length
+    ? `<div class="modal-notes"><div class="modal-notes-title">📋 Squad Notes</div>${{
+        teamNotes.map(n => `<div class="modal-note">• ${{n}}</div>`).join('')
+      }}</div>`
+    : '';
 
   // Group by position
   const byPos = {{}};
@@ -742,6 +778,7 @@ function openSquad(team) {{
       const statsHtml = hasStats ? `
         <div class="pl-stats">
           ${{lgPhoto}}
+          <div class="pl-stat"><span class="pl-stat-val">${{POS_ABBR[p.pos] || p.pos}}</span><span class="pl-stat-lbl">Position</span></div>
           <div class="pl-stat"><span class="pl-stat-val">${{p.caps}}</span><span class="pl-stat-lbl">Caps</span></div>
           <div class="pl-stat"><span class="pl-stat-val">${{p.goals ?? 0}}</span><span class="pl-stat-lbl">Goals</span></div>
           ${{p.age ? `<div class="pl-stat"><span class="pl-stat-val">${{p.age}}</span><span class="pl-stat-lbl">Age</span></div>` : ''}}
@@ -800,13 +837,13 @@ def main():
 
     print("Enriching with club data from Wikipedia...")
     wiki_clubs = fetch_wikipedia_clubs(wiki_cache_path)
-    enrich_with_clubs(squads, wiki_clubs)
-    # Persist enriched club data back to squad cache
+    notes_by_team = enrich_with_clubs(squads, wiki_clubs)
+    # Persist enriched data back to squad cache
     cache_path.write_text(json.dumps(squads, indent=2, ensure_ascii=False), encoding="utf-8")
 
     fetched = sum(1 for v in squads.values() if v is not None and len(v) > 0)
     print(f"\nGenerating {output_path} ({fetched}/48 teams with data)...")
-    html = generate_html(squads)
+    html = generate_html(squads, notes_by_team)
     output_path.write_text(html, encoding="utf-8")
     print(f"✓ Done — open {output_path} to view")
 
