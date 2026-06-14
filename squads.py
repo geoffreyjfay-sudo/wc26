@@ -303,11 +303,17 @@ def fetch_wikipedia_clubs(wiki_cache_path: Path) -> dict:
             club = links[-1].get_text(strip=True) if links else club_cell.get_text(strip=True)
             club = re.sub(r"\[.*?\]", "", club).strip()
 
+            # Captain marked with link to Captain_(association_football)
+            is_captain = bool(
+                name_cell.find("a", href=lambda h: h and "Captain_(association_football)" in h)
+            )
+
             if surname:
                 players[surname.lower()] = {
                     "club": club,
                     "caps": caps,
                     "goals": goals,
+                    "captain": is_captain,
                 }
 
         result[country] = {"players": players, "notes": notes}
@@ -369,14 +375,16 @@ def enrich_with_clubs(cache: dict, wiki_clubs: dict) -> dict:
                     break
 
             if entry:
-                p["club"]  = entry.get("club", "")
-                p["caps"]  = entry.get("caps")
-                p["goals"] = entry.get("goals")
+                p["club"]    = entry.get("club", "")
+                p["caps"]    = entry.get("caps")
+                p["goals"]   = entry.get("goals")
+                p["captain"] = entry.get("captain", False)
                 matched += 1
             else:
                 p.setdefault("club", "")
                 p.setdefault("caps", None)
                 p.setdefault("goals", None)
+                p.setdefault("captain", False)
     print(f"  Players enriched: {matched}/{total}")
     return notes_by_team
 
@@ -396,14 +404,15 @@ def build_squad_data(squads):
             if pos not in by_pos:
                 pos = "Attacker"
             by_pos[pos].append({
-                "n":     pl.get("number") or 0,
-                "name":  pl.get("name", ""),
-                "age":   pl.get("age", ""),
-                "photo": pl.get("photo", ""),
-                "pos":   pos,
-                "club":  pl.get("club", ""),
-                "caps":  pl.get("caps"),
-                "goals": pl.get("goals"),
+                "n":       pl.get("number") or 0,
+                "name":    pl.get("name", ""),
+                "age":     pl.get("age", ""),
+                "photo":   pl.get("photo", ""),
+                "pos":     pos,
+                "club":    pl.get("club", ""),
+                "caps":    pl.get("caps"),
+                "goals":   pl.get("goals"),
+                "captain": pl.get("captain", False),
             })
         for pos in POSITION_ORDER:
             by_pos[pos].sort(key=lambda p: p["n"] or 99)
@@ -656,7 +665,8 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
   color: var(--gold-lt); min-width: 22px; text-align: right; flex-shrink: 0;
 }}
 .pl-info {{ flex: 1; min-width: 0; }}
-.pl-name {{ font-size: 0.85rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+.pl-name {{ font-size: 0.85rem; font-weight: 500; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; gap: 5px; }}
+.pl-captain {{ font-family: 'Bebas Neue', sans-serif; font-size: 0.68rem; letter-spacing: 0.06em; background: var(--gold); color: var(--dark); padding: 1px 5px; border-radius: 4px; flex-shrink: 0; }}
 .pl-club {{ font-size: 0.72rem; color: var(--gold-lt); opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
 .pl-age {{ font-size: 0.68rem; color: var(--muted); }}
 .pl-stats {{
@@ -787,7 +797,7 @@ function openSquad(team) {{
         ${{photo}}
         <span class="pl-num">${{p.n || '—'}}</span>
         <div class="pl-info" style="min-width:0;flex:1">
-          <div class="pl-name">${{p.name}}</div>
+          <div class="pl-name">${{p.name}}${{p.captain ? '<span class="pl-captain">C</span>' : ''}}</div>
           ${{p.club ? `<div class="pl-club">${{p.club}}</div>` : ''}}
           ${{!hasStats && p.age ? `<div class="pl-age">Age ${{p.age}}</div>` : ''}}
           ${{statsHtml}}

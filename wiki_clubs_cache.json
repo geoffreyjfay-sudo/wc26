@@ -4,132 +4,158 @@
       "kovář": {
         "club": "PSV Eindhoven",
         "caps": 20,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "zima": {
         "club": "Slavia Prague",
         "caps": 25,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "holeš": {
         "club": "Slavia Prague",
         "caps": 41,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "hranáč": {
         "club": "TSG Hoffenheim",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "coufal": {
         "club": "TSG Hoffenheim",
         "caps": 62,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "chaloupek": {
         "club": "Slavia Prague",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "krejčí": {
         "club": "Wolverhampton Wanderers",
         "caps": 27,
-        "goals": 5
+        "goals": 5,
+        "captain": true
       },
       "darida": {
         "club": "Hradec Králové",
         "caps": 79,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "hložek": {
         "club": "TSG Hoffenheim",
         "caps": 43,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "schick": {
         "club": "Bayer Leverkusen",
         "caps": 53,
-        "goals": 26
+        "goals": 26,
+        "captain": false
       },
       "kuchta": {
         "club": "Sparta Prague",
         "caps": 31,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "červ": {
         "club": "Viktoria Plzeň",
         "caps": 17,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "chytil": {
         "club": "Slavia Prague",
         "caps": 22,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "jurásek": {
         "club": "Slavia Prague",
         "caps": 18,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "šulc": {
         "club": "Lyon",
         "caps": 21,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "staněk": {
         "club": "Slavia Prague",
         "caps": 14,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "provod": {
         "club": "Slavia Prague",
         "caps": 38,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "sadílek": {
         "club": "Slavia Prague",
         "caps": 35,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "chorý": {
         "club": "Slavia Prague",
         "caps": 22,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "zelený": {
         "club": "Sparta Prague",
         "caps": 23,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "douděra": {
         "club": "Slavia Prague",
         "caps": 17,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "souček": {
         "club": "West Ham United",
         "caps": 90,
-        "goals": 17
+        "goals": 17,
+        "captain": false
       },
       "horníček": {
         "club": "Braga",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sojka": {
         "club": "Viktoria Plzeň",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sochůrek": {
         "club": "Sparta Prague",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "višinský": {
         "club": "Viktoria Plzeň",
         "caps": 2,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": []
@@ -139,127 +165,152 @@
       "rangel": {
         "club": "Guadalajara",
         "caps": 14,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sánchez": {
         "club": "PAOK",
         "caps": 59,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "montes": {
         "club": "Lokomotiv Moscow",
         "caps": 67,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "álvarez": {
         "club": "Fenerbahçe",
         "caps": 98,
-        "goals": 7
+        "goals": 7,
+        "captain": true
       },
       "vásquez": {
         "club": "Genoa",
         "caps": 46,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "lira": {
         "club": "Cruz Azul",
         "caps": 25,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "romo": {
         "club": "Guadalajara",
         "caps": 63,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "fidalgo": {
         "club": "Real Betis",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "jiménez": {
         "club": "Fulham",
         "caps": 124,
-        "goals": 45
+        "goals": 45,
+        "captain": false
       },
       "vega": {
         "club": "Toluca",
         "caps": 52,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "giménez": {
         "club": "Milan",
         "caps": 47,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "acevedo": {
         "club": "Santos Laguna",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ochoa": {
         "club": "AEL Limassol",
         "caps": 152,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gonzález": {
         "club": "Guadalajara",
         "caps": 7,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "reyes": {
         "club": "América",
         "caps": 34,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "quiñones": {
         "club": "Al-Qadsiah",
         "caps": 22,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "pineda": {
         "club": "AEK Athens",
         "caps": 92,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "vargas": {
         "club": "Atlético Madrid",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mora": {
         "club": "Tijuana",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "chávez": {
         "club": "Dynamo Moscow",
         "caps": 45,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "huerta": {
         "club": "Anderlecht",
         "caps": 26,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "martínez": {
         "club": "Pumas UNAM",
         "caps": 12,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "gallardo": {
         "club": "Toluca",
         "caps": 121,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "alvarado": {
         "club": "Guadalajara",
         "caps": 67,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "gutiérrez": {
         "club": "Guadalajara",
         "caps": 7,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       }
     },
     "notes": []
@@ -269,132 +320,158 @@
       "williams": {
         "club": "Mamelodi Sundowns",
         "caps": 62,
-        "goals": 0
+        "goals": 0,
+        "captain": true
       },
       "matuludi": {
         "club": "Polokwane City",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ndamane": {
         "club": "Mamelodi Sundowns",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mokoena": {
         "club": "Mamelodi Sundowns",
         "caps": 51,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "mbatha": {
         "club": "Orlando Pirates",
         "caps": 15,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "modiba": {
         "club": "Mamelodi Sundowns",
         "caps": 44,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "appollis": {
         "club": "Orlando Pirates",
         "caps": 26,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "moremi": {
         "club": "Orlando Pirates",
         "caps": 10,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "foster": {
         "club": "Burnley",
         "caps": 27,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "mofokeng": {
         "club": "Orlando Pirates",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "zwane": {
         "club": "Mamelodi Sundowns",
         "caps": 54,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "maseko": {
         "club": "AEL Limassol",
         "caps": 10,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "sithole": {
         "club": "Tondela",
         "caps": 28,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "mbokazi": {
         "club": "Chicago Fire FC",
         "caps": 10,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "rayners": {
         "club": "Mamelodi Sundowns",
         "caps": 14,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "chaine": {
         "club": "Orlando Pirates",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "makgopa": {
         "club": "Orlando Pirates",
         "caps": 26,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "kabini": {
         "club": "Molde",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sibisi": {
         "club": "Orlando Pirates",
         "caps": 20,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mudau": {
         "club": "Mamelodi Sundowns",
         "caps": 32,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "okon": {
         "club": "Hannover 96",
         "caps": 8,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "goss": {
         "club": "Siwelele",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "adams": {
         "club": "Mamelodi Sundowns",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "makhanya": {
         "club": "Philadelphia Union",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sebelebele": {
         "club": "Orlando Pirates",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "cross": {
         "club": "Kaizer Chiefs",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -404,132 +481,158 @@
       "seung-gyu": {
         "club": "FC Tokyo",
         "caps": 87,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "han-beom": {
         "club": "Midtjylland",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gi-hyuk": {
         "club": "Gangwon FC",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "min-jae": {
         "club": "Bayern Munich",
         "caps": 79,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "tae-hyeon": {
         "club": "Kashima Antlers",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "in-beom": {
         "club": "Feyenoord",
         "caps": 73,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "heung-min": {
         "club": "Los Angeles FC",
         "caps": 144,
-        "goals": 56
+        "goals": 56,
+        "captain": true
       },
       "seung-ho": {
         "club": "Birmingham City",
         "caps": 27,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "gue-sung": {
         "club": "Midtjylland",
         "caps": 44,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "jae-sung": {
         "club": "Mainz 05",
         "caps": 105,
-        "goals": 15
+        "goals": 15,
+        "captain": false
       },
       "hee-chan": {
         "club": "Wolverhampton Wanderers",
         "caps": 79,
-        "goals": 17
+        "goals": 17,
+        "captain": false
       },
       "bum-keun": {
         "club": "Jeonbuk Hyundai Motors",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "tae-seok": {
         "club": "Austria Wien",
         "caps": 15,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "wi-je": {
         "club": "Jeonbuk Hyundai Motors",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "moon-hwan": {
         "club": "Daejeon Hana Citizen",
         "caps": 35,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "jin-seob": {
         "club": "Zhejiang",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "jun-ho": {
         "club": "Stoke City",
         "caps": 13,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "hyeon-gyu": {
         "club": "Beşiktaş",
         "caps": 27,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "kang-in": {
         "club": "Paris Saint-Germain",
         "caps": 47,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "hyun-jun": {
         "club": "Celtic",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hyeon-woo": {
         "club": "Ulsan HD",
         "caps": 48,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "young-woo": {
         "club": "Red Star Belgrade",
         "caps": 34,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "castrop": {
         "club": "Borussia Mönchengladbach",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "jin-gyu": {
         "club": "Jeonbuk Hyundai Motors",
         "caps": 22,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "ji-sung": {
         "club": "Swansea City",
         "caps": 9,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "dong-gyeong": {
         "club": "Ulsan HD",
         "caps": 18,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       }
     },
     "notes": [
@@ -541,132 +644,158 @@
       "vasilj": {
         "club": "FC St. Pauli",
         "caps": 26,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mujakić": {
         "club": "Gaziantep",
         "caps": 12,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hadžikadunić": {
         "club": "Sampdoria",
         "caps": 32,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "muharemović": {
         "club": "Sassuolo",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "kolašinac": {
         "club": "Atalanta",
         "caps": 65,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "tahirović": {
         "club": "Brøndby",
         "caps": 28,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "dedić": {
         "club": "Benfica",
         "caps": 28,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "gigović": {
         "club": "Young Boys",
         "caps": 20,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "baždar": {
         "club": "Jagiellonia Białystok",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "demirović": {
         "club": "VfB Stuttgart",
         "caps": 40,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "džeko": {
         "club": "Schalke 04",
         "caps": 148,
-        "goals": 73
+        "goals": 73,
+        "captain": true
       },
       "jurkas": {
         "club": "Borac Banja Luka",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bašić": {
         "club": "Astana",
         "caps": 17,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "šunjić": {
         "club": "Pafos",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "memić": {
         "club": "Viktoria Plzeň",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hadžiahmetović": {
         "club": "Hull City",
         "caps": 36,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "burnić": {
         "club": "Karlsruher SC",
         "caps": 20,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "katić": {
         "club": "Schalke 04",
         "caps": 17,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "alajbegović": {
         "club": "Red Bull Salzburg",
         "caps": 10,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "bajraktarević": {
         "club": "PSV Eindhoven",
         "caps": 16,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "radeljić": {
         "club": "Rijeka",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "zlomislić": {
         "club": "Rijeka",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "tabaković": {
         "club": "Borussia Mönchengladbach",
         "caps": 10,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "malić": {
         "club": "Sturm Graz",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "lukić": {
         "club": "Universitatea Cluj",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mahmić": {
         "club": "Slovan Liberec",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -678,127 +807,152 @@
       "clair": {
         "club": "Inter Miami CF",
         "caps": 20,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "johnston": {
         "club": "Celtic",
         "caps": 58,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "jones": {
         "club": "Middlesbrough",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "fougerolles": {
         "club": "Dender",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "waterman": {
         "club": "Chicago Fire FC",
         "caps": 17,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "choinière": {
         "club": "Los Angeles FC",
         "caps": 23,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "eustáquio": {
         "club": "Los Angeles FC",
         "caps": 56,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "koné": {
         "club": "Sassuolo",
         "caps": 40,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "larin": {
         "club": "Southampton",
         "caps": 90,
-        "goals": 30
+        "goals": 30,
+        "captain": false
       },
       "david": {
         "club": "Union Saint-Gilloise",
         "caps": 10,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "millar": {
         "club": "Hull City",
         "caps": 41,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "oluwaseyi": {
         "club": "Villarreal",
         "caps": 24,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "cornelius": {
         "club": "Rangers",
         "caps": 44,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "shaffelburg": {
         "club": "Los Angeles FC",
         "caps": 31,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "bombito": {
         "club": "Nice",
         "caps": 20,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "crépeau": {
         "club": "Orlando City SC",
         "caps": 32,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "buchanan": {
         "club": "Villarreal",
         "caps": 60,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "goodman": {
         "club": "Barnsley",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "davies": {
         "club": "Bayern Munich",
         "caps": 58,
-        "goals": 15
+        "goals": 15,
+        "captain": true
       },
       "ahmed": {
         "club": "Norwich City",
         "caps": 24,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "osorio": {
         "club": "Toronto FC",
         "caps": 90,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "laryea": {
         "club": "Toronto FC",
         "caps": 75,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "sigur": {
         "club": "Hajduk Split",
         "caps": 19,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "saliba": {
         "club": "Anderlecht",
         "caps": 15,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "nelson": {
         "club": "Austin FC",
         "caps": 14,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       }
     },
     "notes": [
@@ -810,132 +964,158 @@
       "abunada": {
         "club": "Al-Rayyan",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "miguel": {
         "club": "Al-Sadd",
         "caps": 99,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "mendes": {
         "club": "Al-Wakrah",
         "caps": 25,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "laye": {
         "club": "Al-Arabi",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gaber": {
         "club": "Al-Rayyan",
         "caps": 32,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hatem": {
         "club": "Al-Rayyan",
         "caps": 117,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "alaaeldin": {
         "club": "Al-Rayyan",
         "caps": 68,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "junior": {
         "club": "Al-Duhail",
         "caps": 16,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "muntari": {
         "club": "Al-Gharafa",
         "caps": 67,
-        "goals": 16
+        "goals": 16,
+        "captain": false
       },
       "al-haydos": {
         "club": "Al-Sadd",
         "caps": 186,
-        "goals": 41
+        "goals": 41,
+        "captain": true
       },
       "afif": {
         "club": "Al-Sadd",
         "caps": 125,
-        "goals": 39
+        "goals": 39,
+        "captain": false
       },
       "boudiaf": {
         "club": "Al-Duhail",
         "caps": 118,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "al-oui": {
         "club": "Al-Gharafa",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ahmed": {
         "club": "Cultural Leonesa",
         "caps": 68,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "abdurisag": {
         "club": "Al-Wakrah",
         "caps": 39,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "khoukhi": {
         "club": "Al-Sadd",
         "caps": 116,
-        "goals": 20
+        "goals": 20,
+        "captain": false
       },
       "al-ganehi": {
         "club": "Al-Gharafa",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "al-brake": {
         "club": "Al-Duhail",
         "caps": 17,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ali": {
         "club": "Al-Duhail",
         "caps": 115,
-        "goals": 55
+        "goals": 55,
+        "captain": false
       },
       "fathy": {
         "club": "Al-Arabi",
         "caps": 48,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "zakaria": {
         "club": "Al-Duhail",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "barsham": {
         "club": "Al-Sadd",
         "caps": 52,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "madibo": {
         "club": "Al-Wakrah",
         "caps": 51,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "jamshid": {
         "club": "Al-Duhail",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-hussain": {
         "club": "Al-Arabi",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "manai": {
         "club": "Al-Shamal",
         "caps": 10,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -945,132 +1125,158 @@
       "kobel": {
         "club": "Borussia Dortmund",
         "caps": 21,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "muheim": {
         "club": "Hamburger SV",
         "caps": 10,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "widmer": {
         "club": "Mainz 05",
         "caps": 60,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "elvedi": {
         "club": "Borussia Mönchengladbach",
         "caps": 67,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "akanji": {
         "club": "Inter Milan",
         "caps": 81,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "zakaria": {
         "club": "Monaco",
         "caps": 65,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "embolo": {
         "club": "Rennes",
         "caps": 86,
-        "goals": 24
+        "goals": 24,
+        "captain": false
       },
       "freuler": {
         "club": "Bologna",
         "caps": 88,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "manzambi": {
         "club": "SC Freiburg",
         "caps": 12,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "xhaka": {
         "club": "Sunderland",
         "caps": 146,
-        "goals": 17
+        "goals": 17,
+        "captain": true
       },
       "ndoye": {
         "club": "Nottingham Forest",
         "caps": 31,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "mvogo": {
         "club": "Lorient",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "rodriguez": {
         "club": "Real Betis",
         "caps": 138,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "jashari": {
         "club": "Milan",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sow": {
         "club": "Sevilla",
         "caps": 52,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "fassnacht": {
         "club": "Young Boys",
         "caps": 23,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "vargas": {
         "club": "Sevilla",
         "caps": 61,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "cömert": {
         "club": "Valencia",
         "caps": 22,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "okafor": {
         "club": "Leeds United",
         "caps": 25,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "aebischer": {
         "club": "Pisa",
         "caps": 40,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "keller": {
         "club": "Young Boys",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "rieder": {
         "club": "FC Augsburg",
         "caps": 28,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "amdouni": {
         "club": "Burnley",
         "caps": 29,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "amenda": {
         "club": "Eintracht Frankfurt",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "jaquez": {
         "club": "VfB Stuttgart",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "itten": {
         "club": "Fortuna Düsseldorf",
         "caps": 15,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       }
     },
     "notes": []
@@ -1080,127 +1286,152 @@
       "alisson": {
         "club": "Liverpool",
         "caps": 78,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "silva": {
         "club": "Atalanta",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "magalhães": {
         "club": "Arsenal",
         "caps": 17,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "marquinhos": {
         "club": "Paris Saint-Germain",
         "caps": 105,
-        "goals": 7
+        "goals": 7,
+        "captain": true
       },
       "casemiro": {
         "club": "Manchester United",
         "caps": 86,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "sandro": {
         "club": "Flamengo",
         "caps": 45,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "júnior": {
         "club": "Real Madrid",
         "caps": 49,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "guimarães": {
         "club": "Newcastle United",
         "caps": 43,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "cunha": {
         "club": "Manchester United",
         "caps": 23,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "neymar": {
         "club": "Santos",
         "caps": 128,
-        "goals": 79
+        "goals": 79,
+        "captain": false
       },
       "raphinha": {
         "club": "Barcelona",
         "caps": 39,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "weverton": {
         "club": "Grêmio",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "luiz": {
         "club": "Flamengo",
         "caps": 70,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "bremer": {
         "club": "Juventus",
         "caps": 8,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "pereira": {
         "club": "Flamengo",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "santos": {
         "club": "Botafogo",
         "caps": 4,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "fabinho": {
         "club": "Al-Ittihad",
         "caps": 33,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "endrick": {
         "club": "Lyon",
         "caps": 17,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "paquetá": {
         "club": "Flamengo",
         "caps": 63,
-        "goals": 13
+        "goals": 13,
+        "captain": false
       },
       "henrique": {
         "club": "Zenit Saint Petersburg",
         "caps": 15,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "martinelli": {
         "club": "Arsenal",
         "caps": 23,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "moraes": {
         "club": "Fenerbahçe",
         "caps": 32,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ibañez": {
         "club": "Al-Ahli",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "thiago": {
         "club": "Brentford",
         "caps": 4,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "rayan": {
         "club": "Bournemouth",
         "caps": 2,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": [
@@ -1212,127 +1443,152 @@
       "placide": {
         "club": "Bastia",
         "caps": 82,
-        "goals": 0
+        "goals": 0,
+        "captain": true
       },
       "arcus": {
         "club": "Angers",
         "caps": 56,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "thermoncy": {
         "club": "Young Boys",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "adé": {
         "club": "LDU Quito",
         "caps": 59,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "delcroix": {
         "club": "Lugano",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sainté": {
         "club": "El Paso Locomotive FC",
         "caps": 26,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "jr.": {
         "club": "Toronto FC",
         "caps": 51,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "expérience": {
         "club": "Nancy",
         "caps": 21,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "nazon": {
         "club": "Esteghlal",
         "caps": 82,
-        "goals": 44
+        "goals": 44,
+        "captain": false
       },
       "bellegarde": {
         "club": "Wolverhampton Wanderers",
         "caps": 10,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "deedson": {
         "club": "FC Dallas",
         "caps": 32,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "pierre": {
         "club": "Violette",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "lacroix": {
         "club": "Colorado Springs Switchbacks FC",
         "caps": 16,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "metusala": {
         "club": "Colorado Springs Switchbacks FC",
         "caps": 16,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "providence": {
         "club": "Almere City",
         "caps": 15,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "joseph": {
         "club": "Ferencváros",
         "caps": 2,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "jacques": {
         "club": "Philadelphia Union",
         "caps": 31,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "isidor": {
         "club": "Sunderland",
         "caps": 4,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "fortuné": {
         "club": "Vizela",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "pierrot": {
         "club": "Çaykur Rizespor",
         "caps": 51,
-        "goals": 34
+        "goals": 34,
+        "captain": false
       },
       "casimir": {
         "club": "Auxerre",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "duverne": {
         "club": "Gent",
         "caps": 17,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "duverger": {
         "club": "Cosmos Koblenz",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "paugain": {
         "club": "Zulte Waregem",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "simon": {
         "club": "Tatran Prešov",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -1344,132 +1600,158 @@
       "bounou": {
         "club": "Al-Hilal",
         "caps": 90,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hakimi": {
         "club": "Paris Saint-Germain",
         "caps": 96,
-        "goals": 11
+        "goals": 11,
+        "captain": true
       },
       "mazraoui": {
         "club": "Manchester United",
         "caps": 45,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "amrabat": {
         "club": "Real Betis",
         "caps": 75,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "saâdane": {
         "club": "Al-Fateh",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bouaddi": {
         "club": "Lille",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "talbi": {
         "club": "Sunderland",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ounahi": {
         "club": "Girona",
         "caps": 49,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "rahimi": {
         "club": "Al Ain",
         "caps": 27,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "díaz": {
         "club": "Real Madrid",
         "caps": 26,
-        "goals": 14
+        "goals": 14,
+        "captain": false
       },
       "saibari": {
         "club": "PSV Eindhoven",
         "caps": 31,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "mohamedi": {
         "club": "RS Berkane",
         "caps": 52,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ouahdi": {
         "club": "Genk",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "diop": {
         "club": "Fulham",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mourabet": {
         "club": "Strasbourg",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "yassine": {
         "club": "Strasbourg",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sbaï": {
         "club": "Angers",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "riad": {
         "club": "Crystal Palace",
         "caps": 6,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "belammari": {
         "club": "Al Ahly",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kaabi": {
         "club": "Olympiacos",
         "caps": 58,
-        "goals": 23
+        "goals": 23,
+        "captain": false
       },
       "amaimouni": {
         "club": "Eintracht Frankfurt",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "tagnaouti": {
         "club": "AS FAR",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "khannouss": {
         "club": "VfB Stuttgart",
         "caps": 37,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "aynaoui": {
         "club": "Roma",
         "caps": 16,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "halhal": {
         "club": "Mechelen",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "salah-eddine": {
         "club": "PSV Eindhoven",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -1481,132 +1763,158 @@
       "gunn": {
         "club": "Nottingham Forest",
         "caps": 22,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hickey": {
         "club": "Brentford",
         "caps": 21,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "robertson": {
         "club": "Liverpool",
         "caps": 94,
-        "goals": 4
+        "goals": 4,
+        "captain": true
       },
       "mctominay": {
         "club": "Napoli",
         "caps": 70,
-        "goals": 15
+        "goals": 15,
+        "captain": false
       },
       "hanley": {
         "club": "Hibernian",
         "caps": 68,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "tierney": {
         "club": "Celtic",
         "caps": 56,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "mcginn": {
         "club": "Aston Villa",
         "caps": 86,
-        "goals": 20
+        "goals": 20,
+        "captain": false
       },
       "fletcher": {
         "club": "Manchester United",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "dykes": {
         "club": "Charlton Athletic",
         "caps": 51,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "adams": {
         "club": "Torino",
         "caps": 47,
-        "goals": 13
+        "goals": 13,
+        "captain": false
       },
       "christie": {
         "club": "Bournemouth",
         "caps": 68,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "kelly": {
         "club": "Rangers",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hendry": {
         "club": "Al-Ettifaq",
         "caps": 38,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "stewart": {
         "club": "Southampton",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "souttar": {
         "club": "Rangers",
         "caps": 24,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "hyam": {
         "club": "Wrexham",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gannon-doak": {
         "club": "Bournemouth",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hirst": {
         "club": "Ipswich Town",
         "caps": 10,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "ferguson": {
         "club": "Bologna",
         "caps": 24,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "shankland": {
         "club": "Heart of Midlothian",
         "caps": 20,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "gordon": {
         "club": "Heart of Midlothian",
         "caps": 84,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "patterson": {
         "club": "Everton",
         "caps": 26,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "mclean": {
         "club": "Norwich City",
         "caps": 58,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "ralston": {
         "club": "Celtic",
         "caps": 27,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "curtis": {
         "club": "Kilmarnock",
         "caps": 3,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "mckenna": {
         "club": "Dinamo Zagreb",
         "caps": 50,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": [
@@ -1618,132 +1926,158 @@
       "ryan": {
         "club": "Levante",
         "caps": 104,
-        "goals": 0
+        "goals": 0,
+        "captain": true
       },
       "degenek": {
         "club": "APOEL",
         "caps": 57,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "circati": {
         "club": "Parma",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "italiano": {
         "club": "Grazer AK",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bos": {
         "club": "Feyenoord",
         "caps": 27,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "geria": {
         "club": "Albirex Niigata",
         "caps": 14,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "leckie": {
         "club": "Melbourne City",
         "caps": 80,
-        "goals": 14
+        "goals": 14,
+        "captain": false
       },
       "metcalfe": {
         "club": "FC St. Pauli",
         "caps": 36,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "touré": {
         "club": "Norwich City",
         "caps": 10,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "hrustic": {
         "club": "Heracles Almelo",
         "caps": 37,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "mabil": {
         "club": "Castellón",
         "caps": 38,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "izzo": {
         "club": "Randers",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "o'neill": {
         "club": "New York City FC",
         "caps": 31,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "devlin": {
         "club": "Heart of Midlothian",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "trewin": {
         "club": "New York City FC",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "behich": {
         "club": "Melbourne City",
         "caps": 84,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "irankunda": {
         "club": "Watford",
         "caps": 15,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "beach": {
         "club": "Melbourne City",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "souttar": {
         "club": "Leicester City",
         "caps": 38,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "volpato": {
         "club": "Sassuolo",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "burgess": {
         "club": "Swansea City",
         "caps": 27,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "irvine": {
         "club": "FC St. Pauli",
         "caps": 82,
-        "goals": 14
+        "goals": 14,
+        "captain": false
       },
       "velupillay": {
         "club": "Melbourne Victory",
         "caps": 7,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "okon-engstler": {
         "club": "Sydney FC",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "herrington": {
         "club": "Colorado Rapids",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "yengi": {
         "club": "Machida Zelvia",
         "caps": 1,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": []
@@ -1753,127 +2087,152 @@
       "fernández": {
         "club": "Cerro Porteño",
         "caps": 31,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "velázquez": {
         "club": "Cerro Porteño",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "alderete": {
         "club": "Sunderland",
         "caps": 36,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "cáceres": {
         "club": "Dynamo Moscow",
         "caps": 17,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "balbuena": {
         "club": "Grêmio",
         "caps": 48,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "alonso": {
         "club": "Atlético Mineiro",
         "caps": 71,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "sosa": {
         "club": "Palmeiras",
         "caps": 29,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "gómez": {
         "club": "Palmeiras",
         "caps": 89,
-        "goals": 4
+        "goals": 4,
+        "captain": true
       },
       "sanabria": {
         "club": "Cremonese",
         "caps": 48,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "almirón": {
         "club": "Atlanta United FC",
         "caps": 76,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "maurício": {
         "club": "Palmeiras",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gill": {
         "club": "San Lorenzo",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "canale": {
         "club": "Lanús",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "cubas": {
         "club": "Vancouver Whitecaps FC",
         "caps": 33,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bobadilla": {
         "club": "São Paulo",
         "caps": 19,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "kaku": {
         "club": "Al Ain",
         "caps": 33,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "arce": {
         "club": "Independiente Rivadavia",
         "caps": 15,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "enciso": {
         "club": "Strasbourg",
         "caps": 32,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "ojeda": {
         "club": "Orlando City SC",
         "caps": 17,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ávalos": {
         "club": "Independiente",
         "caps": 23,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "olveira": {
         "club": "Olimpia",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "galarza": {
         "club": "Atlanta United FC",
         "caps": 15,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "caballero": {
         "club": "Portsmouth",
         "caps": 2,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "pitta": {
         "club": "Red Bull Bragantino",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "maidana": {
         "club": "Talleres",
         "caps": 2,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": []
@@ -1883,132 +2242,158 @@
       "günok": {
         "club": "Fenerbahçe",
         "caps": 37,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "çelik": {
         "club": "Roma",
         "caps": 61,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "demiral": {
         "club": "Al-Ahli",
         "caps": 62,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "söyüncü": {
         "club": "Fenerbahçe",
         "caps": 60,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "özcan": {
         "club": "Borussia Dortmund",
         "caps": 30,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "kökçü": {
         "club": "Beşiktaş",
         "caps": 50,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "aktürkoğlu": {
         "club": "Fenerbahçe",
         "caps": 52,
-        "goals": 15
+        "goals": 15,
+        "captain": false
       },
       "güler": {
         "club": "Real Madrid",
         "caps": 29,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "gül": {
         "club": "Porto",
         "caps": 8,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "çalhanoğlu": {
         "club": "Inter Milan",
         "caps": 105,
-        "goals": 22
+        "goals": 22,
+        "captain": true
       },
       "yıldız": {
         "club": "Juventus",
         "caps": 28,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "bayındır": {
         "club": "Manchester United",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "elmalı": {
         "club": "Galatasaray",
         "caps": 23,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bardakcı": {
         "club": "Galatasaray",
         "caps": 27,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "kabak": {
         "club": "TSG Hoffenheim",
         "caps": 30,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "yüksek": {
         "club": "Fenerbahçe",
         "caps": 32,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "kahveci": {
         "club": "Kasımpaşa",
         "caps": 47,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "müldür": {
         "club": "Fenerbahçe",
         "caps": 45,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "akgün": {
         "club": "Galatasaray",
         "caps": 19,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "kadıoğlu": {
         "club": "Brighton & Hove Albion",
         "caps": 30,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "yılmaz": {
         "club": "Galatasaray",
         "caps": 35,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "ayhan": {
         "club": "Galatasaray",
         "caps": 73,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "çakır": {
         "club": "Galatasaray",
         "caps": 39,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "aydın": {
         "club": "Fenerbahçe",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "akaydin": {
         "club": "Çaykur Rizespor",
         "caps": 19,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "uzun": {
         "club": "Eintracht Frankfurt",
         "caps": 6,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": []
@@ -2018,127 +2403,152 @@
       "turner": {
         "club": "New England Revolution",
         "caps": 54,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "dest": {
         "club": "PSV Eindhoven",
         "caps": 39,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "richards": {
         "club": "Crystal Palace",
         "caps": 36,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "adams": {
         "club": "Bournemouth",
         "caps": 54,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "robinson": {
         "club": "FC Cincinnati",
         "caps": 40,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "trusty": {
         "club": "Celtic",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "reyna": {
         "club": "Borussia Mönchengladbach",
         "caps": 38,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "mckennie": {
         "club": "Juventus",
         "caps": 66,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "pepi": {
         "club": "PSV Eindhoven",
         "caps": 37,
-        "goals": 13
+        "goals": 13,
+        "captain": false
       },
       "pulisic": {
         "club": "Milan",
         "caps": 86,
-        "goals": 33
+        "goals": 33,
+        "captain": false
       },
       "aaronson": {
         "club": "Leeds United",
         "caps": 58,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "ream": {
         "club": "Charlotte FC",
         "caps": 82,
-        "goals": 1
+        "goals": 1,
+        "captain": true
       },
       "berhalter": {
         "club": "Vancouver Whitecaps FC",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "roldan": {
         "club": "Seattle Sounders FC",
         "caps": 47,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "freeman": {
         "club": "Villarreal",
         "caps": 17,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "tillman": {
         "club": "Bayer Leverkusen",
         "caps": 30,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "arfsten": {
         "club": "Columbus Crew",
         "caps": 20,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "wright": {
         "club": "Coventry City",
         "caps": 20,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "balogun": {
         "club": "Monaco",
         "caps": 27,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "weah": {
         "club": "Marseille",
         "caps": 51,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "mckenzie": {
         "club": "Toulouse",
         "caps": 29,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "scally": {
         "club": "Borussia Mönchengladbach",
         "caps": 26,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "freese": {
         "club": "New York City FC",
         "caps": 15,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "brady": {
         "club": "Chicago Fire FC",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "zendejas": {
         "club": "América",
         "caps": 14,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       }
     },
     "notes": []
@@ -2148,127 +2558,152 @@
       "room": {
         "club": "Miami FC",
         "caps": 71,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sambo": {
         "club": "Sparta Rotterdam",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gaari": {
         "club": "Abha",
         "caps": 60,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "eijma": {
         "club": "RKC Waalwijk",
         "caps": 28,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "floranus": {
         "club": "PEC Zwolle",
         "caps": 28,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "roemeratoe": {
         "club": "RKC Waalwijk",
         "caps": 28,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "bacuna": {
         "club": "Iğdır",
         "caps": 72,
-        "goals": 16
+        "goals": 16,
+        "captain": true
       },
       "comenencia": {
         "club": "Zürich",
         "caps": 20,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "locadia": {
         "club": "Miami FC",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "antonisse": {
         "club": "Kifisia",
         "caps": 27,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "hansen": {
         "club": "Middlesbrough",
         "caps": 6,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "noslin": {
         "club": "Telstar",
         "caps": 7,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "gorré": {
         "club": "Maccabi Haifa",
         "caps": 38,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "martha": {
         "club": "Rotherham United",
         "caps": 9,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "margaritha": {
         "club": "Beveren",
         "caps": 22,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "kuwas": {
         "club": "Volendam",
         "caps": 35,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "obispo": {
         "club": "PSV Eindhoven",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kastaneer": {
         "club": "Terengganu",
         "caps": 29,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "brenet": {
         "club": "Kayserispor",
         "caps": 18,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "chong": {
         "club": "Sheffield United",
         "caps": 6,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "felida": {
         "club": "Den Bosch",
         "caps": 19,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "bazoer": {
         "club": "Konyaspor",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "fonville": {
         "club": "NEC",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bodak": {
         "club": "Telstar",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "doornbusch": {
         "club": "VVV-Venlo",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -2278,122 +2713,146 @@
       "galíndez": {
         "club": "Huracán",
         "caps": 35,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "torres": {
         "club": "Internacional",
         "caps": 49,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "hincapié": {
         "club": "Arsenal",
         "caps": 52,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "ordóñez": {
         "club": "Club Brugge",
         "caps": 17,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "alcívar": {
         "club": "Independiente del Valle",
         "caps": 11,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "pacho": {
         "club": "Paris Saint-Germain",
         "caps": 34,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "estupiñán": {
         "club": "Milan",
         "caps": 54,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "valencia": {
         "club": "Pachuca",
         "caps": 105,
-        "goals": 49
+        "goals": 49,
+        "captain": true
       },
       "yeboah": {
         "club": "Venezia",
         "caps": 23,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "páez": {
         "club": "River Plate",
         "caps": 26,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "rodríguez": {
         "club": "Union Saint-Gilloise",
         "caps": 31,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "ramírez": {
         "club": "Kifisia",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "minda": {
         "club": "Atlético Mineiro",
         "caps": 20,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "vite": {
         "club": "Pumas UNAM",
         "caps": 17,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "caicedo": {
         "club": "Chelsea",
         "caps": 61,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "preciado": {
         "club": "Atlético Mineiro",
         "caps": 55,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "castillo": {
         "club": "Midtjylland",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "plata": {
         "club": "Flamengo",
         "caps": 50,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "angulo": {
         "club": "Sunderland",
         "caps": 14,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "franco": {
         "club": "Atlético Mineiro",
         "caps": 58,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "valle": {
         "club": "LDU Quito",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "arévalo": {
         "club": "VfB Stuttgart",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "porozo": {
         "club": "Tijuana",
         "caps": 10,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "medina": {
         "club": "Genk",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -2403,132 +2862,158 @@
       "neuer": {
         "club": "Bayern Munich",
         "caps": 124,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "rüdiger": {
         "club": "Real Madrid",
         "caps": 82,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "anton": {
         "club": "Borussia Dortmund",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "tah": {
         "club": "Bayern Munich",
         "caps": 47,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "pavlović": {
         "club": "Bayern Munich",
         "caps": 11,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "kimmich": {
         "club": "Bayern Munich",
         "caps": 110,
-        "goals": 10
+        "goals": 10,
+        "captain": true
       },
       "havertz": {
         "club": "Arsenal",
         "caps": 58,
-        "goals": 22
+        "goals": 22,
+        "captain": false
       },
       "goretzka": {
         "club": "Bayern Munich",
         "caps": 70,
-        "goals": 15
+        "goals": 15,
+        "captain": false
       },
       "leweling": {
         "club": "VfB Stuttgart",
         "caps": 5,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "musiala": {
         "club": "Bayern Munich",
         "caps": 42,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "woltemade": {
         "club": "Newcastle United",
         "caps": 11,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "baumann": {
         "club": "TSG Hoffenheim",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "groß": {
         "club": "Brighton & Hove Albion",
         "caps": 18,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "beier": {
         "club": "Borussia Dortmund",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "schlotterbeck": {
         "club": "Borussia Dortmund",
         "caps": 27,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "stiller": {
         "club": "VfB Stuttgart",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "wirtz": {
         "club": "Liverpool",
         "caps": 41,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "brown": {
         "club": "Eintracht Frankfurt",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sané": {
         "club": "Galatasaray",
         "caps": 76,
-        "goals": 17
+        "goals": 17,
+        "captain": false
       },
       "amiri": {
         "club": "Mainz 05",
         "caps": 11,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "nübel": {
         "club": "VfB Stuttgart",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "raum": {
         "club": "RB Leipzig",
         "caps": 37,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "nmecha": {
         "club": "Borussia Dortmund",
         "caps": 8,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "thiaw": {
         "club": "Newcastle United",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ouédraogo": {
         "club": "RB Leipzig",
         "caps": 1,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "undav": {
         "club": "VfB Stuttgart",
         "caps": 9,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       }
     },
     "notes": [
@@ -2540,122 +3025,146 @@
       "fofana": {
         "club": "Porto",
         "caps": 32,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "diomande": {
         "club": "RB Leipzig",
         "caps": 10,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "konan": {
         "club": "Gil Vicente",
         "caps": 54,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "seri": {
         "club": "Maribor",
         "caps": 65,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "singo": {
         "club": "Galatasaray",
         "caps": 34,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "kossounou": {
         "club": "Atalanta",
         "caps": 35,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kessié": {
         "club": "Al-Ahli",
         "caps": 103,
-        "goals": 15
+        "goals": 15,
+        "captain": true
       },
       "bonny": {
         "club": "Inter Milan",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "adingra": {
         "club": "Monaco",
         "caps": 29,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "wahi": {
         "club": "Nice",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "opéri": {
         "club": "İstanbul Başakşehir",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "diakité": {
         "club": "Cercle Brugge",
         "caps": 29,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "diallo": {
         "club": "Manchester United",
         "caps": 19,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "koné": {
         "club": "Charleroi",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "doué": {
         "club": "Strasbourg",
         "caps": 20,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "sangaré": {
         "club": "Nottingham Forest",
         "caps": 58,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "pépé": {
         "club": "Villarreal",
         "caps": 55,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "agbadou": {
         "club": "Beşiktaş",
         "caps": 20,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "ndicka": {
         "club": "Roma",
         "caps": 28,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "guessand": {
         "club": "Crystal Palace",
         "caps": 21,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "lafont": {
         "club": "Panathinaikos",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "touré": {
         "club": "TSG Hoffenheim",
         "caps": 6,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "guiagon": {
         "club": "Charleroi",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "oulaï": {
         "club": "Trabzonspor",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -2667,117 +3176,140 @@
       "suzuki": {
         "club": "Copenhagen",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sugawara": {
         "club": "Werder Bremen",
         "caps": 21,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "taniguchi": {
         "club": "Sint-Truiden",
         "caps": 38,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "itakura": {
         "club": "Ajax",
         "caps": 40,
-        "goals": 2
+        "goals": 2,
+        "captain": true
       },
       "nagatomo": {
         "club": "FC Tokyo",
         "caps": 145,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "machino": {
         "club": "Borussia Mönchengladbach",
         "caps": 14,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "tanaka": {
         "club": "Leeds United",
         "caps": 38,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "kubo": {
         "club": "Real Sociedad",
         "caps": 49,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "gotō": {
         "club": "Sint-Truiden",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "dōan": {
         "club": "Eintracht Frankfurt",
         "caps": 65,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "maeda": {
         "club": "Celtic",
         "caps": 27,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "ōsako": {
         "club": "Sanfrecce Hiroshima",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "nakamura": {
         "club": "Reims",
         "caps": 25,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "itō": {
         "club": "Bayern Munich",
         "caps": 24,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "kamada": {
         "club": "Crystal Palace",
         "caps": 49,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "watanabe": {
         "club": "Feyenoord",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ueda": {
         "club": "Feyenoord",
         "caps": 39,
-        "goals": 16
+        "goals": 16,
+        "captain": false
       },
       "ogawa": {
         "club": "NEC",
         "caps": 15,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "seko": {
         "club": "Le Havre",
         "caps": 14,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "tomiyasu": {
         "club": "Ajax",
         "caps": 43,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hayakawa": {
         "club": "Kashima Antlers",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sano": {
         "club": "Mainz 05",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "shiogai": {
         "club": "VfL Wolfsburg",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -2789,132 +3321,158 @@
       "verbruggen": {
         "club": "Brighton & Hove Albion",
         "caps": 29,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "geertruida": {
         "club": "Sunderland",
         "caps": 21,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "roon": {
         "club": "Atalanta",
         "caps": 43,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "dijk": {
         "club": "Liverpool",
         "caps": 92,
-        "goals": 12
+        "goals": 12,
+        "captain": true
       },
       "aké": {
         "club": "Manchester City",
         "caps": 59,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "hecke": {
         "club": "Brighton & Hove Albion",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kluivert": {
         "club": "Bournemouth",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gravenberch": {
         "club": "Liverpool",
         "caps": 27,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "weghorst": {
         "club": "Ajax",
         "caps": 52,
-        "goals": 14
+        "goals": 14,
+        "captain": false
       },
       "depay": {
         "club": "Corinthians",
         "caps": 109,
-        "goals": 55
+        "goals": 55,
+        "captain": false
       },
       "gakpo": {
         "club": "Liverpool",
         "caps": 50,
-        "goals": 21
+        "goals": 21,
+        "captain": false
       },
       "wieffer": {
         "club": "Brighton & Hove Albion",
         "caps": 15,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "roefs": {
         "club": "Sunderland",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "reijnders": {
         "club": "Manchester City",
         "caps": 32,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "ven": {
         "club": "Tottenham Hotspur",
         "caps": 21,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "til": {
         "club": "PSV Eindhoven",
         "caps": 7,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "lang": {
         "club": "Galatasaray",
         "caps": 15,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "malen": {
         "club": "Roma",
         "caps": 53,
-        "goals": 13
+        "goals": 13,
+        "captain": false
       },
       "brobbey": {
         "club": "Sunderland",
         "caps": 12,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "koopmeiners": {
         "club": "Juventus",
         "caps": 28,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "jong": {
         "club": "Barcelona",
         "caps": 66,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "dumfries": {
         "club": "Inter Milan",
         "caps": 72,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "flekken": {
         "club": "Bayer Leverkusen",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "summerville": {
         "club": "West Ham United",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hato": {
         "club": "Chelsea",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "timber": {
         "club": "Marseille",
         "caps": 11,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": [
@@ -2926,127 +3484,152 @@
       "zetterström": {
         "club": "Derby County",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "lagerbielke": {
         "club": "Braga",
         "caps": 11,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "lindelöf": {
         "club": "Aston Villa",
         "caps": 76,
-        "goals": 3
+        "goals": 3,
+        "captain": true
       },
       "hien": {
         "club": "Atalanta",
         "caps": 29,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gudmundsson": {
         "club": "Leeds United",
         "caps": 24,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "johansson": {
         "club": "Stoke City",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bergvall": {
         "club": "Tottenham Hotspur",
         "caps": 10,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "svensson": {
         "club": "Borussia Dortmund",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "isak": {
         "club": "Liverpool",
         "caps": 58,
-        "goals": 17
+        "goals": 17,
+        "captain": false
       },
       "nygren": {
         "club": "Celtic",
         "caps": 11,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "elanga": {
         "club": "Newcastle United",
         "caps": 30,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "sema": {
         "club": "Pafos",
         "caps": 33,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "ekdal": {
         "club": "Burnley",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "starfelt": {
         "club": "Celta Vigo",
         "caps": 18,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "karlström": {
         "club": "Udinese",
         "caps": 25,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gyökeres": {
         "club": "Arsenal",
         "caps": 33,
-        "goals": 20
+        "goals": 20,
+        "captain": false
       },
       "ayari": {
         "club": "Brighton & Hove Albion",
         "caps": 21,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "svanberg": {
         "club": "VfL Wolfsburg",
         "caps": 41,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "smith": {
         "club": "FC St. Pauli",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bernhardsson": {
         "club": "Holstein Kiel",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "zeneli": {
         "club": "Union Saint-Gilloise",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "nordfeldt": {
         "club": "AIK",
         "caps": 21,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "stroud": {
         "club": "Mjällby AIF",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "nilsson": {
         "club": "Club Brugge",
         "caps": 10,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "ali": {
         "club": "Malmö FF",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -3058,132 +3641,158 @@
       "chamakh": {
         "club": "Club Africain",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "abdi": {
         "club": "Nice",
         "caps": 46,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "talbi": {
         "club": "Lorient",
         "caps": 64,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "rekik": {
         "club": "Maribor",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "arous": {
         "club": "Kasımpaşa",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bronn": {
         "club": "Servette",
         "caps": 52,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "achouri": {
         "club": "Copenhagen",
         "caps": 30,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "saad": {
         "club": "Hannover 96",
         "caps": 15,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "mastouri": {
         "club": "Dynamo Makhachkala",
         "caps": 19,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "mejbri": {
         "club": "Burnley",
         "caps": 45,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "gharbi": {
         "club": "FC Augsburg",
         "caps": 17,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "ouanes": {
         "club": "Kasımpaşa",
         "caps": 18,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "khedira": {
         "club": "Union Berlin",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ayari": {
         "club": "Paris Saint-Germain",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mahmoud": {
         "club": "Lugano",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "dahmen": {
         "club": "CS Sfaxien",
         "caps": 37,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "skhiri": {
         "club": "Eintracht Frankfurt",
         "caps": 83,
-        "goals": 4
+        "goals": 4,
+        "captain": true
       },
       "elloumi": {
         "club": "Vancouver Whitecaps FC",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "chaouat": {
         "club": "Club Africain",
         "caps": 30,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "valery": {
         "club": "Young Boys",
         "caps": 22,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hamida": {
         "club": "Espérance de Tunis",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hessen": {
         "club": "Étoile du Sahel",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "neffati": {
         "club": "IFK Norrköping",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "chikhaoui": {
         "club": "US Monastir",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "slimane": {
         "club": "Norwich City",
         "caps": 41,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "tounekti": {
         "club": "Celtic",
         "caps": 12,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": []
@@ -3193,132 +3802,158 @@
       "courtois": {
         "club": "Real Madrid",
         "caps": 109,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "debast": {
         "club": "Sporting CP",
         "caps": 26,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "theate": {
         "club": "Eintracht Frankfurt",
         "caps": 33,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "mechele": {
         "club": "Club Brugge",
         "caps": 9,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "cuyper": {
         "club": "Brighton & Hove Albion",
         "caps": 19,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "witsel": {
         "club": "Girona",
         "caps": 138,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "bruyne": {
         "club": "Napoli",
         "caps": 119,
-        "goals": 37
+        "goals": 37,
+        "captain": false
       },
       "tielemans": {
         "club": "Aston Villa",
         "caps": 85,
-        "goals": 13
+        "goals": 13,
+        "captain": true
       },
       "lukaku": {
         "club": "Napoli",
         "caps": 126,
-        "goals": 90
+        "goals": 90,
+        "captain": false
       },
       "trossard": {
         "club": "Arsenal",
         "caps": 51,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "doku": {
         "club": "Manchester City",
         "caps": 43,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "lammens": {
         "club": "Manchester United",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "penders": {
         "club": "Strasbourg",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "lukébakio": {
         "club": "Benfica",
         "caps": 30,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "meunier": {
         "club": "Lille",
         "caps": 80,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "winter": {
         "club": "Milan",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ketelaere": {
         "club": "Atalanta",
         "caps": 30,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "seys": {
         "club": "Club Brugge",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "moreira": {
         "club": "Strasbourg",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "vanaken": {
         "club": "Club Brugge",
         "caps": 34,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "castagne": {
         "club": "Fulham",
         "caps": 63,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "saelemaekers": {
         "club": "Milan",
         "caps": 24,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "raskin": {
         "club": "Rangers",
         "caps": 13,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "onana": {
         "club": "Aston Villa",
         "caps": 29,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "ngoy": {
         "club": "Lille",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "fernandez-pardo": {
         "club": "Lille",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -3328,127 +3963,152 @@
       "shenawy": {
         "club": "Al Ahly",
         "caps": 76,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ibrahim": {
         "club": "Al Ahly",
         "caps": 17,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hany": {
         "club": "Al Ahly",
         "caps": 42,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "abdelmaguid": {
         "club": "Zamalek",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "rabia": {
         "club": "Al Ain",
         "caps": 44,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "abdelmonem": {
         "club": "Nice",
         "caps": 36,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "trézéguet": {
         "club": "Al Ahly",
         "caps": 96,
-        "goals": 23
+        "goals": 23,
+        "captain": false
       },
       "ashour": {
         "club": "Al Ahly",
         "caps": 29,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "abdelkarim": {
         "club": "Barcelona B",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "salah": {
         "club": "Liverpool",
         "caps": 116,
-        "goals": 67
+        "goals": 67,
+        "captain": true
       },
       "ziko": {
         "club": "Pyramids",
         "caps": 2,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "hassan": {
         "club": "Oviedo",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "fatouh": {
         "club": "Zamalek",
         "caps": 39,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "fathy": {
         "club": "Al-Wakrah",
         "caps": 63,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "hafez": {
         "club": "Pyramids",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "soliman": {
         "club": "Zamalek",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "lasheen": {
         "club": "Pyramids",
         "caps": 23,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "emad": {
         "club": "Al-Najma",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "attia": {
         "club": "Al Ahly",
         "caps": 34,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "adel": {
         "club": "Nordsjælland",
         "caps": 24,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "saber": {
         "club": "ZED",
         "caps": 15,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "marmoush": {
         "club": "Manchester City",
         "caps": 50,
-        "goals": 11
+        "goals": 11,
+        "captain": false
       },
       "shobeir": {
         "club": "Al Ahly",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "alaa": {
         "club": "El Gouna",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "zizo": {
         "club": "Al Ahly",
         "caps": 63,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       }
     },
     "notes": []
@@ -3458,132 +4118,158 @@
       "beiranvand": {
         "club": "Tractor",
         "caps": 86,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hardani": {
         "club": "Esteghlal",
         "caps": 18,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hajsafi": {
         "club": "Sepahan",
         "caps": 146,
-        "goals": 7
+        "goals": 7,
+        "captain": true
       },
       "khalilzadeh": {
         "club": "Tractor",
         "caps": 58,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "mohammadi": {
         "club": "Persepolis",
         "caps": 76,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "ezatolahi": {
         "club": "Shabab Al Ahli",
         "caps": 83,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "jahanbakhsh": {
         "club": "Dender",
         "caps": 98,
-        "goals": 17
+        "goals": 17,
+        "captain": false
       },
       "mohebi": {
         "club": "Rostov",
         "caps": 36,
-        "goals": 14
+        "goals": 14,
+        "captain": false
       },
       "taremi": {
         "club": "Olympiacos",
         "caps": 105,
-        "goals": 60
+        "goals": 60,
+        "captain": false
       },
       "ghayedi": {
         "club": "Al Nasr",
         "caps": 30,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "alipour": {
         "club": "Persepolis",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "niazmand": {
         "club": "Persepolis",
         "caps": 15,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kanaanizadegan": {
         "club": "Persepolis",
         "caps": 65,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "ghoddos": {
         "club": "Kalba",
         "caps": 68,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "cheshmi": {
         "club": "Esteghlal",
         "caps": 40,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "torabi": {
         "club": "Tractor",
         "caps": 52,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "yousefi": {
         "club": "Sepahan",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hosseinzadeh": {
         "club": "Tractor",
         "caps": 18,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "nemati": {
         "club": "Foolad",
         "caps": 17,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "moghanlou": {
         "club": "Kalba",
         "caps": 21,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "ghorbani": {
         "club": "Al Wahda",
         "caps": 16,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hosseini": {
         "club": "Sepahan",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "rezaeian": {
         "club": "Foolad",
         "caps": 74,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "eckert": {
         "club": "Standard Liège",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "eiri": {
         "club": "Malavan",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "razzaghinia": {
         "club": "Esteghlal",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -3593,132 +4279,158 @@
       "crocombe": {
         "club": "Millwall",
         "caps": 24,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "payne": {
         "club": "Wellington Phoenix",
         "caps": 51,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "vries": {
         "club": "Auckland FC",
         "caps": 20,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "bindon": {
         "club": "Sheffield United",
         "caps": 25,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "boxall": {
         "club": "Minnesota United FC",
         "caps": 63,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "bell": {
         "club": "Viking",
         "caps": 32,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "garbett": {
         "club": "Peterborough United",
         "caps": 37,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "stamenić": {
         "club": "Swansea City",
         "caps": 39,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "wood": {
         "club": "Nottingham Forest",
         "caps": 90,
-        "goals": 45
+        "goals": 45,
+        "captain": true
       },
       "singh": {
         "club": "Wellington Phoenix",
         "caps": 28,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "just": {
         "club": "Motherwell",
         "caps": 44,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "paulsen": {
         "club": "Lechia Gdańsk",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "cacace": {
         "club": "Wrexham",
         "caps": 37,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "rufer": {
         "club": "Wellington Phoenix",
         "caps": 26,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "pijnaker": {
         "club": "Auckland FC",
         "caps": 25,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "surman": {
         "club": "Portland Timbers",
         "caps": 19,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "barbarouses": {
         "club": "Western Sydney Wanderers",
         "caps": 76,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "waine": {
         "club": "Port Vale",
         "caps": 31,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "old": {
         "club": "Saint-Étienne",
         "caps": 24,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "mccowatt": {
         "club": "Silkeborg",
         "caps": 32,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "randall": {
         "club": "Auckland FC",
         "caps": 11,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "woud": {
         "club": "Auckland FC",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "thomas": {
         "club": "PEC Zwolle",
         "caps": 25,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "elliot": {
         "club": "Auckland FC",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bayliss": {
         "club": "Newcastle Jets",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "smith": {
         "club": "Braintree Town",
         "caps": 56,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       }
     },
     "notes": []
@@ -3728,107 +4440,128 @@
       "vozinha": {
         "club": "Chaves",
         "caps": 90,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "stopira": {
         "club": "Torreense",
         "caps": 61,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "diney": {
         "club": "Al Bataeh",
         "caps": 32,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "lopes": {
         "club": "Shamrock Rovers",
         "caps": 45,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "costa": {
         "club": "İstanbul Başakşehir",
         "caps": 9,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "pina": {
         "club": "Trabzonspor",
         "caps": 14,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "cabral": {
         "club": "Benfica",
         "caps": 11,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "paulo": {
         "club": "FCSB",
         "caps": 41,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "benchimol": {
         "club": "Akron Tolyatti",
         "caps": 21,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "monteiro": {
         "club": "PEC Zwolle",
         "caps": 55,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "rodrigues": {
         "club": "Apollon Limassol",
         "caps": 61,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "rosa": {
         "club": "Montana",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "duarte": {
         "club": "Puskás Akadémia",
         "caps": 20,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "semedo": {
         "club": "Omonia",
         "caps": 38,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "arcanjo": {
         "club": "Vitória de Guimarães",
         "caps": 16,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "livramento": {
         "club": "Casa Pia",
         "caps": 22,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "mendes": {
         "club": "Iğdır",
         "caps": 98,
-        "goals": 22
+        "goals": 22,
+        "captain": true
       },
       "moreira": {
         "club": "Columbus Crew",
         "caps": 20,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "santos": {
         "club": "San Diego FC",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "pires": {
         "club": "SJK",
         "caps": 6,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "varela": {
         "club": "Maccabi Tel Aviv",
         "caps": 21,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -3838,127 +4571,152 @@
       "al-aqidi": {
         "club": "Al-Nassr",
         "caps": 24,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "majrashi": {
         "club": "Al-Ahli",
         "caps": 21,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "lajami": {
         "club": "Al-Hilal",
         "caps": 24,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "al-amri": {
         "club": "Al-Nassr",
         "caps": 44,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "al-tambakti": {
         "club": "Al-Hilal",
         "caps": 54,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "al-dawsari": {
         "club": "Al-Hilal",
         "caps": 111,
-        "goals": 27
+        "goals": 27,
+        "captain": true
       },
       "al-juwayr": {
         "club": "Al-Qadsiah",
         "caps": 37,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "yahya": {
         "club": "Al-Nassr",
         "caps": 26,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-buraikan": {
         "club": "Al-Ahli",
         "caps": 72,
-        "goals": 16
+        "goals": 16,
+        "captain": false
       },
       "al-shehri": {
         "club": "Al-Ittihad",
         "caps": 59,
-        "goals": 17
+        "goals": 17,
+        "captain": false
       },
       "abdulhamid": {
         "club": "Lens",
         "caps": 55,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "boushal": {
         "club": "Al-Nassr",
         "caps": 27,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kadesh": {
         "club": "Al-Ittihad",
         "caps": 21,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "al-khaibari": {
         "club": "Al-Nassr",
         "caps": 42,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-johani": {
         "club": "Al-Ahli",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-ghannam": {
         "club": "Al-Ettifaq",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-hejji": {
         "club": "Neom",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-hamdan": {
         "club": "Al-Nassr",
         "caps": 52,
-        "goals": 13
+        "goals": 13,
+        "captain": false
       },
       "mandash": {
         "club": "Al-Hilal",
         "caps": 7,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "al-owais": {
         "club": "Al-Ula",
         "caps": 65,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-kassar": {
         "club": "Al-Qadsiah",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kanno": {
         "club": "Al-Hilal",
         "caps": 79,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "al-harbi": {
         "club": "Al-Hilal",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "thakri": {
         "club": "Al-Qadsiah",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-shamat": {
         "club": "Al-Qadsiah",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -3968,132 +4726,158 @@
       "raya": {
         "club": "Arsenal",
         "caps": 13,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "pubill": {
         "club": "Atlético Madrid",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "grimaldo": {
         "club": "Bayer Leverkusen",
         "caps": 14,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "garcía": {
         "club": "Barcelona",
         "caps": 21,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "llorente": {
         "club": "Atlético Madrid",
         "caps": 24,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "merino": {
         "club": "Arsenal",
         "caps": 43,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "torres": {
         "club": "Barcelona",
         "caps": 57,
-        "goals": 24
+        "goals": 24,
+        "captain": false
       },
       "ruiz": {
         "club": "Paris Saint-Germain",
         "caps": 42,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "gavi": {
         "club": "Barcelona",
         "caps": 30,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "olmo": {
         "club": "Barcelona",
         "caps": 50,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "pino": {
         "club": "Crystal Palace",
         "caps": 23,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "porro": {
         "club": "Tottenham Hotspur",
         "caps": 18,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "garcia": {
         "club": "Barcelona",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "laporte": {
         "club": "Athletic Bilbao",
         "caps": 46,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "baena": {
         "club": "Atlético Madrid",
         "caps": 17,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "rodri": {
         "club": "Manchester City",
         "caps": 62,
-        "goals": 4
+        "goals": 4,
+        "captain": true
       },
       "williams": {
         "club": "Athletic Bilbao",
         "caps": 30,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "zubimendi": {
         "club": "Arsenal",
         "caps": 26,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "yamal": {
         "club": "Barcelona",
         "caps": 25,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "pedri": {
         "club": "Barcelona",
         "caps": 41,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "oyarzabal": {
         "club": "Real Sociedad",
         "caps": 53,
-        "goals": 25
+        "goals": 25,
+        "captain": false
       },
       "cubarsí": {
         "club": "Barcelona",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "simón": {
         "club": "Athletic Bilbao",
         "caps": 58,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "cucurella": {
         "club": "Chelsea",
         "caps": 24,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "muñoz": {
         "club": "Osasuna",
         "caps": 2,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "iglesias": {
         "club": "Celta Vigo",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -4103,127 +4887,152 @@
       "rochet": {
         "club": "Internacional",
         "caps": 35,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "giménez": {
         "club": "Atlético Madrid",
         "caps": 99,
-        "goals": 8
+        "goals": 8,
+        "captain": true
       },
       "cáceres": {
         "club": "América",
         "caps": 24,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "araújo": {
         "club": "Sporting CP",
         "caps": 28,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "ugarte": {
         "club": "Manchester United",
         "caps": 36,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "bentancur": {
         "club": "Tottenham Hotspur",
         "caps": 74,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "cruz": {
         "club": "Flamengo",
         "caps": 34,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "valverde": {
         "club": "Real Madrid",
         "caps": 73,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "núñez": {
         "club": "Al-Hilal",
         "caps": 38,
-        "goals": 13
+        "goals": 13,
+        "captain": false
       },
       "arrascaeta": {
         "club": "Flamengo",
         "caps": 60,
-        "goals": 13
+        "goals": 13,
+        "captain": false
       },
       "pellistri": {
         "club": "Panathinaikos",
         "caps": 39,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "mele": {
         "club": "Monterrey",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "varela": {
         "club": "Flamengo",
         "caps": 28,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "canobbio": {
         "club": "Fluminense",
         "caps": 15,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "martínez": {
         "club": "Palmeiras",
         "caps": 10,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "olivera": {
         "club": "Napoli",
         "caps": 35,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "viña": {
         "club": "River Plate",
         "caps": 43,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "rodríguez": {
         "club": "América",
         "caps": 32,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "aguirre": {
         "club": "Tigres UANL",
         "caps": 10,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "viñas": {
         "club": "Oviedo",
         "caps": 11,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "piquerez": {
         "club": "Palmeiras",
         "caps": 19,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "muslera": {
         "club": "Estudiantes",
         "caps": 134,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bueno": {
         "club": "Wolverhampton Wanderers",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sanabria": {
         "club": "Real Salt Lake",
         "caps": 5,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "zalazar": {
         "club": "Braga",
         "caps": 8,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       }
     },
     "notes": []
@@ -4233,127 +5042,152 @@
       "samba": {
         "club": "Rennes",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gusto": {
         "club": "Chelsea",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "digne": {
         "club": "Aston Villa",
         "caps": 58,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "upamecano": {
         "club": "Bayern Munich",
         "caps": 38,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "koundé": {
         "club": "Barcelona",
         "caps": 48,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "koné": {
         "club": "Roma",
         "caps": 14,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "dembélé": {
         "club": "Paris Saint-Germain",
         "caps": 59,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "tchouaméni": {
         "club": "Real Madrid",
         "caps": 46,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "thuram": {
         "club": "Inter Milan",
         "caps": 34,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "mbappé": {
         "club": "Real Madrid",
         "caps": 98,
-        "goals": 56
+        "goals": 56,
+        "captain": true
       },
       "olise": {
         "club": "Bayern Munich",
         "caps": 17,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "barcola": {
         "club": "Paris Saint-Germain",
         "caps": 20,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "kanté": {
         "club": "Fenerbahçe",
         "caps": 69,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "rabiot": {
         "club": "Milan",
         "caps": 59,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "konaté": {
         "club": "Liverpool",
         "caps": 28,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "maignan": {
         "club": "Milan",
         "caps": 40,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "saliba": {
         "club": "Arsenal",
         "caps": 32,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "zaïre-emery": {
         "club": "Paris Saint-Germain",
         "caps": 11,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hernandez": {
         "club": "Paris Saint-Germain",
         "caps": 42,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "doué": {
         "club": "Paris Saint-Germain",
         "caps": 7,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "mateta": {
         "club": "Crystal Palace",
         "caps": 4,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "risser": {
         "club": "Lens",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "cherki": {
         "club": "Manchester City",
         "caps": 7,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "akliouche": {
         "club": "Monaco",
         "caps": 9,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "lacroix": {
         "club": "Crystal Palace",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -4363,127 +5197,152 @@
       "talib": {
         "club": "Al-Talaba",
         "caps": 21,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sulaka": {
         "club": "Port",
         "caps": 56,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "ali": {
         "club": "Dibba",
         "caps": 72,
-        "goals": 27
+        "goals": 27,
+        "captain": false
       },
       "tahseen": {
         "club": "Pakhtakor",
         "caps": 28,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hashim": {
         "club": "Al-Zawraa",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "younis": {
         "club": "Al-Shorta",
         "caps": 34,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "amyn": {
         "club": "AEK Larnaca",
         "caps": 27,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "bayesh": {
         "club": "Al Dhafra",
         "caps": 76,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "al-hamadi": {
         "club": "Luton Town",
         "caps": 20,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "qasem": {
         "club": "Nashville SC",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hassan": {
         "club": "Al-Zawraa",
         "caps": 102,
-        "goals": 0
+        "goals": 0,
+        "captain": true
       },
       "yousif": {
         "club": "Al-Talaba",
         "caps": 7,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "iqbal": {
         "club": "Utrecht",
         "caps": 25,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "maknzi": {
         "club": "Al-Karma",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-ammari": {
         "club": "Cracovia",
         "caps": 51,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "jasim": {
         "club": "Al-Najma",
         "caps": 36,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "hussein": {
         "club": "Al-Karma",
         "caps": 95,
-        "goals": 33
+        "goals": 33,
+        "captain": false
       },
       "yakob": {
         "club": "AGF",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sher": {
         "club": "Sarpsborg 08",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "farji": {
         "club": "Venezia",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "basil": {
         "club": "Al-Shorta",
         "caps": 16,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "doski": {
         "club": "Viktoria Plzeň",
         "caps": 31,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "ismail": {
         "club": "Al-Talaba",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "saadoon": {
         "club": "Al-Shorta",
         "caps": 17,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "putros": {
         "club": "Persib",
         "caps": 28,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -4495,132 +5354,158 @@
       "nyland": {
         "club": "Sevilla",
         "caps": 71,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "thorsby": {
         "club": "Cremonese",
         "caps": 31,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ajer": {
         "club": "Brentford",
         "caps": 52,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "østigård": {
         "club": "Genoa",
         "caps": 38,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "wolfe": {
         "club": "Wolverhampton Wanderers",
         "caps": 22,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "berg": {
         "club": "Bodø/Glimt",
         "caps": 43,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sørloth": {
         "club": "Atlético Madrid",
         "caps": 72,
-        "goals": 26
+        "goals": 26,
+        "captain": false
       },
       "berge": {
         "club": "Fulham",
         "caps": 66,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "haaland": {
         "club": "Manchester City",
         "caps": 50,
-        "goals": 55
+        "goals": 55,
+        "captain": false
       },
       "ødegaard": {
         "club": "Arsenal",
         "caps": 68,
-        "goals": 5
+        "goals": 5,
+        "captain": true
       },
       "larsen": {
         "club": "Crystal Palace",
         "caps": 28,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "tangvik": {
         "club": "Hamburger SV",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "selvik": {
         "club": "Watford",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "aursnes": {
         "club": "Benfica",
         "caps": 22,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "bjørkan": {
         "club": "Bodø/Glimt",
         "caps": 21,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "pedersen": {
         "club": "Torino",
         "caps": 32,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "heggem": {
         "club": "Bologna",
         "caps": 15,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "thorstvedt": {
         "club": "Sassuolo",
         "caps": 37,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "aasgaard": {
         "club": "Rangers",
         "caps": 8,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "nusa": {
         "club": "RB Leipzig",
         "caps": 24,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "schjelderup": {
         "club": "Benfica",
         "caps": 12,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "bobb": {
         "club": "Fulham",
         "caps": 20,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "hauge": {
         "club": "Bodø/Glimt",
         "caps": 15,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "langås": {
         "club": "Derby County",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "falchener": {
         "club": "Viking",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ryerson": {
         "club": "Borussia Dortmund",
         "caps": 43,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": []
@@ -4630,97 +5515,116 @@
       "diouf": {
         "club": "West Ham United",
         "caps": 20,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "sarr": {
         "club": "Crystal Palace",
         "caps": 83,
-        "goals": 19
+        "goals": 19,
+        "captain": false
       },
       "koulibaly": {
         "club": "Al-Hilal",
         "caps": 103,
-        "goals": 2
+        "goals": 2,
+        "captain": true
       },
       "seck": {
         "club": "Maccabi Haifa",
         "caps": 22,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "gueye": {
         "club": "Villarreal",
         "caps": 41,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "ciss": {
         "club": "Rayo Vallecano",
         "caps": 30,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "diao": {
         "club": "Como",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "camara": {
         "club": "Monaco",
         "caps": 33,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "dieng": {
         "club": "Lorient",
         "caps": 23,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "mané": {
         "club": "Al-Nassr",
         "caps": 128,
-        "goals": 55
+        "goals": 55,
+        "captain": false
       },
       "jackson": {
         "club": "Bayern Munich",
         "caps": 33,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "ndiaye": {
         "club": "Bayern Munich",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "jakobs": {
         "club": "Galatasaray",
         "caps": 30,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "diatta": {
         "club": "Monaco",
         "caps": 61,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "mendy": {
         "club": "Nice",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "niakhaté": {
         "club": "Lyon",
         "caps": 31,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mbaye": {
         "club": "Paris Saint-Germain",
         "caps": 11,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "diarra": {
         "club": "Sunderland",
         "caps": 21,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "diaw": {
         "club": "Le Havre",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -4730,132 +5634,158 @@
       "mastil": {
         "club": "Stade Nyonnais",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mandi": {
         "club": "Lille",
         "caps": 120,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "abada": {
         "club": "USM Alger",
         "caps": 9,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "tougai": {
         "club": "Espérance de Tunis",
         "caps": 31,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "belaïd": {
         "club": "JS Kabylie",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "zerrouki": {
         "club": "Twente",
         "caps": 54,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "mahrez": {
         "club": "Al-Ahli",
         "caps": 117,
-        "goals": 38
+        "goals": 38,
+        "captain": true
       },
       "aouar": {
         "club": "Al-Ittihad",
         "caps": 23,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "gouiri": {
         "club": "Marseille",
         "caps": 24,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "chaïbi": {
         "club": "Eintracht Frankfurt",
         "caps": 32,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "moussa": {
         "club": "Feyenoord",
         "caps": 16,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "benbouali": {
         "club": "Győri ETO",
         "caps": 5,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "hadjam": {
         "club": "Young Boys",
         "caps": 19,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "boudaoui": {
         "club": "Nice",
         "caps": 35,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "aït-nouri": {
         "club": "Manchester City",
         "caps": 31,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "benbot": {
         "club": "USM Alger",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "belghali": {
         "club": "Hellas Verona",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "amoura": {
         "club": "VfL Wolfsburg",
         "caps": 48,
-        "goals": 19
+        "goals": 19,
+        "captain": false
       },
       "bentaleb": {
         "club": "Lille",
         "caps": 62,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "boulbina": {
         "club": "Al-Duhail",
         "caps": 11,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "bensebaini": {
         "club": "Borussia Dortmund",
         "caps": 82,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "maza": {
         "club": "Bayer Leverkusen",
         "caps": 18,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "zidane": {
         "club": "Granada",
         "caps": 7,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "titraoui": {
         "club": "Charleroi",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ghedjemis": {
         "club": "Frosinone",
         "caps": 1,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "chergui": {
         "club": "Paris FC",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -4865,122 +5795,146 @@
       "musso": {
         "club": "Atlético Madrid",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "senesi": {
         "club": "Bournemouth",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "tagliafico": {
         "club": "Lyon",
         "caps": 76,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "montiel": {
         "club": "River Plate",
         "caps": 39,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "paredes": {
         "club": "Boca Juniors",
         "caps": 77,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "martínez": {
         "club": "Aston Villa",
         "caps": 59,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "paul": {
         "club": "Inter Miami CF",
         "caps": 87,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "barco": {
         "club": "Strasbourg",
         "caps": 4,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "alvarez": {
         "club": "Atlético Madrid",
         "caps": 51,
-        "goals": 14
+        "goals": 14,
+        "captain": false
       },
       "messi": {
         "club": "Inter Miami CF",
         "caps": 199,
-        "goals": 117
+        "goals": 117,
+        "captain": true
       },
       "celso": {
         "club": "Real Betis",
         "caps": 67,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "rulli": {
         "club": "Marseille",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "romero": {
         "club": "Tottenham Hotspur",
         "caps": 51,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "palacios": {
         "club": "Bayer Leverkusen",
         "caps": 40,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gonzález": {
         "club": "Atlético Madrid",
         "caps": 51,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "almada": {
         "club": "Atlético Madrid",
         "caps": 16,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "simeone": {
         "club": "Atlético Madrid",
         "caps": 13,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "paz": {
         "club": "Como",
         "caps": 9,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "otamendi": {
         "club": "Benfica",
         "caps": 132,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "allister": {
         "club": "Liverpool",
         "caps": 46,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "lópez": {
         "club": "Palmeiras",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "fernández": {
         "club": "Chelsea",
         "caps": 42,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "medina": {
         "club": "Marseille",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "molina": {
         "club": "Atlético Madrid",
         "caps": 58,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": [
@@ -4992,127 +5946,152 @@
       "schlager": {
         "club": "RB Leipzig",
         "caps": 51,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "affengruber": {
         "club": "Elche",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "danso": {
         "club": "Tottenham Hotspur",
         "caps": 32,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "posch": {
         "club": "Mainz 05",
         "caps": 52,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "seiwald": {
         "club": "RB Leipzig",
         "caps": 47,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "arnautović": {
         "club": "Red Star Belgrade",
         "caps": 133,
-        "goals": 47
+        "goals": 47,
+        "captain": false
       },
       "alaba": {
         "club": "Real Madrid",
         "caps": 113,
-        "goals": 15
+        "goals": 15,
+        "captain": true
       },
       "sabitzer": {
         "club": "Borussia Dortmund",
         "caps": 98,
-        "goals": 26
+        "goals": 26,
+        "captain": false
       },
       "grillitsch": {
         "club": "Braga",
         "caps": 58,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "gregoritsch": {
         "club": "FC Augsburg",
         "caps": 75,
-        "goals": 24
+        "goals": 24,
+        "captain": false
       },
       "wiegele": {
         "club": "Viktoria Plzeň",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "pentz": {
         "club": "Brøndby",
         "caps": 18,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kalajdžić": {
         "club": "LASK",
         "caps": 22,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "lienhart": {
         "club": "SC Freiburg",
         "caps": 41,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "mwene": {
         "club": "Mainz 05",
         "caps": 30,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "chukwuemeka": {
         "club": "Borussia Dortmund",
         "caps": 3,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "schmid": {
         "club": "Werder Bremen",
         "caps": 34,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "ljubičić": {
         "club": "Schalke 04",
         "caps": 9,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "laimer": {
         "club": "Bayern Munich",
         "caps": 57,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "wimmer": {
         "club": "VfL Wolfsburg",
         "caps": 30,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "prass": {
         "club": "TSG Hoffenheim",
         "caps": 19,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "friedl": {
         "club": "Werder Bremen",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "wanner": {
         "club": "PSV Eindhoven",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "svoboda": {
         "club": "Venezia",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "schöpf": {
         "club": "Wolfsberger AC",
         "caps": 35,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       }
     },
     "notes": [
@@ -5124,122 +6103,146 @@
       "abulaila": {
         "club": "Al-Hussein",
         "caps": 76,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hashish": {
         "club": "Al-Karma",
         "caps": 56,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "nasib": {
         "club": "Al-Zawraa",
         "caps": 65,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "dahab": {
         "club": "Al-Faisaly",
         "caps": 18,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-arab": {
         "club": "FC Seoul",
         "caps": 80,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "jamous": {
         "club": "Al-Zawraa",
         "caps": 19,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "zrayq": {
         "club": "Raja Casablanca",
         "caps": 41,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "al-rawabdeh": {
         "club": "Selangor",
         "caps": 68,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "olwan": {
         "club": "Al-Sailiya",
         "caps": 66,
-        "goals": 29
+        "goals": 29,
+        "captain": false
       },
       "al-taamari": {
         "club": "Rennes",
         "caps": 92,
-        "goals": 24
+        "goals": 24,
+        "captain": false
       },
       "al-fakhouri": {
         "club": "Al-Wehdat",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "attiah": {
         "club": "Al-Faisaly",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-mardi": {
         "club": "Al-Hussein",
         "caps": 89,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "ayed": {
         "club": "Al-Hussein",
         "caps": 72,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sadeh": {
         "club": "Al-Karma",
         "caps": 57,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "abualnadi": {
         "club": "Selangor",
         "caps": 18,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "obaid": {
         "club": "Al-Hussein",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "taha": {
         "club": "Al-Quwa Al-Jawiya",
         "caps": 29,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "al-rosan": {
         "club": "Al-Hussein",
         "caps": 21,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "al-rashdan": {
         "club": "Qatar SC",
         "caps": 47,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "haddad": {
         "club": "Al-Hussein",
         "caps": 92,
-        "goals": 2
+        "goals": 2,
+        "captain": true
       },
       "azaizeh": {
         "club": "Al-Shabab",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "al-dawoud": {
         "club": "Al-Wehdat",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "badawi": {
         "club": "Al-Faisaly",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -5251,127 +6254,152 @@
       "ospina": {
         "club": "Atlético Nacional",
         "caps": 130,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "muñoz": {
         "club": "Crystal Palace",
         "caps": 46,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "lucumí": {
         "club": "Bologna",
         "caps": 37,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "arias": {
         "club": "Palmeiras",
         "caps": 38,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "castaño": {
         "club": "River Plate",
         "caps": 25,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ríos": {
         "club": "Benfica",
         "caps": 32,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "díaz": {
         "club": "Bayern Munich",
         "caps": 74,
-        "goals": 22
+        "goals": 22,
+        "captain": false
       },
       "carrascal": {
         "club": "Flamengo",
         "caps": 24,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "córdoba": {
         "club": "Krasnodar",
         "caps": 21,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "rodríguez": {
         "club": "Minnesota United FC",
         "caps": 126,
-        "goals": 31
+        "goals": 31,
+        "captain": true
       },
       "vargas": {
         "club": "Atlas",
         "caps": 42,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mina": {
         "club": "Cagliari",
         "caps": 54,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "puerta": {
         "club": "Racing Santander",
         "caps": 6,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "portilla": {
         "club": "Athletico Paranaense",
         "caps": 10,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "lerma": {
         "club": "Crystal Palace",
         "caps": 65,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "mojica": {
         "club": "Mallorca",
         "caps": 45,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "ditta": {
         "club": "Cruz Azul",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "hernández": {
         "club": "Real Betis",
         "caps": 9,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "quintero": {
         "club": "River Plate",
         "caps": 49,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "campaz": {
         "club": "Rosario Central",
         "caps": 10,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "machado": {
         "club": "Nantes",
         "caps": 15,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sánchez": {
         "club": "Galatasaray",
         "caps": 79,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "montero": {
         "club": "Vélez Sarsfield",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "suárez": {
         "club": "Sporting CP",
         "caps": 12,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "gómez": {
         "club": "Vasco da Gama",
         "caps": 8,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       }
     },
     "notes": []
@@ -5381,127 +6409,152 @@
       "mpasi": {
         "club": "Le Havre",
         "caps": 29,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "wan-bissaka": {
         "club": "West Ham United",
         "caps": 12,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kapuadi": {
         "club": "Widzew Łódź",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "tuanzebe": {
         "club": "Burnley",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "batubinsika": {
         "club": "AEL",
         "caps": 14,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "mukau": {
         "club": "Lille",
         "caps": 14,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mbuku": {
         "club": "Montpellier",
         "caps": 19,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "moutoussamy": {
         "club": "Atromitos",
         "caps": 58,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "cipenga": {
         "club": "Castellón",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bongonda": {
         "club": "Spartak Moscow",
         "caps": 38,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "kakuta": {
         "club": "AEL",
         "caps": 31,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "kayembe": {
         "club": "Watford",
         "caps": 43,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "elia": {
         "club": "Alanyaspor",
         "caps": 69,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "sadiki": {
         "club": "Sunderland",
         "caps": 20,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "tshibola": {
         "club": "Kilmarnock",
         "caps": 17,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "fayulu": {
         "club": "Noah",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "bakambu": {
         "club": "Real Betis",
         "caps": 70,
-        "goals": 21
+        "goals": 21,
+        "captain": false
       },
       "pickel": {
         "club": "Espanyol",
         "caps": 34,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "mayele": {
         "club": "Pyramids",
         "caps": 37,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "wissa": {
         "club": "Newcastle United",
         "caps": 38,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "epolo": {
         "club": "Standard Liège",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mbemba": {
         "club": "Lille",
         "caps": 109,
-        "goals": 7
+        "goals": 7,
+        "captain": true
       },
       "banza": {
         "club": "Al Jazira",
         "caps": 15,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "kalulu": {
         "club": "Aris Limassol",
         "caps": 28,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "masuaku": {
         "club": "Lens",
         "caps": 45,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       }
     },
     "notes": [
@@ -5513,117 +6566,140 @@
       "costa": {
         "club": "Mallorca",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "semedo": {
         "club": "Fenerbahçe",
         "caps": 50,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "dias": {
         "club": "Manchester City",
         "caps": 76,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "araújo": {
         "club": "Benfica",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "dalot": {
         "club": "Manchester United",
         "caps": 35,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "nunes": {
         "club": "Manchester City",
         "caps": 20,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "ronaldo": {
         "club": "Al-Nassr",
         "caps": 228,
-        "goals": 143
+        "goals": 143,
+        "captain": true
       },
       "fernandes": {
         "club": "Manchester United",
         "caps": 89,
-        "goals": 29
+        "goals": 29,
+        "captain": false
       },
       "ramos": {
         "club": "Paris Saint-Germain",
         "caps": 25,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "silva": {
         "club": "Sporting CP",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "félix": {
         "club": "Al-Nassr",
         "caps": 54,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "sá": {
         "club": "Wolverhampton Wanderers",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "veiga": {
         "club": "Villarreal",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "inácio": {
         "club": "Sporting CP",
         "caps": 22,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "neves": {
         "club": "Al-Hilal",
         "caps": 67,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "trincão": {
         "club": "Sporting CP",
         "caps": 18,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "leão": {
         "club": "Milan",
         "caps": 44,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "neto": {
         "club": "Chelsea",
         "caps": 25,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "guedes": {
         "club": "Real Sociedad",
         "caps": 34,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "cancelo": {
         "club": "Barcelona",
         "caps": 68,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "vitinha": {
         "club": "Paris Saint-Germain",
         "caps": 38,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mendes": {
         "club": "Paris Saint-Germain",
         "caps": 44,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "conceição": {
         "club": "Juventus",
         "caps": 17,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       }
     },
     "notes": []
@@ -5633,132 +6709,158 @@
       "yusupov": {
         "club": "Navbahor Namangan",
         "caps": 40,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "khusanov": {
         "club": "Manchester City",
         "caps": 27,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "alijonov": {
         "club": "Pakhtakor",
         "caps": 40,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "sayfiev": {
         "club": "Neftchi Fergana",
         "caps": 46,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "ashurmatov": {
         "club": "Esteghlal",
         "caps": 49,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "mozgovoy": {
         "club": "Pakhtakor",
         "caps": 25,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "shukurov": {
         "club": "Baniyas",
         "caps": 84,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "iskanderov": {
         "club": "Neftchi Fergana",
         "caps": 38,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "hamrobekov": {
         "club": "Tractor",
         "caps": 72,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "masharipov": {
         "club": "Esteghlal",
         "caps": 74,
-        "goals": 12
+        "goals": 12,
+        "captain": false
       },
       "urunov": {
         "club": "Persepolis",
         "caps": 42,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "nematov": {
         "club": "Nasaf",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "nasrullaev": {
         "club": "Nasaf",
         "caps": 31,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "shomurodov": {
         "club": "İstanbul Başakşehir",
         "caps": 92,
-        "goals": 44
+        "goals": 44,
+        "captain": true
       },
       "eshmurodov": {
         "club": "Nasaf",
         "caps": 29,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ergashev": {
         "club": "Neftchi Fergana",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "khamdamov": {
         "club": "Pakhtakor",
         "caps": 34,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "abdullaev": {
         "club": "Dibba",
         "caps": 17,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ganiev": {
         "club": "Al Bataeh",
         "caps": 19,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "amonov": {
         "club": "Dinamo Samarqand",
         "caps": 12,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "sergeev": {
         "club": "Persepolis",
         "caps": 83,
-        "goals": 25
+        "goals": 25,
+        "captain": false
       },
       "fayzullaev": {
         "club": "İstanbul Başakşehir",
         "caps": 32,
-        "goals": 8
+        "goals": 8,
+        "captain": false
       },
       "esanov": {
         "club": "Bukhara",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "karimov": {
         "club": "Surkhon Termiz",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ulmasaliev": {
         "club": "AGMK",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "urozov": {
         "club": "Dinamo Samarqand",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -5770,122 +6872,146 @@
       "livaković": {
         "club": "Dinamo Zagreb",
         "caps": 75,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "stanišić": {
         "club": "Bayern Munich",
         "caps": 31,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "pongračić": {
         "club": "Fiorentina",
         "caps": 20,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "gvardiol": {
         "club": "Manchester City",
         "caps": 48,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "ćaleta-car": {
         "club": "Real Sociedad",
         "caps": 38,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "šutalo": {
         "club": "Ajax",
         "caps": 33,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "moro": {
         "club": "Bologna",
         "caps": 10,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kovačić": {
         "club": "Manchester City",
         "caps": 113,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "kramarić": {
         "club": "TSG Hoffenheim",
         "caps": 116,
-        "goals": 36
+        "goals": 36,
+        "captain": false
       },
       "modrić": {
         "club": "Milan",
         "caps": 198,
-        "goals": 29
+        "goals": 29,
+        "captain": true
       },
       "budimir": {
         "club": "Osasuna",
         "caps": 38,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "pandur": {
         "club": "Hull City",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "vlašić": {
         "club": "Torino",
         "caps": 63,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "perišić": {
         "club": "PSV Eindhoven",
         "caps": 154,
-        "goals": 38
+        "goals": 38,
+        "captain": false
       },
       "pašalić": {
         "club": "Orlando City SC",
         "caps": 15,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "baturina": {
         "club": "Como",
         "caps": 19,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "sučić": {
         "club": "Real Sociedad",
         "caps": 21,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "jakić": {
         "club": "FC Augsburg",
         "caps": 17,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "fruk": {
         "club": "Rijeka",
         "caps": 7,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "matanović": {
         "club": "SC Freiburg",
         "caps": 9,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "vušković": {
         "club": "Hamburger SV",
         "caps": 5,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "kotarski": {
         "club": "Copenhagen",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "erlić": {
         "club": "Midtjylland",
         "caps": 13,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "musa": {
         "club": "FC Dallas",
         "caps": 11,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       }
     },
     "notes": []
@@ -5895,127 +7021,152 @@
       "pickford": {
         "club": "Everton",
         "caps": 84,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "konsa": {
         "club": "Aston Villa",
         "caps": 20,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "o'reilly": {
         "club": "Manchester City",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "rice": {
         "club": "Arsenal",
         "caps": 73,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "stones": {
         "club": "Manchester City",
         "caps": 89,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "guéhi": {
         "club": "Manchester City",
         "caps": 29,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "saka": {
         "club": "Arsenal",
         "caps": 49,
-        "goals": 14
+        "goals": 14,
+        "captain": false
       },
       "anderson": {
         "club": "Nottingham Forest",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "kane": {
         "club": "Bayern Munich",
         "caps": 114,
-        "goals": 79
+        "goals": 79,
+        "captain": true
       },
       "bellingham": {
         "club": "Real Madrid",
         "caps": 48,
-        "goals": 6
+        "goals": 6,
+        "captain": false
       },
       "rashford": {
         "club": "Barcelona",
         "caps": 72,
-        "goals": 18
+        "goals": 18,
+        "captain": false
       },
       "livramento": {
         "club": "Newcastle United",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "henderson": {
         "club": "Brentford",
         "caps": 90,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "burn": {
         "club": "Newcastle United",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mainoo": {
         "club": "Manchester United",
         "caps": 14,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "rogers": {
         "club": "Aston Villa",
         "caps": 15,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "gordon": {
         "club": "Newcastle United",
         "caps": 19,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "watkins": {
         "club": "Aston Villa",
         "caps": 22,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "madueke": {
         "club": "Arsenal",
         "caps": 11,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "eze": {
         "club": "Arsenal",
         "caps": 17,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "toney": {
         "club": "Al-Ahli",
         "caps": 8,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "trafford": {
         "club": "Manchester City",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "james": {
         "club": "Chelsea",
         "caps": 24,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "spence": {
         "club": "Tottenham Hotspur",
         "caps": 6,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "quansah": {
         "club": "Bayer Leverkusen",
         "caps": 3,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
@@ -6025,132 +7176,158 @@
       "ati-zigi": {
         "club": "St. Gallen",
         "caps": 29,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "seidu": {
         "club": "Rennes",
         "caps": 24,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "yirenkyi": {
         "club": "Nordsjælland",
         "caps": 11,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "adjetey": {
         "club": "VfL Wolfsburg",
         "caps": 10,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "partey": {
         "club": "Villarreal",
         "caps": 57,
-        "goals": 15
+        "goals": 15,
+        "captain": false
       },
       "mumin": {
         "club": "Rayo Vallecano",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "fatawu": {
         "club": "Leicester City",
         "caps": 28,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "sibo": {
         "club": "Oviedo",
         "caps": 8,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ayew": {
         "club": "Leicester City",
         "caps": 120,
-        "goals": 34
+        "goals": 34,
+        "captain": true
       },
       "thomas-asante": {
         "club": "Coventry City",
         "caps": 8,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "semenyo": {
         "club": "Manchester City",
         "caps": 34,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "anang": {
         "club": "St Patrick's Athletic",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "baah": {
         "club": "Al-Qadsiah",
         "caps": 9,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "mensah": {
         "club": "Auxerre",
         "caps": 40,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "owusu": {
         "club": "Auxerre",
         "caps": 20,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "asare": {
         "club": "Hearts of Oak",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "baba": {
         "club": "PAOK",
         "caps": 51,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "opoku": {
         "club": "İstanbul Başakşehir",
         "caps": 11,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "williams": {
         "club": "Athletic Bilbao",
         "caps": 26,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "boakye": {
         "club": "Saint-Étienne",
         "caps": 0,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "oppong": {
         "club": "Nice",
         "caps": 4,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "sulemana": {
         "club": "Atalanta",
         "caps": 28,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "luckassen": {
         "club": "Pafos",
         "caps": 1,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "nuamah": {
         "club": "Lyon",
         "caps": 18,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "adu": {
         "club": "Viktoria Plzeň",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "senaya": {
         "club": "Auxerre",
         "caps": 2,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": [
@@ -6162,127 +7339,152 @@
       "mejía": {
         "club": "Nacional",
         "caps": 56,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "blackman": {
         "club": "Slovan Bratislava",
         "caps": 40,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "córdoba": {
         "club": "Norwich City",
         "caps": 32,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "escobar": {
         "club": "Saprissa",
         "caps": 99,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "fariña": {
         "club": "Pari Nizhny Novgorod",
         "caps": 18,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "martínez": {
         "club": "Ironi Kiryat Shmona",
         "caps": 66,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "rodríguez": {
         "club": "Saprissa",
         "caps": 13,
-        "goals": 4
+        "goals": 4,
+        "captain": false
       },
       "carrasquilla": {
         "club": "Pumas UNAM",
         "caps": 73,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "díaz": {
         "club": "León",
         "caps": 57,
-        "goals": 17
+        "goals": 17,
+        "captain": false
       },
       "bárcenas": {
         "club": "Mazatlán",
         "caps": 104,
-        "goals": 10
+        "goals": 10,
+        "captain": false
       },
       "samudio": {
         "club": "Marathón",
         "caps": 5,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "ramos": {
         "club": "Puerto Cabello",
         "caps": 23,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "harvey": {
         "club": "Minnesota United FC",
         "caps": 28,
-        "goals": 3
+        "goals": 3,
+        "captain": false
       },
       "davis": {
         "club": "Plaza Amador",
         "caps": 107,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "andrade": {
         "club": "LASK",
         "caps": 50,
-        "goals": 1
+        "goals": 1,
+        "captain": false
       },
       "fajardo": {
         "club": "Universidad Católica",
         "caps": 68,
-        "goals": 17
+        "goals": 17,
+        "captain": false
       },
       "waterman": {
         "club": "Universidad de Concepción",
         "caps": 55,
-        "goals": 15
+        "goals": 15,
+        "captain": false
       },
       "quintero": {
         "club": "Plaza Amador",
         "caps": 141,
-        "goals": 7
+        "goals": 7,
+        "captain": false
       },
       "godoy": {
         "club": "San Diego FC",
         "caps": 159,
-        "goals": 4
+        "goals": 4,
+        "captain": true
       },
       "yanis": {
         "club": "Cobresal",
         "caps": 56,
-        "goals": 5
+        "goals": 5,
+        "captain": false
       },
       "mosquera": {
         "club": "Al-Fayha",
         "caps": 48,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "murillo": {
         "club": "Beşiktaş",
         "caps": 94,
-        "goals": 9
+        "goals": 9,
+        "captain": false
       },
       "londoño": {
         "club": "Universidad Católica",
         "caps": 11,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       },
       "miller": {
         "club": "Turan Tovuz",
         "caps": 50,
-        "goals": 2
+        "goals": 2,
+        "captain": false
       },
       "gutiérrez": {
         "club": "Deportivo La Guaira",
         "caps": 18,
-        "goals": 0
+        "goals": 0,
+        "captain": false
       }
     },
     "notes": []
