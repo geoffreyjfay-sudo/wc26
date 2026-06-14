@@ -250,7 +250,19 @@ def build_scores(matches: list) -> dict:
 
         fixture_id = FIXTURE_LOOKUP.get((home, away))
         if fixture_id:
-            scores[fixture_id] = {"home": str(home_goals), "away": str(away_goals)}
+            ht = score_data.get("halfTime", {})
+            ht_home = ht.get("home")
+            ht_away = ht.get("away")
+            entry = {
+                "home": str(home_goals),
+                "away": str(away_goals),
+                "status": status,
+                "winner": score_data.get("winner"),
+            }
+            if ht_home is not None and ht_away is not None:
+                entry["ht_home"] = str(ht_home)
+                entry["ht_away"] = str(ht_away)
+            scores[fixture_id] = entry
         else:
             unmatched.append(f"{home_raw} ({home}) vs {away_raw} ({away})")
 

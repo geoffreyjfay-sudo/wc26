@@ -420,6 +420,16 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
 }
 .preview-btn:hover { background: rgba(77,207,106,0.25); }
 
+/* ── CALENDAR SCORE ── */
+.cal-score { display:flex; align-items:center; padding:2px 0 2px 28px; font-family:'Bebas Neue',sans-serif; font-size:1.1rem; letter-spacing:0.05em; }
+.cal-score-num { min-width:16px; text-align:center; }
+.cal-score-num.won { color:var(--green-lt); }
+.cal-score-num.drew { color:var(--gold-lt); }
+.cal-score-num.lost { color:var(--muted); }
+.cal-ht { font-family:'Inter',sans-serif; font-size:0.62rem; color:var(--muted); letter-spacing:0; font-weight:normal; margin-left:8px; align-self:center; }
+.live-badge { display:block; font-size:0.6rem; font-family:'Inter',sans-serif; letter-spacing:0.06em; font-weight:700; color:var(--green-lt); animation:livepulse 1.4s ease-in-out infinite; margin-top:2px; }
+@keyframes livepulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
 </style>
 </head>
 <body>
@@ -798,15 +808,29 @@ function render() {
       const timeDisplay = m.time.replace('+','');
       const isNextDay = m.time.includes('+');
 
+      // Score display from AUTO_SCORES / results
+      const sc = (typeof results !== 'undefined' ? results : {})[m.id];
+      const hasScore = sc && sc.home !== '' && sc.away !== '';
+      const isLive = sc && (sc.status === 'IN_PLAY' || sc.status === 'PAUSED');
+      let hClass = 'drew', aClass = 'drew';
+      if (sc && sc.winner === 'HOME_TEAM') { hClass = 'won'; aClass = 'lost'; }
+      else if (sc && sc.winner === 'AWAY_TEAM') { hClass = 'lost'; aClass = 'won'; }
+      const htStr = (hasScore && sc.ht_home !== undefined)
+        ? `<span class="cal-ht">HT ${sc.ht_home}–${sc.ht_away}</span>` : '';
+      const vsOrScore = hasScore
+        ? `<div class="cal-score"><span class="cal-score-num ${hClass}">${sc.home}</span><span style="color:var(--muted);margin:0 4px">–</span><span class="cal-score-num ${aClass}">${sc.away}</span>${htStr}</div>`
+        : `<div style="font-size:0.7rem;color:var(--muted);padding:1px 0 1px 28px">vs</div>`;
+      const liveTag = isLive ? `<span class="live-badge">● LIVE</span>` : '';
+
       html += `<div class="match-card ${isFam?'family':''}">
-        <div class="match-time">${timeDisplay}<span class="tz">IST</span></div>
+        <div class="match-time">${timeDisplay}<span class="tz">IST</span>${liveTag}</div>
         <div class="match-teams">
           <div class="teams-row">
             <span class="flag">${getTeamFlag(m.home)}</span>
             <span class="team-name" style="${homeInfo.length?'color:var(--gold-lt);font-weight:600':''}">${m.home}</span>
             ${homeInfo.length ? `<span class="inline-owner">${homeInfo.map(p=>p.person).join(', ')}</span>` : ''}
           </div>
-          <div style="font-size:0.7rem;color:var(--muted);padding:1px 0 1px 28px">vs</div>
+          ${vsOrScore}
           <div class="teams-row">
             <span class="flag">${getTeamFlag(m.away)}</span>
             <span class="team-name" style="${awayInfo.length?'color:var(--gold-lt);font-weight:600':''}">${m.away}</span>
@@ -1990,8 +2014,6 @@ Leopards vs Wolves in Atlanta. Somebody's fairytale gets a next chapter. 🌍�
 const PREVIEW_BY_ID = {};
 for (const p of PREVIEWS) PREVIEW_BY_ID[p.id] = p;
 
-render();
-
 // ── STANDINGS ──
 
 
@@ -2122,35 +2144,67 @@ function loadData() {
 const AUTO_SCORES = {
   "A1": {
     "home": "2",
-    "away": "0"
+    "away": "0",
+    "status": "FINISHED",
+    "winner": "HOME_TEAM",
+    "ht_home": "1",
+    "ht_away": "0"
   },
   "A2": {
     "home": "2",
-    "away": "1"
+    "away": "1",
+    "status": "FINISHED",
+    "winner": "HOME_TEAM",
+    "ht_home": "0",
+    "ht_away": "0"
   },
   "B1": {
     "home": "1",
-    "away": "1"
+    "away": "1",
+    "status": "FINISHED",
+    "winner": "DRAW",
+    "ht_home": "0",
+    "ht_away": "1"
   },
   "D1": {
     "home": "4",
-    "away": "1"
+    "away": "1",
+    "status": "FINISHED",
+    "winner": "HOME_TEAM",
+    "ht_home": "3",
+    "ht_away": "0"
   },
   "B2": {
     "home": "1",
-    "away": "1"
+    "away": "1",
+    "status": "FINISHED",
+    "winner": "DRAW",
+    "ht_home": "0",
+    "ht_away": "1"
   },
   "C1": {
     "home": "1",
-    "away": "1"
+    "away": "1",
+    "status": "FINISHED",
+    "winner": "DRAW",
+    "ht_home": "1",
+    "ht_away": "1"
   },
   "C2": {
     "home": "0",
-    "away": "1"
+    "away": "1",
+    "status": "FINISHED",
+    "winner": "AWAY_TEAM",
+    "ht_home": "0",
+    "ht_away": "1"
   },
   "D2": {
     "home": "2",
-    "away": "0"
+    "away": "0",
+    "status": "FINISHED",
+    "winner": "HOME_TEAM",
+    "ht_home": "1",
+    "ht_away": "0"
   }
 };
 // AUTO_SCORES_END
@@ -2432,6 +2486,7 @@ function closePreview() {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePreview(); });
 
 // ── INIT ─────────────────────────────────────────────────────
+render();
 renderLeaderboard();
 renderFixtures();
 renderGroupTables();
