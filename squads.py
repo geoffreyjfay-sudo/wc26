@@ -205,8 +205,10 @@ def squad_html(team, players):
             num = pl.get("number") or "—"
             name = pl.get("name", "Unknown")
             age = pl.get("age", "")
+            photo = pl.get("photo", "")
             age_str = f'<span class="pl-age">{age}</span>' if age else ""
-            html += f'<div class="player-row"><span class="pl-num">{num}</span><span class="pl-name">{name}</span>{age_str}</div>'
+            photo_str = f'<img class="pl-photo" src="{photo}" alt="" loading="lazy" onerror="this.style.display=\'none\'">' if photo else '<span class="pl-photo-empty"></span>'
+            html += f'<div class="player-row">{photo_str}<span class="pl-num">{num}</span><span class="pl-name">{name}</span>{age_str}</div>'
         html += "</div>"
     return html
 
@@ -379,11 +381,20 @@ main {{ max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }}
   padding-bottom: 3px; border-bottom: 1px solid rgba(255,255,255,0.05);
 }}
 .player-row {{
-  display: flex; align-items: baseline; gap: 8px;
-  padding: 3px 0; font-size: 0.8rem;
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 0; font-size: 0.8rem;
   border-bottom: 1px solid rgba(255,255,255,0.03);
 }}
 .player-row:last-child {{ border-bottom: none; }}
+.pl-photo {{
+  width: 32px; height: 32px; border-radius: 50%; object-fit: cover;
+  flex-shrink: 0; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+}}
+.pl-photo-empty {{
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+}}
 .pl-num {{
   font-family: 'Bebas Neue', sans-serif;
   font-size: 0.85rem; color: var(--gold-lt);
