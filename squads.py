@@ -282,19 +282,32 @@ def fetch_wikipedia_clubs(wiki_cache_path: Path) -> dict:
                 full = (link.get_text(strip=True) if link else name_cell.get_text(strip=True))
                 surname = full.split()[-1] if full else ""
 
-            # Club — last <a> tag in column 6 (index 6)
+            def _int_cell(cell):
+                txt = re.sub(r"\[.*?\]", "", cell.get_text(strip=True))
+                try:
+                    return int(txt)
+                except ValueError:
+                    return None
+
+            # Caps (col 4), Goals (col 5), Club (col 6)
+            caps  = _int_cell(cells[4])
+            goals = _int_cell(cells[5])
             club_cell = cells[6]
             links = club_cell.find_all("a")
             club = links[-1].get_text(strip=True) if links else club_cell.get_text(strip=True)
             club = re.sub(r"\[.*?\]", "", club).strip()
 
-            if surname and club:
-                players[surname.lower()] = club
+            if surname:
+                players[surname.lower()] = {
+                    "club": club,
+                    "caps": caps,
+                    "goals": goals,
+                }
 
         result[country] = players
         seen.add(country)
 
-    print(f"  Got club data for {len(result)} teams from Wikipedia")
+    print(f"  Got player data for {len(result)} teams from Wikipedia")
     wiki_cache_path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     return result
 
@@ -305,48 +318,53 @@ def _norm(s: str) -> str:
 
 
 def enrich_with_clubs(cache: dict, wiki_clubs: dict) -> None:
-    """Add 'club' field to each player dict in cache using Wikipedia data."""
+    """Add club, caps, goals fields to each player dict using Wikipedia data."""
     if not wiki_clubs:
         return
     matched = total = 0
     for team, players in cache.items():
         if not players:
             continue
-        team_clubs = wiki_clubs.get(team, {})
-        # Build normalized lookup so diacritics don't block matches
-        norm_lookup = {_norm(k): v for k, v in team_clubs.items()}
+        team_data = wiki_clubs.get(team, {})
+        # Support both old format (surname→club string) and new (surname→{club,caps,goals})
+        def _entry(v):
+            if isinstance(v, dict):
+                return v
+            return {"club": v, "caps": None, "goals": None}
+        norm_lookup = {_norm(k): _entry(v) for k, v in team_data.items()}
 
         for p in players:
             total += 1
-            if p.get("club"):
-                matched += 1
-                continue
             name = p.get("name", "")
             parts = name.split()
-            # Strip leading initials like "C.", "L."
             non_init = [pt for pt in parts if not (len(pt) <= 2 and pt.endswith("."))]
             if not non_init:
-                p["club"] = ""
+                p.setdefault("club", "")
+                p.setdefault("caps", None)
+                p.setdefault("goals", None)
                 continue
 
-            # Try several surname strategies in order:
-            # 1. Last word (Western names: "C. Acevedo" → "Acevedo")
-            # 2. First word (East-Asian family-name-first: "Park Jin-Seop" → "Park")
-            # 3. Last two words (Arabic/compound: "Sultan Al Braik" → "Al Braik")
             candidates = [
                 _norm(non_init[-1]),
                 _norm(non_init[0]),
                 _norm(" ".join(non_init[-2:])) if len(non_init) >= 2 else "",
             ]
-            club = ""
+            entry = None
             for c in candidates:
                 if c and c in norm_lookup:
-                    club = norm_lookup[c]
+                    entry = norm_lookup[c]
                     break
-            p["club"] = club
-            if club:
+
+            if entry:
+                p["club"]  = entry.get("club", "")
+                p["caps"]  = entry.get("caps")
+                p["goals"] = entry.get("goals")
                 matched += 1
-    print(f"  Clubs matched: {matched}/{total} players")
+            else:
+                p.setdefault("club", "")
+                p.setdefault("caps", None)
+                p.setdefault("goals", None)
+    print(f"  Players enriched: {matched}/{total}")
 
 
 # ── HTML generation ───────────────────────────────────────────────────────────
@@ -364,12 +382,14 @@ def build_squad_data(squads):
             if pos not in by_pos:
                 pos = "Attacker"
             by_pos[pos].append({
-                "n": pl.get("number") or 0,
-                "name": pl.get("name", ""),
-                "age": pl.get("age", ""),
+                "n":     pl.get("number") or 0,
+                "name":  pl.get("name", ""),
+                "age":   pl.get("age", ""),
                 "photo": pl.get("photo", ""),
-                "pos": pos,
-                "club": pl.get("club", ""),
+                "pos":   pos,
+                "club":  pl.get("club", ""),
+                "caps":  pl.get("caps"),
+                "goals": pl.get("goals"),
             })
         for pos in POSITION_ORDER:
             by_pos[pos].sort(key=lambda p: p["n"] or 99)
@@ -614,6 +634,24 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 .pl-name {{ font-size: 0.85rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
 .pl-club {{ font-size: 0.72rem; color: var(--gold-lt); opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
 .pl-age {{ font-size: 0.68rem; color: var(--muted); }}
+.pl-stats {{
+  display: none; margin-top: 6px; padding: 8px 10px;
+  background: rgba(255,255,255,0.04); border-radius: 6px;
+  font-size: 0.78rem; color: var(--cream);
+  display: none; gap: 16px; flex-wrap: wrap;
+}}
+.pl-stat {{ display: flex; flex-direction: column; align-items: center; gap: 2px; }}
+.pl-stat-val {{ font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--gold-lt); line-height: 1; }}
+.pl-stat-lbl {{ font-size: 0.65rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }}
+.pl-photo-lg {{
+  width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--gold); display: block; margin: 0 auto 8px;
+  background: rgba(255,255,255,0.06);
+}}
+.player-row {{ cursor: pointer; transition: background 0.12s; border-radius: 6px; }}
+.player-row:hover {{ background: rgba(255,255,255,0.04); }}
+.player-row.open .pl-stats {{ display: flex; }}
+.player-row.open {{ background: rgba(212,160,23,0.07); }}
 </style>
 </head>
 <body>
@@ -697,13 +735,25 @@ function openSquad(team) {{
       const photo = p.photo
         ? `<img class="pl-photo" src="${{p.photo}}" alt="" loading="lazy" onerror="this.classList.add('pl-photo-empty');this.removeAttribute('src')">`
         : `<span class="pl-photo-empty"></span>`;
-      html += `<div class="player-row">
+      const hasStats = p.caps !== null && p.caps !== undefined;
+      const lgPhoto = p.photo
+        ? `<img class="pl-photo-lg" src="${{p.photo}}" alt="" loading="lazy" onerror="this.style.display='none'">`
+        : '';
+      const statsHtml = hasStats ? `
+        <div class="pl-stats">
+          ${{lgPhoto}}
+          <div class="pl-stat"><span class="pl-stat-val">${{p.caps}}</span><span class="pl-stat-lbl">Caps</span></div>
+          <div class="pl-stat"><span class="pl-stat-val">${{p.goals ?? 0}}</span><span class="pl-stat-lbl">Goals</span></div>
+          ${{p.age ? `<div class="pl-stat"><span class="pl-stat-val">${{p.age}}</span><span class="pl-stat-lbl">Age</span></div>` : ''}}
+        </div>` : '';
+      html += `<div class="player-row" onclick="this.classList.toggle('open')">
         ${{photo}}
         <span class="pl-num">${{p.n || '—'}}</span>
-        <div class="pl-info">
+        <div class="pl-info" style="min-width:0;flex:1">
           <div class="pl-name">${{p.name}}</div>
           ${{p.club ? `<div class="pl-club">${{p.club}}</div>` : ''}}
-          ${{p.age ? `<div class="pl-age">Age ${{p.age}}</div>` : ''}}
+          ${{!hasStats && p.age ? `<div class="pl-age">Age ${{p.age}}</div>` : ''}}
+          ${{statsHtml}}
         </div>
       </div>`;
     }}
