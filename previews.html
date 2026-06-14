@@ -19,6 +19,15 @@ body { background:var(--dark); color:var(--cream); font-family:'Inter',sans-seri
 .topnav a { color:var(--muted); text-decoration:none; padding:5px 14px; border-radius:20px; border:1px solid transparent; transition:all 0.15s; font-family:'Bebas Neue',sans-serif; font-size:0.9rem; letter-spacing:0.07em; }
 .topnav a:hover { color:var(--cream); border-color:var(--border); }
 .topnav a.active { background:var(--gold); color:var(--dark); border-color:var(--gold); }
+.nav-links { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.hamburger { display:none; flex-direction:column; justify-content:center; gap:5px; background:none; border:1px solid var(--border); border-radius:6px; cursor:pointer; padding:7px 9px; margin-left:auto; }
+.hamburger span { display:block; width:20px; height:2px; background:var(--cream); border-radius:2px; transition:all 0.2s; }
+@media(max-width:640px) {
+  .hamburger { display:flex; }
+  .nav-links { display:none; width:100%; flex-direction:column; align-items:flex-start; gap:4px; padding:8px 0 4px; border-top:1px solid var(--border); }
+  .nav-links.open { display:flex; }
+  .nav-links a { padding:8px 14px; width:100%; }
+}
 header { background:linear-gradient(160deg,#0a2e0e,#0d1a0e); border-bottom:2px solid var(--gold); padding:32px 24px 24px; text-align:center; position:relative; overflow:hidden; }
 header::before { content:'📱'; position:absolute; font-size:200px; opacity:0.04; top:-20px; right:-20px; line-height:1; pointer-events:none; }
 header h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,6vw,3.8rem); letter-spacing:0.06em; background:linear-gradient(135deg,var(--gold-lt),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -48,12 +57,16 @@ main { max-width:680px; margin:0 auto; padding:28px 16px 60px; }
 </head>
 <body>
 <nav class="topnav">
-  <a href="index.html">📅 Calendar</a>
-  <a href="index.html#standings">🏆 Standings</a>
-  <a href="index.html#group-tables-section">📋 Groups</a>
-  <a href="index.html#results-entry-section">⚽ Results</a>
-  <a href="previews.html" class="active">💬 Previews</a>
-  <a href="squads.html">👕 Squads</a>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" onclick="navClick()">📅 Calendar</a>
+    <a href="index.html#standings" onclick="navClick()">🏆 Standings</a>
+    <a href="index.html#group-tables-section" onclick="navClick()">📋 Groups</a>
+    <a href="index.html#results-entry-section" onclick="navClick()">⚽ Results</a>
+    <a href="squads.html" onclick="navClick()">👕 Squads</a>
+  </div>
 </nav>
 <header>
   <h1>Match Previews</h1>
@@ -1301,6 +1314,9 @@ function escHtml(s) {
 
 buildFilters();
 render();
+
+function toggleNav() { document.getElementById('nav-links').classList.toggle('open'); }
+function navClick() { document.getElementById('nav-links').classList.remove('open'); }
 </script>
 </body>
 </html>

@@ -263,6 +263,7 @@ body {{ background: var(--dark); color: var(--cream); font-family: 'Inter', sans
   background: rgba(9,18,8,0.92); border-bottom: 1px solid var(--border);
   padding: 10px 24px; display: flex; gap: 12px; align-items: center;
   position: sticky; top: 0; z-index: 200; backdrop-filter: blur(8px);
+  flex-wrap: wrap;
 }}
 .topnav a {{
   color: var(--muted); text-decoration: none; padding: 5px 14px; border-radius: 20px;
@@ -271,6 +272,15 @@ body {{ background: var(--dark); color: var(--cream); font-family: 'Inter', sans
 }}
 .topnav a:hover {{ color: var(--cream); border-color: var(--border); }}
 .topnav a.active {{ background: var(--gold); color: var(--dark); border-color: var(--gold); }}
+.nav-links {{ display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }}
+.hamburger {{ display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; padding: 7px 9px; margin-left: auto; }}
+.hamburger span {{ display: block; width: 20px; height: 2px; background: var(--cream); border-radius: 2px; transition: all 0.2s; }}
+@media(max-width: 640px) {{
+  .hamburger {{ display: flex; }}
+  .nav-links {{ display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 4px; padding: 8px 0 4px; border-top: 1px solid var(--border); }}
+  .nav-links.open {{ display: flex; }}
+  .nav-links a {{ padding: 8px 14px; width: 100%; }}
+}}
 
 /* ── HEADER ── */
 header {{
@@ -437,12 +447,16 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 <body>
 
 <nav class="topnav">
-  <a href="index.html">📅 Calendar</a>
-  <a href="index.html#standings">🏆 Standings</a>
-  <a href="index.html#group-tables-section">📋 Groups</a>
-  <a href="index.html#results-entry-section">⚽ Results</a>
-  <a href="previews.html">💬 Previews</a>
-  <a href="squads.html" class="active">👕 Squads</a>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" onclick="navClick()">📅 Calendar</a>
+    <a href="index.html#standings" onclick="navClick()">🏆 Standings</a>
+    <a href="index.html#group-tables-section" onclick="navClick()">📋 Groups</a>
+    <a href="index.html#results-entry-section" onclick="navClick()">⚽ Results</a>
+    <a href="squads.html" class="active" onclick="navClick()">👕 Squads</a>
+  </div>
 </nav>
 
 <header>
@@ -539,6 +553,9 @@ function closeSquad() {{
 }}
 
 document.addEventListener('keydown', e => {{ if (e.key === 'Escape') closeSquad(); }});
+
+function toggleNav() {{ document.getElementById('nav-links').classList.toggle('open'); }}
+function navClick() {{ document.getElementById('nav-links').classList.remove('open'); }}
 </script>
 </body>
 </html>"""
