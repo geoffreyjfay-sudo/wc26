@@ -2267,10 +2267,18 @@ const AUTO_SCORES = {
   "G1": {
     "home": "1",
     "away": "1",
-    "status": "IN_PLAY",
+    "status": "FINISHED",
     "winner": "DRAW",
     "ht_home": "0",
     "ht_away": "1"
+  },
+  "H2": {
+    "home": "1",
+    "away": "0",
+    "status": "PAUSED",
+    "winner": "HOME_TEAM",
+    "ht_home": "1",
+    "ht_away": "0"
   }
 };
 // AUTO_SCORES_END
@@ -2622,6 +2630,17 @@ const AUTO_EVENTS = {
         "team": "Belgium",
         "pen": false,
         "og": true
+      }
+    ]
+  },
+  "H2": {
+    "goals": [
+      {
+        "min": "41'",
+        "player": "Abdulelah Al-Amri",
+        "team": "Saudi Arabia",
+        "pen": false,
+        "og": false
       }
     ]
   }
