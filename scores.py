@@ -10,6 +10,16 @@ Usage:
   python3 scores.py --api-key YOUR_FOOTBALL_DATA_KEY
   (get a free key at https://www.football-data.org/)
 
+
+
+cd /Users/geofffay/wc26                         
+pip3 install requests                                                         
+python3 scores.py --api-key ebfb2f93b2d84919a843ecf10ee2ee95
+
+
+
+
+ x-apisports-key: 52b666d2295c611526945b634938150f
 Site: https://geoffreyjfay-sudo.github.io/wc26/
 ===============================
 """
@@ -66,6 +76,8 @@ TEAM_NAME_MAP = {
     "Tunisia": "Tunisia",
     "Spain": "Spain",
     "Cape Verde": "Cape Verde",
+    "Cabo Verde": "Cape Verde",
+    "Cape Verde Islands": "Cape Verde",
     "Saudi Arabia": "Saudi Arabia",
     "Uruguay": "Uruguay",
     "Belgium": "Belgium",
@@ -190,6 +202,7 @@ ESPN_TEAM_MAP = {
     "Ivory Coast": "Ivory Coast",
     "Côte d'Ivoire": "Ivory Coast",
     "Cape Verde Islands": "Cape Verde",
+    "Cabo Verde": "Cape Verde",
     "IR Iran": "Iran",
     "Curacao": "Curaçao",
 }

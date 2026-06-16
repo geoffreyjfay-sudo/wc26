@@ -102,6 +102,57 @@ DRAW = {
     "Wes":       [("Netherlands", 1), ("Jordan", 2)],
 }
 
+NICKNAMES = {
+    "Mexico":       "El Tri, El Tricolor (The Tricolor)",
+    "South Africa": "Bafana Bafana",
+    "South Korea":  "Taegeuk Warriors, Tigers of Asia",
+    "Czechia":      "Nároďák (The National Team), Repre (The Representatives)",
+    "Canada":       "Les Rouges (The Reds), The Canucks",
+    "Bosnia & Hz.": "Zmajevi (The Dragons), Zlatni Ljiljani (Golden Lilies)",
+    "Qatar":        "The Maroons",
+    "Switzerland":  "Schweizer Nati (The National Team)",
+    "Brazil":       "Seleção (The Selection), Canarinho (Little Canary)",
+    "Morocco":      "The Atlas Lions",
+    "Haiti":        "Les Grenadiers (The Grenadiers), Le Rouge et Bleu (The Red and Blue)",
+    "Scotland":     "The Tartan Army",
+    "USA":          "The Stars and Stripes",
+    "Paraguay":     "La Albirroja (The White and Red)",
+    "Australia":    "Socceroos",
+    "Turkey":       "The Crescent-Stars",
+    "Germany":      "Die Mannschaft (The Team)",
+    "Curaçao":      "The Blue Wave",
+    "Ivory Coast":  "Les Éléphants (The Elephants)",
+    "Ecuador":      "La Tri, La Tricolor (The Tricolours)",
+    "Netherlands":  "Oranje (Orange)",
+    "Japan":        "Samurai Blue",
+    "Sweden":       "Blågult (The Blue-Yellow)",
+    "Tunisia":      "Eagles of Carthage",
+    "Belgium":      "De Rode Duivels (The Red Devils)",
+    "Egypt":        "The Pharaohs",
+    "Iran":         "Team Melli",
+    "New Zealand":  "All Whites",
+    "Spain":        "La Roja (The Red One)",
+    "Cape Verde":   "Tubarões Azuis (Blue Sharks), Crioulos (Creoles)",
+    "Saudi Arabia": "The Green Falcons",
+    "Uruguay":      "La Celeste (The Sky Blue)",
+    "France":       "Les Bleus (The Blues)",
+    "Senegal":      "Lions de la Téranga (The Lions of Teranga)",
+    "Iraq":         "Usood al-Rafidayn (Lions of Mesopotamia)",
+    "Norway":       "Røde, Hvite, Blå (Red, White and Blue)",
+    "Argentina":    "La Selección (The Selection), La Albiceleste (The White and Sky Blue)",
+    "Algeria":      "The Desert Warriors, The Greens, The Fennecs",
+    "Austria":      "Das Team (The Team), Burschen (The Boys), Unsere Burschen (Our Boys)",
+    "Jordan":       "Al-Nashama (The Chivalrous Ones or The Brave Ones)",
+    "Portugal":     "Seleção das Quinas (The Team of the Shields)",
+    "DR Congo":     "Léopards (Leopards)",
+    "Uzbekistan":   "White Wolves",
+    "Colombia":     "La Tricolor (The Tricolor), Los Cafeteros (The Coffee Growers)",
+    "England":      "Three Lions",
+    "Croatia":      "Vatreni (Blazers)",
+    "Ghana":        "Black Stars",
+    "Panama":       "Los Canaleros (The Canal Men)",
+}
+
 FLAGS = {
     "Argentina": "🇦🇷", "Spain": "🇪🇸", "France": "🇫🇷", "England": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "Portugal": "🇵🇹", "Brazil": "🇧🇷", "Morocco": "🇲🇦", "Netherlands": "🇳🇱",
@@ -610,10 +661,14 @@ def generate_html(squads, notes_by_team=None):
             tier = TEAM_TIER.get(team, 2)
             tc = tier_cls.get(tier, "t2")
             safe = team.replace('"', '\\"')
+            nick = NICKNAMES.get(team, "")
+            primary_nick = nick.split(",")[0].strip() if nick else ""
+            nick_html = f'<span class="tile-nickname">{primary_nick}</span>' if primary_nick else ''
             tiles += f"""
       <div class="team-tile" onclick="openSquad('{safe}')">
         <span class="tile-flag">{flag}</span>
         <span class="tile-name">{team}</span>
+        {nick_html}
         <span class="tile-owner {tc}">{owner}</span>
       </div>"""
 
@@ -902,6 +957,16 @@ main {{ max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }}
 .stat-bar {{ height: 6px; border-radius: 3px; background: var(--gold); }}
 .stat-trivia {{ font-size: 0.82rem; color: var(--muted); line-height: 1.6; }}
 .stat-trivia strong {{ color: var(--cream); }}
+
+/* Nicknames */
+.tile-nickname {{
+  font-size: 0.63rem; color: var(--muted); font-style: italic;
+  line-height: 1.2; text-align: center;
+}}
+.modal-nickname {{
+  font-size: 0.8rem; color: var(--gold-lt); opacity: 0.75;
+  font-style: italic; margin-top: 2px; margin-bottom: 4px;
+}}
 </style>
 </head>
 <body>
@@ -964,6 +1029,7 @@ const POS_ORDER = {json.dumps(POSITION_ORDER)};
 const TIER_LABEL = {json.dumps(TIER_LABEL)};
 const TIER_CLS = {{1:"t1",2:"t2",3:"t3"}};
 const POS_ABBR = {{Goalkeeper:"GK",Defender:"DF",Midfielder:"MF",Attacker:"FW"}};
+const NICKNAMES = {json.dumps(NICKNAMES, ensure_ascii=False)};
 
 function openSquad(team) {{
   const players = SQUADS[team] || [];
@@ -974,7 +1040,9 @@ function openSquad(team) {{
 
   document.getElementById('modalFlag').textContent = flag;
   document.getElementById('modalTeamName').textContent = team;
+  const nick = NICKNAMES[team] || '';
   document.getElementById('modalMeta').innerHTML =
+    `${{nick ? `<div class="modal-nickname">${{nick}}</div>` : ''}}` +
     `${{owner ? `<span class="modal-owner-badge ${{tc}}">${{owner}} · ${{TIER_LABEL[tier]}}</span>` : ''}}`;
 
   // Replacement / withdrawal notes

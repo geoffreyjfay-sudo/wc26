@@ -274,6 +274,16 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
 .stat-bar { height: 6px; border-radius: 3px; background: var(--gold); }
 .stat-trivia { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 .stat-trivia strong { color: var(--cream); }
+
+/* Nicknames */
+.tile-nickname {
+  font-size: 0.63rem; color: var(--muted); font-style: italic;
+  line-height: 1.2; text-align: center;
+}
+.modal-nickname {
+  font-size: 0.8rem; color: var(--gold-lt); opacity: 0.75;
+  font-style: italic; margin-top: 2px; margin-bottom: 4px;
+}
 </style>
 </head>
 <body>
@@ -305,21 +315,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('Mexico')">
         <span class="tile-flag">🇲🇽</span>
         <span class="tile-name">Mexico</span>
+        <span class="tile-nickname">El Tri</span>
         <span class="tile-owner t1">David</span>
       </div>
       <div class="team-tile" onclick="openSquad('South Korea')">
         <span class="tile-flag">🇰🇷</span>
         <span class="tile-name">South Korea</span>
+        <span class="tile-nickname">Taegeuk Warriors</span>
         <span class="tile-owner t2">Sue</span>
       </div>
       <div class="team-tile" onclick="openSquad('South Africa')">
         <span class="tile-flag">🇿🇦</span>
         <span class="tile-name">South Africa</span>
+        <span class="tile-nickname">Bafana Bafana</span>
         <span class="tile-owner t2">Jane</span>
       </div>
       <div class="team-tile" onclick="openSquad('Czechia')">
         <span class="tile-flag">🇨🇿</span>
         <span class="tile-name">Czechia</span>
+        <span class="tile-nickname">Nároďák (The National Team)</span>
         <span class="tile-owner t2">Oliver</span>
       </div>
       </div>
@@ -330,21 +344,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('Canada')">
         <span class="tile-flag">🇨🇦</span>
         <span class="tile-name">Canada</span>
+        <span class="tile-nickname">Les Rouges (The Reds)</span>
         <span class="tile-owner t2">Cooper</span>
       </div>
       <div class="team-tile" onclick="openSquad('Switzerland')">
         <span class="tile-flag">🇨🇭</span>
         <span class="tile-name">Switzerland</span>
+        <span class="tile-nickname">Schweizer Nati (The National Team)</span>
         <span class="tile-owner t1">Evelyn</span>
       </div>
       <div class="team-tile" onclick="openSquad('Qatar')">
         <span class="tile-flag">🇶🇦</span>
         <span class="tile-name">Qatar</span>
+        <span class="tile-nickname">The Maroons</span>
         <span class="tile-owner t2">Eimíle</span>
       </div>
       <div class="team-tile" onclick="openSquad('Bosnia & Hz.')">
         <span class="tile-flag">🇧🇦</span>
         <span class="tile-name">Bosnia & Hz.</span>
+        <span class="tile-nickname">Zmajevi (The Dragons)</span>
         <span class="tile-owner t3">Jane</span>
       </div>
       </div>
@@ -355,21 +373,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('Brazil')">
         <span class="tile-flag">🇧🇷</span>
         <span class="tile-name">Brazil</span>
+        <span class="tile-nickname">Seleção (The Selection)</span>
         <span class="tile-owner t1">Oliver</span>
       </div>
       <div class="team-tile" onclick="openSquad('Morocco')">
         <span class="tile-flag">🇲🇦</span>
         <span class="tile-name">Morocco</span>
+        <span class="tile-nickname">The Atlas Lions</span>
         <span class="tile-owner t1">Orlagh</span>
       </div>
       <div class="team-tile" onclick="openSquad('Scotland')">
         <span class="tile-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
         <span class="tile-name">Scotland</span>
+        <span class="tile-nickname">The Tartan Army</span>
         <span class="tile-owner t2">Eric</span>
       </div>
       <div class="team-tile" onclick="openSquad('Haiti')">
         <span class="tile-flag">🇭🇹</span>
         <span class="tile-name">Haiti</span>
+        <span class="tile-nickname">Les Grenadiers (The Grenadiers)</span>
         <span class="tile-owner t3">Geoff</span>
       </div>
       </div>
@@ -380,21 +402,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('USA')">
         <span class="tile-flag">🇺🇸</span>
         <span class="tile-name">USA</span>
+        <span class="tile-nickname">The Stars and Stripes</span>
         <span class="tile-owner t1">Peter</span>
       </div>
       <div class="team-tile" onclick="openSquad('Australia')">
         <span class="tile-flag">🇦🇺</span>
         <span class="tile-name">Australia</span>
+        <span class="tile-nickname">Socceroos</span>
         <span class="tile-owner t2">Leighanne</span>
       </div>
       <div class="team-tile" onclick="openSquad('Paraguay')">
         <span class="tile-flag">🇵🇾</span>
         <span class="tile-name">Paraguay</span>
+        <span class="tile-nickname">La Albirroja (The White and Red)</span>
         <span class="tile-owner t2">Siobhan</span>
       </div>
       <div class="team-tile" onclick="openSquad('Turkey')">
         <span class="tile-flag">🇹🇷</span>
         <span class="tile-name">Turkey</span>
+        <span class="tile-nickname">The Crescent-Stars</span>
         <span class="tile-owner t1">Siobhan</span>
       </div>
       </div>
@@ -405,21 +431,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('Germany')">
         <span class="tile-flag">🇩🇪</span>
         <span class="tile-name">Germany</span>
+        <span class="tile-nickname">Die Mannschaft (The Team)</span>
         <span class="tile-owner t1">Craig</span>
       </div>
       <div class="team-tile" onclick="openSquad('Ecuador')">
         <span class="tile-flag">🇪🇨</span>
         <span class="tile-name">Ecuador</span>
+        <span class="tile-nickname">La Tri</span>
         <span class="tile-owner t1">Cooper</span>
       </div>
       <div class="team-tile" onclick="openSquad('Ivory Coast')">
         <span class="tile-flag">🇨🇮</span>
         <span class="tile-name">Ivory Coast</span>
+        <span class="tile-nickname">Les Éléphants (The Elephants)</span>
         <span class="tile-owner t2">Geoff</span>
       </div>
       <div class="team-tile" onclick="openSquad('Curaçao')">
         <span class="tile-flag">🇨🇼</span>
         <span class="tile-name">Curaçao</span>
+        <span class="tile-nickname">The Blue Wave</span>
         <span class="tile-owner t3">Leighanne</span>
       </div>
       </div>
@@ -430,21 +460,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('Netherlands')">
         <span class="tile-flag">🇳🇱</span>
         <span class="tile-name">Netherlands</span>
+        <span class="tile-nickname">Oranje (Orange)</span>
         <span class="tile-owner t1">Wes</span>
       </div>
       <div class="team-tile" onclick="openSquad('Japan')">
         <span class="tile-flag">🇯🇵</span>
         <span class="tile-name">Japan</span>
+        <span class="tile-nickname">Samurai Blue</span>
         <span class="tile-owner t1">Ruairí</span>
       </div>
       <div class="team-tile" onclick="openSquad('Tunisia')">
         <span class="tile-flag">🇹🇳</span>
         <span class="tile-name">Tunisia</span>
+        <span class="tile-nickname">Eagles of Carthage</span>
         <span class="tile-owner t2">Ruairí</span>
       </div>
       <div class="team-tile" onclick="openSquad('Sweden')">
         <span class="tile-flag">🇸🇪</span>
         <span class="tile-name">Sweden</span>
+        <span class="tile-nickname">Blågult (The Blue-Yellow)</span>
         <span class="tile-owner t2">Julian</span>
       </div>
       </div>
@@ -455,21 +489,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('Belgium')">
         <span class="tile-flag">🇧🇪</span>
         <span class="tile-name">Belgium</span>
+        <span class="tile-nickname">De Rode Duivels (The Red Devils)</span>
         <span class="tile-owner t1">Julian</span>
       </div>
       <div class="team-tile" onclick="openSquad('Iran')">
         <span class="tile-flag">🇮🇷</span>
         <span class="tile-name">Iran</span>
+        <span class="tile-nickname">Team Melli</span>
         <span class="tile-owner t1">Eric</span>
       </div>
       <div class="team-tile" onclick="openSquad('Egypt')">
         <span class="tile-flag">🇪🇬</span>
         <span class="tile-name">Egypt</span>
+        <span class="tile-nickname">The Pharaohs</span>
         <span class="tile-owner t2">Peter</span>
       </div>
       <div class="team-tile" onclick="openSquad('New Zealand')">
         <span class="tile-flag">🇳🇿</span>
         <span class="tile-name">New Zealand</span>
+        <span class="tile-nickname">All Whites</span>
         <span class="tile-owner t3">Catherine</span>
       </div>
       </div>
@@ -480,21 +518,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('Spain')">
         <span class="tile-flag">🇪🇸</span>
         <span class="tile-name">Spain</span>
+        <span class="tile-nickname">La Roja (The Red One)</span>
         <span class="tile-owner t1">Geoff</span>
       </div>
       <div class="team-tile" onclick="openSquad('Uruguay')">
         <span class="tile-flag">🇺🇾</span>
         <span class="tile-name">Uruguay</span>
+        <span class="tile-nickname">La Celeste (The Sky Blue)</span>
         <span class="tile-owner t1">Leighanne</span>
       </div>
       <div class="team-tile" onclick="openSquad('Saudi Arabia')">
         <span class="tile-flag">🇸🇦</span>
         <span class="tile-name">Saudi Arabia</span>
+        <span class="tile-nickname">The Green Falcons</span>
         <span class="tile-owner t2">Craig</span>
       </div>
       <div class="team-tile" onclick="openSquad('Cape Verde')">
         <span class="tile-flag">🇨🇻</span>
         <span class="tile-name">Cape Verde</span>
+        <span class="tile-nickname">Tubarões Azuis (Blue Sharks)</span>
         <span class="tile-owner t3">Orlagh</span>
       </div>
       </div>
@@ -505,21 +547,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('France')">
         <span class="tile-flag">🇫🇷</span>
         <span class="tile-name">France</span>
+        <span class="tile-nickname">Les Bleus (The Blues)</span>
         <span class="tile-owner t1">Jane</span>
       </div>
       <div class="team-tile" onclick="openSquad('Senegal')">
         <span class="tile-flag">🇸🇳</span>
         <span class="tile-name">Senegal</span>
+        <span class="tile-nickname">Lions de la Téranga (The Lions of Teranga)</span>
         <span class="tile-owner t1">Elsie</span>
       </div>
       <div class="team-tile" onclick="openSquad('Norway')">
         <span class="tile-flag">🇳🇴</span>
         <span class="tile-name">Norway</span>
+        <span class="tile-nickname">Røde</span>
         <span class="tile-owner t2">Elsie</span>
       </div>
       <div class="team-tile" onclick="openSquad('Iraq')">
         <span class="tile-flag">🇮🇶</span>
         <span class="tile-name">Iraq</span>
+        <span class="tile-nickname">Usood al-Rafidayn (Lions of Mesopotamia)</span>
         <span class="tile-owner t2">Catherine</span>
       </div>
       </div>
@@ -530,21 +576,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('Argentina')">
         <span class="tile-flag">🇦🇷</span>
         <span class="tile-name">Argentina</span>
+        <span class="tile-nickname">La Selección (The Selection)</span>
         <span class="tile-owner t1">Matthew</span>
       </div>
       <div class="team-tile" onclick="openSquad('Austria')">
         <span class="tile-flag">🇦🇹</span>
         <span class="tile-name">Austria</span>
+        <span class="tile-nickname">Das Team (The Team)</span>
         <span class="tile-owner t2">Evelyn</span>
       </div>
       <div class="team-tile" onclick="openSquad('Algeria')">
         <span class="tile-flag">🇩🇿</span>
         <span class="tile-name">Algeria</span>
+        <span class="tile-nickname">The Desert Warriors</span>
         <span class="tile-owner t2">Aisling</span>
       </div>
       <div class="team-tile" onclick="openSquad('Jordan')">
         <span class="tile-flag">🇯🇴</span>
         <span class="tile-name">Jordan</span>
+        <span class="tile-nickname">Al-Nashama (The Chivalrous Ones or The Brave Ones)</span>
         <span class="tile-owner t2">Wes</span>
       </div>
       </div>
@@ -555,21 +605,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('Portugal')">
         <span class="tile-flag">🇵🇹</span>
         <span class="tile-name">Portugal</span>
+        <span class="tile-nickname">Seleção das Quinas (The Team of the Shields)</span>
         <span class="tile-owner t1">Catherine</span>
       </div>
       <div class="team-tile" onclick="openSquad('Colombia')">
         <span class="tile-flag">🇨🇴</span>
         <span class="tile-name">Colombia</span>
+        <span class="tile-nickname">La Tricolor (The Tricolor)</span>
         <span class="tile-owner t1">Eimíle</span>
       </div>
       <div class="team-tile" onclick="openSquad('DR Congo')">
         <span class="tile-flag">🇨🇩</span>
         <span class="tile-name">DR Congo</span>
+        <span class="tile-nickname">Léopards (Leopards)</span>
         <span class="tile-owner t2">Orlagh</span>
       </div>
       <div class="team-tile" onclick="openSquad('Uzbekistan')">
         <span class="tile-flag">🇺🇿</span>
         <span class="tile-name">Uzbekistan</span>
+        <span class="tile-nickname">White Wolves</span>
         <span class="tile-owner t2">Matthew</span>
       </div>
       </div>
@@ -580,21 +634,25 @@ main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
       <div class="team-tile" onclick="openSquad('England')">
         <span class="tile-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
         <span class="tile-name">England</span>
+        <span class="tile-nickname">Three Lions</span>
         <span class="tile-owner t1">Aisling</span>
       </div>
       <div class="team-tile" onclick="openSquad('Croatia')">
         <span class="tile-flag">🇭🇷</span>
         <span class="tile-name">Croatia</span>
+        <span class="tile-nickname">Vatreni (Blazers)</span>
         <span class="tile-owner t1">Sue</span>
       </div>
       <div class="team-tile" onclick="openSquad('Ghana')">
         <span class="tile-flag">🇬🇭</span>
         <span class="tile-name">Ghana</span>
+        <span class="tile-nickname">Black Stars</span>
         <span class="tile-owner t3">Sue</span>
       </div>
       <div class="team-tile" onclick="openSquad('Panama')">
         <span class="tile-flag">🇵🇦</span>
         <span class="tile-name">Panama</span>
+        <span class="tile-nickname">Los Canaleros (The Canal Men)</span>
         <span class="tile-owner t2">David</span>
       </div>
       </div>
@@ -636,6 +694,7 @@ const POS_ORDER = ["Goalkeeper", "Defender", "Midfielder", "Attacker"];
 const TIER_LABEL = {"1": "Tier 1", "2": "Tier 2", "3": "Bonus"};
 const TIER_CLS = {1:"t1",2:"t2",3:"t3"};
 const POS_ABBR = {Goalkeeper:"GK",Defender:"DF",Midfielder:"MF",Attacker:"FW"};
+const NICKNAMES = {"Mexico": "El Tri, El Tricolor (The Tricolor)", "South Africa": "Bafana Bafana", "South Korea": "Taegeuk Warriors, Tigers of Asia", "Czechia": "Nároďák (The National Team), Repre (The Representatives)", "Canada": "Les Rouges (The Reds), The Canucks", "Bosnia & Hz.": "Zmajevi (The Dragons), Zlatni Ljiljani (Golden Lilies)", "Qatar": "The Maroons", "Switzerland": "Schweizer Nati (The National Team)", "Brazil": "Seleção (The Selection), Canarinho (Little Canary)", "Morocco": "The Atlas Lions", "Haiti": "Les Grenadiers (The Grenadiers), Le Rouge et Bleu (The Red and Blue)", "Scotland": "The Tartan Army", "USA": "The Stars and Stripes", "Paraguay": "La Albirroja (The White and Red)", "Australia": "Socceroos", "Turkey": "The Crescent-Stars", "Germany": "Die Mannschaft (The Team)", "Curaçao": "The Blue Wave", "Ivory Coast": "Les Éléphants (The Elephants)", "Ecuador": "La Tri, La Tricolor (The Tricolours)", "Netherlands": "Oranje (Orange)", "Japan": "Samurai Blue", "Sweden": "Blågult (The Blue-Yellow)", "Tunisia": "Eagles of Carthage", "Belgium": "De Rode Duivels (The Red Devils)", "Egypt": "The Pharaohs", "Iran": "Team Melli", "New Zealand": "All Whites", "Spain": "La Roja (The Red One)", "Cape Verde": "Tubarões Azuis (Blue Sharks), Crioulos (Creoles)", "Saudi Arabia": "The Green Falcons", "Uruguay": "La Celeste (The Sky Blue)", "France": "Les Bleus (The Blues)", "Senegal": "Lions de la Téranga (The Lions of Teranga)", "Iraq": "Usood al-Rafidayn (Lions of Mesopotamia)", "Norway": "Røde, Hvite, Blå (Red, White and Blue)", "Argentina": "La Selección (The Selection), La Albiceleste (The White and Sky Blue)", "Algeria": "The Desert Warriors, The Greens, The Fennecs", "Austria": "Das Team (The Team), Burschen (The Boys), Unsere Burschen (Our Boys)", "Jordan": "Al-Nashama (The Chivalrous Ones or The Brave Ones)", "Portugal": "Seleção das Quinas (The Team of the Shields)", "DR Congo": "Léopards (Leopards)", "Uzbekistan": "White Wolves", "Colombia": "La Tricolor (The Tricolor), Los Cafeteros (The Coffee Growers)", "England": "Three Lions", "Croatia": "Vatreni (Blazers)", "Ghana": "Black Stars", "Panama": "Los Canaleros (The Canal Men)"};
 
 function openSquad(team) {
   const players = SQUADS[team] || [];
@@ -646,7 +705,9 @@ function openSquad(team) {
 
   document.getElementById('modalFlag').textContent = flag;
   document.getElementById('modalTeamName').textContent = team;
+  const nick = NICKNAMES[team] || '';
   document.getElementById('modalMeta').innerHTML =
+    `${nick ? `<div class="modal-nickname">${nick}</div>` : ''}` +
     `${owner ? `<span class="modal-owner-badge ${tc}">${owner} · ${TIER_LABEL[tier]}</span>` : ''}`;
 
   // Replacement / withdrawal notes
