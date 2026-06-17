@@ -522,6 +522,9 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
       <tr>
         <th style="width:32px">#</th>
         <th>Player</th>
+        <th class="num" title="Goals For">GF</th>
+        <th class="num" title="Goals Against">GA</th>
+        <th class="num">Pts</th>
         <th class="num">Prize €</th>
       </tr>
     </thead>
@@ -2906,17 +2909,23 @@ function computeTeamStats() {
 
 function computePlayerStandings(teamStats) {
   return DRAW.map(d => {
-    let totalPts = 0;
+    let totalPts = 0, totalGF = 0, totalGA = 0;
     let breakdown = [];
     for (const t of d.teams) {
       const s = teamStats[t.name];
       if (s) {
         totalPts += s.pts;
+        totalGF += s.gf;
+        totalGA += s.ga;
         breakdown.push(`${t.name}: ${s.pts}pts`);
       }
     }
-    return { ...d, totalPts, breakdown };
-  }).sort((a,b) => b.totalPts - a.totalPts);
+    return { ...d, totalPts, totalGF, totalGA, breakdown };
+  }).sort((a,b) => {
+    if (b.totalPts !== a.totalPts) return b.totalPts - a.totalPts;
+    if (b.totalGF !== a.totalGF) return b.totalGF - a.totalGF;
+    return a.totalGA - b.totalGA;
+  });
 }
 
 // ── RENDER LEADERBOARD ───────────────────────────────────────
@@ -2960,10 +2969,10 @@ function renderLeaderboard() {
         <div class="team-list">${teamTags}</div>
         ${p.breakdown.length ? `<div class="pts-breakdown">${p.breakdown.join(' · ')}</div>` : ''}
       </td>
-      <td class="num">
-        <div class="pts-cell">${p.totalPts}</div>
-        ${prize ? `<div class="prize-cell" style="color:var(--gold-lt)">${prize}</div>` : ''}
-      </td>
+      <td class="num" style="color:var(--muted);font-size:0.85rem">${p.totalGF}</td>
+      <td class="num" style="color:var(--muted);font-size:0.85rem">${p.totalGA}</td>
+      <td class="num"><div class="pts-cell">${p.totalPts}</div></td>
+      <td class="num">${prize ? `<div class="prize-cell" style="color:var(--gold-lt)">${prize}</div>` : ''}</td>
     </tr>`;
   });
 
