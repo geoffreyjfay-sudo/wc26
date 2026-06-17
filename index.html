@@ -2937,14 +2937,14 @@ function renderLeaderboard() {
   const totalPlayed = Object.values(results).filter(r => r.home !== '' && r.away !== '').length;
 
   let html = '';
-  let lastPts = -1, pos = 0, displayPos = 0;
+  let lastPts = -1, lastGF = -1, lastGA = -1, pos = 0, displayPos = 0;
   const n = standings.length;
 
   standings.forEach((p, i) => {
     pos++;
-    if (p.totalPts !== lastPts) displayPos = pos;
-    lastPts = p.totalPts;
-    const isLast = i === n - 1;
+    if (p.totalPts !== lastPts || p.totalGF !== lastGF || p.totalGA !== lastGA) displayPos = pos;
+    lastPts = p.totalPts; lastGF = p.totalGF; lastGA = p.totalGA;
+    const isLast = displayPos === n; // uniquely last only after full tiebreaking
     const posClass = displayPos===1?'p1':displayPos===2?'p2':displayPos===3?'p3':isLast?'plast':'';
     const posIcon = displayPos===1?'🥇':displayPos===2?'🥈':displayPos===3?'🥉':isLast?'😬':'';
 
@@ -2954,7 +2954,7 @@ function renderLeaderboard() {
       if (displayPos === 1) prize = '€60';
       else if (displayPos === 2) prize = '€25';
       else if (displayPos === 3) prize = '€10';
-      else if (isLast && standings.filter(x=>x.totalPts===p.totalPts).length===1) prize = '€10 😬';
+      else if (isLast) prize = '€10 😬';
     }
 
     const teamTags = p.teams.map(t => {
