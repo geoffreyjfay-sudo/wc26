@@ -218,11 +218,12 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
 .leaderboard td.num { text-align: right; font-variant-numeric: tabular-nums; }
 .leaderboard tr:hover td { background: rgba(255,255,255,0.025); }
 
-.pos { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--muted); width: 32px; }
-.pos.p1 { color: var(--gold-lt); }
-.pos.p2 { color: #ccc; }
-.pos.p3 { color: #cd7f32; }
-.pos.plast { color: var(--red-lt); }
+.pos { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--muted); width: 40px; text-align: center; }
+.pos .badge { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; font-size: 1.3rem; line-height: 1; }
+.pos.p1 .badge { background: rgba(212,160,23,0.18); box-shadow: 0 0 0 2px var(--gold-lt); }
+.pos.p2 .badge { background: rgba(200,200,200,0.12); box-shadow: 0 0 0 2px #bbb; }
+.pos.p3 .badge { background: rgba(205,127,50,0.15); box-shadow: 0 0 0 2px #cd7f32; }
+.pos.plast .badge { background: rgba(255,80,80,0.10); box-shadow: 0 0 0 2px var(--red-lt); }
 
 .player-name { font-weight: 600; font-size: 0.97rem; }
 .team-list { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
@@ -2963,7 +2964,7 @@ function renderLeaderboard() {
     }).join('');
 
     html += `<tr>
-      <td class="pos ${posClass}">${posIcon||displayPos}</td>
+      <td class="pos ${posClass}">${posIcon ? `<span class="badge">${posIcon}</span>` : displayPos}</td>
       <td>
         <div class="player-name">${p.person}</div>
         <div class="team-list">${teamTags}</div>
