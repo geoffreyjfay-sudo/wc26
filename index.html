@@ -441,6 +441,62 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
 .cal-goal { font-size:0.72rem; color:var(--cream); opacity:0.85; white-space:nowrap; }
 .cal-red  { font-size:0.72rem; color:var(--red-lt); white-space:nowrap; }
 
+/* ── BRACKET ── */
+#bracket-section { margin-top: 36px; }
+.bracket-scroll { overflow-x: auto; padding-bottom: 20px; -webkit-overflow-scrolling: touch; }
+.bracket-inner { position: relative; }
+.bk-round-labels { position: relative; height: 26px; margin-bottom: 4px; }
+.bk-round-label {
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em;
+  color: var(--gold); text-align: center; white-space: nowrap;
+}
+.bk-match {
+  position: absolute;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 5px; overflow: hidden;
+}
+.bk-team {
+  display: flex; align-items: center; gap: 4px;
+  padding: 4px 7px; height: 26px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.bk-team:last-of-type { border-bottom: none; }
+.bk-team.bk-won { background: rgba(77,207,106,0.12); }
+.bk-team.bk-lost { opacity: 0.38; }
+.bk-team.bk-owned .bk-name { color: var(--gold-lt); font-weight: 600; }
+.bk-flag { font-size: 0.85rem; flex-shrink: 0; line-height: 1; }
+.bk-name { flex: 1; font-size: 0.72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bk-owner-tag { font-size: 0.6rem; color: var(--muted); font-weight: 400; margin-left: 2px; }
+.bk-score { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; min-width: 14px; text-align: right; flex-shrink: 0; letter-spacing: 0; }
+.bk-tbd-row {
+  display: flex; align-items: center; justify-content: center;
+  height: 52px; font-size: 0.7rem; color: var(--muted); font-style: italic;
+  flex-direction: column; gap: 3px; padding: 4px 7px; text-align: center;
+}
+.bk-tbd-slot { font-size: 0.68rem; color: var(--muted); }
+.bk-tbd-date { font-size: 0.65rem; color: rgba(240,234,216,0.3); }
+.bk-match-date {
+  font-size: 0.6rem; color: rgba(240,234,216,0.3);
+  padding: 1px 7px; text-align: right;
+  background: rgba(0,0,0,0.15); border-top: 1px solid rgba(255,255,255,0.04);
+  white-space: nowrap;
+}
+.bk-connector-svg { position: absolute; left: 0; pointer-events: none; overflow: visible; }
+.bk-bronze {
+  margin: 28px auto 0; max-width: 380px;
+  border: 1px solid rgba(212,160,23,0.25); border-radius: 6px; overflow: hidden;
+}
+.bk-bronze-header {
+  background: rgba(212,160,23,0.1); padding: 7px 12px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em;
+  color: var(--gold); border-bottom: 1px solid rgba(212,160,23,0.2);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.bk-bronze .bk-match {
+  position: static; width: 100%; border: none; border-radius: 0;
+}
+
 </style>
 </head>
 <body>
@@ -449,6 +505,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
   <a href="#" onclick="document.getElementById('standings').scrollIntoView({behavior:'smooth'});return false;" id="nav-standings">🏆 <span class="nav-full">Standings</span><span class="nav-short">Table</span></a>
   <a href="#" onclick="document.getElementById('group-tables-section').scrollIntoView({behavior:'smooth'});return false;" id="nav-groups">📋 Groups</a>
   <a href="#" onclick="document.getElementById('results-entry-section').scrollIntoView({behavior:'smooth'});return false;" id="nav-results">⚽ Results</a>
+  <a href="#" onclick="document.getElementById('bracket-section').scrollIntoView({behavior:'smooth'});return false;" id="nav-bracket">🎯 <span class="nav-full">Bracket</span><span class="nav-short">KO</span></a>
   <a href="squads.html">👕 Squads</a>
 </nav>
 
@@ -551,6 +608,16 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
     <div id="fixtures-container"></div>
 
     <div class="save-notice" id="saveNotice">✓ Results saved!</div>
+  </div>
+
+  <!-- KNOCKOUT BRACKET -->
+  <div id="bracket-section" style="margin-top:36px">
+    <div class="sec-title">🎯 Knockout Bracket</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin-bottom:16px">Round of 32 through to the Final · Knockout wins add 3 pts to the leaderboard</p>
+    <div class="bracket-scroll">
+      <div id="bracket-inner" class="bracket-inner"></div>
+    </div>
+    <div id="bracket-bronze"></div>
   </div>
 
 </div>
@@ -666,7 +733,7 @@ const FIXTURES = [
   {id:"E5",date:"2026-06-25",time:"21:00",home:"Ecuador",away:"Germany",group:"E",venue:"New York"},
   {id:"E6",date:"2026-06-25",time:"21:00",home:"Curaçao",away:"Ivory Coast",group:"E",venue:"Philadelphia"},
   {id:"F5",date:"2026-06-26",time:"00:00",home:"Japan",away:"Sweden",group:"F",venue:"Dallas"},
-  {id:"F6",date:"2026-06-26",time:"00:00",home:"Netherlands",away:"Tunisia",group:"F",venue:"Kansas City"},
+  {id:"F6",date:"2026-06-26",time:"00:00",home:"Tunisia",away:"Netherlands",group:"F",venue:"Kansas City"},
   {id:"D5",date:"2026-06-26",time:"03:00",home:"Turkey",away:"USA",group:"D",venue:"Los Angeles"},
   {id:"D6",date:"2026-06-26",time:"03:00",home:"Paraguay",away:"Australia",group:"D",venue:"San Francisco"},
   {id:"I5",date:"2026-06-26",time:"20:00",home:"Norway",away:"France",group:"I",venue:"Boston"},
@@ -2101,7 +2168,7 @@ const GROUPS = {
          {id:"F3",home:"Netherlands",away:"Sweden",date:"Jun 20"},
          {id:"F4",home:"Tunisia",away:"Japan",date:"Jun 21"},
          {id:"F5",home:"Japan",away:"Sweden",date:"Jun 26"},
-         {id:"F6",home:"Netherlands",away:"Tunisia",date:"Jun 26"},
+         {id:"F6",home:"Tunisia",away:"Netherlands",date:"Jun 26"},
        ]},
   G: { teams:["Belgium","Iran","Egypt","New Zealand"],
        fixtures:[
@@ -2157,6 +2224,64 @@ const GROUPS = {
          {id:"L5",home:"Panama",away:"England",date:"Jun 27"},
          {id:"L6",home:"Croatia",away:"Ghana",date:"Jun 27"},
        ]},
+};
+
+// ── KNOCKOUT BRACKET ─────────────────────────────────────────
+// Static metadata for each knockout match slot
+const KNOCKOUT_META = {
+  M73:  { date:"Jun 28", slot:"A2 v B2" },
+  M74:  { date:"Jun 29", slot:"E1 v best 3rd" },
+  M75:  { date:"Jun 29", slot:"F1 v C2" },
+  M76:  { date:"Jun 29", slot:"C1 v F2" },
+  M77:  { date:"Jun 30", slot:"I1 v best 3rd" },
+  M78:  { date:"Jun 30", slot:"E2 v I2" },
+  M79:  { date:"Jun 30", slot:"A1 v best 3rd" },
+  M80:  { date:"Jul 1",  slot:"L1 v best 3rd" },
+  M81:  { date:"Jul 1",  slot:"D1 v best 3rd" },
+  M82:  { date:"Jul 1",  slot:"G1 v best 3rd" },
+  M83:  { date:"Jul 2",  slot:"K2 v L2" },
+  M84:  { date:"Jul 2",  slot:"H1 v J2" },
+  M85:  { date:"Jul 2",  slot:"B1 v best 3rd" },
+  M86:  { date:"Jul 3",  slot:"J1 v H2" },
+  M87:  { date:"Jul 3",  slot:"K1 v best 3rd" },
+  M88:  { date:"Jul 3",  slot:"D2 v G2" },
+  M89:  { date:"Jul 4",  slot:"W74 v W77" },
+  M90:  { date:"Jul 4",  slot:"W73 v W75" },
+  M91:  { date:"Jul 5",  slot:"W76 v W78" },
+  M92:  { date:"Jul 5",  slot:"W79 v W80" },
+  M93:  { date:"Jul 6",  slot:"W83 v W84" },
+  M94:  { date:"Jul 6",  slot:"W81 v W82" },
+  M95:  { date:"Jul 7",  slot:"W86 v W88" },
+  M96:  { date:"Jul 7",  slot:"W85 v W87" },
+  M97:  { date:"Jul 9",  slot:"W89 v W90" },
+  M98:  { date:"Jul 10", slot:"W93 v W94" },
+  M99:  { date:"Jul 11", slot:"W91 v W92" },
+  M100: { date:"Jul 11", slot:"W95 v W96" },
+  M101: { date:"Jul 14", slot:"W97 v W98" },
+  M102: { date:"Jul 15", slot:"W99 v W100" },
+  M103: { date:"Jul 18", slot:"3rd Place" },
+  M104: { date:"Jul 19", slot:"Final" },
+};
+
+// Bracket round order (top-to-bottom slot assignment)
+const BRACKET_ROUNDS = [
+  { label:"Round of 32", matches:["M74","M77","M73","M75","M83","M84","M81","M82","M76","M78","M79","M80","M86","M88","M85","M87"] },
+  { label:"Round of 16", matches:["M89","M90","M93","M94","M91","M92","M95","M96"] },
+  { label:"Quarter-Finals", matches:["M97","M98","M99","M100"] },
+  { label:"Semi-Finals", matches:["M101","M102"] },
+  { label:"Final", matches:["M104"] },
+];
+
+// Which two matches feed each match (the losers of M101/M102 play M103)
+const BRACKET_FEEDERS = {
+  M89:["M74","M77"], M90:["M73","M75"],
+  M93:["M83","M84"], M94:["M81","M82"],
+  M91:["M76","M78"], M92:["M79","M80"],
+  M95:["M86","M88"], M96:["M85","M87"],
+  M97:["M89","M90"], M98:["M93","M94"],
+  M99:["M91","M92"], M100:["M95","M96"],
+  M101:["M97","M98"], M102:["M99","M100"],
+  M104:["M101","M102"],
 };
 
 // ── COOKIE STORAGE ───────────────────────────────────────────
@@ -2619,6 +2744,14 @@ const AUTO_SCORES = {
     "winner": "AWAY_TEAM",
     "ht_home": "0",
     "ht_away": "1"
+  },
+  "F6": {
+    "home": "1",
+    "away": "3",
+    "status": "FINISHED",
+    "winner": "AWAY_TEAM",
+    "ht_home": "0",
+    "ht_away": "2"
   },
   "F5": {
     "home": "1",
@@ -4107,6 +4240,38 @@ const AUTO_EVENTS = {
       }
     ]
   },
+  "F6": {
+    "goals": [
+      {
+        "min": "3'",
+        "player": "Ellyes Skhiri",
+        "team": "Netherlands",
+        "pen": false,
+        "og": true
+      },
+      {
+        "min": "7'",
+        "player": "Brian Brobbey",
+        "team": "Netherlands",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "54'",
+        "player": "Hazem Mastouri",
+        "team": "Tunisia",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "62'",
+        "player": "Jan Paul van Hecke",
+        "team": "Netherlands",
+        "pen": false,
+        "og": false
+      }
+    ]
+  },
   "D5": {
     "goals": [
       {
@@ -4315,6 +4480,202 @@ const AUTO_EVENTS = {
   }
 };
 // AUTO_EVENTS_END
+// AUTO_KNOCKOUT_START
+const AUTO_KNOCKOUT = {
+  "M73": {
+    "home": "South Africa",
+    "away": "Canada",
+    "status": "TIMED",
+    "winner": null
+  },
+  "M74": {
+    "home": "Brazil",
+    "away": "Japan",
+    "status": "TIMED",
+    "winner": null
+  },
+  "M75": {
+    "home": "Germany",
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M76": {
+    "home": "Netherlands",
+    "away": "Morocco",
+    "status": "TIMED",
+    "winner": null
+  },
+  "M77": {
+    "home": "Ivory Coast",
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M78": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M79": {
+    "home": "Mexico",
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M80": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M81": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M82": {
+    "home": "USA",
+    "away": "Bosnia & Hz.",
+    "status": "TIMED",
+    "winner": null
+  },
+  "M83": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M84": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M85": {
+    "home": "Switzerland",
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M86": {
+    "home": "Australia",
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M87": {
+    "home": "Argentina",
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M88": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M89": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M90": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M91": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M92": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M93": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M94": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M95": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M96": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M97": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M98": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M99": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M100": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M101": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M102": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M103": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  },
+  "M104": {
+    "home": null,
+    "away": null,
+    "status": "TIMED",
+    "winner": null
+  }
+};
+// AUTO_KNOCKOUT_END
 let results = Object.assign({}, AUTO_SCORES, loadData());
 
 // ── TEAM OWNER LOOKUP ────────────────────────────────────────
@@ -4353,6 +4714,23 @@ function computeTeamStats() {
         stats[f.away].won++; stats[f.away].pts += 3;
         stats[f.home].lost++;
       }
+    }
+  }
+  // Knockout rounds — wins give 3 pts (same as group stage)
+  for (const [id, m] of Object.entries(AUTO_KNOCKOUT)) {
+    if (!m.home || !m.away || m.status !== 'FINISHED') continue;
+    const hs = parseInt(m.home_score), as = parseInt(m.away_score);
+    if (isNaN(hs) || isNaN(as)) continue;
+    const home = m.home, away = m.away;
+    if (!stats[home]) stats[home] = { played:0, won:0, drawn:0, lost:0, gf:0, ga:0, pts:0 };
+    if (!stats[away]) stats[away] = { played:0, won:0, drawn:0, lost:0, gf:0, ga:0, pts:0 };
+    stats[home].played++; stats[away].played++;
+    stats[home].gf += hs; stats[home].ga += as;
+    stats[away].gf += as; stats[away].ga += hs;
+    if (m.winner === 'HOME_TEAM') {
+      stats[home].won++; stats[home].pts += 3; stats[away].lost++;
+    } else if (m.winner === 'AWAY_TEAM') {
+      stats[away].won++; stats[away].pts += 3; stats[home].lost++;
     }
   }
   return stats;
@@ -4598,11 +4976,156 @@ function closePreview() {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePreview(); });
 
+// ── RENDER BRACKET ──────────────────────────────────────────
+function renderBracket() {
+  const MATCH_W = 170, MATCH_H = 58, SLOT_H = 72, CONN_W = 36;
+  const ROUND_W = MATCH_W + CONN_W;
+  const LABEL_H = 28;
+  const TOTAL_H = 16 * SLOT_H;
+  const TOTAL_W = BRACKET_ROUNDS.length * ROUND_W - CONN_W; // no connector after final
+
+  // Compute match positions
+  const pos = {};
+  BRACKET_ROUNDS.forEach((rnd, ri) => {
+    const n = rnd.matches.length;
+    const slotH = TOTAL_H / n;
+    rnd.matches.forEach((id, si) => {
+      const x = ri * ROUND_W;
+      const cy = (si + 0.5) * slotH;
+      const y = cy - MATCH_H / 2;
+      pos[id] = { x, y, cy, cx: x + MATCH_W };
+    });
+  });
+
+  // Build match card HTML
+  function matchCard(id) {
+    const m = AUTO_KNOCKOUT[id] || {};
+    const meta = KNOCKOUT_META[id] || {};
+    const { x, y } = pos[id];
+
+    // Both teams fully unknown — show compact TBD card
+    if (!m.home && !m.away) {
+      return `<div class="bk-match" style="left:${x}px;top:${y}px;width:${MATCH_W}px;height:${MATCH_H}px">
+        <div class="bk-tbd-row">
+          <span class="bk-tbd-slot">${meta.slot || 'TBD'}</span>
+          <span class="bk-tbd-date">${meta.date || ''}</span>
+        </div>
+      </div>`;
+    }
+
+    // At least one team known — always use two-row card, null team → 'TBD'
+    const home = m.home || null, away = m.away || null;
+    const hs = m.home_score !== null && m.home_score !== undefined ? m.home_score : '';
+    const as = m.away_score !== null && m.away_score !== undefined ? m.away_score : '';
+    const played = m.status === 'FINISHED';
+    const homeWon = played && m.winner === 'HOME_TEAM';
+    const awayWon = played && m.winner === 'AWAY_TEAM';
+
+    function teamRow(name, score, won, lost) {
+      const tbd = !name;
+      const owner = name ? TEAM_OWNER[name] : null;
+      const owned = owner ? 'bk-owned' : '';
+      const wonCls = won ? 'bk-won' : '';
+      const lostCls = lost ? 'bk-lost' : '';
+      const flag = (name && FLAGS[name]) || '🏳️';
+      const displayName = name || 'TBD';
+      const ownerTag = owner ? `<span class="bk-owner-tag">${owner.person}</span>` : '';
+      return `<div class="bk-team ${owned} ${wonCls} ${lostCls}${tbd?' bk-lost':''}">
+        <span class="bk-flag">${flag}</span>
+        <span class="bk-name">${displayName}${ownerTag}</span>
+        <span class="bk-score">${score}</span>
+      </div>`;
+    }
+
+    const dateRow = !played && meta.date
+      ? `<div class="bk-match-date">${meta.date}</div>`
+      : '';
+
+    return `<div class="bk-match" style="left:${x}px;top:${y}px;width:${MATCH_W}px">
+      ${teamRow(home, hs, homeWon, played && !homeWon)}
+      ${teamRow(away, as, awayWon, played && !awayWon)}
+      ${dateRow}
+    </div>`;
+  }
+
+  // Build SVG connector lines
+  const LINE = 'rgba(212,160,23,0.35)';
+  let svgPaths = '';
+  for (const [id, feeders] of Object.entries(BRACKET_FEEDERS)) {
+    const [fA, fB] = feeders;
+    if (!pos[id] || !pos[fA] || !pos[fB]) continue;
+    const tgt = pos[id], pA = pos[fA], pB = pos[fB];
+    const midX = pA.cx + CONN_W / 2;
+    svgPaths += `
+      <line x1="${pA.cx}" y1="${pA.cy}" x2="${midX}" y2="${pA.cy}" stroke="${LINE}" stroke-width="1"/>
+      <line x1="${pB.cx}" y1="${pB.cy}" x2="${midX}" y2="${pB.cy}" stroke="${LINE}" stroke-width="1"/>
+      <line x1="${midX}" y1="${pA.cy}" x2="${midX}" y2="${pB.cy}" stroke="${LINE}" stroke-width="1"/>
+      <line x1="${midX}" y1="${tgt.cy}" x2="${tgt.x}" y2="${tgt.cy}" stroke="${LINE}" stroke-width="1"/>`;
+  }
+
+  // Round labels
+  const labelsHtml = BRACKET_ROUNDS.map((rnd, ri) =>
+    `<div class="bk-round-label" style="left:${ri*ROUND_W}px;width:${MATCH_W}px">${rnd.label}</div>`
+  ).join('');
+
+  // All match cards
+  const cardsHtml = BRACKET_ROUNDS.flatMap(rnd => rnd.matches.map(matchCard)).join('');
+
+  // Main bracket
+  const inner = document.getElementById('bracket-inner');
+  inner.style.width = TOTAL_W + 'px';
+  inner.style.height = (LABEL_H + TOTAL_H) + 'px';
+  inner.innerHTML = `
+    <div class="bk-round-labels" style="width:${TOTAL_W}px">${labelsHtml}</div>
+    <svg class="bk-connector-svg" style="top:${LABEL_H}px;width:${TOTAL_W}px;height:${TOTAL_H}px">
+      ${svgPaths}
+    </svg>
+    <div style="position:absolute;top:${LABEL_H}px;left:0;width:${TOTAL_W}px;height:${TOTAL_H}px">
+      ${cardsHtml}
+    </div>`;
+
+  // Bronze final (separate, below bracket)
+  const bronzeEl = document.getElementById('bracket-bronze');
+  const bm = AUTO_KNOCKOUT['M103'] || {};
+  const bmeta = KNOCKOUT_META['M103'];
+  if (bm.home) {
+    const hs = bm.home_score !== null && bm.home_score !== undefined ? bm.home_score : '';
+    const as = bm.away_score !== null && bm.away_score !== undefined ? bm.away_score : '';
+    const played = bm.status === 'FINISHED';
+    const homeWon = played && bm.winner === 'HOME_TEAM';
+    const awayWon = played && bm.winner === 'AWAY_TEAM';
+    function bTeamRow(name, score, won, lost) {
+      const owner = TEAM_OWNER[name];
+      const owned = owner ? 'bk-owned' : '';
+      const flag = FLAGS[name] || '🏳️';
+      const ownerTag = owner ? `<span class="bk-owner-tag">${owner.person}</span>` : '';
+      return `<div class="bk-team ${owned} ${won?'bk-won':''} ${lost?'bk-lost':''}">
+        <span class="bk-flag">${flag}</span>
+        <span class="bk-name">${name}${ownerTag}</span>
+        <span class="bk-score">${score}</span>
+      </div>`;
+    }
+    bronzeEl.innerHTML = `<div class="bk-bronze">
+      <div class="bk-bronze-header"><span>🥉 Third Place Play-off</span><span style="font-size:0.7rem;color:var(--muted);font-family:'Inter',sans-serif">${bmeta.date}</span></div>
+      <div class="bk-match">
+        ${bTeamRow(bm.home, hs, homeWon, played && !homeWon)}
+        ${bTeamRow(bm.away, as, awayWon, played && !awayWon)}
+      </div>
+    </div>`;
+  } else {
+    bronzeEl.innerHTML = `<div class="bk-bronze">
+      <div class="bk-bronze-header"><span>🥉 Third Place Play-off</span><span style="font-size:0.7rem;color:var(--muted);font-family:'Inter',sans-serif">${bmeta.date}</span></div>
+      <div style="padding:12px;font-size:0.75rem;color:var(--muted);font-style:italic;text-align:center">Teams TBD — ${bmeta.date}</div>
+    </div>`;
+  }
+}
+
 // ── INIT ─────────────────────────────────────────────────────
 render();
 renderLeaderboard();
 renderFixtures();
 renderGroupTables();
+renderBracket();
 
 </script>
 </body>

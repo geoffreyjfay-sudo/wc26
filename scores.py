@@ -144,7 +144,7 @@ FIXTURES = {
     "F3": ("Netherlands", "Sweden"),
     "F4": ("Tunisia", "Japan"),
     "F5": ("Japan", "Sweden"),
-    "F6": ("Netherlands", "Tunisia"),
+    "F6": ("Tunisia", "Netherlands"),
     "G1": ("Belgium", "Egypt"),
     "G2": ("Iran", "New Zealand"),
     "G3": ("Belgium", "Iran"),
@@ -185,6 +185,37 @@ FIXTURES = {
 
 # Build reverse lookup: (home, away) → fixture_id
 FIXTURE_LOOKUP = {v: k for k, v in FIXTURES.items()}
+
+# Knockout match IDs by date (UTC date string → ordered list of M-IDs)
+# Sorted by kickoff time within each date
+KNOCKOUT_DATE_MAP = {
+    "2026-06-28": ["M73"],
+    "2026-06-29": ["M74", "M75", "M76"],
+    "2026-06-30": ["M77", "M78", "M79"],
+    "2026-07-01": ["M80", "M81", "M82"],
+    "2026-07-02": ["M83", "M84", "M85"],
+    "2026-07-03": ["M86", "M87", "M88"],
+    "2026-07-04": ["M89", "M90"],
+    "2026-07-05": ["M91", "M92"],
+    "2026-07-06": ["M93", "M94"],
+    "2026-07-07": ["M95", "M96"],
+    "2026-07-09": ["M97"],
+    "2026-07-10": ["M98"],
+    "2026-07-11": ["M99", "M100"],
+    "2026-07-14": ["M101"],
+    "2026-07-15": ["M102"],
+    "2026-07-18": ["M103"],
+    "2026-07-19": ["M104"],
+}
+
+KNOCKOUT_STAGES = {
+    "LAST_32", "ROUND_OF_32",
+    "LAST_16", "ROUND_OF_16",
+    "QUARTER_FINALS", "QUARTER_FINAL",
+    "SEMI_FINALS", "SEMI_FINAL",
+    "THIRD_PLACE", "PLAY_OFF_FOR_THIRD_PLACE",
+    "FINAL",
+}
 
 # ── ESPN (no key required) ───────────────────────────────────────────────────
 ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
@@ -403,6 +434,96 @@ def build_scores(matches: list) -> dict:
     return scores
 
 
+def fetch_all_matches(api_key: str) -> list:
+    """Fetch all WC 2026 matches (group + knockout) from football-data.org."""
+    headers = {"X-Auth-Token": api_key}
+    resp = requests.get(
+        f"{API_BASE}/competitions/{COMPETITION}/matches",
+        headers=headers,
+        params={"season": SEASON},
+        timeout=15,
+    )
+    if resp.status_code in (403, 404):
+        print(f"Warning: could not fetch all matches (HTTP {resp.status_code}), skipping knockout scores")
+        return []
+    resp.raise_for_status()
+    return resp.json().get("matches", [])
+
+
+def build_knockout_scores(matches: list) -> dict:
+    """Build AUTO_KNOCKOUT dict from knockout-stage matches.
+
+    Late-night US kickoffs cross midnight UTC, so date-based bucketing is
+    unreliable.  Instead we sort all 32 knockout matches chronologically and
+    zip them with the fixed M73–M104 sequence.
+    """
+    KO_ORDERED = [
+        "M73","M74","M75","M76","M77","M78","M79","M80",
+        "M81","M82","M83","M84","M85","M86","M87","M88",
+        "M89","M90","M91","M92","M93","M94","M95","M96",
+        "M97","M98","M99","M100",
+        "M101","M102","M103","M104",
+    ]
+
+    ko_matches = [m for m in matches if m.get("stage", "") in KNOCKOUT_STAGES]
+    ko_matches.sort(key=lambda m: m.get("utcDate", ""))
+
+    if len(ko_matches) != len(KO_ORDERED):
+        print(f"  Note: expected 32 knockout matches, got {len(ko_matches)} — bracket may be partial")
+
+    knockout = {}
+    for mid, m in zip(KO_ORDERED, ko_matches):
+        status = m.get("status", "")
+        home_raw = m.get("homeTeam", {}).get("name", "") or ""
+        away_raw = m.get("awayTeam", {}).get("name", "") or ""
+        home = normalize(home_raw) if home_raw else None
+        away = normalize(away_raw) if away_raw else None
+
+        entry = {
+            "home": home,
+            "away": away,
+            "status": status,
+            "winner": m.get("score", {}).get("winner"),
+        }
+
+        if status in ("FINISHED", "IN_PLAY", "PAUSED"):
+            score_data = m.get("score", {})
+            ft = score_data.get("fullTime", {})
+            hs = ft.get("home")
+            as_ = ft.get("away")
+            if hs is None:
+                curr = score_data.get("halfTime", {})
+                hs = curr.get("home")
+                as_ = curr.get("away")
+            entry["home_score"] = str(hs) if hs is not None else None
+            entry["away_score"] = str(as_) if as_ is not None else None
+
+        knockout[mid] = entry
+
+    return knockout
+
+
+def patch_knockout_html(html_path: Path, knockout: dict) -> None:
+    content = html_path.read_text(encoding="utf-8")
+    ko_json = json.dumps(knockout, indent=2, ensure_ascii=False)
+    new_block = (
+        "// AUTO_KNOCKOUT_START\n"
+        f"const AUTO_KNOCKOUT = {ko_json};\n"
+        "// AUTO_KNOCKOUT_END"
+    )
+    updated, n = re.subn(
+        r"// AUTO_KNOCKOUT_START.*?// AUTO_KNOCKOUT_END",
+        new_block,
+        content,
+        flags=re.DOTALL,
+    )
+    if n == 0:
+        print("Warning: AUTO_KNOCKOUT sentinel not found in HTML — skipping knockout patch")
+        return
+    html_path.write_text(updated, encoding="utf-8")
+    print(f"✓ Patched {len(knockout)} knockout match(es) into {html_path}")
+
+
 def patch_html(html_path: Path, scores: dict) -> None:
     content = html_path.read_text(encoding="utf-8")
 
@@ -458,6 +579,13 @@ def main():
     events = fetch_espn_events()
     print(f"  {len(events)} fixture(s) with events")
     patch_events_html(html_path, events)
+
+    print("Fetching knockout stage matches...")
+    all_matches = fetch_all_matches(args.api_key)
+    knockout = build_knockout_scores(all_matches)
+    ko_count = len(knockout)
+    print(f"  {ko_count} knockout match slot(s) found")
+    patch_knockout_html(html_path, knockout)
 
     print("Done. Re-upload the HTML to Netlify/GitHub Pages to publish.")
 

@@ -1,3 +1,7 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # Family World Cup 2026 Sweepstake — Project Guide
 
 This is a small family sweepstake project for the 2026 FIFA World Cup (USA/Canada/Mexico, 11 June – 19 July 2026). It is a set of self-contained HTML pages plus a couple of printable PDFs. There is **no build step, no framework, no server** — every page is a single HTML file that runs by double-clicking it or hosting it as a static file.
@@ -22,8 +26,28 @@ If you are Claude Code reading this: the goal is to keep these files simple, sel
 
 | Script | What it does |
 |--------|-------------|
-| `scores.py` | Fetches live scores from football-data.org and goal events from ESPN; patches `AUTO_SCORES` and `AUTO_EVENTS` blocks in `index.html`. Run: `python3 scores.py --api-key KEY`. |
+| `scores.py` | Fetches live scores from football-data.org and goal events from ESPN; patches `AUTO_SCORES` and `AUTO_EVENTS` blocks in `index.html`. Run: `python3 scores.py --api-key KEY`. The API key is stored in the script's own docstring and in the GitHub Actions secret `FOOTBALL_DATA_API_KEY`. |
 | `squads.py` | Fetches squad rosters from api-football.com (cached in `squads_cache.json`) and enriches with club/caps/goals/captain data scraped from Wikipedia (cached in `wiki_clubs_cache.json`); generates `squads.html`. Run: `python3 squads.py --api-key KEY`. If all 48 teams are already cached, a dummy key works: `python3 squads.py --api-key dummy`. Use `--refresh-wiki` to re-scrape Wikipedia. |
+
+### How auto-scores work
+
+`scores.py` rewrites two sentinel blocks inside `index.html`:
+
+```
+// AUTO_SCORES_START
+const AUTO_SCORES = { ... };   // fixture ID → { home, away }
+// AUTO_SCORES_END
+
+// AUTO_EVENTS_START
+const AUTO_EVENTS = { ... };   // fixture ID → [{ min, player, team, pen, og }]
+// AUTO_EVENTS_END
+```
+
+At runtime, `index.html` merges these with any manually entered scores via:
+```js
+let results = Object.assign({}, AUTO_SCORES, loadData());
+```
+Manual cookie entries always win over auto-scores. The GitHub Actions workflow (`/.github/workflows/update-scores.yml`) runs `scores.py` every 30 minutes and pushes changes to `index.html` automatically.
 
 ### Hosting
 These are static files. To host: drag the HTML files onto https://drop.netlify.com, or push to a GitHub repo and enable GitHub Pages. If hosting the multi-page set together, the nav links between `worldcup-calendar.html` and `previews.html` need both files in the same folder. **Cookies are per-browser/per-device** — the standings only persist on the device that entered them, so the intended use is one person running the live page on a shared screen.
@@ -107,7 +131,7 @@ Key relationship facts that have tripped previews up before:
 
 ## Fixture data (official, Irish time)
 
-The calendar uses the official FIFA schedule with Irish (IST = UTC+1) kick-off times. Dates are the Irish calendar date the game is played on (overnight US kick-offs roll to the next Irish date). The authoritative fixture array lives in the `FIXTURES` const inside `worldcup-calendar.html`, and the same data is mirrored in the `GROUPS` object used by the standings section. **If you edit fixtures, update both, and keep the per-group fixture IDs (A1, A2 … L6) consistent.**
+The calendar uses the official FIFA schedule with Irish (IST = UTC+1) kick-off times. Dates are the Irish calendar date the game is played on (overnight US kick-offs roll to the next Irish date). The authoritative fixture array lives in the `FIXTURES` const inside `index.html`, and the same data is mirrored in the `GROUPS` object used by the standings section. **If you edit fixtures, update both, and keep the per-group fixture IDs (A1, A2 … L6) consistent.**
 
 Group make-up:
 
@@ -170,8 +194,15 @@ open squads.html                 # squad browser (generated — run squads.py to
 
 Most likely first request: build the knockout bracket, update previews/calendar, or fix squad data. Read the relevant HTML file fully before editing — each is self-contained, and the data (DRAW, FIXTURES/GROUPS, FLAGS, BANTER/PREVIEWS) is defined in JS consts near the bottom of each file.
 
+### Leaderboard architecture (index.html)
+
+The leaderboard is driven by three functions:
+- `computeTeamStats()` — iterates `GROUPS` fixtures + `results` to produce per-team `{ played, won, drawn, lost, gf, ga, pts }`.
+- `computePlayerStandings(teamStats)` — maps `DRAW` to per-person totals (`totalPts`, `totalGF`, `totalGA`), sorted: **pts desc → GF desc → GA asc**.
+- `renderLeaderboard()` — renders the table; advances `displayPos` only when all three of pts/GF/GA differ from the previous row, so tied players share a rank and medals only show for genuinely unique positions.
+
 **Important gotchas:**
 - `squads.html` is generated — never edit it directly; edit `squads.py` and regenerate.
 - The PREVIEWS array exists in **both** `previews.html` and `index.html` — keep them in sync.
-- The GitHub Actions auto-score workflow pushes to `index.html` every 30 min; pull before pushing to avoid conflicts (`git pull --rebase origin main && git push`).
+- The GitHub Actions bot pushes to `index.html` every 30 min. If you have local edits, use `git stash && git pull --rebase origin main && git stash pop` before committing, to avoid merge conflicts.
 - `index.html` was previously called `worldcup-calendar.html` — it was renamed when hosted on GitHub Pages.
