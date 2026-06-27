@@ -2662,15 +2662,35 @@ const AUTO_SCORES = {
   },
   "H6": {
     "home": "0",
-    "away": "0",
-    "status": "IN_PLAY",
-    "winner": "DRAW"
+    "away": "1",
+    "status": "FINISHED",
+    "winner": "AWAY_TEAM",
+    "ht_home": "0",
+    "ht_away": "1"
   },
   "H5": {
     "home": "0",
     "away": "0",
+    "status": "FINISHED",
+    "winner": "DRAW",
+    "ht_home": "0",
+    "ht_away": "0"
+  },
+  "G6": {
+    "home": "0",
+    "away": "3",
     "status": "IN_PLAY",
-    "winner": "DRAW"
+    "winner": "AWAY_TEAM",
+    "ht_home": "0",
+    "ht_away": "1"
+  },
+  "G5": {
+    "home": "1",
+    "away": "1",
+    "status": "IN_PLAY",
+    "winner": "DRAW",
+    "ht_home": "1",
+    "ht_away": "1"
   }
 };
 // AUTO_SCORES_END
@@ -4208,6 +4228,67 @@ const AUTO_EVENTS = {
         "min": "13'",
         "player": "Rebin Sulaka",
         "team": "Iraq"
+      }
+    ]
+  },
+  "H6": {
+    "goals": [
+      {
+        "min": "42'",
+        "player": "Álex Baena",
+        "team": "Spain",
+        "pen": false,
+        "og": false
+      }
+    ],
+    "reds": [
+      {
+        "min": "90'+5'",
+        "player": "Agustín Canobbio",
+        "team": "Uruguay"
+      }
+    ]
+  },
+  "G5": {
+    "goals": [
+      {
+        "min": "5'",
+        "player": "Mahmoud Saber",
+        "team": "Egypt",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "14'",
+        "player": "Ramin Rezaeian",
+        "team": "Iran",
+        "pen": false,
+        "og": false
+      }
+    ]
+  },
+  "G6": {
+    "goals": [
+      {
+        "min": "28'",
+        "player": "Leandro Trossard",
+        "team": "Belgium",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "50'",
+        "player": "Leandro Trossard",
+        "team": "Belgium",
+        "pen": false,
+        "og": false
+      },
+      {
+        "min": "66'",
+        "player": "Kevin De Bruyne",
+        "team": "Belgium",
+        "pen": false,
+        "og": false
       }
     ]
   }
