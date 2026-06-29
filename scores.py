@@ -453,9 +453,19 @@ def fetch_all_matches(api_key: str) -> list:
 def build_knockout_scores(matches: list) -> dict:
     """Build AUTO_KNOCKOUT dict from knockout-stage matches.
 
-    Late-night US kickoffs cross midnight UTC, so date-based bucketing is
-    unreliable.  Instead we sort all 32 knockout matches chronologically and
-    zip them with the fixed M73–M104 sequence.
+    R32 matches are identified by team names (reliable) rather than by
+    UTC-sorted position (unreliable).  The problem with positional zipping:
+    our M-slot numbers follow IST (UTC+1) order, but the API returns matches
+    sorted by UTC date.  Late-night US kickoffs cross UTC midnight, so a game
+    that is IST June 30 02:00 (= UTC June 30 01:00) sorts after games that are
+    IST June 29 18:00 and 21:30 (= UTC June 29 17:00 and 20:30) — but its
+    M-slot number (M75) is lower than those two (M76, M74).  Matching by team
+    name avoids this entirely.
+
+    For rounds beyond R32 (R16 onwards), teams are not known in advance, so
+    we fall back to positional assignment for the remaining slots.  Those later
+    rounds happen to have M-slot order matching UTC date order, so positional
+    matching is safe there.
     """
     KO_ORDERED = [
         "M73","M74","M75","M76","M77","M78","M79","M80",
@@ -465,27 +475,90 @@ def build_knockout_scores(matches: list) -> dict:
         "M101","M102","M103","M104",
     ]
 
+    # Canonical R32 team assignments.  Key = (home, away) after normalisation.
+    R32_SLOT = {
+        ("South Africa", "Canada"):    "M73",
+        ("Germany",      "Paraguay"):  "M74",
+        ("Netherlands",  "Morocco"):   "M75",
+        ("Brazil",       "Japan"):     "M76",
+        ("France",       "Sweden"):    "M77",
+        ("Ivory Coast",  "Norway"):    "M78",
+        ("Mexico",       "Ecuador"):   "M79",
+        ("England",      "DR Congo"):  "M80",
+        ("USA",          "Bosnia & Hz."): "M81",
+        ("Belgium",      "Senegal"):   "M82",
+        ("Portugal",     "Croatia"):   "M83",
+        ("Spain",        "Austria"):   "M84",
+        ("Switzerland",  "Algeria"):   "M85",
+        ("Argentina",    "Cape Verde"): "M86",
+        ("Colombia",     "Ghana"):     "M87",
+        ("Australia",    "Egypt"):     "M88",
+    }
+
     ko_matches = [m for m in matches if m.get("stage", "") in KNOCKOUT_STAGES]
     ko_matches.sort(key=lambda m: m.get("utcDate", ""))
 
-    if len(ko_matches) != len(KO_ORDERED):
-        print(f"  Note: expected 32 knockout matches, got {len(ko_matches)} — bracket may be partial")
+    if len(ko_matches) < 16:
+        print(f"  Note: only {len(ko_matches)} knockout match(es) returned — later rounds may be absent")
+    elif len(ko_matches) != 32:
+        print(f"  Note: expected 32 knockout matches, got {len(ko_matches)}")
 
-    knockout = {}
-    for mid, m in zip(KO_ORDERED, ko_matches):
-        status = m.get("status", "")
+    # Initialise all slots as null/TIMED
+    knockout = {mid: {"home": None, "away": None, "status": "TIMED", "winner": None}
+                for mid in KO_ORDERED}
+
+    used_slots = set()
+    unmatched = []   # matches not found in R32_SLOT (later rounds or unknown)
+
+    for m in ko_matches:
+        status = m.get("status", "TIMED")
+        home_raw = m.get("homeTeam", {}).get("name", "") or ""
+        away_raw = m.get("awayTeam", {}).get("name", "") or ""
+        home = normalize(home_raw) if home_raw else None
+        away = normalize(away_raw) if away_raw else None
+
+        mid = R32_SLOT.get((home, away)) if (home and away) else None
+
+        if mid:
+            used_slots.add(mid)
+        else:
+            unmatched.append(m)
+            continue
+
+        entry = {
+            "home": home, "away": away,
+            "status": status,
+            "winner": m.get("score", {}).get("winner"),
+        }
+        if status in ("FINISHED", "IN_PLAY", "PAUSED"):
+            score_data = m.get("score", {})
+            ft = score_data.get("fullTime", {})
+            hs = ft.get("home")
+            as_ = ft.get("away")
+            if hs is None:
+                curr = score_data.get("halfTime", {})
+                hs = curr.get("home")
+                as_ = curr.get("away")
+            entry["home_score"] = str(hs) if hs is not None else None
+            entry["away_score"] = str(as_) if as_ is not None else None
+
+        knockout[mid] = entry
+
+    # Later-round matches (R16 onwards): assign positionally to remaining slots.
+    # R16+ M-slot order matches UTC date order, so this is safe.
+    remaining = [mid for mid in KO_ORDERED if mid not in used_slots]
+    for mid, m in zip(remaining, unmatched):
+        status = m.get("status", "TIMED")
         home_raw = m.get("homeTeam", {}).get("name", "") or ""
         away_raw = m.get("awayTeam", {}).get("name", "") or ""
         home = normalize(home_raw) if home_raw else None
         away = normalize(away_raw) if away_raw else None
 
         entry = {
-            "home": home,
-            "away": away,
+            "home": home, "away": away,
             "status": status,
             "winner": m.get("score", {}).get("winner"),
         }
-
         if status in ("FINISHED", "IN_PLAY", "PAUSED"):
             score_data = m.get("score", {})
             ft = score_data.get("fullTime", {})
