@@ -1524,7 +1524,7 @@ function render() {
   let filtered = activeFilter === 'All'
     ? [...PREVIEWS]
     : PREVIEWS.filter(p => p.people.includes(activeFilter));
-  filtered.sort((a,b) => parseInt(a.date.match(/\d+/)[0]) - parseInt(b.date.match(/\d+/)[0]));
+  filtered.sort((a,b) => PREVIEWS.indexOf(a) - PREVIEWS.indexOf(b));
 
   if (!filtered.length) {
     list.innerHTML = `<div style="text-align:center;padding:40px;color:var(--muted);font-style:italic">No previews yet for ${activeFilter}. Check back as the tournament progresses!</div>`;
@@ -1561,7 +1561,7 @@ function render() {
     </div>`;
   });
 
-  html += `<div style="text-align:center;padding:32px;color:var(--muted);font-style:italic;font-size:0.85rem">That's every group-stage fixture: 71 previews, one family. Knockout previews to follow once the bracket is set ⚽</div>`;
+  html += `<div style="text-align:center;padding:32px;color:var(--muted);font-style:italic;font-size:0.85rem">Group stage + Round of 32 previews — one family, all 88 games ⚽</div>`;
   list.innerHTML = html;
 }
 

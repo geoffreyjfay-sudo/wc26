@@ -5348,6 +5348,59 @@ function renderFixtures() {
     html += `</div></div>`;
   }
 
+  // ── ROUND OF 32 section ──────────────────────────────────────
+  const R32_FIXTURES = KNOCKOUT_FIXTURES.filter(f => f.round === 'R32');
+  html += `<div class="group-panel" style="margin-top:20px">
+    <div class="group-header" onclick="toggleGroup('gR32')">
+      <span class="group-label">Round of 32</span>
+      <span class="group-teams" style="font-size:0.8rem;color:var(--muted)">28 June – 4 July</span>
+      <span class="group-toggle" id="tog-gR32">▼ show</span>
+    </div>
+    <div class="group-body" id="gR32">`;
+
+  for (const f of R32_FIXTURES) {
+    const ko = AUTO_KNOCKOUT[f.id];
+    if (!ko || !ko.home) {
+      // TBD game
+      html += `<div class="fixture-row" style="opacity:0.5">
+        <div class="fix-home"><span class="fix-name">${f.slot.split(' v ')[0]}</span></div>
+        <span style="color:var(--muted);padding:0 6px;font-size:0.85rem">TBD</span>
+        <span class="score-sep">-</span>
+        <span style="color:var(--muted);padding:0 6px;font-size:0.85rem">TBD</span>
+        <div class="fix-away"><span class="fix-name">${f.slot.split(' v ')[1]}</span></div>
+      </div>`;
+      continue;
+    }
+    const homeOwned = isOwned(ko.home);
+    const awayOwned = isOwned(ko.away);
+    const homeOwner = homeOwned ? TEAM_OWNER[ko.home].person : '';
+    const awayOwner = awayOwned ? TEAM_OWNER[ko.away].person : '';
+    const hs = ko.home_score !== null && ko.home_score !== undefined ? ko.home_score : '';
+    const as = ko.away_score !== null && ko.away_score !== undefined ? ko.away_score : '';
+    const hasScore = hs !== '' && as !== '';
+    let hClass = 'drew', aClass = 'drew';
+    if (ko.winner === 'HOME_TEAM') { hClass = 'won'; aClass = 'lost'; }
+    else if (ko.winner === 'AWAY_TEAM') { hClass = 'lost'; aClass = 'won'; }
+
+    html += `<div class="fixture-row">
+      <div class="fix-home">
+        <span class="fix-name ${homeOwned?'owned':''}">${homeOwned?`<span style="font-size:0.7rem;color:var(--muted)">${homeOwner}</span> `:''}${FLAGS[ko.home]||''}${ko.home}</span>
+      </div>
+      ${hasScore
+        ? `<span class="score-input ${hClass}" style="background:none;border:none;width:28px;text-align:center;font-weight:700">${hs}</span>
+           <span class="score-sep">-</span>
+           <span class="score-input ${aClass}" style="background:none;border:none;width:28px;text-align:center;font-weight:700">${as}</span>`
+        : `<span style="color:var(--muted);padding:0 4px;font-size:0.8rem;min-width:28px;text-align:center">–</span>
+           <span class="score-sep">vs</span>
+           <span style="color:var(--muted);padding:0 4px;font-size:0.8rem;min-width:28px;text-align:center">–</span>`}
+      <div class="fix-away">
+        <span class="fix-name ${awayOwned?'owned':''}">${FLAGS[ko.away]||''}${ko.away}${awayOwned?` <span style="font-size:0.7rem;color:var(--muted)">${awayOwner}</span>`:''}</span>
+      </div>
+    </div>`;
+  }
+
+  html += `</div></div>`;
+
   container.innerHTML = html;
 
   // Auto-open groups with family teams
@@ -5358,6 +5411,12 @@ function renderFixtures() {
       const tog = document.getElementById(`tog-g${gKey}`);
       if (tog) tog.textContent = '▲ hide';
     }
+  }
+
+  // Auto-open R32 if any game has been played
+  if (R32_FIXTURES.some(f => { const ko = AUTO_KNOCKOUT[f.id]; return ko && ko.status === 'FINISHED'; })) {
+    const r32el = document.getElementById('gR32');
+    if (r32el) { r32el.classList.add('open'); document.getElementById('tog-gR32').textContent = '▲ hide'; }
   }
 }
 
