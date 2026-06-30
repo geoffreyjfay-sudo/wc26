@@ -5475,8 +5475,9 @@ function renderBracket() {
                   <span class="ko-score" style="color:var(--muted)">–</span>`;
       }
 
+      const matchLabel = `<span style="font-size:0.62rem;color:rgba(240,234,216,0.28);flex-shrink:0;margin-right:3px">${f.id}</span>`;
       html += `<div class="fixture-row">
-        <div class="fix-home"><span class="fix-name${homeOwner ? ' owned' : ''}">${homeStr}</span></div>
+        <div class="fix-home">${matchLabel}<span class="fix-name${homeOwner ? ' owned' : ''}">${homeStr}</span></div>
         ${centre}
         <div class="fix-away"><span class="fix-name${awayOwner ? ' owned' : ''}">${awayStr}</span></div>
       </div>`;
