@@ -443,59 +443,9 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
 
 /* ── BRACKET ── */
 #bracket-section { margin-top: 36px; }
-.bracket-scroll { overflow-x: auto; padding-bottom: 20px; -webkit-overflow-scrolling: touch; }
-.bracket-inner { position: relative; }
-.bk-round-labels { position: relative; height: 26px; margin-bottom: 4px; }
-.bk-round-label {
-  position: absolute;
-  font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em;
-  color: var(--gold); text-align: center; white-space: nowrap;
-}
-.bk-match {
-  position: absolute;
-  background: var(--panel); border: 1px solid var(--border);
-  border-radius: 5px; overflow: hidden;
-}
-.bk-team {
-  display: flex; align-items: center; gap: 4px;
-  padding: 4px 7px; height: 26px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.bk-team:last-of-type { border-bottom: none; }
-.bk-team.bk-won { background: rgba(77,207,106,0.12); }
-.bk-team.bk-lost { opacity: 0.38; }
-.bk-team.bk-owned .bk-name { color: var(--gold-lt); font-weight: 600; }
-.bk-flag { font-size: 0.85rem; flex-shrink: 0; line-height: 1; }
-.bk-name { flex: 1; font-size: 0.72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.bk-owner-tag { font-size: 0.6rem; color: var(--muted); font-weight: 400; margin-left: 2px; }
-.bk-score { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; min-width: 14px; text-align: right; flex-shrink: 0; letter-spacing: 0; }
-.bk-tbd-row {
-  display: flex; align-items: center; justify-content: center;
-  height: 52px; font-size: 0.7rem; color: var(--muted); font-style: italic;
-  flex-direction: column; gap: 3px; padding: 4px 7px; text-align: center;
-}
-.bk-tbd-slot { font-size: 0.68rem; color: var(--muted); }
-.bk-tbd-date { font-size: 0.65rem; color: rgba(240,234,216,0.3); }
-.bk-match-date {
-  font-size: 0.6rem; color: rgba(240,234,216,0.3);
-  padding: 1px 7px; text-align: right;
-  background: rgba(0,0,0,0.15); border-top: 1px solid rgba(255,255,255,0.04);
-  white-space: nowrap;
-}
-.bk-connector-svg { position: absolute; left: 0; pointer-events: none; overflow: visible; }
-.bk-bronze {
-  margin: 28px auto 0; max-width: 380px;
-  border: 1px solid rgba(212,160,23,0.25); border-radius: 6px; overflow: hidden;
-}
-.bk-bronze-header {
-  background: rgba(212,160,23,0.1); padding: 7px 12px;
-  font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em;
-  color: var(--gold); border-bottom: 1px solid rgba(212,160,23,0.2);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.bk-bronze .bk-match {
-  position: static; width: 100%; border: none; border-radius: 0;
-}
+.ko-owner { font-size: 0.7rem; color: var(--muted); font-weight: 400; margin-left: 3px; }
+.ko-score { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; width: 28px; text-align: center; display: inline-block; }
+.ko-tbd { color: var(--muted); font-style: italic; font-size: 0.85em; }
 
 </style>
 </head>
@@ -612,12 +562,9 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
 
   <!-- KNOCKOUT BRACKET -->
   <div id="bracket-section" style="margin-top:36px">
-    <div class="sec-title">🎯 Knockout Bracket</div>
+    <div class="sec-title">🎯 Knockout Rounds</div>
     <p style="font-size:0.82rem;color:var(--muted);margin-bottom:16px">Round of 32 through to the Final · Knockout wins add 3 pts to the leaderboard</p>
-    <div class="bracket-scroll">
-      <div id="bracket-inner" class="bracket-inner"></div>
-    </div>
-    <div id="bracket-bronze"></div>
+    <div id="bracket-container"></div>
   </div>
 
 </div>
@@ -2585,26 +2532,15 @@ const KNOCKOUT_META = {
   M104: { date:"Jul 19", slot:"Final" },
 };
 
-// Bracket round order (top-to-bottom slot assignment)
-const BRACKET_ROUNDS = [
-  { label:"Round of 32", matches:["M74","M77","M73","M75","M83","M84","M81","M82","M76","M78","M79","M80","M86","M88","M85","M87"] },
-  { label:"Round of 16", matches:["M89","M90","M93","M94","M91","M92","M95","M96"] },
-  { label:"Quarter-Finals", matches:["M97","M98","M99","M100"] },
-  { label:"Semi-Finals", matches:["M101","M102"] },
-  { label:"Final", matches:["M104"] },
+// Knockout round display config
+const KNOCKOUT_ROUNDS_DISPLAY = [
+  { id:'R32',       label:'Round of 32',    dates:'28 Jun – 4 Jul' },
+  { id:'R16',       label:'Round of 16',    dates:'4 – 7 Jul' },
+  { id:'QF',        label:'Quarter-Finals', dates:'9 – 12 Jul' },
+  { id:'SF',        label:'Semi-Finals',    dates:'14 – 15 Jul' },
+  { id:'3rd Place', label:'Third Place',    dates:'18 Jul' },
+  { id:'Final',     label:'Final 🏆',       dates:'19 Jul' },
 ];
-
-// Which two matches feed each match (the losers of M101/M102 play M103)
-const BRACKET_FEEDERS = {
-  M89:["M74","M77"], M90:["M73","M75"],
-  M93:["M83","M84"], M94:["M81","M82"],
-  M91:["M76","M78"], M92:["M79","M80"],
-  M95:["M86","M88"], M96:["M85","M87"],
-  M97:["M89","M90"], M98:["M93","M94"],
-  M99:["M91","M92"], M100:["M95","M96"],
-  M101:["M97","M98"], M102:["M99","M100"],
-  M104:["M101","M102"],
-};
 
 // ── COOKIE STORAGE ───────────────────────────────────────────
 const COOKIE = 'wc2026results';
@@ -5354,59 +5290,6 @@ function renderFixtures() {
     html += `</div></div>`;
   }
 
-  // ── ROUND OF 32 section ──────────────────────────────────────
-  const R32_FIXTURES = KNOCKOUT_FIXTURES.filter(f => f.round === 'R32');
-  html += `<div class="group-panel" style="margin-top:20px">
-    <div class="group-header" onclick="toggleGroup('gR32')">
-      <span class="group-label">Round of 32</span>
-      <span class="group-teams" style="font-size:0.8rem;color:var(--muted)">28 June – 4 July</span>
-      <span class="group-toggle" id="tog-gR32">▼ show</span>
-    </div>
-    <div class="group-body" id="gR32">`;
-
-  for (const f of R32_FIXTURES) {
-    const ko = AUTO_KNOCKOUT[f.id];
-    if (!ko || !ko.home) {
-      // TBD game
-      html += `<div class="fixture-row" style="opacity:0.5">
-        <div class="fix-home"><span class="fix-name">${f.slot.split(' v ')[0]}</span></div>
-        <span style="color:var(--muted);padding:0 6px;font-size:0.85rem">TBD</span>
-        <span class="score-sep">-</span>
-        <span style="color:var(--muted);padding:0 6px;font-size:0.85rem">TBD</span>
-        <div class="fix-away"><span class="fix-name">${f.slot.split(' v ')[1]}</span></div>
-      </div>`;
-      continue;
-    }
-    const homeOwned = isOwned(ko.home);
-    const awayOwned = isOwned(ko.away);
-    const homeOwner = homeOwned ? TEAM_OWNER[ko.home].person : '';
-    const awayOwner = awayOwned ? TEAM_OWNER[ko.away].person : '';
-    const hs = ko.home_score !== null && ko.home_score !== undefined ? ko.home_score : '';
-    const as = ko.away_score !== null && ko.away_score !== undefined ? ko.away_score : '';
-    const hasScore = hs !== '' && as !== '';
-    let hClass = 'drew', aClass = 'drew';
-    if (ko.winner === 'HOME_TEAM') { hClass = 'won'; aClass = 'lost'; }
-    else if (ko.winner === 'AWAY_TEAM') { hClass = 'lost'; aClass = 'won'; }
-
-    html += `<div class="fixture-row">
-      <div class="fix-home">
-        <span class="fix-name ${homeOwned?'owned':''}">${homeOwned?`<span style="font-size:0.7rem;color:var(--muted)">${homeOwner}</span> `:''}${FLAGS[ko.home]||''}${ko.home}</span>
-      </div>
-      ${hasScore
-        ? `<span class="score-input ${hClass}" style="background:none;border:none;width:28px;text-align:center;font-weight:700">${hs}</span>
-           <span class="score-sep">-</span>
-           <span class="score-input ${aClass}" style="background:none;border:none;width:28px;text-align:center;font-weight:700">${as}</span>`
-        : `<span style="color:var(--muted);padding:0 4px;font-size:0.8rem;min-width:28px;text-align:center">–</span>
-           <span class="score-sep">vs</span>
-           <span style="color:var(--muted);padding:0 4px;font-size:0.8rem;min-width:28px;text-align:center">–</span>`}
-      <div class="fix-away">
-        <span class="fix-name ${awayOwned?'owned':''}">${FLAGS[ko.away]||''}${ko.away}${awayOwned?` <span style="font-size:0.7rem;color:var(--muted)">${awayOwner}</span>`:''}</span>
-      </div>
-    </div>`;
-  }
-
-  html += `</div></div>`;
-
   container.innerHTML = html;
 
   // Auto-open groups with family teams
@@ -5417,12 +5300,6 @@ function renderFixtures() {
       const tog = document.getElementById(`tog-g${gKey}`);
       if (tog) tog.textContent = '▲ hide';
     }
-  }
-
-  // Auto-open R32 if any game has been played
-  if (R32_FIXTURES.some(f => { const ko = AUTO_KNOCKOUT[f.id]; return ko && ko.status === 'FINISHED'; })) {
-    const r32el = document.getElementById('gR32');
-    if (r32el) { r32el.classList.add('open'); document.getElementById('tog-gR32').textContent = '▲ hide'; }
   }
 }
 
@@ -5536,147 +5413,91 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePreview
 
 // ── RENDER BRACKET ──────────────────────────────────────────
 function renderBracket() {
-  const MATCH_W = 170, MATCH_H = 58, SLOT_H = 72, CONN_W = 36;
-  const ROUND_W = MATCH_W + CONN_W;
-  const LABEL_H = 28;
-  const TOTAL_H = 16 * SLOT_H;
-  const TOTAL_W = BRACKET_ROUNDS.length * ROUND_W - CONN_W; // no connector after final
+  const container = document.getElementById('bracket-container');
+  if (!container) return;
+  let html = '';
 
-  // Compute match positions
-  const pos = {};
-  BRACKET_ROUNDS.forEach((rnd, ri) => {
-    const n = rnd.matches.length;
-    const slotH = TOTAL_H / n;
-    rnd.matches.forEach((id, si) => {
-      const x = ri * ROUND_W;
-      const cy = (si + 0.5) * slotH;
-      const y = cy - MATCH_H / 2;
-      pos[id] = { x, y, cy, cx: x + MATCH_W };
-    });
-  });
+  for (const rnd of KNOCKOUT_ROUNDS_DISPLAY) {
+    const fixtures = KNOCKOUT_FIXTURES.filter(f => f.round === rnd.id);
+    const panelId = 'ko' + rnd.id.replace(/[\s]/g, '');
+    const hasAnyResult = fixtures.some(f => (AUTO_KNOCKOUT[f.id] || {}).status === 'FINISHED');
 
-  // Build match card HTML
-  function matchCard(id) {
-    const m = AUTO_KNOCKOUT[id] || {};
-    const meta = KNOCKOUT_META[id] || {};
-    const { x, y } = pos[id];
-
-    // Both teams fully unknown — show compact TBD card
-    if (!m.home && !m.away) {
-      return `<div class="bk-match" style="left:${x}px;top:${y}px;width:${MATCH_W}px;height:${MATCH_H}px">
-        <div class="bk-tbd-row">
-          <span class="bk-tbd-slot">${meta.slot || 'TBD'}</span>
-          <span class="bk-tbd-date">${meta.date || ''}</span>
-        </div>
-      </div>`;
-    }
-
-    // At least one team known — always use two-row card, null team → 'TBD'
-    const home = m.home || null, away = m.away || null;
-    const hs = m.home_score !== null && m.home_score !== undefined ? m.home_score : '';
-    const as = m.away_score !== null && m.away_score !== undefined ? m.away_score : '';
-    const played = m.status === 'FINISHED';
-    const homeWon = played && m.winner === 'HOME_TEAM';
-    const awayWon = played && m.winner === 'AWAY_TEAM';
-
-    function teamRow(name, score, won, lost) {
-      const tbd = !name;
-      const owner = name ? TEAM_OWNER[name] : null;
-      const owned = owner ? 'bk-owned' : '';
-      const wonCls = won ? 'bk-won' : '';
-      const lostCls = lost ? 'bk-lost' : '';
-      const flag = (name && FLAGS[name]) || '🏳️';
-      const displayName = name || 'TBD';
-      const ownerTag = owner ? `<span class="bk-owner-tag">${owner.person}</span>` : '';
-      return `<div class="bk-team ${owned} ${wonCls} ${lostCls}${tbd?' bk-lost':''}">
-        <span class="bk-flag">${flag}</span>
-        <span class="bk-name">${displayName}${ownerTag}</span>
-        <span class="bk-score">${score}</span>
-      </div>`;
-    }
-
-    const dateRow = !played && meta.date
-      ? `<div class="bk-match-date">${meta.date}</div>`
-      : '';
-
-    return `<div class="bk-match" style="left:${x}px;top:${y}px;width:${MATCH_W}px">
-      ${teamRow(home, hs, homeWon, played && !homeWon)}
-      ${teamRow(away, as, awayWon, played && !awayWon)}
-      ${dateRow}
-    </div>`;
-  }
-
-  // Build SVG connector lines
-  const LINE = 'rgba(212,160,23,0.35)';
-  let svgPaths = '';
-  for (const [id, feeders] of Object.entries(BRACKET_FEEDERS)) {
-    const [fA, fB] = feeders;
-    if (!pos[id] || !pos[fA] || !pos[fB]) continue;
-    const tgt = pos[id], pA = pos[fA], pB = pos[fB];
-    const midX = pA.cx + CONN_W / 2;
-    svgPaths += `
-      <line x1="${pA.cx}" y1="${pA.cy}" x2="${midX}" y2="${pA.cy}" stroke="${LINE}" stroke-width="1"/>
-      <line x1="${pB.cx}" y1="${pB.cy}" x2="${midX}" y2="${pB.cy}" stroke="${LINE}" stroke-width="1"/>
-      <line x1="${midX}" y1="${pA.cy}" x2="${midX}" y2="${pB.cy}" stroke="${LINE}" stroke-width="1"/>
-      <line x1="${midX}" y1="${tgt.cy}" x2="${tgt.x}" y2="${tgt.cy}" stroke="${LINE}" stroke-width="1"/>`;
-  }
-
-  // Round labels
-  const labelsHtml = BRACKET_ROUNDS.map((rnd, ri) =>
-    `<div class="bk-round-label" style="left:${ri*ROUND_W}px;width:${MATCH_W}px">${rnd.label}</div>`
-  ).join('');
-
-  // All match cards
-  const cardsHtml = BRACKET_ROUNDS.flatMap(rnd => rnd.matches.map(matchCard)).join('');
-
-  // Main bracket
-  const inner = document.getElementById('bracket-inner');
-  inner.style.width = TOTAL_W + 'px';
-  inner.style.height = (LABEL_H + TOTAL_H) + 'px';
-  inner.innerHTML = `
-    <div class="bk-round-labels" style="width:${TOTAL_W}px">${labelsHtml}</div>
-    <svg class="bk-connector-svg" style="top:${LABEL_H}px;width:${TOTAL_W}px;height:${TOTAL_H}px">
-      ${svgPaths}
-    </svg>
-    <div style="position:absolute;top:${LABEL_H}px;left:0;width:${TOTAL_W}px;height:${TOTAL_H}px">
-      ${cardsHtml}
-    </div>`;
-
-  // Bronze final (separate, below bracket)
-  const bronzeEl = document.getElementById('bracket-bronze');
-  const bm = AUTO_KNOCKOUT['M103'] || {};
-  const bmeta = KNOCKOUT_META['M103'];
-  if (bm.home) {
-    const hs = bm.home_score !== null && bm.home_score !== undefined ? bm.home_score : '';
-    const as = bm.away_score !== null && bm.away_score !== undefined ? bm.away_score : '';
-    const played = bm.status === 'FINISHED';
-    const homeWon = played && bm.winner === 'HOME_TEAM';
-    const awayWon = played && bm.winner === 'AWAY_TEAM';
-    function bTeamRow(name, score, won, lost) {
-      const owner = TEAM_OWNER[name];
-      const owned = owner ? 'bk-owned' : '';
-      const flag = FLAGS[name] || '🏳️';
-      const ownerTag = owner ? `<span class="bk-owner-tag">${owner.person}</span>` : '';
-      return `<div class="bk-team ${owned} ${won?'bk-won':''} ${lost?'bk-lost':''}">
-        <span class="bk-flag">${flag}</span>
-        <span class="bk-name">${name}${ownerTag}</span>
-        <span class="bk-score">${score}</span>
-      </div>`;
-    }
-    bronzeEl.innerHTML = `<div class="bk-bronze">
-      <div class="bk-bronze-header"><span>🥉 Third Place Play-off</span><span style="font-size:0.7rem;color:var(--muted);font-family:'Inter',sans-serif">${bmeta.date}</span></div>
-      <div class="bk-match">
-        ${bTeamRow(bm.home, hs, homeWon, played && !homeWon)}
-        ${bTeamRow(bm.away, as, awayWon, played && !awayWon)}
+    html += `<div class="group-panel" style="margin-bottom:12px">
+      <div class="group-header" onclick="toggleGroup('${panelId}')">
+        <span class="group-label">${rnd.label}</span>
+        <span class="group-teams" style="font-size:0.8rem;color:var(--muted)">${rnd.dates}</span>
+        <span class="group-toggle" id="tog-${panelId}">▼ show</span>
       </div>
-    </div>`;
-  } else {
-    bronzeEl.innerHTML = `<div class="bk-bronze">
-      <div class="bk-bronze-header"><span>🥉 Third Place Play-off</span><span style="font-size:0.7rem;color:var(--muted);font-family:'Inter',sans-serif">${bmeta.date}</span></div>
-      <div style="padding:12px;font-size:0.75rem;color:var(--muted);font-style:italic;text-align:center">Teams TBD — ${bmeta.date}</div>
-    </div>`;
+      <div class="group-body${hasAnyResult ? ' open' : ''}" id="${panelId}">`;
+
+    for (const f of fixtures) {
+      const ko = AUTO_KNOCKOUT[f.id] || {};
+      const meta = KNOCKOUT_META[f.id] || {};
+      const home = ko.home || null;
+      const away = ko.away || null;
+      const played = ko.status === 'FINISHED';
+      const past = !played && isCompleted(f);
+      const hs = played ? (ko.home_score ?? '') : '';
+      const as = played ? (ko.away_score ?? '') : '';
+      const homeWon = played && ko.winner === 'HOME_TEAM';
+      const awayWon = played && ko.winner === 'AWAY_TEAM';
+      const homeOwner = home && TEAM_OWNER[home] ? TEAM_OWNER[home].person : '';
+      const awayOwner = away && TEAM_OWNER[away] ? TEAM_OWNER[away].person : '';
+
+      // Slot fallbacks for unknown teams
+      const slotParts = (f.slot || '').split(' v ');
+      const homeSlot = slotParts.length > 1 ? slotParts[0] : 'TBD';
+      const awaySlot = slotParts.length > 1 ? slotParts[1] : 'TBD';
+
+      // Build team display strings
+      const homeStr = home
+        ? `${FLAGS[home] || ''}${home}${homeOwner ? `<span class="ko-owner">${homeOwner}</span>` : ''}`
+        : `<span class="ko-tbd">${homeSlot}</span>`;
+      const awayStr = away
+        ? `${FLAGS[away] || ''}${away}${awayOwner ? `<span class="ko-owner">${awayOwner}</span>` : ''}`
+        : `<span class="ko-tbd">${awaySlot}</span>`;
+
+      // Build score / centre display
+      let centre;
+      if (played) {
+        const hCol = homeWon ? 'color:var(--green-lt)' : 'color:var(--muted)';
+        const aCol = awayWon ? 'color:var(--green-lt)' : 'color:var(--muted)';
+        centre = `<span class="ko-score" style="${hCol};font-weight:700">${hs}</span>
+                  <span class="score-sep">-</span>
+                  <span class="ko-score" style="${aCol};font-weight:700">${as}</span>`;
+      } else if (past) {
+        centre = `<span class="ko-score" style="color:var(--muted)">?</span>
+                  <span class="score-sep" style="color:var(--muted);font-size:0.7rem">upd</span>
+                  <span class="ko-score" style="color:var(--muted)">?</span>`;
+      } else {
+        centre = `<span class="ko-score" style="color:var(--muted)">–</span>
+                  <span class="score-sep" style="color:var(--muted);font-size:0.72rem">${meta.date || 'vs'}</span>
+                  <span class="ko-score" style="color:var(--muted)">–</span>`;
+      }
+
+      html += `<div class="fixture-row">
+        <div class="fix-home"><span class="fix-name${homeOwner ? ' owned' : ''}">${homeStr}</span></div>
+        ${centre}
+        <div class="fix-away"><span class="fix-name${awayOwner ? ' owned' : ''}">${awayStr}</span></div>
+      </div>`;
+    }
+
+    html += `</div></div>`;
+  }
+
+  container.innerHTML = html;
+
+  // Set toggle labels for auto-opened rounds
+  for (const rnd of KNOCKOUT_ROUNDS_DISPLAY) {
+    const panelId = 'ko' + rnd.id.replace(/[\s]/g, '');
+    const el = document.getElementById(panelId);
+    if (el && el.classList.contains('open')) {
+      const tog = document.getElementById('tog-' + panelId);
+      if (tog) tog.textContent = '▲ hide';
+    }
   }
 }
+
 
 // ── INIT ─────────────────────────────────────────────────────
 render();
